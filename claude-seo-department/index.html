@@ -80,6 +80,11 @@ h1 em{font-style:italic; color:var(--accent)}
 .btn-ghost{border-color:var(--line); color:var(--ink); background:var(--surface)}
 .btn-ghost:hover{border-color:var(--accent); color:var(--accent)}
 .note{font-size:13.5px; color:var(--muted)}
+/* Proof tease: opens a loop at line 2 that only closes in the conversion section,
+   which is what buys the scroll past the value section. */
+.tease{margin:-16px 0 26px; font-size:14.5px}
+.tease a{color:var(--muted); text-decoration:none; border-bottom:1px dashed var(--line); padding-bottom:2px}
+.tease a:hover{color:var(--accent); border-bottom-color:var(--accent)}
 
 /* ---------- figures ---------- */
 figure{margin:38px 0}
@@ -236,6 +241,7 @@ footer a{color:var(--muted)}
     <span class="eyebrow">Free · Nothing gated</span>
     <h1>The Claude<br><em>SEO Department</em></h1>
     <p class="sub">Six SEO functions. One shared brief. Every prompt below is the real one — copy, paste, run.</p>
+    <p class="tease"><a href="#proof">How a solo founder gained 14,500 organic clicks in 100 days →</a></p>
     <div class="cta-row">
       <a class="btn btn-primary" href="https://link.chatseo.app/Gv8il1h" target="_blank" rel="noopener">Run these on your real data →</a>
       <a class="btn btn-ghost" href="#brief">Read the playbook</a>
@@ -565,7 +571,7 @@ No dashboard. No "traffic is up 4% overall". One number, one action.</pre>
 
   <hr>
 
-  <h2>How one founder went from 250 → 750 clicks a day</h2>
+  <h2 id="proof" style="scroll-margin-top:80px">How one founder went from 250 → 750 clicks a day</h2>
   <p class="lede">He added <strong>+14,500 clicks just by chatting with AI.</strong></p>
   <p>No SEO expertise. He simply ran the recommendations he was given.</p>
   <figure>
