@@ -184,6 +184,19 @@ th,td{padding:11px 15px; text-align:left; border-bottom:1px solid var(--line)}
 th{background:var(--surface); font-weight:650; font-size:12.5px; letter-spacing:.05em; text-transform:uppercase; color:var(--muted)}
 tr:last-child td{border-bottom:0}
 
+/* ---------- old-vs-new comparison ---------- */
+.vs{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:26px 0}
+.vs-col{border:1px solid var(--line); border-radius:14px; padding:20px; background:var(--surface)}
+.vs-col h3{margin:0 0 12px; font-size:15px; letter-spacing:.04em; text-transform:uppercase}
+.vs-col ul{margin:0; padding-left:20px}
+.vs-col li{font-size:15px; margin-bottom:9px; color:var(--muted)}
+.vs-old h3{color:var(--muted)}
+.vs-old li{text-decoration:line-through; text-decoration-color:var(--line)}
+.vs-new{border-color:var(--accent)}
+.vs-new h3{color:var(--accent)}
+.vs-new li{color:var(--ink)}
+@media (max-width:600px){ .vs{grid-template-columns:1fr} }
+
 /* ---------- final cta ---------- */
 .final{
   background:var(--surface); border:1px solid var(--line); border-radius:18px;
@@ -224,10 +237,10 @@ footer a{color:var(--muted)}
     <h1>The Claude<br><em>SEO Department</em></h1>
     <p class="sub">Six SEO functions. One shared brief. Every prompt below is the real one — copy, paste, run.</p>
     <div class="cta-row">
-      <a class="btn btn-primary" href="#brief">Start with the Brief</a>
-      <a class="btn btn-ghost" href="https://link.chatseo.app/Gv8il1h" target="_blank" rel="noopener">Try ChatSEO free</a>
+      <a class="btn btn-primary" href="https://link.chatseo.app/Gv8il1h" target="_blank" rel="noopener">Run these on your real data →</a>
+      <a class="btn btn-ghost" href="#brief">Read the playbook</a>
     </div>
-    <p class="note">No credit card required</p>
+    <p class="note">Free · No credit card required</p>
   </div>
 
   <figure>
@@ -236,11 +249,12 @@ footer a{color:var(--muted)}
   </figure>
 
   <div class="author">
-    <img class="author-img" src="https://files.catbox.moe/tw3810.jpg" alt="Nicholas" loading="lazy">
+    <img class="author-img" src="img/tw3810.jpg" alt="Nicholas" loading="lazy">
     <div>
       <p><strong>Hey there, I'm Nicholas 👋</strong></p>
       <p>I grew my last B2C app to 15K Google clicks/month as a solo founder, then sold it. Turns out I fell in love with SEO along the way.</p>
       <p>So now I'm building <a href="https://link.chatseo.app/Gv8il1h" target="_blank" rel="noopener"><strong>ChatSEO.app</strong></a> — an all-in-one <strong>SEO employee</strong> whose job is to make sure you <strong>rank #1 in Google and in AI search</strong>.</p>
+      <p>This department is exactly how I run it. <a href="https://link.chatseo.app/Gv8il1h" target="_blank" rel="noopener"><strong>Try it free →</strong></a></p>
     </div>
   </div>
 
@@ -296,6 +310,11 @@ RULES FOR EVERY ANSWER:
 
   <div class="callout">
     <p><span class="k">The constraint is the product.</span> Every prompt below ends in <strong>one action</strong>, not twenty recommendations. A list of twenty is how SEO advice becomes homework you never do.</p>
+  </div>
+
+  <div class="callout" style="border-left-color:var(--sage)">
+    <p><span class="k" style="color:var(--sage)">One honest caveat.</span> A Brief describes your business — it can't see your <em>data</em>. Paste it into any AI and you'll get good reasoning about a site the model has never looked at. Every prompt below therefore says <em>"say unknown rather than guess"</em>, and you'll hit that line often.</p>
+    <p style="margin-top:10px">That's the gap <a href="https://link.chatseo.app/Gv8il1h" target="_blank" rel="noopener"><strong>ChatSEO</strong></a> closes: it plugs into your Search Console and runs these six functions against your real positions, real queries and real competitors — so "unknown" becomes a number. <a href="https://link.chatseo.app/Gv8il1h" target="_blank" rel="noopener"><strong>Free to try, no card →</strong></a></p>
   </div>
 
   <h2 id="functions">Step 2 — The six functions</h2>
@@ -544,11 +563,108 @@ No dashboard. No "traffic is up 4% overall". One number, one action.</pre>
     <li><strong>Killing things.</strong> Nothing here will tell you to stop doing SEO on a page that will never rank. That's still on you.</li>
   </ul>
 
-  <div class="final">
-    <h2>Want this running on your real data?</h2>
-    <p>ChatSEO connects to your Search Console and runs these six functions against your actual site, not a pasted description of it.</p>
+  <hr>
+
+  <h2>How one founder went from 250 → 750 clicks a day</h2>
+  <p class="lede">He added <strong>+14,500 clicks just by chatting with AI.</strong></p>
+  <p>No SEO expertise. He simply ran the recommendations he was given.</p>
+  <figure>
+    <img src="img/z911lt.png" alt="Search Console graph showing daily clicks rising from around 250 to around 750." loading="lazy">
+  </figure>
+
+  <h2>Why this works when old SEO tools don't</h2>
+  <p>Here's the blunt truth about SEO in 2026.</p>
+
+  <div class="vs">
+    <div class="vs-col vs-old">
+      <h3>Old SEO tools</h3>
+      <ul>
+        <li>1–2 useful insights buried in 100 pages of dashboards</li>
+        <li>Hours to extract anything actionable out of GSC</li>
+        <li>Five tools that don't talk to each other</li>
+        <li>Generic advice that works for everyone, therefore no one</li>
+        <li>Far too expensive</li>
+      </ul>
+    </div>
+    <div class="vs-col vs-new">
+      <h3>What you actually want</h3>
+      <ul>
+        <li>Your next SEO priority found in 30 seconds</li>
+        <li>What ten tools do, except it's done <em>for</em> you</li>
+        <li>Every recommendation based on <strong>your</strong> data</li>
+        <li>Trained on how real SEO experts actually work</li>
+        <li>One thing to do, not a dashboard to read</li>
+      </ul>
+    </div>
+  </div>
+
+  <figure>
+    <img src="img/k1a2u3.png" alt="Comparison of traditional SEO tooling against the ChatSEO approach." loading="lazy">
+  </figure>
+
+  <div class="final" style="margin:44px 0">
+    <h2 style="margin-top:0">That's the entire idea behind ChatSEO</h2>
+    <p>One SEO employee that reads your Search Console, finds the opportunity, and tells you the single next thing to do.</p>
     <a class="btn btn-primary" href="https://link.chatseo.app/Gv8il1h" target="_blank" rel="noopener">Try ChatSEO free →</a>
     <p class="note" style="margin-top:16px">No credit card required</p>
+  </div>
+
+  <figure>
+    <img src="img/rjmm0e.png" alt="ChatSEO interface showing an SEO recommendation generated from real site data." loading="lazy">
+  </figure>
+
+  <h2>Three things to try today, free</h2>
+  <p class="lede">Run these the moment you connect your site. Each takes under a minute.</p>
+
+  <div class="fn">
+    <div class="fn-head"><span class="fn-num">1</span><h3 class="fn-title">Find quick wins hiding in your data</h3></div>
+    <p class="fn-sub">Low effort, high ROI — the pages you're closest to winning.</p>
+    <div class="prompt">
+      <div class="prompt-bar"><span class="prompt-label">Paste into ChatSEO</span><button class="copy">Copy</button></div>
+<pre>Look at my Google Search Console data and find 10 pages that are close to
+ranking well but underperforming. For each one, tell me what's holding it
+back and exactly how to fix it.</pre>
+    </div>
+    <figure style="margin:18px 0 0">
+      <img src="img/rgghto.png" alt="ChatSEO returning a list of underperforming pages with fixes." loading="lazy">
+    </figure>
+  </div>
+
+  <div class="fn">
+    <div class="fn-head"><span class="fn-num">2</span><h3 class="fn-title">Target a keyword like an expert, in 30 seconds</h3></div>
+    <p class="fn-sub">Straight from keyword to a page that's built to rank for it.</p>
+    <div class="prompt">
+      <div class="prompt-bar"><span class="prompt-label">Paste into ChatSEO</span><button class="copy">Copy</button></div>
+<pre>I'd like you to create a page for [main keyword to target]</pre>
+    </div>
+    <figure style="margin:18px 0 0">
+      <img src="img/d67qo1.png" alt="ChatSEO generating a page targeting a chosen keyword." loading="lazy">
+    </figure>
+  </div>
+
+  <div class="fn">
+    <div class="fn-head"><span class="fn-num">3</span><h3 class="fn-title">Spy on a competitor, copy what works</h3></div>
+    <p class="fn-sub">The gaps they've left open, ranked by what you can realistically take.</p>
+    <div class="prompt">
+      <div class="prompt-bar"><span class="prompt-label">Paste into ChatSEO</span><button class="copy">Copy</button></div>
+<pre>Analyze the SEO strategy of one of my competitors (same size as me).
+What keywords are they ranking for that I'm not? Where are the gaps
+I can exploit?</pre>
+    </div>
+    <figure style="margin:18px 0 0">
+      <img src="img/f62hht.png" alt="ChatSEO competitor gap analysis output." loading="lazy">
+    </figure>
+  </div>
+
+  <div class="final">
+    <span class="eyebrow">Start today</span>
+    <h2 style="margin-top:0">Stop reading about SEO. Go do one thing.</h2>
+    <p>Connect your Search Console and let the department run against your actual site.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://link.chatseo.app/Gv8il1h" target="_blank" rel="noopener">Start using ChatSEO free →</a>
+      <a class="btn btn-ghost" href="https://link.chatseo.app/Gv8il1h" target="_blank" rel="noopener">Book a demo with me 😉</a>
+    </div>
+    <p class="note" style="margin-top:16px">Free · No credit card needed</p>
   </div>
 
   <footer>
