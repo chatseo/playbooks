@@ -1,0 +1,652 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Claude SEO System</title>
+<meta name="description" content="Stop chasing new keywords. Find the pages Google already wants to rank, fix them, and recheck on autopilot. The full system — free, nothing gated.">
+<meta property="og:title" content="The Claude SEO System">
+<meta property="og:description" content="Stop chasing new keywords. Find the pages Google already wants to rank, fix them, and recheck on autopilot. Free, nothing gated.">
+<meta property="og:image" content="https://chatseo.github.io/playbooks/claude-seo-system/img/og-card.jpg">
+<meta property="og:url" content="https://chatseo.github.io/playbooks/claude-seo-system/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍊</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F7F3EC; --surface:#FFFDF9; --ink:#2B2A28; --muted:#6E6A63;
+  --accent:#D9663D; --accent-soft:#F2D9CE; --sage:#8A9A7B;
+  --line:#E2DACE; --code-bg:#2B2A28; --code-ink:#F2EDE4;
+  --shadow:0 1px 2px rgba(43,42,40,.05), 0 8px 24px rgba(43,42,40,.06);
+  --maxw:760px;
+}
+:root:not([data-theme="light"]){ @media (prefers-color-scheme: dark){
+  --bg:#191817; --surface:#211F1D; --ink:#EFEAE1; --muted:#A29C93;
+  --accent:#E8794F; --accent-soft:#3A2A22; --sage:#9DAD8E;
+  --line:#332F2B; --code-bg:#0F0E0D; --code-ink:#EFEAE1;
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+}}
+:root[data-theme="dark"]{
+  --bg:#191817; --surface:#211F1D; --ink:#EFEAE1; --muted:#A29C93;
+  --accent:#E8794F; --accent-soft:#3A2A22; --sage:#9DAD8E;
+  --line:#332F2B; --code-bg:#0F0E0D; --code-ink:#EFEAE1;
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:72px}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:17px; line-height:1.68; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 22px}
+
+/* ---------- top bar ---------- */
+.bar{
+  position:sticky; top:0; z-index:50; background:color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter:blur(10px); border-bottom:1px solid var(--line);
+}
+.bar-in{max-width:var(--maxw); margin:0 auto; padding:11px 22px; display:flex; align-items:center; gap:14px}
+.brand{font-weight:800; letter-spacing:-.02em; font-size:15px; text-decoration:none; color:var(--ink); white-space:nowrap}
+.brand span{color:var(--accent)}
+.bar nav{margin-left:auto; display:flex; gap:16px; overflow-x:auto; scrollbar-width:none}
+.bar nav::-webkit-scrollbar{display:none}
+.bar nav a{color:var(--muted); text-decoration:none; font-size:13.5px; font-weight:500; white-space:nowrap}
+.bar nav a:hover{color:var(--accent)}
+.theme{background:none; border:1px solid var(--line); color:var(--muted); border-radius:8px;
+  width:32px; height:32px; cursor:pointer; font-size:14px; flex:none}
+.theme:hover{color:var(--accent); border-color:var(--accent)}
+
+/* ---------- hero ---------- */
+.hero{padding:64px 0 8px; text-align:center}
+.eyebrow{
+  display:inline-block; font-size:12px; font-weight:700; letter-spacing:.13em; text-transform:uppercase;
+  color:var(--accent); background:var(--accent-soft); padding:6px 13px; border-radius:100px; margin-bottom:20px;
+}
+h1{
+  font-family:"Instrument Serif",Georgia,serif; font-weight:400; letter-spacing:-.015em;
+  font-size:clamp(40px,7.5vw,62px); line-height:1.06; margin:0 0 18px;
+}
+h1 em{font-style:italic; color:var(--accent)}
+.sub{font-size:19px; color:var(--muted); max-width:560px; margin:0 auto 30px}
+.cta-row{display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-bottom:10px}
+.btn{
+  display:inline-flex; align-items:center; gap:8px; padding:13px 24px; border-radius:10px;
+  font-weight:600; font-size:15px; text-decoration:none; border:1px solid transparent; transition:.15s;
+}
+.btn-primary{background:var(--accent); color:#fff}
+.btn-primary:hover{filter:brightness(1.07); transform:translateY(-1px)}
+.btn-ghost{border-color:var(--line); color:var(--ink); background:var(--surface)}
+.btn-ghost:hover{border-color:var(--accent); color:var(--accent)}
+.note{font-size:13.5px; color:var(--muted)}
+/* Proof tease: opens a loop at line 2 that only closes in the conversion section,
+   which is what buys the scroll past the value section. */
+.tease{margin:-16px 0 26px; font-size:14.5px}
+.tease a{color:var(--muted); text-decoration:none; border-bottom:1px dashed var(--line); padding-bottom:2px}
+.tease a:hover{color:var(--accent); border-bottom-color:var(--accent)}
+
+/* ---------- figures ---------- */
+figure{margin:38px 0}
+figure img{width:100%; height:auto; display:block; border-radius:14px; border:1px solid var(--line)}
+figure.plainfig img{border:0; border-radius:0}
+figcaption{font-size:13.5px; color:var(--muted); text-align:center; margin-top:11px}
+
+/* ---------- type ---------- */
+h2{
+  font-family:"Instrument Serif",Georgia,serif; font-weight:400; font-size:clamp(29px,4.6vw,38px);
+  line-height:1.16; letter-spacing:-.01em; margin:60px 0 6px;
+}
+h3{font-size:19px; font-weight:700; letter-spacing:-.01em; margin:32px 0 8px}
+p{margin:0 0 17px}
+a{color:var(--accent)}
+.lede{font-size:19px; color:var(--muted); margin-bottom:26px}
+hr{border:0; border-top:1px solid var(--line); margin:56px 0}
+strong{font-weight:650}
+
+/* ---------- author ---------- */
+.author{
+  display:flex; gap:24px; align-items:flex-start; background:var(--surface);
+  border:1px solid var(--line); border-radius:16px; padding:28px; margin:40px 0;
+}
+.author-img{
+  width:96px; height:96px; border-radius:50%; flex:none; object-fit:cover;
+  background:var(--accent-soft); border:1px solid var(--line);
+}
+.author p{margin:0 0 11px; font-size:17px; line-height:1.62}
+.author p:last-child{margin-bottom:0}
+
+/* ---------- step cards ---------- */
+.fn{
+  background:var(--surface); border:1px solid var(--line); border-radius:16px;
+  padding:26px; margin:22px 0; box-shadow:var(--shadow); scroll-margin-top:80px;
+}
+.fn-head{display:flex; align-items:baseline; gap:12px; margin-bottom:4px; flex-wrap:wrap}
+.fn-num{
+  font-family:"Instrument Serif",Georgia,serif; font-size:34px; line-height:1;
+  color:var(--accent); flex:none;
+}
+.fn-title{font-size:22px; font-weight:750; letter-spacing:-.015em; margin:0}
+.fn-sub{color:var(--muted); font-size:15px; margin:0 0 18px}
+.meta{display:flex; flex-wrap:wrap; gap:8px; margin:16px 0}
+.chip{
+  font-size:12.5px; font-weight:600; padding:5px 11px; border-radius:100px;
+  background:var(--bg); border:1px solid var(--line); color:var(--muted);
+}
+.chip b{color:var(--ink); font-weight:650}
+
+/* ---------- prompt block ---------- */
+.prompt{position:relative; margin:16px 0 4px}
+.prompt-bar{
+  display:flex; align-items:center; justify-content:space-between; gap:10px;
+  background:var(--code-bg); border-radius:10px 10px 0 0; padding:9px 13px;
+  border-bottom:1px solid rgba(255,255,255,.09);
+}
+.prompt-label{
+  font-family:"JetBrains Mono",ui-monospace,monospace; font-size:11.5px;
+  letter-spacing:.06em; text-transform:uppercase; color:#9A938A;
+}
+.copy{
+  background:rgba(255,255,255,.09); color:#F2EDE4; border:0; border-radius:6px;
+  padding:5px 11px; font-size:12px; font-weight:600; cursor:pointer;
+  font-family:Inter,sans-serif; transition:.15s; white-space:nowrap;
+}
+.copy:hover{background:var(--accent)}
+.copy.done{background:var(--sage); color:#12140F}
+pre{
+  margin:0; background:var(--code-bg); color:var(--code-ink); border-radius:0 0 10px 10px;
+  padding:17px; overflow-x:auto; font-family:"JetBrains Mono",ui-monospace,monospace;
+  font-size:13px; line-height:1.62; white-space:pre-wrap; word-wrap:break-word;
+}
+
+/* ---------- callout ---------- */
+.callout{
+  border-left:3px solid var(--accent); background:var(--surface);
+  padding:16px 20px; border-radius:0 12px 12px 0; margin:26px 0;
+}
+.callout p{margin:0; font-size:15.5px}
+.callout .k{font-weight:700; color:var(--accent)}
+
+/* ---------- lists ---------- */
+ul,ol{padding-left:22px; margin:0 0 18px}
+li{margin-bottom:9px}
+.plain{list-style:none; padding:0}
+.plain li{padding-left:28px; position:relative; margin-bottom:13px}
+.plain li::before{content:"→"; position:absolute; left:0; color:var(--accent); font-weight:700}
+
+/* ---------- setup steps ---------- */
+.setup{counter-reset:s; list-style:none; padding:0; margin:22px 0}
+.setup li{
+  counter-increment:s; position:relative; padding-left:40px; margin-bottom:14px;
+}
+.setup li::before{
+  content:counter(s); position:absolute; left:0; top:1px;
+  width:26px; height:26px; border-radius:50%; background:var(--accent-soft); color:var(--accent);
+  font-size:13px; font-weight:700; display:flex; align-items:center; justify-content:center;
+}
+kbd{
+  font-family:"JetBrains Mono",ui-monospace,monospace; font-size:12.5px;
+  background:var(--bg); border:1px solid var(--line); border-radius:5px; padding:2px 6px;
+}
+
+/* ---------- mistakes ---------- */
+.miss{border-left:3px solid var(--sage); padding:2px 0 2px 18px; margin:22px 0}
+.miss h3{margin:0 0 5px; font-size:17px}
+.miss p{margin:0; color:var(--muted); font-size:15.5px}
+
+/* ---------- table ---------- */
+.tw{overflow-x:auto; margin:22px 0; border:1px solid var(--line); border-radius:12px}
+table{border-collapse:collapse; width:100%; font-size:14.5px; min-width:460px}
+th,td{padding:11px 15px; text-align:left; border-bottom:1px solid var(--line)}
+th{background:var(--surface); font-weight:650; font-size:12.5px; letter-spacing:.05em; text-transform:uppercase; color:var(--muted)}
+tr:last-child td{border-bottom:0}
+
+/* ---------- old-vs-new comparison ---------- */
+.vs{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:26px 0}
+.vs-col{border:1px solid var(--line); border-radius:14px; padding:20px; background:var(--surface)}
+.vs-col h3{margin:0 0 12px; font-size:15px; letter-spacing:.04em; text-transform:uppercase}
+.vs-col ul{margin:0; padding-left:20px}
+.vs-col li{font-size:15px; margin-bottom:9px; color:var(--muted)}
+.vs-old h3{color:var(--muted)}
+.vs-old li{text-decoration:line-through; text-decoration-color:var(--line)}
+.vs-new{border-color:var(--accent)}
+.vs-new h3{color:var(--accent)}
+.vs-new li{color:var(--ink)}
+@media (max-width:600px){ .vs{grid-template-columns:1fr} }
+
+/* ---------- final cta ---------- */
+.final{
+  background:var(--surface); border:1px solid var(--line); border-radius:18px;
+  padding:38px 28px; text-align:center; margin:52px 0 24px;
+}
+.final h2{margin:0 0 10px}
+.final p{color:var(--muted); max-width:460px; margin:0 auto 22px}
+footer{text-align:center; padding:34px 0 56px; color:var(--muted); font-size:13.5px}
+footer a{color:var(--muted)}
+
+@media (max-width:560px){
+  body{font-size:16px}
+  .fn{padding:20px}
+  .bar nav{display:none}
+  .author{flex-direction:column; gap:12px}
+}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="bar-in">
+    <a class="brand" href="#top">Chat<span>SEO</span></a>
+    <nav>
+      <a href="#filters">The Filters</a>
+      <a href="#rewrite">The Prompts</a>
+      <a href="#agent">The Agent</a>
+      <a href="#plan">4 Weeks</a>
+    </nav>
+    <button class="theme" id="themeBtn" aria-label="Toggle theme">◐</button>
+  </div>
+</div>
+
+<div class="wrap" id="top">
+
+  <div class="hero">
+    <span class="eyebrow">Free · Nothing gated</span>
+    <h1>The Claude<br><em>SEO System</em></h1>
+    <p class="sub">Stop chasing new keywords. Find the pages Google already wants to rank, fix them, and recheck on autopilot.</p>
+    <p class="tease"><a href="#proof">How a solo founder gained 14,500 organic clicks in 100 days →</a></p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://link.chatseo.app/pb-seo-system" target="_blank" rel="noopener">Run this on your real data →</a>
+      <a class="btn btn-ghost" href="#filters">Read the system</a>
+    </div>
+    <p class="note">Free · No credit card required</p>
+  </div>
+
+  <figure class="plainfig">
+    <img src="img/hero-loop.webp" alt="Diagram: Search Console feeds a four-stage loop — Find, Rewrite, Push, Recheck — which cycles back to Find." width="1400" height="933">
+    <figcaption>Four stages, and the last one feeds the first. That loop is the whole system.</figcaption>
+  </figure>
+
+  <div class="author">
+    <img class="author-img" src="img/tw3810.jpg" alt="Nicholas" loading="lazy">
+    <div>
+      <p><strong>Hey there, I'm Nicholas 👋</strong></p>
+      <p>I grew my last B2C app to 15K Google clicks/month as a solo founder, then sold it. Turns out I fell in love with SEO along the way.</p>
+      <p>So now I'm building <a href="https://link.chatseo.app/pb-seo-system" target="_blank" rel="noopener"><strong>ChatSEO.app</strong></a> — an all-in-one <strong>SEO employee</strong> whose job is to make sure you <strong>rank #1 in Google and in AI search</strong>.</p>
+      <p>This system is exactly how I run it. <a href="https://link.chatseo.app/pb-seo-system" target="_blank" rel="noopener"><strong>Try it free →</strong></a></p>
+    </div>
+  </div>
+
+  <hr>
+
+  <h2>Most people use Claude to write blog articles</h2>
+  <p class="lede">That's about 2% of what it can do for SEO — and it's the 2% with the longest payback.</p>
+  <p>A new article starts at position nothing. It needs to be indexed, then crawled again, then earn enough signal to climb past everyone already there. Three to six months if it works at all, and most of them don't.</p>
+  <p>Meanwhile there is a list sitting in your Search Console of pages Google <em>already</em> decided to show. They're on page two. They collect impressions and almost no clicks. Nobody is writing them; they're just being ignored.</p>
+  <p><strong>The difference is intent.</strong> Stop chasing new keywords thinking that will fix your website. Start fixing the pages Google already wants to rank.</p>
+
+  <h2 id="filters">Step 1 — The exact filters that surface quick wins</h2>
+  <p class="lede">Two cuts. Everything else in that report is noise for this job.</p>
+
+  <p>Open <strong>Search Console → Performance → Search results</strong>. Before anything else, set the report up so the numbers you need are actually on screen:</p>
+
+  <ol class="setup">
+    <li>Date range: <strong>Last 3 months</strong>. 28 days is too jumpy to tell a real position from a bad week.</li>
+    <li>Toggle on <strong>all four metrics</strong> — Clicks, Impressions, CTR, Average position. Three of the four are off by default, which is why most people never see this list.</li>
+    <li>Work in the <strong>Pages</strong> tab for cut one, the <strong>Queries</strong> tab for cut two.</li>
+    <li>Hit <strong>Export → CSV</strong>. The filter menu in Search Console only filters by query, page, country, device, search appearance and date — there is no "position greater than" control. The numeric cuts happen in the export.</li>
+  </ol>
+
+  <h3>Cut 1 — The strike zone: average position 8 to 15</h3>
+  <p>In the export, keep only rows where <strong>average position is between 8 and 15</strong>, then sort by impressions descending.</p>
+  <p>Above 8 you're already on page one and the remaining gain is small. Below 15 you're two pages back and a title rewrite won't carry you. Between them is where a page has proven relevance but is losing on presentation — which is a fifteen-minute fix, not a content project.</p>
+
+  <figure class="plainfig">
+    <img src="img/strike-zone.webp" alt="Three stacked bands: positions 1-7 already won, positions 8-15 the strike zone, positions 16+ not worth it yet." loading="lazy" width="900" height="900">
+    <figcaption>The middle band is the only one worth your Tuesday.</figcaption>
+  </figure>
+
+  <h3>Cut 2 — The CTR gap: 500+ impressions, under 1% CTR</h3>
+  <p>Switch to Queries, export, and keep only rows with <strong>more than 500 impressions and a CTR below 1%</strong>.</p>
+  <p>This is a different failure. The page is being shown — often plenty — and people are reading your title and choosing someone else. That is not a ranking problem, it's a promise problem, and it's the single cheapest thing to fix in SEO because it needs no new content and no developer.</p>
+
+  <div class="callout">
+    <p><span class="k">Why 500.</span> Below a few hundred impressions a 0.8% CTR is three clicks versus four — noise, not a signal. 500 is where the number starts meaning something. Raise it if you're a bigger site; the point is to have a floor at all.</p>
+  </div>
+
+  <p>Now hand the export to Claude and make it pick <em>one</em>. This is the prompt that turns two lists into a decision:</p>
+
+  <div class="prompt">
+    <div class="prompt-bar">
+      <span class="prompt-label">Quick-win triage · paste your CSV rows</span>
+      <button class="copy">Copy</button>
+    </div>
+<pre>Here are rows from my Google Search Console export.
+Columns: page (or query), clicks, impressions, CTR, average position.
+
+[PASTE ROWS]
+
+My site: [domain]
+What we sell: [one sentence]
+The pages that make us money: [1-3 urls]
+
+Pick the SINGLE best quick win from this data.
+
+Score every row on:
+- Proximity — is it 8-15? Closer to 8 is worth more.
+- Demand — impressions. Real volume, not a rounding error.
+- Gap — how far its CTR sits below what that position normally earns.
+- Money — does it touch a page that can actually produce revenue?
+
+Return exactly this, nothing else:
+1. THE PAGE (or query) — the winner
+2. Its current position, impressions and CTR, quoted from my data
+3. WHY IT'S STUCK — ranking problem or click problem? Say which, and
+   what in the data tells you that.
+4. The realistic upside in clicks/month if fixed. Show the arithmetic
+   from MY numbers. If you can't compute it from what I pasted, say
+   "cannot compute from this data" — do not estimate a number.
+5. THE ONE THING to do this week.
+
+Use only the numbers I pasted. Never invent a volume, a position or a
+benchmark CTR you cannot point to in my data. Do not rank the runners-up.</pre>
+  </div>
+
+  <div class="callout" style="border-left-color:var(--sage)">
+    <p><span class="k" style="color:var(--sage)">One honest caveat, since you'll hit it in about four minutes.</span> This system runs on a CSV you export by hand. Claude can reason brilliantly about the rows you paste — and it cannot see the rows you didn't, refresh them tomorrow, or check whether last week's fix moved. Every prompt here says <em>"say cannot compute rather than estimate"</em>, and you will hit that line.</p>
+    <p style="margin-top:10px">That's the gap <a href="https://link.chatseo.app/pb-seo-system" target="_blank" rel="noopener"><strong>ChatSEO</strong></a> closes: it connects to your Search Console directly, so the strike zone and the CTR gap are a live list instead of a Tuesday export — and "cannot compute" becomes a number. <a href="https://link.chatseo.app/pb-seo-system" target="_blank" rel="noopener"><strong>Free to try, no card →</strong></a></p>
+  </div>
+
+  <h2 id="rewrite">Step 2 — The prompts that rewrite titles and metas</h2>
+  <p class="lede">Copy-paste. Both of these end in something you can ship, not options to consider.</p>
+
+  <p>Order matters here. Diagnose the intent first, then write. Rewriting a title before you know what the searcher actually wanted is how you produce a prettier version of the same miss.</p>
+
+  <div class="fn" id="intent">
+    <div class="fn-head"><span class="fn-num">1</span><h3 class="fn-title">The intent check</h3></div>
+    <p class="fn-sub">Why they're scrolling past you. Run this before writing anything.</p>
+    <div class="meta">
+      <span class="chip"><b>Takes:</b> 2 min</span>
+      <span class="chip"><b>Returns:</b> the mismatch</span>
+      <span class="chip"><b>Needs:</b> the query + your current title</span>
+    </div>
+    <div class="prompt">
+      <div class="prompt-bar"><span class="prompt-label">Intent check</span><button class="copy">Copy</button></div>
+<pre>Query: [QUERY]
+My page: [URL]
+My current title tag: [TITLE]
+My current meta description: [META]
+Position: [N] · Impressions: [N] · CTR: [N]%
+
+Someone types that query and does not click me. Tell me why.
+
+Return exactly:
+1. THE JOB — what is the person typing this actually trying to get done?
+   One sentence. Not the topic, the job.
+2. WHAT THEY EXPECT TO SEE in a result before they'll click — the
+   format, the specificity, the reassurance. Be concrete.
+3. WHAT MY TITLE PROMISES INSTEAD — quote the gap.
+4. THE VERDICT — pick one:
+   (a) intent mismatch — my page answers a different question
+   (b) presentation — right page, title doesn't say so
+   (c) SERP feature — the clicks are going somewhere I can't win
+5. If (a), say plainly whether the page is worth fixing or whether
+   this query needs a different page.
+
+If you cannot load my URL, say so and ask me to paste the page.
+Do not describe what you assume is on it.</pre>
+    </div>
+  </div>
+
+  <div class="fn" id="titles">
+    <div class="fn-head"><span class="fn-num">2</span><h3 class="fn-title">The rewrite</h3></div>
+    <p class="fn-sub">One title, one meta, ready to paste into your CMS.</p>
+    <div class="meta">
+      <span class="chip"><b>Takes:</b> 5 min</span>
+      <span class="chip"><b>Returns:</b> 1 title + 1 meta</span>
+      <span class="chip"><b>Needs:</b> the intent check above</span>
+    </div>
+    <div class="prompt">
+      <div class="prompt-bar"><span class="prompt-label">Title + meta rewrite</span><button class="copy">Copy</button></div>
+<pre>Using the intent you just identified, rewrite my title tag and meta
+description for [URL], targeting [QUERY].
+
+Constraints — these are hard:
+- Title: under 60 characters. Count them and show the count.
+- Meta: under 155 characters. Count them and show the count.
+- The primary query appears in the title, near the front, reading
+  naturally. If it can't read naturally, say so rather than forcing it.
+- The title must promise what the page actually delivers. If the page
+  doesn't deliver it, tell me — do not write a promise I can't keep.
+- No "Ultimate Guide", no "Everything You Need to Know", no year
+  padding unless the page is genuinely updated for that year.
+- The meta earns the click. It does not summarise the page.
+
+Return exactly:
+- TITLE (with character count)
+- META (with character count)
+- WHAT CHANGED — the one substantive difference versus my current
+  title, in one line. Not "more compelling". The actual change.
+- WHAT I'M BETTING ON — the single assumption about the searcher
+  this rewrite depends on, so I know what I disproved if it fails.
+
+One version of each. Do not give me three options to choose between.</pre>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p><span class="k">Then ship it.</span> Paste the title and meta into your CMS and publish — that's the whole "push" stage. It's fifteen minutes and it's where most people stall, because the audit spreadsheet feels like progress and the CMS edit feels like work. The spreadsheet has never moved a position.</p>
+  </div>
+
+  <h2 id="agent">Step 3 — The agent that surfaces opportunities daily</h2>
+  <p class="lede">The system is only worth building if it runs without you remembering to run it.</p>
+
+  <p>Steps 1 and 2 are a Tuesday. This step is what makes it a system: a saved instruction that does the triage before you sit down, so the work waiting for you is a decision, not a data pull.</p>
+
+  <p>Save the block below as a <strong>Claude Project instruction</strong> (or a ChatSEO memory, or whatever your tool calls a system prompt). Then your daily interaction is: drop in the fresh export, and it hands you one page.</p>
+
+  <div class="prompt">
+    <div class="prompt-bar">
+      <span class="prompt-label">The daily agent · save as a project instruction</span>
+      <button class="copy">Copy</button>
+    </div>
+<pre>You are my SEO opportunity scout. You run once a day against Google
+Search Console data I give you.
+
+MY CONTEXT
+Site: [domain]
+What we sell: [one sentence]
+Who buys it: [persona + the trigger that makes them look]
+Money pages: [1-3 urls]
+Already fixed (do not resurface these): [running list — add to it]
+
+YOUR JOB
+Each time I paste an export, find the one opportunity worth my next
+30 minutes. Nothing else.
+
+RULES
+- Only consider rows in position 8-15, OR rows with 500+ impressions
+  and CTR under 1%.
+- Never resurface a page from "already fixed" unless 21+ days have
+  passed AND its position has not improved. Then say so explicitly.
+- Prefer money pages over informational ones when scores are close.
+- Never invent a number. If something can't be computed from what I
+  pasted, say "cannot compute from this data" and name the export
+  that would answer it.
+- If nothing clears the bar today, say "nothing worth doing today"
+  and stop. A quiet day is a valid answer. Do not manufacture work.
+
+YOUR OUTPUT — always exactly this shape, never longer:
+TODAY'S PAGE: [url]
+THE NUMBER: [position, impressions, CTR — quoted from my data]
+THE PROBLEM: [one sentence]
+THE ACTION: [one thing, doable in 30 minutes]
+RECHECK ON: [date, 21 days out]
+
+Then stop. No summary, no runners-up, no "other things to consider".</pre>
+  </div>
+
+  <p>Two things make that instruction work, and both are easy to delete by accident.</p>
+  <ul class="plain">
+    <li><strong>The "already fixed" list.</strong> Without it the agent hands you the same page every morning, because it's still the highest-scoring row until Google recrawls. Add each page as you ship it.</li>
+    <li><strong>Permission to say nothing.</strong> An agent that must produce an opportunity every day will produce a bad one on day six. "Nothing worth doing today" is the answer that keeps you trusting the other five.</li>
+  </ul>
+
+  <h3>The recheck — the stage everyone drops</h3>
+  <p>Twenty-one days after a fix, the loop closes. Pull the same query, compare, and decide. This is the prompt that stops a change you never verified from becoming a belief:</p>
+
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Recheck · 21 days after a fix</span><button class="copy">Copy</button></div>
+<pre>On [DATE] I changed the title and meta on [URL] targeting [QUERY].
+
+Before — position [N], impressions [N], CTR [N]%
+After  — position [N], impressions [N], CTR [N]%
+
+Return exactly:
+1. DID IT WORK — yes / no / too early to tell. Pick one.
+2. WHICH METRIC MOVED — position, CTR, or neither. These mean
+   different things. Say which one and what it implies.
+3. IS IT REAL — could this be seasonality, a Google update, or an
+   impression-volume change rather than my edit? Say how confident
+   you are and why.
+4. THE ASSUMPTION — I bet on [WHAT I'M BETTING ON, from the rewrite].
+   Was it confirmed or disproved?
+5. NEXT — keep it, revert it, or try one more thing. One choice.
+
+If 21 days isn't enough to tell from these numbers, say so plainly
+instead of finding a story in the noise.</pre>
+  </div>
+
+  <h2 id="plan">Step 4 — The four-week plan</h2>
+  <p class="lede">From flat clicks to a loop that compounds. About 30 minutes a day.</p>
+
+  <p>The plan is deliberately slow in week one. Everyone wants to fix twenty pages on day one; you then have twenty changes in flight, no idea which did anything, and no reason to trust the system enough to keep running it.</p>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Week</th><th>What you do</th><th>You end the week with</th></tr></thead>
+      <tbody>
+        <tr><td>1 · Find</td><td>Export both cuts. Run the triage prompt. Fix <strong>one</strong> page, end to end.</td><td>One page shipped, one recheck date in the calendar</td></tr>
+        <tr><td>2 · Fix</td><td>Three more pages from the strike zone. Intent check, rewrite, publish.</td><td>Four pages live. Still zero results — that's expected</td></tr>
+        <tr><td>3 · Automate</td><td>Save the agent instruction. Run it daily. Ship what it gives you.</td><td>The list comes to you instead of you pulling it</td></tr>
+        <tr><td>4 · Recheck</td><td>Week 1's fixes are 21 days old. Run the recheck prompt on each.</td><td>Evidence about <em>your</em> site, and a loop that now has input</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>Week four is the one that matters and the one people never reach. Up to then you're following someone else's method. After the first recheck you're running on your own data: you know which rewrites moved your pages, in your niche, for your searchers. That's when it stops being a checklist and starts compounding.</p>
+
+  <h2>The four things that kill this</h2>
+
+  <div class="miss">
+    <h3>1. Widening the filters</h3>
+    <p>Position 8-15 and 500 impressions feel arbitrary, so people loosen them and get 400 rows back. The whole value of this system is that it returns a short list. A long list is the audit spreadsheet you were trying to escape.</p>
+  </div>
+  <div class="miss">
+    <h3>2. Rewriting before diagnosing</h3>
+    <p>If the page answers a different question than the query asks, a better title just gets you a higher bounce rate. Run the intent check first. Sometimes the honest answer is that the page shouldn't target that query at all.</p>
+  </div>
+  <div class="miss">
+    <h3>3. Fixing twenty pages at once</h3>
+    <p>Ship one, recheck it, learn something. Twenty simultaneous changes tell you nothing about which rewrite pattern works for your audience — and that lesson is the actual asset.</p>
+  </div>
+  <div class="miss">
+    <h3>4. Never rechecking</h3>
+    <p>The loop only compounds if it closes. Without the recheck you're just doing on-page edits forever, with a growing pile of untested opinions about what Google likes.</p>
+  </div>
+
+  <h2>Where this still needs you</h2>
+  <ul class="plain">
+    <li><strong>The export.</strong> Every number here has to come from Search Console. The model reasons about your data — it should never be the source of it.</li>
+    <li><strong>The publish.</strong> Nothing above touches your site. Someone still opens the CMS and pastes the title in.</li>
+    <li><strong>Killing a page.</strong> No prompt will tell you to stop optimising something that will never rank. That call is yours.</li>
+    <li><strong>Deciding what "worth it" means.</strong> A query with 900 impressions might be your entire ICP or entirely students. Only you know.</li>
+  </ul>
+
+  <hr>
+
+  <h2 id="proof" style="scroll-margin-top:80px">How one founder went from 250 → 750 clicks a day</h2>
+  <p class="lede">He added <strong>+14,500 clicks just by chatting with AI.</strong></p>
+  <p>No SEO expertise. He simply ran the recommendations he was given.</p>
+  <figure>
+    <img src="img/proof-clicks.webp" alt="Search Console graph showing daily clicks rising from around 250 to around 750." loading="lazy">
+  </figure>
+
+  <h2>Why this works when old SEO tools don't</h2>
+  <p>Here's the blunt truth about SEO in 2026.</p>
+
+  <div class="vs">
+    <div class="vs-col vs-old">
+      <h3>Old SEO tools</h3>
+      <ul>
+        <li>A 40-tab audit spreadsheet nobody finishes</li>
+        <li>Hours of exporting before you learn anything</li>
+        <li>Keyword lists for pages that don't exist yet</li>
+        <li>Generic advice that works for everyone, therefore no one</li>
+        <li>Far too expensive</li>
+      </ul>
+    </div>
+    <div class="vs-col vs-new">
+      <h3>What you actually want</h3>
+      <ul>
+        <li>The one page to fix, found in 30 seconds</li>
+        <li>A live list, not a Tuesday export</li>
+        <li>Pages Google <strong>already</strong> wants to rank</li>
+        <li>Every recommendation from <strong>your</strong> positions and queries</li>
+        <li>One thing to do, not a dashboard to read</li>
+      </ul>
+    </div>
+  </div>
+
+  <figure>
+    <img src="img/vs-tools.webp" alt="Comparison of traditional SEO tooling against the ChatSEO approach." loading="lazy">
+  </figure>
+
+  <div class="final" style="margin:44px 0">
+    <h2 style="margin-top:0">That's the entire idea behind ChatSEO</h2>
+    <p>One SEO employee that reads your Search Console, finds the page sitting at position nine, and tells you the single next thing to do about it.</p>
+    <a class="btn btn-primary" href="https://link.chatseo.app/pb-seo-system" target="_blank" rel="noopener">Try ChatSEO free →</a>
+    <p class="note" style="margin-top:16px">No credit card required</p>
+  </div>
+
+  <footer>
+    <p>Built by <a href="https://link.chatseo.app/pb-seo-system" target="_blank" rel="noopener">Nicholas at ChatSEO</a> · Everything on this page is free to copy and use.</p>
+  </footer>
+
+</div>
+
+<script>
+// Theme: remember the viewer's choice, fall back to their system setting.
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  try{ var s=localStorage.getItem('theme'); if(s) root.setAttribute('data-theme',s); }catch(e){}
+  btn.addEventListener('click',function(){
+    var cur=root.getAttribute('data-theme');
+    if(!cur) cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+    var next=cur==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{ localStorage.setItem('theme',next); }catch(e){}
+  });
+})();
+
+// Copy buttons: the whole point of a prompt playbook is getting the prompt out cleanly.
+document.querySelectorAll('.copy').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var pre=btn.closest('.prompt').querySelector('pre');
+    var text=pre.innerText;
+    var done=function(){ btn.textContent='Copied'; btn.classList.add('done');
+      setTimeout(function(){ btn.textContent='Copy'; btn.classList.remove('done'); },1600); };
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done).catch(fallback);
+    } else { fallback(); }
+    function fallback(){
+      var ta=document.createElement('textarea'); ta.value=text;
+      ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta);
+      ta.select(); try{ document.execCommand('copy'); done(); }catch(e){ btn.textContent='Select manually'; }
+      document.body.removeChild(ta);
+    }
+  });
+});
+</script>
+</body>
+</html>
