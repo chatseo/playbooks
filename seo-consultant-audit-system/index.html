@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The SEO Consultant's Audit, in One Chat</title>
+<meta name="description" content="Rank tracker, keyword tool, backlink tool, crawler, Search Console: five subscriptions to write one client audit. See how SEO consultants and agencies run it in one conversation instead, on a real audit.">
+<meta property="og:title" content="The SEO Consultant's Audit, in One Chat">
+<meta property="og:description" content="Five tools, five bills, one audit. Here's the one-conversation version, and what it actually wrote on a real domain.">
+<meta property="og:image" content="https://chatseo.github.io/playbooks/seo-consultant-audit-system/img/og-card.jpg">
+<meta property="og:url" content="https://chatseo.github.io/playbooks/seo-consultant-audit-system/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFFFFF; --wash:#EDF2FF; --surface:#FFFFFF; --raised:#F7F9FF;
+  --ink:#0B1220; --body:#4B5565; --muted:#6B7688;
+  --blue:#2563EB; --blue-dark:#1D4ED8; --blue-soft:#EAF0FF;
+  --line:#E4E9F2;
+  --shadow:0 1px 2px rgba(16,24,40,.04), 0 8px 24px rgba(16,24,40,.06);
+  --maxw:720px;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0B1120; --wash:#101A30; --surface:#131C2E; --raised:#172136;
+    --ink:#F2F5FA; --body:#B4BECD; --muted:#8D98AA;
+    --blue:#5B8DEF; --blue-dark:#7BA6F5; --blue-soft:#1A2540;
+    --line:#232E45;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; color:var(--body);
+  background:var(--bg);
+  background-image:linear-gradient(180deg, var(--wash) 0%, var(--bg) 620px);
+  background-repeat:no-repeat;
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:17px; line-height:1.7; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 22px}
+
+/* ---------- hero ---------- */
+.hero{padding:72px 0 4px; text-align:center}
+h1{
+  color:var(--ink); font-weight:800; letter-spacing:-.035em;
+  font-size:clamp(34px,6.2vw,52px); line-height:1.08; margin:0 0 20px;
+}
+h1 em{font-style:italic; color:var(--blue); font-weight:800}
+.sub{font-size:18.5px; color:var(--body); max-width:560px; margin:0 auto 22px}
+.trust{font-size:14.5px; color:var(--muted); margin:0}
+.trust b{color:var(--ink); font-weight:700}
+
+/* ---------- type ---------- */
+h2{
+  color:var(--ink); font-weight:800; letter-spacing:-.028em;
+  font-size:clamp(25px,3.9vw,32px); line-height:1.2; margin:52px 0 8px;
+}
+h3{color:var(--ink); font-size:17.5px; font-weight:700; letter-spacing:-.015em; margin:26px 0 6px}
+p{margin:0 0 16px}
+a{color:var(--blue); text-decoration:none; border-bottom:1px solid var(--blue-soft)}
+a:hover{border-bottom-color:var(--blue)}
+.lede{font-size:18px; color:var(--muted); margin-bottom:24px}
+strong{color:var(--ink); font-weight:650}
+hr{border:0; border-top:1px solid var(--line); margin:48px 0}
+
+/* ---------- figures ---------- */
+figure{margin:32px 0}
+figure img{width:100%; height:auto; display:block; border-radius:16px; border:1px solid var(--line)}
+
+/* ---------- quotes ---------- */
+.q{background:var(--surface); border:1px solid var(--line); border-radius:16px;
+  padding:22px 24px; margin:16px 0; box-shadow:var(--shadow)}
+.q-top{display:flex; align-items:center; gap:12px; margin-bottom:14px}
+.av{flex:none; width:42px; height:42px; border-radius:50%; background:var(--blue-soft);
+  color:var(--blue); font-size:14.5px; font-weight:800; letter-spacing:-.01em;
+  display:flex; align-items:center; justify-content:center}
+.q-who{flex:1; min-width:0; line-height:1.35}
+.q-who b{display:block; color:var(--ink); font-weight:700; font-size:15.5px}
+.q-who span{display:block; color:var(--muted); font-size:13.5px}
+.stars{flex:none; color:#F5A623; font-size:15px; letter-spacing:1px}
+.q p{margin:0; font-size:16px; color:var(--body)}
+.q .src{margin:12px 0 0; font-size:13px; color:var(--muted)}
+.q .src a{color:var(--muted); border-bottom:1px solid var(--line)}
+.q .src a:hover{color:var(--blue); border-bottom-color:var(--blue)}
+@media (max-width:460px){ .stars{display:none} }
+
+/* ---------- steps ---------- */
+.step{display:flex; gap:16px; margin:26px 0}
+.num{
+  flex:none; width:30px; height:30px; border-radius:9px; background:var(--blue);
+  color:#fff; font-size:14px; font-weight:800; display:flex; align-items:center;
+  justify-content:center; margin-top:2px;
+}
+.step-body{flex:1; min-width:0}
+.step-body h3{margin:0 0 5px}
+.step-body p{margin:0 0 12px; font-size:16px}
+.step-body p:last-child{margin-bottom:0}
+
+/* ---------- copy block ---------- */
+.box{margin:14px 0 0; border-radius:14px; overflow:hidden; border:1px solid var(--line);
+  background:var(--surface); box-shadow:var(--shadow)}
+.box-bar{display:flex; align-items:center; justify-content:space-between; gap:10px;
+  background:var(--raised); border-bottom:1px solid var(--line); padding:10px 16px}
+.box-label{font-size:11.5px; font-weight:700; letter-spacing:.08em;
+  text-transform:uppercase; color:var(--muted)}
+.copy{background:var(--blue-soft); color:var(--blue); border:0; border-radius:7px;
+  padding:6px 13px; font-size:12.5px; font-weight:650; cursor:pointer;
+  font-family:inherit; transition:.15s; white-space:nowrap}
+.copy:hover{background:var(--blue); color:#fff}
+.copy.done{background:#DCFCE7; color:#15803D}
+pre{margin:0; background:var(--surface); color:var(--ink); padding:18px 20px;
+  overflow-x:auto; font-family:inherit; font-size:15.5px; line-height:1.68;
+  white-space:pre-wrap; word-wrap:break-word}
+
+/* ---------- note ---------- */
+.note{background:var(--blue-soft); border-radius:12px; padding:15px 18px; margin:22px 0}
+.note p{margin:0; font-size:15.5px; color:var(--body)}
+.note b{color:var(--ink)}
+
+/* ---------- table ---------- */
+.tw{overflow-x:auto; margin:22px 0; border:1px solid var(--line); border-radius:14px;
+  background:var(--surface)}
+table{border-collapse:collapse; width:100%; font-size:15px; min-width:440px}
+th,td{padding:12px 16px; text-align:left; border-bottom:1px solid var(--line)}
+th{font-weight:700; font-size:12px; letter-spacing:.06em; text-transform:uppercase;
+  color:var(--muted); background:var(--raised)}
+td strong{color:var(--ink)}
+td.p{font-weight:700; color:var(--blue); white-space:nowrap}
+tr:last-child td{border-bottom:0}
+
+/* ---------- list ---------- */
+ul{padding:0; margin:0 0 16px; list-style:none}
+ul li{padding-left:24px; position:relative; margin-bottom:10px}
+ul li::before{content:""; position:absolute; left:2px; top:11px; width:6px; height:6px;
+  border-radius:50%; background:var(--blue)}
+
+/* ---------- close ---------- */
+.close{background:var(--surface); border:1px solid var(--line); border-radius:18px;
+  padding:34px 28px; text-align:center; margin:48px 0 20px; box-shadow:var(--shadow)}
+.close h2{margin:0 0 10px}
+.close p{color:var(--body); max-width:440px; margin:0 auto 22px}
+.btn{display:inline-flex; align-items:center; gap:8px; background:var(--blue); color:#fff;
+  padding:14px 26px; border-radius:11px; font-weight:650; font-size:15.5px;
+  text-decoration:none; border:0; transition:.15s}
+.btn:hover{background:var(--blue-dark); transform:translateY(-1px)}
+.btn-ghost{background:transparent; color:var(--blue); border:1px solid var(--line)}
+.btn-ghost:hover{background:var(--blue-soft); color:var(--blue); border-color:var(--blue)}
+.cta-row{display:flex; gap:10px; justify-content:center; flex-wrap:wrap}
+.fine{font-size:13.5px; color:var(--muted); margin:14px 0 0}
+footer{text-align:center; padding:8px 0 52px; color:var(--muted); font-size:13.5px}
+footer a{color:var(--muted); border:0}
+
+@media (max-width:560px){
+  body{font-size:16px}
+}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+
+  <div class="hero">
+    <h1>Stop paying for five tools<br>to write <em>one audit</em></h1>
+    <p class="sub">Rank tracker, keyword tool, backlink tool, crawler, Search Console. Five subscriptions, five exports, and the real work only starts after: making them agree with each other. Here's the one-conversation version, on a real domain.</p>
+    <p class="trust"><b>600+ customers at ChatSEO.</b> Many of them are consultants and agencies running audits for their own clients.</p>
+    <div class="cta-row" style="margin-top:26px">
+      <a class="btn" href="https://link.chatseo.app/pb-seoconsultant-call" target="_blank" rel="noopener">Book a 15 min call →</a>
+    </div>
+    <p class="fine" style="margin-top:14px">With Nicholas, on a real client audit</p>
+  </div>
+
+  <figure>
+    <img src="img/hero.webp" alt="Flow: five tools and five bills become one chat, the audit comes back written, and you send it under your own name." >
+  </figure>
+
+  <h2>What agencies already say about it</h2>
+
+  <div class="q">
+    <div class="q-top">
+      <div class="av" aria-hidden="true">SA</div>
+      <div class="q-who"><b>Simon Atherley</b><span>SEO agency</span></div>
+      <div class="stars" aria-label="5 out of 5">★★★★★</div>
+    </div>
+    <p>ChatSEO with search console and analytics connected produces amazing in-depth results. <strong>Using this helped us to secure a multi year deal with a UK top 100 Law Firm as they were so impressed with our granular level of reporting.</strong> On top of this, the team built a new element into the product that we asked for. Highly recommended!</p>
+    <p class="src"><a href="https://www.trustpilot.com/reviews/6a76f4f1ed082394a7302a0a" target="_blank" rel="noopener">Verified review on Trustpilot</a></p>
+  </div>
+
+  <hr>
+
+  <h2>The 4 steps</h2>
+  <p class="lede">Run it on a client file this afternoon and compare it to your last audit.</p>
+
+  <div class="step">
+    <div class="num">1</div>
+    <div class="step-body">
+      <h3>Give it the domain</h3>
+      <p>One line. This works on a client you've had for years or one you're pitching tomorrow: connect their Search Console for the deepest read, or run it in <strong>SEO research mode</strong> on any external site with nothing connected at all.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="num">2</div>
+    <div class="step-body">
+      <h3>It pulls five tools' worth of data, you write nothing</h3>
+      <p>Rankings, keyword gaps, backlinks against named competitors, technical and indexation issues, Search Console, all in parallel, in the same thread.</p>
+      <figure style="margin:18px 0 0">
+        <img src="img/shot-prompt.webp" alt="A real ChatSEO run: consultant prompt asking for current rankings, missing keywords, backlink profile against competitors, technical issues and Search Console, with GSC, GA4 and competitive backlink audits running in parallel." loading="lazy">
+      </figure>
+      <p style="margin-top:16px"><a href="https://link.chatseo.app/pb-seoconsultant-call" target="_blank" rel="noopener">Book a 15-minute call</a> if you'd rather we ran the first one with you, on a real client file.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="num">3</div>
+    <div class="step-body">
+      <h3>It comes back written, not exported</h3>
+      <p>Not five CSVs to reconcile by hand. A document: the numbers, who's actually winning and why, and what to fix first.</p>
+      <figure style="margin:14px 0 0">
+        <img src="img/shot-work.webp" alt="ChatSEO's written backlink profile versus two named competitors, with referring domains, dofollow rate, organic keywords and estimated traffic, plus the analysis: which competitor is a real SEO threat and which one is not, and why deep pages sit at position 15-20." loading="lazy">
+      </figure>
+      <p style="margin-top:14px">This ran on chatseo.app itself, live, for this page. Nothing here was cleaned up or shortened afterward.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="num">4</div>
+    <div class="step-body">
+      <h3>You correct what only you know, and send it under your name</h3>
+      <p>The client relationship, the constraints the data can't see, the judgment call on what's worth doing this quarter: that's yours. What you no longer do is the collection.</p>
+    </div>
+  </div>
+
+  <div class="note">
+    <p><b>Connect the client's Search Console once.</b> Everything else here works without it, but the comparison against what actually moved (the one thing a rank tracker can't tell you) only exists once it's connected. Do it during onboarding, or the second audit is still a snapshot.</p>
+  </div>
+
+  <hr>
+
+  <h2>What it replaces</h2>
+  <p class="lede">Same coverage, one thread, one conversation that remembers the last one.</p>
+
+  <figure>
+    <img src="img/services.webp" alt="One domain fanning out into SERP positions, keyword gaps, backlink profile, technical crawl and Search Console, pulled in parallel." loading="lazy" >
+  </figure>
+
+  <div class="tw">
+  <table>
+    <thead><tr><th>What you used to open</th><th>What ChatSEO pulls, in the same thread</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Rank tracker</strong></td><td>Live keyword positions, pulled fresh</td></tr>
+      <tr><td><strong>Keyword tool</strong></td><td>Volume, difficulty, and the gaps against named competitors</td></tr>
+      <tr><td><strong>Backlink tool</strong></td><td>Referring domains, anchor text, deep-link gaps</td></tr>
+      <tr><td><strong>Crawler</strong></td><td>Indexation, technical issues, page-level checks</td></tr>
+      <tr><td><strong>Search Console</strong></td><td>What actually moved, period over period</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>None of it replaces the judgment a client pays a consultant for. What it replaces is the part nobody bills for: opening five tabs, exporting five files, and making them agree with each other before the real thinking can start.</p>
+
+  <div class="close">
+    <h2>Run it on one client file</h2>
+    <p>Pick a domain you already know well and see what it finds that your last audit didn't. Try it yourself with your free credits, or book a call and we'll run the first one with you.</p>
+    <div class="cta-row">
+      <a class="btn" href="https://link.chatseo.app/pb-seo-consultant-audit-system" target="_blank" rel="noopener">Start free →</a>
+      <a class="btn btn-ghost" href="https://link.chatseo.app/pb-seoconsultant-call" target="_blank" rel="noopener">Book a 15-min call</a>
+    </div>
+    <p class="fine">No credit card required · or we'll walk you through it live</p>
+  </div>
+
+  <footer>
+    <p>Written by <a href="https://link.chatseo.app/pb-seo-consultant-audit-system" target="_blank" rel="noopener">Nicholas at ChatSEO</a> · Copy anything on this page.</p>
+  </footer>
+
+</div>
+<script>
+document.querySelectorAll('.copy').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var text=btn.closest('.box').querySelector('pre').innerText;
+    var done=function(){ btn.textContent='Copied'; btn.classList.add('done');
+      setTimeout(function(){ btn.textContent='Copy'; btn.classList.remove('done'); },1600); };
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done).catch(fallback);
+    } else { fallback(); }
+    function fallback(){
+      var ta=document.createElement('textarea'); ta.value=text;
+      ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta);
+      ta.select(); try{ document.execCommand('copy'); done(); }catch(e){ btn.textContent='Select manually'; }
+      document.body.removeChild(ta);
+    }
+  });
+});
+</script>
+</body>
+</html>
