@@ -1,0 +1,977 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Chief SEO Officer</title>
+<meta name="description" content="Seven skills that turn Claude into a Chief SEO Officer: one constraint instead of 47 issues, a scored backlog, and a Monday report you actually read. Free, nothing gated.">
+<meta property="og:title" content="The Chief SEO Officer">
+<meta property="og:description" content="An analyst hands you 47 issues. An officer hands you one. The seven skills I gave Claude, free and ungated.">
+<meta property="og:image" content="https://chatseo.github.io/playbooks/chief-seo-officer/img/og-card.jpg">
+<meta property="og:url" content="https://chatseo.github.io/playbooks/chief-seo-officer/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍊</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F7F3EC; --surface:#FFFDF9; --ink:#2B2A28; --muted:#6E6A63;
+  --accent:#D9663D; --accent-soft:#F2D9CE; --sage:#8A9A7B;
+  --line:#E2DACE; --code-bg:#2B2A28; --code-ink:#F2EDE4;
+  --shadow:0 1px 2px rgba(43,42,40,.05), 0 8px 24px rgba(43,42,40,.06);
+  --maxw:760px;
+}
+:root:not([data-theme="light"]){ @media (prefers-color-scheme: dark){
+  --bg:#191817; --surface:#211F1D; --ink:#EFEAE1; --muted:#A29C93;
+  --accent:#E8794F; --accent-soft:#3A2A22; --sage:#9DAD8E;
+  --line:#332F2B; --code-bg:#0F0E0D; --code-ink:#EFEAE1;
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+}}
+:root[data-theme="dark"]{
+  --bg:#191817; --surface:#211F1D; --ink:#EFEAE1; --muted:#A29C93;
+  --accent:#E8794F; --accent-soft:#3A2A22; --sage:#9DAD8E;
+  --line:#332F2B; --code-bg:#0F0E0D; --code-ink:#EFEAE1;
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:72px}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:17px; line-height:1.68; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 22px}
+
+/* ---------- top bar ---------- */
+.bar{
+  position:sticky; top:0; z-index:50; background:color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter:blur(10px); border-bottom:1px solid var(--line);
+}
+.bar-in{max-width:var(--maxw); margin:0 auto; padding:11px 22px; display:flex; align-items:center; gap:14px}
+.brand{font-weight:800; letter-spacing:-.02em; font-size:15px; text-decoration:none; color:var(--ink); white-space:nowrap}
+.brand span{color:var(--accent)}
+.bar nav{margin-left:auto; display:flex; gap:16px; overflow-x:auto; scrollbar-width:none}
+.bar nav::-webkit-scrollbar{display:none}
+.bar nav a{color:var(--muted); text-decoration:none; font-size:13.5px; font-weight:500; white-space:nowrap}
+.bar nav a:hover{color:var(--accent)}
+.theme{background:none; border:1px solid var(--line); color:var(--muted); border-radius:8px;
+  width:32px; height:32px; cursor:pointer; font-size:14px; flex:none}
+.theme:hover{color:var(--accent); border-color:var(--accent)}
+
+/* ---------- hero ---------- */
+.hero{padding:64px 0 8px; text-align:center}
+.eyebrow{
+  display:inline-block; font-size:12px; font-weight:700; letter-spacing:.13em; text-transform:uppercase;
+  color:var(--accent); background:var(--accent-soft); padding:6px 13px; border-radius:100px; margin-bottom:20px;
+}
+h1{
+  font-family:"Instrument Serif",Georgia,serif; font-weight:400; letter-spacing:-.015em;
+  font-size:clamp(40px,7.5vw,62px); line-height:1.06; margin:0 0 18px;
+}
+h1 em{font-style:italic; color:var(--accent)}
+.sub{font-size:19px; color:var(--muted); max-width:560px; margin:0 auto 30px}
+.cta-row{display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-bottom:10px}
+.btn{
+  display:inline-flex; align-items:center; gap:8px; padding:13px 24px; border-radius:10px;
+  font-weight:600; font-size:15px; text-decoration:none; border:1px solid transparent; transition:.15s;
+}
+.btn-primary{background:var(--accent); color:#fff}
+.btn-primary:hover{filter:brightness(1.07); transform:translateY(-1px)}
+.btn-ghost{border-color:var(--line); color:var(--ink); background:var(--surface)}
+.btn-ghost:hover{border-color:var(--accent); color:var(--accent)}
+.note{font-size:13.5px; color:var(--muted)}
+/* Proof tease: opens a loop at line 2 that only closes in the conversion section,
+   which is what buys the scroll past the value section. */
+.tease{margin:-16px 0 26px; font-size:14.5px}
+.tease a{color:var(--muted); text-decoration:none; border-bottom:1px dashed var(--line); padding-bottom:2px}
+.tease a:hover{color:var(--accent); border-bottom-color:var(--accent)}
+
+/* ---------- figures ---------- */
+figure{margin:38px 0}
+figure img{width:100%; height:auto; display:block; border-radius:14px; border:1px solid var(--line)}
+figure.plainfig img{border:0; border-radius:0}
+figcaption{font-size:13.5px; color:var(--muted); text-align:center; margin-top:11px}
+
+/* ---------- type ---------- */
+h2{
+  font-family:"Instrument Serif",Georgia,serif; font-weight:400; font-size:clamp(29px,4.6vw,38px);
+  line-height:1.16; letter-spacing:-.01em; margin:60px 0 6px;
+}
+h3{font-size:19px; font-weight:700; letter-spacing:-.01em; margin:32px 0 8px}
+p{margin:0 0 17px}
+a{color:var(--accent)}
+.lede{font-size:19px; color:var(--muted); margin-bottom:26px}
+hr{border:0; border-top:1px solid var(--line); margin:56px 0}
+strong{font-weight:650}
+
+/* ---------- author ---------- */
+.author{
+  display:flex; gap:24px; align-items:flex-start; background:var(--surface);
+  border:1px solid var(--line); border-radius:16px; padding:28px; margin:40px 0;
+}
+.author-img{
+  width:96px; height:96px; border-radius:50%; flex:none; object-fit:cover;
+  background:var(--accent-soft); border:1px solid var(--line);
+}
+.author p{margin:0 0 11px; font-size:17px; line-height:1.62}
+.author p:last-child{margin-bottom:0}
+
+/* ---------- step cards ---------- */
+.fn{
+  background:var(--surface); border:1px solid var(--line); border-radius:16px;
+  padding:26px; margin:22px 0; box-shadow:var(--shadow); scroll-margin-top:80px;
+}
+.fn-head{display:flex; align-items:baseline; gap:12px; margin-bottom:4px; flex-wrap:wrap}
+.fn-num{
+  font-family:"Instrument Serif",Georgia,serif; font-size:34px; line-height:1;
+  color:var(--accent); flex:none;
+}
+.fn-title{font-size:22px; font-weight:750; letter-spacing:-.015em; margin:0}
+.fn-sub{color:var(--muted); font-size:15px; margin:0 0 18px}
+.meta{display:flex; flex-wrap:wrap; gap:8px; margin:16px 0}
+.chip{
+  font-size:12.5px; font-weight:600; padding:5px 11px; border-radius:100px;
+  background:var(--bg); border:1px solid var(--line); color:var(--muted);
+}
+.chip b{color:var(--ink); font-weight:650}
+
+/* ---------- prompt block ---------- */
+.prompt{position:relative; margin:16px 0 4px}
+.prompt-bar{
+  display:flex; align-items:center; justify-content:space-between; gap:10px;
+  background:var(--code-bg); border-radius:10px 10px 0 0; padding:9px 13px;
+  border-bottom:1px solid rgba(255,255,255,.09);
+}
+.prompt-label{
+  font-family:"JetBrains Mono",ui-monospace,monospace; font-size:11.5px;
+  letter-spacing:.06em; text-transform:uppercase; color:#9A938A;
+}
+.copy{
+  background:rgba(255,255,255,.09); color:#F2EDE4; border:0; border-radius:6px;
+  padding:5px 11px; font-size:12px; font-weight:600; cursor:pointer;
+  font-family:Inter,sans-serif; transition:.15s; white-space:nowrap;
+}
+.copy:hover{background:var(--accent)}
+.copy.done{background:var(--sage); color:#12140F}
+pre{
+  margin:0; background:var(--code-bg); color:var(--code-ink); border-radius:0 0 10px 10px;
+  padding:17px; overflow-x:auto; font-family:"JetBrains Mono",ui-monospace,monospace;
+  font-size:13px; line-height:1.62; white-space:pre-wrap; word-wrap:break-word;
+}
+
+/* ---------- callout ---------- */
+.callout{
+  border-left:3px solid var(--accent); background:var(--surface);
+  padding:16px 20px; border-radius:0 12px 12px 0; margin:26px 0;
+}
+.callout p{margin:0; font-size:15.5px}
+.callout .k{font-weight:700; color:var(--accent)}
+
+/* ---------- lists ---------- */
+ul,ol{padding-left:22px; margin:0 0 18px}
+li{margin-bottom:9px}
+.plain{list-style:none; padding:0}
+.plain li{padding-left:28px; position:relative; margin-bottom:13px}
+.plain li::before{content:"→"; position:absolute; left:0; color:var(--accent); font-weight:700}
+
+/* ---------- setup steps ---------- */
+.setup{counter-reset:s; list-style:none; padding:0; margin:22px 0}
+.setup li{
+  counter-increment:s; position:relative; padding-left:40px; margin-bottom:14px;
+}
+.setup li::before{
+  content:counter(s); position:absolute; left:0; top:1px;
+  width:26px; height:26px; border-radius:50%; background:var(--accent-soft); color:var(--accent);
+  font-size:13px; font-weight:700; display:flex; align-items:center; justify-content:center;
+}
+kbd{
+  font-family:"JetBrains Mono",ui-monospace,monospace; font-size:12.5px;
+  background:var(--bg); border:1px solid var(--line); border-radius:5px; padding:2px 6px;
+}
+
+/* ---------- mistakes ---------- */
+.miss{border-left:3px solid var(--sage); padding:2px 0 2px 18px; margin:22px 0}
+.miss h3{margin:0 0 5px; font-size:17px}
+.miss p{margin:0; color:var(--muted); font-size:15.5px}
+
+/* ---------- table ---------- */
+.tw{overflow-x:auto; margin:22px 0; border:1px solid var(--line); border-radius:12px}
+table{border-collapse:collapse; width:100%; font-size:14.5px; min-width:460px}
+th,td{padding:11px 15px; text-align:left; border-bottom:1px solid var(--line)}
+th{background:var(--surface); font-weight:650; font-size:12.5px; letter-spacing:.05em; text-transform:uppercase; color:var(--muted)}
+tr:last-child td{border-bottom:0}
+
+/* ---------- old-vs-new comparison ---------- */
+.vs{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:26px 0}
+.vs-col{border:1px solid var(--line); border-radius:14px; padding:20px; background:var(--surface)}
+.vs-col h3{margin:0 0 12px; font-size:15px; letter-spacing:.04em; text-transform:uppercase}
+.vs-col ul{margin:0; padding-left:20px}
+.vs-col li{font-size:15px; margin-bottom:9px; color:var(--muted)}
+.vs-old h3{color:var(--muted)}
+.vs-old li{text-decoration:line-through; text-decoration-color:var(--line)}
+.vs-new{border-color:var(--accent)}
+.vs-new h3{color:var(--accent)}
+.vs-new li{color:var(--ink)}
+:not(pre) > code{
+  font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:.88em; background:var(--surface); border:1px solid var(--line);
+  border-radius:6px; padding:1px 6px; color:var(--ink); word-break:break-word;
+}
+
+@media (max-width:600px){ .vs{grid-template-columns:1fr} }
+
+/* ---------- final cta ---------- */
+.final{
+  background:var(--surface); border:1px solid var(--line); border-radius:18px;
+  padding:38px 28px; text-align:center; margin:52px 0 24px;
+}
+.final h2{margin:0 0 10px}
+.final p{color:var(--muted); max-width:460px; margin:0 auto 22px}
+footer{text-align:center; padding:34px 0 56px; color:var(--muted); font-size:13.5px}
+footer a{color:var(--muted)}
+
+@media (max-width:560px){
+  body{font-size:16px}
+  .fn{padding:20px}
+  .bar nav{display:none}
+  .author{flex-direction:column; gap:12px}
+}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="bar-in">
+    <a class="brand" href="#top">Chat<span>SEO</span></a>
+    <nav>
+      <a href="#setup">The Setup</a>
+      <a href="#skills">The 7 Skills</a>
+      <a href="#routine">The Routine</a>
+      <a href="#mistakes">Mistakes</a>
+    </nav>
+    <button class="theme" id="themeBtn" aria-label="Toggle theme">◐</button>
+  </div>
+</div>
+
+<div class="wrap" id="top">
+
+  <div class="hero">
+    <span class="eyebrow">Free · Nothing gated</span>
+    <h1>I built my company a<br><em>Chief SEO Officer</em></h1>
+    <p class="sub">Not an SEO tool that hands you 47 issues sorted by severity. Seven skills that read your live Search Console and come back with one decision.</p>
+    <p class="tease"><a href="#proof">How a solo founder gained 14,500 organic clicks in 100 days →</a></p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://link.chatseo.app/pb-chief-seo-officer" target="_blank" rel="noopener">Run it on your own data →</a>
+      <a class="btn btn-ghost" href="#skills">Read the 7 skills</a>
+    </div>
+    <p class="note">Free · No credit card required</p>
+  </div>
+
+  <figure class="plainfig">
+    <svg viewBox="0 0 1400 720" width="1400" height="720" role="img" aria-label="The Search Console funnel from indexing to conversions, with the position stage marked as the binding constraint, next to a crossed-out cluster of 47 generic issues." style="width:100%;height:auto;display:block">
+      <g font-family="Inter,system-ui,sans-serif">
+        <!-- left: the 47 issues an analyst hands you -->
+        <text x="60" y="96" font-size="26" font-weight="700" fill="var(--muted)" letter-spacing="1.5">47 ISSUES</text>
+        <text x="60" y="130" font-size="20" fill="var(--muted)">what a tool gives you</text>
+        <g fill="var(--line)">
+          <circle cx="70" cy="190" r="11"/>
+          <circle cx="114" cy="190" r="11"/>
+          <circle cx="158" cy="190" r="11"/>
+          <circle cx="202" cy="190" r="11"/>
+          <circle cx="246" cy="190" r="11"/>
+          <circle cx="290" cy="190" r="11"/>
+          <circle cx="70" cy="234" r="11"/>
+          <circle cx="114" cy="234" r="11"/>
+          <circle cx="158" cy="234" r="11"/>
+          <circle cx="202" cy="234" r="11"/>
+          <circle cx="246" cy="234" r="11"/>
+          <circle cx="290" cy="234" r="11"/>
+          <circle cx="70" cy="278" r="11"/>
+          <circle cx="114" cy="278" r="11"/>
+          <circle cx="158" cy="278" r="11"/>
+          <circle cx="202" cy="278" r="11"/>
+          <circle cx="246" cy="278" r="11"/>
+          <circle cx="290" cy="278" r="11"/>
+          <circle cx="70" cy="322" r="11"/>
+          <circle cx="114" cy="322" r="11"/>
+          <circle cx="158" cy="322" r="11"/>
+          <circle cx="202" cy="322" r="11"/>
+          <circle cx="246" cy="322" r="11"/>
+          <circle cx="290" cy="322" r="11"/>
+          <circle cx="70" cy="366" r="11"/>
+          <circle cx="114" cy="366" r="11"/>
+          <circle cx="158" cy="366" r="11"/>
+          <circle cx="202" cy="366" r="11"/>
+          <circle cx="246" cy="366" r="11"/>
+          <circle cx="290" cy="366" r="11"/>
+          <circle cx="70" cy="410" r="11"/>
+          <circle cx="114" cy="410" r="11"/>
+          <circle cx="158" cy="410" r="11"/>
+          <circle cx="202" cy="410" r="11"/>
+          <circle cx="246" cy="410" r="11"/>
+          <circle cx="290" cy="410" r="11"/>
+          <circle cx="70" cy="454" r="11"/>
+          <circle cx="114" cy="454" r="11"/>
+          <circle cx="158" cy="454" r="11"/>
+          <circle cx="202" cy="454" r="11"/>
+          <circle cx="246" cy="454" r="11"/>
+          <circle cx="290" cy="454" r="11"/>
+          <circle cx="70" cy="498" r="11"/>
+          <circle cx="114" cy="498" r="11"/>
+          <circle cx="158" cy="498" r="11"/>
+          <circle cx="202" cy="498" r="11"/>
+          <circle cx="246" cy="498" r="11"/>
+        </g>
+        <line x1="46" y1="172" x2="314" y2="562" stroke="var(--muted)" stroke-width="3"/>
+
+        <!-- right: the funnel -->
+        <g>
+          <rect x="560" y="70"  width="620" height="86" rx="10" fill="none" stroke="var(--line)" stroke-width="3"/>
+          <rect x="597" y="186" width="546" height="86" rx="10" fill="none" stroke="var(--line)" stroke-width="3"/>
+          <rect x="634" y="302" width="472" height="86" rx="10" fill="var(--accent)"/>
+          <rect x="671" y="418" width="398" height="86" rx="10" fill="none" stroke="var(--line)" stroke-width="3"/>
+          <rect x="708" y="534" width="324" height="86" rx="10" fill="none" stroke="var(--line)" stroke-width="3"/>
+        </g>
+        <g font-size="27" font-weight="600" text-anchor="middle" letter-spacing="1.2">
+          <text x="870" y="123" fill="var(--ink)">INDEXING</text>
+          <text x="870" y="239" fill="var(--ink)">IMPRESSIONS</text>
+          <text x="870" y="355" fill="#FFFDF9">POSITION</text>
+          <text x="870" y="471" fill="var(--ink)">CTR</text>
+          <text x="870" y="587" fill="var(--ink)">CONVERSIONS</text>
+        </g>
+
+        <!-- the one call -->
+        <line x1="1188" y1="345" x2="1128" y2="345" stroke="var(--accent)" stroke-width="4"/>
+        <path d="M1122 345 l22 -12 v24 z" fill="var(--accent)"/>
+        <text x="1206" y="337" font-size="25" font-weight="700" fill="var(--accent)" letter-spacing="1.2">THE</text>
+        <text x="1206" y="369" font-size="25" font-weight="700" fill="var(--accent)" letter-spacing="1.2">CONSTRAINT</text>
+      </g>
+    </svg>
+    <figcaption>An analyst reports every stage. An officer names the one that's binding.</figcaption>
+  </figure>
+
+  <div class="author">
+    <img class="author-img" src="img/tw3810.webp" alt="Nicholas" loading="lazy">
+    <div>
+      <p><strong>Hey there, I'm Nicholas 👋</strong></p>
+      <p>I grew my last B2C app to 15K Google clicks/month as a solo founder, then sold it. Turns out I fell in love with SEO along the way.</p>
+      <p>So now I'm building <a href="https://link.chatseo.app/pb-chief-seo-officer" target="_blank" rel="noopener"><strong>ChatSEO.app</strong></a> — an all-in-one <strong>SEO employee</strong> whose job is to make sure you <strong>rank #1 in Google and in AI search</strong>.</p>
+      <p>A month ago I stopped asking Claude for SEO advice and gave it a job title instead. This is the whole thing. <a href="https://link.chatseo.app/pb-chief-seo-officer" target="_blank" rel="noopener"><strong>Try it free →</strong></a></p>
+    </div>
+  </div>
+
+  <hr>
+
+  <h2>You don't have an SEO information problem</h2>
+  <p class="lede">Every tool you own already tells you more than you can act on.</p>
+  <p>Open any SEO platform and it will find you problems. Forty-seven of them, sorted by a severity score that somebody else's algorithm decided. Thin content on twelve pages. Missing alt text. Three redirect chains. A title tag over sixty characters.</p>
+  <p>All of it is true. None of it is a decision. You have one hour this week, and the list does not tell you which of the forty-seven is the one that would actually move the number.</p>
+  <p>That is the difference between an analyst and an officer, and it has nothing to do with intelligence.</p>
+
+  <h3>An analyst is measured on coverage</h3>
+  <p>Their job is to miss nothing. So the output grows: more checks, more rows, more severity tiers. A crawler that reported three issues would look broken. The incentive runs directly against the thing you need, which is fewer things to think about.</p>
+
+  <h3>An officer is measured on the call</h3>
+  <p>They read the forty-seven issues before the meeting and arrive with one. Forty-six of them do not matter this quarter, and saying so out loud is the entire job. You are not paying for the analysis. You are paying for the forty-six things you now get to ignore.</p>
+
+  <h3>Claude could always do the first job, never the second</h3>
+  <p>Not because it lacked the knowledge — it has read more SEO writing than any consultant alive. It lacked two things. It could not see your data, so every answer was general. And nothing forced it to choose, so every answer was a list.</p>
+  <p>The connector fixes the first. The seven skills below fix the second, and they do it with a constraint written into the prompt itself: <strong>cap the output, end on one action, never invent a number.</strong></p>
+
+  <div class="callout">
+    <p><span class="k">The whole system in one line:</span> an analyst gives you a list, an officer gives you the next move.</p>
+  </div>
+
+  <hr>
+
+  <h2 id="setup">The setup — 5 minutes, no API key</h2>
+  <p class="lede">The skills are worthless without live data. This is the only part you have to do once.</p>
+
+  <h3>Step 1 — Connect Search Console to ChatSEO</h3>
+  <p>Create a free account at <a href="https://link.chatseo.app/pb-chief-seo-officer" target="_blank" rel="noopener"><strong>chatseo.app</strong></a>, add your site, then click <strong>Connect Google Search Console</strong> and authorize with the Google account that owns the property. It's read-only OAuth. There is no API key to generate anywhere in this playbook.</p>
+
+  <h3>Step 2 — Add the connector to Claude</h3>
+  <p>The MCP endpoint is the same for everybody:</p>
+<pre>https://api.chatseo.app/mcp</pre>
+  <p>Pick your client. The full guide with screenshots is in your dashboard under <strong>MCP / API</strong>.</p>
+
+  <div class="fn">
+    <div class="fn-head"><h3 class="fn-title">Claude Desktop</h3></div>
+    <p class="fn-sub">Easiest if you're not a developer.</p>
+    <p>Click your account at the very bottom of the sidebar → <strong>Settings</strong>. Scroll to the bottom of the settings sidebar, under <strong>Platform</strong> → <strong>Customize</strong>. Open the <strong>Connectors</strong> tab → <strong>Add</strong>, top right. Paste the URL and connect. A browser tab opens once to sign you in.</p>
+  </div>
+
+  <div class="fn">
+    <div class="fn-head"><h3 class="fn-title">Claude Code</h3></div>
+    <p class="fn-sub">One command, ten seconds.</p>
+<pre>claude mcp add --transport http chatseo https://api.chatseo.app/mcp</pre>
+    <p>Run it, open a new session, done.</p>
+  </div>
+
+  <div class="fn">
+    <div class="fn-head"><h3 class="fn-title">Cursor, ChatGPT, VS Code</h3></div>
+    <p class="fn-sub">Same URL, three menus.</p>
+    <p><strong>Cursor</strong> — add it as an HTTP MCP server in <code>.cursor/mcp.json</code> and restart. <strong>ChatGPT / Codex</strong> — Settings → Connectors → Add custom connector, paste the URL, it handles the OAuth. <strong>VS Code</strong> — add it as an MCP server in your Copilot settings.</p>
+  </div>
+
+  <h3>Step 3 — Prove it's connected</h3>
+  <p>Ask one question before you save a single skill:</p>
+<pre>Which of my pages lost the most clicks last month?</pre>
+  <p>If it comes back with your actual URLs, you have a Chief SEO Officer. If it comes back with advice, it's still just Claude, and everything below will produce beautifully formatted fiction.</p>
+
+  <div class="callout">
+    <p><span class="k">This is the step people skip.</span> <a href="https://link.chatseo.app/pb-chief-seo-officer" target="_blank" rel="noopener"><strong>Connect ChatSEO free →</strong></a> It's the one thing that makes the other seven work.</p>
+  </div>
+
+  <hr>
+
+  <h2 id="skills">The 7 skills</h2>
+  <p class="lede">Seven jobs, in the order a real Chief SEO Officer would do them.</p>
+  <p>Paste one and you get an answer once. Save it as a file and you get the same job, in the same shape, every time you type its name — with no slow drift in the wording that makes this month's output incomparable to last month's.</p>
+  <p>Every prompt below does three things on purpose: it <strong>caps its own output</strong>, it <strong>ends on one action</strong>, and it <strong>forbids invented numbers</strong>. That last rule matters more than it sounds. A connected model that guesses is worse than a disconnected one, because now you believe it.</p>
+
+  <div class="fn" id="seo-diagnosis">
+    <div class="fn-head"><span class="fn-num">1</span><h3 class="fn-title">SEO diagnosis</h3></div>
+    <p class="fn-sub">Reads the funnel from impressions through to conversions and names the one constraint holding the site back. Not 47 issues. One.</p>
+    <div class="meta">
+      <span class="chip"><b>Takes:</b> 3 min</span>
+      <span class="chip"><b>Returns:</b> one constraint</span>
+      <span class="chip"><b>When:</b> first, then quarterly</span>
+    </div>
+    <div class="prompt">
+      <div class="prompt-bar">
+        <span class="prompt-label">/seo-diagnosis</span>
+        <button class="copy">Copy</button>
+      </div>
+<pre>Use the ChatSEO connector. If no site is set, list my sites
+and ask me which one. Do not guess.
+
+Pull the last 90 days of Search Console data and walk the
+funnel in this order:
+1. INDEXING     — pages indexed versus submitted
+2. IMPRESSIONS  — total, and the trend versus the prior 90 days
+3. POSITION     — how many queries sit 1-3, 4-10, 11-20, 21+
+4. CTR          — actual CTR per position band versus what that
+                  band normally earns
+5. CONVERSION   — if analytics is connected, clicks to conversions
+                  by landing page
+
+For each stage give me one line: the number, the direction,
+and whether it is healthy.
+
+Then name THE ONE binding constraint: the earliest stage in
+that list that is broken. Order matters — a CTR problem is not
+worth solving on pages Google is not showing.
+Explain in two sentences why that stage and not the next one,
+using the numbers you pulled.
+
+If a figure is not in the data, write "cannot compute from this
+data". Do not estimate it.
+
+End with ONE sentence: the constraint, and the single next action.
+Do not list the other issues you found. Do not append an audit.</pre>
+    </div>
+    <p>The order of the funnel is the whole skill. Rewriting titles on pages Google isn't showing is the most common wasted month in SEO, and it happens because CTR is the easiest number to look at. Walking the stages in sequence makes that mistake structurally impossible: the model isn't allowed to reach stage four while stage two is broken.</p>
+  </div>
+
+  <div class="fn" id="query-opportunity">
+    <div class="fn-head"><span class="fn-num">2</span><h3 class="fn-title">Query opportunity</h3></div>
+    <p class="fn-sub">Every query by position, impressions, CTR and intent. Then what to do with each one: push, defend, rewrite, merge, or drop.</p>
+    <div class="meta">
+      <span class="chip"><b>Takes:</b> 3 min</span>
+      <span class="chip"><b>Returns:</b> five buckets, one action</span>
+      <span class="chip"><b>When:</b> monthly, before planning</span>
+    </div>
+    <div class="prompt">
+      <div class="prompt-bar">
+        <span class="prompt-label">/query-opportunity</span>
+        <button class="copy">Copy</button>
+      </div>
+<pre>Use the ChatSEO connector on my active site.
+
+Pull the last 28 days of query data. Exclude brand queries
+everywhere — they move for reasons that have nothing to do
+with the page.
+
+Put every query with 50+ impressions into exactly ONE bucket:
+- PUSH    — position 5-15, impressions rising. A small move is
+            worth real clicks.
+- DEFEND  — position 1-4 with meaningful clicks, and slipping
+            versus the previous 28 days.
+- REWRITE — position 1-10 but CTR below half the band average.
+            You won the spot and lost the click.
+- MERGE   — two or more URLs ranking for the same query in the
+            same period. Name both URLs.
+- DROP    — impressions with no commercial intent, or position
+            40+ with no trend. Stop spending on it.
+
+Cap each bucket at 5 rows, ranked by impressions — never by
+percentage change.
+Columns: query | URL | position | impressions | CTR | why this bucket.
+
+Classify intent as informational, commercial or navigational from
+the wording of the query itself. If the intent is ambiguous, say
+so rather than picking one.
+
+End with the ONE query to act on this week and which bucket it
+came from.
+Do not give me a content calendar. Do not rank the buckets
+against each other.</pre>
+    </div>
+    <p>A keyword list sorted by volume is a wish. The five buckets exist because they map to five completely different Monday mornings — writing, defending, retitling, consolidating, and deliberately doing nothing. That last one is a real output. Most keyword tools have no way to tell you to stop.</p>
+  </div>
+
+  <div class="fn" id="click-capture">
+    <div class="fn-head"><span class="fn-num">3</span><h3 class="fn-title">Click capture</h3></div>
+    <p class="fn-sub">The gap between what you rank for and what actually gets clicked. Position 8–15, 500+ impressions, under 1% CTR — then a title rewritten against the query people really typed.</p>
+    <div class="meta">
+      <span class="chip"><b>Takes:</b> 4 min</span>
+      <span class="chip"><b>Returns:</b> one title + meta to ship</span>
+      <span class="chip"><b>When:</b> monthly</span>
+    </div>
+    <div class="prompt">
+      <div class="prompt-bar">
+        <span class="prompt-label">/click-capture</span>
+        <button class="copy">Copy</button>
+      </div>
+<pre>Use the ChatSEO connector on my active site.
+
+Pull the last 28 days. Find every page matching ALL THREE:
+- average position between 8 and 15
+- 500+ impressions
+- CTR under 1%
+
+Cap the list at 5 pages, ranked by impressions.
+
+For each one, pull the TOP 3 QUERIES that page actually receives
+impressions for. This matters: the rewrite has to match the query
+people typed, not the keyword the page was written for.
+
+Then fetch the live page and read its current title and meta
+description.
+
+For each page give me:
+- URL | position | impressions | CTR | current title
+- the top query, verbatim
+- ONE new title, under 60 characters, containing the top query
+  in the words the searcher used
+- ONE new meta description, under 155 characters, that answers
+  the query rather than describing the page
+
+Do not write three options per page. One title, one meta, your best.
+If the page cannot honestly deliver the query, say so and skip the
+rewrite — a title that earns a click the page doesn't keep is a
+bounce, not a win.
+
+End with the ONE page to ship first and why that one.</pre>
+    </div>
+    <p>Position twelve with 800 impressions and a 0.6% CTR is not a ranking problem. You already paid for that traffic — in content, in links, in months. The packaging is what's failing, and it's the cheapest fix in SEO because nothing needs to move for it to work.</p>
+    <p>The instruction to pull the page's <em>actual</em> queries first is the part people cut, and it's the part that makes the rewrite work. The keyword you wrote the page for and the query that page receives impressions for are different strings more often than not.</p>
+  </div>
+
+  <div class="fn" id="seo-experiments">
+    <div class="fn-head"><span class="fn-num">4</span><h3 class="fn-title">Experimentation</h3></div>
+    <p class="fn-sub">Maintains the backlog. Scores every test by traffic impact, confidence and effort, then tells you what ships this week and what waits.</p>
+    <div class="meta">
+      <span class="chip"><b>Takes:</b> 3 min</span>
+      <span class="chip"><b>Returns:</b> one item that ships</span>
+      <span class="chip"><b>When:</b> weekly</span>
+    </div>
+    <div class="prompt">
+      <div class="prompt-bar">
+        <span class="prompt-label">/seo-experiments</span>
+        <button class="copy">Copy</button>
+      </div>
+<pre>Use the ChatSEO connector on my active site.
+
+Keep a running backlog of SEO tests. If I have given you a backlog
+file, read it. If not, build one from the last run of /seo-diagnosis,
+/query-opportunity and /click-capture.
+
+Score every item out of 10 on three axes:
+- IMPACT     — the clicks at stake, taken from real impression and
+               position data, never from a guess about volume
+- CONFIDENCE — how sure we are the change causes the effect. A title
+               rewrite on a page with 800 impressions is high. A
+               site-wide internal linking change is low.
+- EFFORT     — hours of human work, inverted, so cheap scores high
+
+Score = impact x confidence / effort. Show the arithmetic in one
+line per item.
+If IMPACT cannot be grounded in a number from the data, mark the item
+"unscored" and leave it out of the ranking rather than inventing a
+figure.
+
+Output the table, capped at 8 rows, sorted by score.
+
+Then split it in two:
+- SHIPS THIS WEEK — exactly one item
+- WAITS           — everything else, each with the one condition
+                    that would promote it
+
+Every shipped experiment needs a check date and a success metric
+written before it ships. Give me both, in one line.
+
+Do not propose a sprint. One item ships.</pre>
+    </div>
+    <p>SEO backlogs rot because every item on them looks equally plausible. Scoring turns an argument into arithmetic, and the arithmetic is deliberately crude — three numbers, one formula, shown in a line. A scoring model nobody can compute in their head is a scoring model nobody trusts.</p>
+    <p>The check date is the part that changes how you work. Without it you accumulate changes and learn nothing, which is empirically indistinguishable from doing no SEO at all.</p>
+  </div>
+
+  <div class="fn" id="decay-check">
+    <div class="fn-head"><span class="fn-num">5</span><h3 class="fn-title">Decay</h3></div>
+    <p class="fn-sub">Page-level trends, cannibalisation, lost positions. Which pages are quietly dying, when they started, and which two of your posts are eating each other.</p>
+    <div class="meta">
+      <span class="chip"><b>Takes:</b> 4 min</span>
+      <span class="chip"><b>Returns:</b> one page to rescue</span>
+      <span class="chip"><b>When:</b> monthly, or after an update</span>
+    </div>
+    <div class="prompt">
+      <div class="prompt-bar">
+        <span class="prompt-label">/decay-check</span>
+        <button class="copy">Copy</button>
+      </div>
+<pre>Use the ChatSEO connector on my active site.
+
+Compare the last 90 days to the 90 days before, page by page.
+Rank by absolute clicks lost, never by percentage: a page falling
+from 8 clicks to 2 is not a priority.
+
+Return three lists, 5 rows each.
+
+DECAYING — pages losing clicks steadily.
+Each: URL | clicks before | clicks after | clicks lost | the month
+the decline started.
+Date the start from the data by walking the monthly series back to
+the last month that was flat or rising. Say which month. Do not date
+it from a Google update you remember — if you think an update is
+involved, ask me for the date.
+
+CANNIBALISATION — queries where two or more of my URLs both received
+impressions in the same period.
+Each: query | URL A + position | URL B + position | which one should
+keep the query, and why.
+
+LOST POSITIONS — queries that ranked top 10 in the earlier period and
+no longer do.
+Each: query | old position | new position | the URL.
+
+For every row in DECAYING, name the cause from the numbers:
+- position dropped            -> content or authority problem
+- position stable, CTR down   -> a SERP problem: someone else's
+                                 title, or an AI answer above you
+- both stable, clicks down    -> impressions fell. That's demand,
+                                 not ranking. Say so and stop.
+
+Do not speculate beyond what the numbers support.
+End with the ONE page to rescue first, and whether the fix is a
+rewrite, a merge or a redirect.</pre>
+    </div>
+    <p>Nobody notices decay, because nothing breaks. A page loses four clicks a week for six months and no alert ever fires, because no single week looks like an incident. By the time it's visible in the monthly total, the cause is a year old.</p>
+    <p>Dating the decline from the data rather than from a remembered algorithm update is a small instruction with a large effect. Models are extremely willing to attribute your traffic loss to an update that shipped in a different quarter.</p>
+  </div>
+
+  <div class="fn" id="monday-report">
+    <div class="fn-head"><span class="fn-num">6</span><h3 class="fn-title">SEO reporting</h3></div>
+    <p class="fn-sub">One page every Monday: clicks, impressions, average position, indexed pages, what moved, why it moved, and what needs attention next.</p>
+    <div class="meta">
+      <span class="chip"><b>Takes:</b> 2 min</span>
+      <span class="chip"><b>Returns:</b> four numbers, one action</span>
+      <span class="chip"><b>When:</b> every Monday</span>
+    </div>
+    <div class="prompt">
+      <div class="prompt-bar">
+        <span class="prompt-label">/monday-report</span>
+        <button class="copy">Copy</button>
+      </div>
+<pre>Use the ChatSEO connector on my active site.
+
+Compare the last 7 days to the 7 days before. Produce ONE page,
+in this exact order, and nothing else.
+
+THE NUMBERS — four lines only:
+clicks | impressions | average position | indexed pages
+Each with the change versus last week, as an absolute number and
+a direction.
+
+WHAT MOVED — the 3 biggest movers by absolute clicks, up or down.
+One line each: URL or query | before | after | direction.
+
+WHY IT MOVED — one sentence per mover, and only causes the data
+supports: position change, CTR change, or impression change.
+If you cannot tell from the data which one it was, write "cause
+unclear from this data" and move on. Do not guess at an algorithm
+update.
+
+NEEDS ATTENTION — exactly one item. The single thing worth
+someone's time this week, and the first step.
+
+Hard rules: no recommendations section, no summary paragraph, no
+encouragement.
+If a number is flat, say flat. A week where nothing happened is a
+valid report and should be three lines long.</pre>
+    </div>
+    <p>The report exists so that nobody has to open Search Console. If it takes more than two minutes to read, it has failed at the only thing it was for.</p>
+    <p>"A week where nothing happened is a valid report" is the line that makes it survive past month two. Every weekly report ever written died because the person producing it felt obliged to produce insight, ran out, and started padding.</p>
+  </div>
+
+  <div class="fn" id="seo-strategy">
+    <div class="fn-head"><span class="fn-num">7</span><h3 class="fn-title">SEO strategy</h3></div>
+    <p class="fn-sub">New language. New cluster. Site migration. Programmatic pages. Models the upside, the downside, the assumptions and the time to payback before you commit six weeks.</p>
+    <div class="meta">
+      <span class="chip"><b>Takes:</b> 5 min</span>
+      <span class="chip"><b>Returns:</b> go, wait or no</span>
+      <span class="chip"><b>When:</b> before any big bet</span>
+    </div>
+    <div class="prompt">
+      <div class="prompt-bar">
+        <span class="prompt-label">/seo-strategy</span>
+        <button class="copy">Copy</button>
+      </div>
+<pre>Use the ChatSEO connector on my active site.
+
+I will describe a bet: a new language, a new topic cluster, a site
+migration, or programmatic pages. If I haven't said which, ask.
+Do not model a generic version.
+
+Ground the model in my actual data first. Pull, and state plainly:
+- my current clicks and impressions in the relevant segment
+- my average position and CTR in that segment — this is the
+  conversion rate the model must use
+- how long my last comparable pages took to reach their current
+  position, measured from the data, not assumed
+
+Then give me four blocks, in this order:
+
+UPSIDE     — the realistic ceiling in clicks per month, with the
+             arithmetic shown in one line. Use my measured CTR,
+             not an industry curve.
+DOWNSIDE   — what this costs if it fails, including the pages it
+             takes attention away from. A migration also risks
+             losing what already works: quantify that in clicks.
+ASSUMPTIONS— every number in the model that is not measured from
+             my data, listed explicitly. If that list runs longer
+             than three lines, the bet is not modellable yet and
+             you should say so.
+PAYBACK    — weeks until the upside exceeds the effort, based on
+             how long my own comparable pages actually took.
+
+Never present a projected number without the assumption it rests
+on, in the same line.
+If the data cannot support the model, say "cannot model this from
+the available data" and tell me the one thing that would make it
+modellable.
+
+End with a verdict in one word: GO, WAIT, or NO. Then one sentence
+of justification.
+Do not present options. Give me your call.</pre>
+    </div>
+    <p>Every six-week SEO commitment I have ever seen was made in a ten-minute conversation, using a CTR curve somebody found in a blog post in 2019. Forcing the model to use <em>your</em> measured CTR and <em>your</em> measured time-to-rank is what separates a projection from a fantasy.</p>
+    <p>The one-word verdict is not decoration. A model that ends in "it depends on your priorities" has handed the decision back to you, which is exactly the job you were trying to delegate.</p>
+  </div>
+
+  <h2>Save them, so you type a name instead of a prompt</h2>
+  <p>Pasting works. Saving is better — same job, same shape, every time.</p>
+  <ul class="plain">
+    <li><strong>Claude Code</strong> — save the prompt as <code>~/.claude/skills/&lt;name&gt;/SKILL.md</code> with a name and description in the frontmatter, then type <code>/&lt;name&gt;</code>.</li>
+    <li><strong>Claude Desktop / claude.ai</strong> — put the file in a folder, zip it, and upload it under Settings → Skills.</li>
+    <li><strong>Anywhere else</strong> — paste the prompt into a project's custom instructions and call it by name.</li>
+  </ul>
+  <p>If you write a description, write it as <em>when to use this</em>, not <em>what this is</em>. That sentence is what the model reads to decide whether to run the skill at all.</p>
+
+  <hr>
+
+  <h2 id="routine">The routine</h2>
+  <p class="lede">Seven skills is not seven weekly jobs. Two repeat. The rest fire on a trigger.</p>
+
+  <figure class="plainfig">
+    <svg viewBox="0 0 1400 620" width="1400" height="620" role="img" aria-label="The cadence: Monday report and experiments weekly, query opportunity, click capture and decay monthly, diagnosis and strategy quarterly." style="width:100%;height:auto;display:block">
+      <g font-family="Inter,system-ui,sans-serif">
+        <!-- WEEKLY -->
+        <rect x="240" y="40" width="1120" height="140" rx="16" fill="var(--accent-soft)"/>
+        <text x="40" y="100" font-size="27" font-weight="700" fill="var(--accent)" letter-spacing="1.5">WEEKLY</text>
+        <text x="40" y="134" font-size="20" fill="var(--muted)">10 + 20 minutes</text>
+        <g>
+          <rect x="290" y="76" width="480" height="68" rx="10" fill="var(--surface)" stroke="var(--accent)" stroke-width="2"/>
+          <text x="530" y="119" font-size="26" font-weight="600" text-anchor="middle" fill="var(--ink)">MONDAY REPORT</text>
+          <rect x="820" y="76" width="480" height="68" rx="10" fill="var(--surface)" stroke="var(--accent)" stroke-width="2"/>
+          <text x="1060" y="119" font-size="26" font-weight="600" text-anchor="middle" fill="var(--ink)">EXPERIMENTS</text>
+        </g>
+
+        <!-- MONTHLY -->
+        <rect x="240" y="230" width="1120" height="140" rx="16" fill="var(--sage)" opacity="0.22"/>
+        <text x="40" y="290" font-size="27" font-weight="700" fill="var(--sage)" letter-spacing="1.5">MONTHLY</text>
+        <text x="40" y="324" font-size="20" fill="var(--muted)">45 minutes</text>
+        <g>
+          <rect x="280" y="266" width="320" height="68" rx="10" fill="var(--surface)" stroke="var(--sage)" stroke-width="2"/>
+          <text x="440" y="309" font-size="24" font-weight="600" text-anchor="middle" fill="var(--ink)">QUERY OPPORTUNITY</text>
+          <rect x="640" y="266" width="320" height="68" rx="10" fill="var(--surface)" stroke="var(--sage)" stroke-width="2"/>
+          <text x="800" y="309" font-size="24" font-weight="600" text-anchor="middle" fill="var(--ink)">CLICK CAPTURE</text>
+          <rect x="1000" y="266" width="320" height="68" rx="10" fill="var(--surface)" stroke="var(--sage)" stroke-width="2"/>
+          <text x="1160" y="309" font-size="24" font-weight="600" text-anchor="middle" fill="var(--ink)">DECAY</text>
+          <path d="M604 300 h28 l-9 -9 m9 9 l-9 9" fill="none" stroke="var(--sage)" stroke-width="3"/>
+          <path d="M964 300 h28 l-9 -9 m9 9 l-9 9" fill="none" stroke="var(--sage)" stroke-width="3"/>
+        </g>
+
+        <!-- QUARTERLY -->
+        <rect x="240" y="420" width="1120" height="140" rx="16" fill="none" stroke="var(--line)" stroke-width="3"/>
+        <text x="40" y="480" font-size="27" font-weight="700" fill="var(--ink)" letter-spacing="1.5">QUARTERLY</text>
+        <text x="40" y="514" font-size="20" fill="var(--muted)">or on a trigger</text>
+        <g>
+          <rect x="290" y="456" width="480" height="68" rx="10" fill="var(--surface)" stroke="var(--line)" stroke-width="2"/>
+          <text x="530" y="499" font-size="26" font-weight="600" text-anchor="middle" fill="var(--ink)">DIAGNOSIS</text>
+          <rect x="820" y="456" width="480" height="68" rx="10" fill="var(--surface)" stroke="var(--line)" stroke-width="2"/>
+          <text x="1060" y="499" font-size="26" font-weight="600" text-anchor="middle" fill="var(--ink)">STRATEGY</text>
+        </g>
+      </g>
+    </svg>
+    <figcaption>Two weekly, three monthly, two on a trigger. That's the whole calendar.</figcaption>
+  </figure>
+
+  <h3>Every Monday — 10 minutes</h3>
+  <p><strong>6 · /monday-report</strong> → read the four numbers → do the one thing under NEEDS ATTENTION → close the tab.</p>
+
+  <h3>Every week — 20 minutes</h3>
+  <p><strong>4 · /seo-experiments</strong> → ship the one item it names → write down the check date. The check date is not optional; it's the only reason next month's report means anything.</p>
+
+  <h3>Monthly — 45 minutes</h3>
+  <p><strong>2 · /query-opportunity</strong> → run <strong>3 · /click-capture</strong> on whatever it surfaced → <strong>5 · /decay-check</strong> to see what you're losing while you gain.</p>
+  <p>That chain is the whole loop: find the opportunity, package it, and check the ground isn't moving underneath you.</p>
+
+  <h3>Quarterly, or when something big is on the table</h3>
+  <ul class="plain">
+    <li>Deciding what the quarter is even about → <strong>1 · /seo-diagnosis</strong></li>
+    <li>About to commit six weeks to anything → <strong>7 · /seo-strategy</strong></li>
+  </ul>
+
+  <div class="callout">
+    <p><span class="k">Don't set up all seven this week.</span> Set up two: <strong>/monday-report</strong> and <strong>/seo-diagnosis</strong>. Run them for a month. Add the rest when those two feel automatic.</p>
+  </div>
+
+  <h2>What a chat can't do: remember</h2>
+  <p>Worth being straight about, because you'll hit it in week three, and it's the one thing on this page the prompts cannot fix.</p>
+  <p>A connector gives Claude your data on demand. It does not give the conversation a memory. Every new chat starts from zero: it can re-pull the numbers, but it doesn't know which page you fixed in March, what the title used to say, when you shipped it, or what you were waiting to see.</p>
+  <p>Six of the seven skills survive that. <strong>Skill 4 doesn't.</strong> A backlog with check dates is, by definition, a thing that has to persist between sessions — and the moment you're maintaining it by hand in a doc, you've rebuilt the spreadsheet the officer was supposed to replace.</p>
+  <p>That's the half a chat window structurally can't hold. It's what ChatSEO keeps on the other side of the connector: the site, the conversation history, the todos each shipped change writes, and the Monday report that grades them. Claude is the interface. The record has to live somewhere that doesn't reset.</p>
+  <p><a class="btn btn-primary" href="https://link.chatseo.app/pb-chief-seo-officer" target="_blank" rel="noopener">Connect Claude to ChatSEO free →</a></p>
+
+  <hr>
+
+  <h2 id="mistakes">The 5 mistakes that kill this</h2>
+
+  <div class="miss">
+    <h3>Running all seven every week</h3>
+    <p>You'll spend an hour reading and zero minutes fixing. The routine exists because the seven skills compete for the same hour, and reading is the more comfortable half.</p>
+  </div>
+  <div class="miss">
+    <h3>Editing out the constraint because you want "the full picture"</h3>
+    <p>Every prompt ends on one action on purpose. The first time you delete that line to get more options back, you have rebuilt a 47-issue audit with extra steps and a chat interface.</p>
+  </div>
+  <div class="miss">
+    <h3>Trusting a number it didn't pull</h3>
+    <p>Every prompt forbids estimation. If an answer contains a confident figure and no data call behind it, ask where the number came from before you act on it.</p>
+  </div>
+  <div class="miss">
+    <h3>Skipping the check date</h3>
+    <p>"I shipped the change" and "the change worked" are different claims. Without a date and a metric written before you ship, you accumulate changes and learn nothing.</p>
+  </div>
+  <div class="miss">
+    <h3>Diagnosing at the wrong stage</h3>
+    <p>Rewriting titles on pages Google isn't showing is the most common wasted month in SEO. Running skill 1 before skills 2 and 3 is the entire defence against it.</p>
+  </div>
+
+  <h2>Where this still needs you</h2>
+  <ul class="plain">
+    <li><strong>Approval on anything that goes live.</strong> It can write the title. It shouldn't be the one deciding to publish it.</li>
+    <li><strong>Whether the page can honestly deliver the query.</strong> Skill 3 will write the title that earns the click. Only you know if the page behind it keeps that promise.</li>
+    <li><strong>What's worth building.</strong> Skill 7 models the bet. Whether you want that market is a business decision, not a data one.</li>
+    <li><strong>The weird stuff.</strong> If a number looks wrong, it might be. Go and look.</li>
+  </ul>
+
+  <hr>
+
+  <h2 id="proof" style="scroll-margin-top:80px">How one founder went from 250 → 750 clicks a day</h2>
+  <p class="lede">He added <strong>+14,500 clicks just by chatting with AI.</strong></p>
+  <p>No SEO expertise. He simply ran the recommendations he was given.</p>
+  <figure>
+    <img src="img/proof-clicks.webp" alt="Search Console graph showing daily clicks rising from around 250 to around 750." loading="lazy">
+  </figure>
+
+  <h2>Why this works when old SEO tools don't</h2>
+  <p>Here's the blunt truth about SEO in 2026.</p>
+
+  <div class="vs">
+    <div class="vs-col vs-old">
+      <h3>Old SEO tools</h3>
+      <ul>
+        <li>47 issues sorted by somebody else's severity score</li>
+        <li>Hours of exporting before you learn anything</li>
+        <li>Five tools that don't talk to each other</li>
+        <li>A backlog nobody ever ranked</li>
+        <li>A weekly report nobody reads past line two</li>
+      </ul>
+    </div>
+    <div class="vs-col vs-new">
+      <h3>What you actually want</h3>
+      <ul>
+        <li>One constraint, named, with the reason</li>
+        <li>Live data, not a Tuesday export</li>
+        <li>One connection, from data to CMS</li>
+        <li>Every test scored before anyone builds it</li>
+        <li>Four numbers and one action, every Monday</li>
+      </ul>
+    </div>
+  </div>
+
+  <figure>
+    <img src="img/vs-tools.webp" alt="Comparison of traditional SEO tooling against the ChatSEO approach." loading="lazy">
+  </figure>
+
+  <div class="final" style="margin:44px 0">
+    <h2 style="margin-top:0">That's the entire idea behind ChatSEO</h2>
+    <p>One SEO employee that reads your Search Console, tells you the single thing holding the site back, writes the fix, ships it to your site — and tells you a month later whether it worked. From your Claude chat, or from ChatSEO itself.</p>
+    <a class="btn btn-primary" href="https://link.chatseo.app/pb-chief-seo-officer" target="_blank" rel="noopener">Try ChatSEO free →</a>
+    <p class="note" style="margin-top:16px">No credit card required</p>
+  </div>
+
+  <footer>
+    <p>Built by <a href="https://link.chatseo.app/pb-chief-seo-officer" target="_blank" rel="noopener">Nicholas at ChatSEO</a> · Everything on this page is free to copy and use.</p>
+  </footer>
+
+</div>
+<script>
+// Theme: remember the viewer's choice, fall back to their system setting.
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  try{ var s=localStorage.getItem('theme'); if(s) root.setAttribute('data-theme',s); }catch(e){}
+  btn.addEventListener('click',function(){
+    var cur=root.getAttribute('data-theme');
+    if(!cur) cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+    var next=cur==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{ localStorage.setItem('theme',next); }catch(e){}
+  });
+})();
+
+// Copy buttons: the whole point of a prompt playbook is getting the prompt out cleanly.
+document.querySelectorAll('.copy').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var pre=btn.closest('.prompt').querySelector('pre');
+    var text=pre.innerText;
+    var done=function(){ btn.textContent='Copied'; btn.classList.add('done');
+      setTimeout(function(){ btn.textContent='Copy'; btn.classList.remove('done'); },1600); };
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done).catch(fallback);
+    } else { fallback(); }
+    function fallback(){
+      var ta=document.createElement('textarea'); ta.value=text;
+      ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta);
+      ta.select(); try{ document.execCommand('copy'); done(); }catch(e){ btn.textContent='Select manually'; }
+      document.body.removeChild(ta);
+    }
+  });
+});
+</script>
+</body>
+</html>
