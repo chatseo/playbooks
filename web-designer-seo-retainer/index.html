@@ -90,12 +90,19 @@ figure img{width:100%; height:auto; display:block; border-radius:16px; border:1p
 /* ---------- quotes ---------- */
 .q{background:var(--surface); border:1px solid var(--line); border-radius:16px;
   padding:22px 24px; margin:16px 0; box-shadow:var(--shadow)}
-.q p{margin:0 0 14px; font-size:16px; color:var(--body)}
-.q .who{margin:0; font-size:14px; display:flex; align-items:baseline; gap:7px; flex-wrap:wrap}
-.q .who b{color:var(--ink); font-weight:700}
-.q .who span{color:var(--muted)}
-.q .who i{font-style:normal; font-size:12px; color:var(--muted);
-  border:1px solid var(--line); border-radius:99px; padding:1px 8px}
+.q-top{display:flex; align-items:center; gap:12px; margin-bottom:14px}
+.av{flex:none; width:42px; height:42px; border-radius:50%; background:var(--blue-soft);
+  color:var(--blue); font-size:14.5px; font-weight:800; letter-spacing:-.01em;
+  display:flex; align-items:center; justify-content:center}
+.q-who{flex:1; min-width:0; line-height:1.35}
+.q-who b{display:block; color:var(--ink); font-weight:700; font-size:15.5px}
+.q-who span{display:block; color:var(--muted); font-size:13.5px}
+.stars{flex:none; color:#F5A623; font-size:15px; letter-spacing:1px}
+.q p{margin:0; font-size:16px; color:var(--body)}
+.q .src{margin:12px 0 0; font-size:13px; color:var(--muted)}
+.q .src a{color:var(--muted); border-bottom:1px solid var(--line)}
+.q .src a:hover{color:var(--blue); border-bottom-color:var(--blue)}
+@media (max-width:460px){ .stars{display:none} }
 
 /* ---------- steps ---------- */
 .step{display:flex; gap:16px; margin:26px 0}
@@ -124,17 +131,6 @@ figure img{width:100%; height:auto; display:block; border-radius:16px; border:1p
 pre{margin:0; background:var(--surface); color:var(--ink); padding:18px 20px;
   overflow-x:auto; font-family:inherit; font-size:15.5px; line-height:1.68;
   white-space:pre-wrap; word-wrap:break-word}
-
-/* ---------- product answer excerpt ---------- */
-.answer{background:var(--raised); border:1px solid var(--line); border-radius:14px;
-  padding:22px 24px; margin:18px 0 0}
-.answer h4{margin:0 0 12px; font-size:17px; font-weight:750; color:var(--ink); letter-spacing:-.015em}
-.answer p{margin:0 0 11px; font-size:15.5px}
-.answer b{color:var(--ink); font-weight:650}
-.answer ul{margin:0 0 12px}
-.answer ul li{font-size:15.5px; margin-bottom:7px}
-.answer .tw{background:var(--surface)}
-.answer .src{margin:14px 0 0; font-size:14.5px}
 
 /* ---------- note ---------- */
 .note{background:var(--blue-soft); border-radius:12px; padding:15px 18px; margin:22px 0}
@@ -206,18 +202,43 @@ footer a{color:var(--muted); border:0}
   <p class="lede">Real reviews. The French ones are marked as translated.</p>
 
   <div class="q">
+    <div class="q-top">
+      <div class="av" aria-hidden="true">GM</div>
+      <div class="q-who"><b>Geoffrey Merlet</b><span>Web designer</span></div>
+      <div class="stars" aria-label="5 out of 5">★★★★★</div>
+    </div>
     <p>As a web designer, ChatSEO has become my secret weapon. It lets me add a new revenue stream by offering complete SEO services to my web design clients. It generates SEO audits and optimised copy in one click — a huge time saver that raises the value of my offers.</p>
-    <p class="who"><b>Geoffrey Merlet</b> <span>· Web designer</span> <i>translated</i></p>
+    <p class="src"><a href="https://www.trustpilot.com/reviews/6a953c55c531ca8982319b16" target="_blank" rel="noopener">Verified review on Trustpilot</a> · translated from French</p>
   </div>
 
   <div class="q">
+    <div class="q-top">
+      <div class="av" aria-hidden="true">SA</div>
+      <div class="q-who"><b>Simon Atherley</b><span>Founder, SimplyPage1</span></div>
+      <div class="stars" aria-label="5 out of 5">★★★★★</div>
+    </div>
     <p>ChatSEO with Search Console and Analytics connected produces amazing in-depth results. Using this helped us secure a multi-year deal with a UK top 100 law firm as they were so impressed with our granular level of reporting.</p>
-    <p class="who"><b>Simon Atherley</b> <span>· Founder, SimplyPage1</span></p>
+    <p class="src"><a href="https://www.trustpilot.com/reviews/6a76f4f1ed082394a7302a0a" target="_blank" rel="noopener">Verified review on Trustpilot</a></p>
   </div>
 
   <div class="q">
+    <div class="q-top">
+      <div class="av" aria-hidden="true">AT</div>
+      <div class="q-who"><b>Antoine Tournaire</b><span>Owner, E-Dilik — web &amp; graphic designer</span></div>
+      <div class="stars" aria-label="5 out of 5">★★★★★</div>
+    </div>
+    <p>I've used ChatSEO almost since the beginning. I find it very sharp on recommendations, and on producing the content too. Qualified traffic arriving slowly but surely.</p>
+    <p class="src">Translated from French</p>
+  </div>
+
+  <div class="q">
+    <div class="q-top">
+      <div class="av" aria-hidden="true">AS</div>
+      <div class="q-who"><b>Alexandre Soete</b><span>CEO, A&amp;F Développement — web agency</span></div>
+      <div class="stars" aria-label="5 out of 5">★★★★★</div>
+    </div>
     <p>I use it to improve the SEO of my web agency's site. One month in, my average position went from 56 to 24. This week it found me a very low-competition keyword with volume. Three days later I was in the top 5.</p>
-    <p class="who"><b>Alexandre Soete</b> <span>· CEO, A&amp;F Développement</span> <i>translated</i></p>
+    <p class="src">Translated from French</p>
   </div>
 
   <p>Simon's is the one worth rereading. The multi-year deal wasn't won on the SEO — it was won on <strong>the reporting</strong>. That's what a retainer actually sells.</p>
@@ -256,32 +277,7 @@ opportunities.</pre>
       <figure style="margin:14px 0 0">
         <img src="img/shot-work.webp" alt="ChatSEO running domain overview, keyword rankings, referring domains, meta tag extraction, SERP analysis and keyword research, then returning three high-ROI low-effort opportunities." loading="lazy">
       </figure>
-      <p style="margin-top:14px">And what comes back is the email. Here's one of the three it returned, run on <strong>chatseo.app</strong> itself so you can go and check the numbers:</p>
-
-      <div class="answer">
-        <h4>Opportunity 1 — "Free SEO Tool" landing page</h4>
-        <p><b>What to do:</b> create a dedicated landing page targeting "free SEO tool" and its close variants ("free SEO audit tool", "free AI SEO tools").</p>
-        <p><b>Why it's a quick win:</b></p>
-        <ul>
-          <li>"Free SEO tool" gets <b>3,600 searches/month</b> at medium difficulty — within reach for a growing domain.</li>
-          <li>ChatSEO already is a free-to-start tool, so the page just needs to exist and be optimised. No new product needed.</li>
-          <li>The CPC ($14–25) signals strong commercial intent: people searching this are ready to sign up.</li>
-          <li>You already rank for the French equivalents (positions 13–21) — an English page is the missing piece.</li>
-        </ul>
-        <p><b>Effort:</b> write one landing page.</p>
-        <div class="tw" style="margin:16px 0 0">
-          <table>
-            <thead><tr><th>#</th><th>Target keyword</th><th>Searches</th><th>Effort</th></tr></thead>
-            <tbody>
-              <tr><td>1</td><td>free SEO tool</td><td>3,600</td><td>1 landing page</td></tr>
-              <tr><td>2</td><td>Surfer SEO alternative</td><td>480</td><td>1 comparison page</td></tr>
-              <tr><td>3</td><td>AI SEO tool</td><td>2,400</td><td>1 category page</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="src"><a href="https://chatseo.app/share/e0c557f2-4bdd-4de0-8803-b86d21b9de2b" target="_blank" rel="noopener">See all three and the research behind them →</a></p>
-      </div>
-
+      <p style="margin-top:14px">What comes back is the email: three concrete opportunities with real search volumes behind them. <a href="https://chatseo.app/share/e0c557f2-4bdd-4de0-8803-b86d21b9de2b" target="_blank" rel="noopener">Here's a full one</a>.</p>
       <p style="margin-top:16px">Low effort, high ROI is the important half of the prompt. You want three things a business owner reads and immediately understands — not a technical audit, and nothing that reads as a criticism of the site you built them.</p>
     </div>
   </div>
