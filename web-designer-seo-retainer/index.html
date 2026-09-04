@@ -4,847 +4,373 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Web Designer's SEO Retainer</title>
-<meta name="description" content="Every site you've built is a client who already trusts you and is buying SEO from someone else. The exact system web designers use to reopen old clients and sell $500-2,000/month SEO retainers. Free, nothing gated.">
+<meta name="description" content="Your old clients already trust you and already have a website. How web designers turn them into $500-1,000/month SEO retainers — the 4 steps, and what you deliver each month.">
 <meta property="og:title" content="The Web Designer's SEO Retainer">
-<meta property="og:description" content="The clients you delivered last year already trust you. Here's the system for going back, sending them a free SEO brief, and turning a one-off build into a monthly retainer.">
+<meta property="og:description" content="Every site you've built is a client who already trusts you. Here's how to reopen them and sell a monthly SEO retainer.">
 <meta property="og:image" content="https://chatseo.github.io/playbooks/web-designer-seo-retainer/img/og-card.jpg">
 <meta property="og:url" content="https://chatseo.github.io/playbooks/web-designer-seo-retainer/">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍊</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#F7F3EC; --surface:#FFFDF9; --ink:#2B2A28; --muted:#6E6A63;
-  --accent:#D9663D; --accent-soft:#F2D9CE; --sage:#8A9A7B;
-  --line:#E2DACE; --code-bg:#2B2A28; --code-ink:#F2EDE4;
-  --shadow:0 1px 2px rgba(43,42,40,.05), 0 8px 24px rgba(43,42,40,.06);
-  --maxw:760px;
+  --bg:#FFFFFF; --wash:#EDF2FF; --surface:#FFFFFF; --raised:#F7F9FF;
+  --ink:#0B1220; --body:#4B5565; --muted:#6B7688;
+  --blue:#2563EB; --blue-dark:#1D4ED8; --blue-soft:#EAF0FF;
+  --line:#E4E9F2; --code-bg:#0B1220; --code-ink:#E8EDF7;
+  --shadow:0 1px 2px rgba(16,24,40,.04), 0 8px 24px rgba(16,24,40,.06);
+  --maxw:720px;
 }
-:root:not([data-theme="light"]){ @media (prefers-color-scheme: dark){
-  --bg:#191817; --surface:#211F1D; --ink:#EFEAE1; --muted:#A29C93;
-  --accent:#E8794F; --accent-soft:#3A2A22; --sage:#9DAD8E;
-  --line:#332F2B; --code-bg:#0F0E0D; --code-ink:#EFEAE1;
-  --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
-}}
-:root[data-theme="dark"]{
-  --bg:#191817; --surface:#211F1D; --ink:#EFEAE1; --muted:#A29C93;
-  --accent:#E8794F; --accent-soft:#3A2A22; --sage:#9DAD8E;
-  --line:#332F2B; --code-bg:#0F0E0D; --code-ink:#EFEAE1;
-  --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0B1120; --wash:#101A30; --surface:#131C2E; --raised:#172136;
+    --ink:#F2F5FA; --body:#B4BECD; --muted:#8D98AA;
+    --blue:#5B8DEF; --blue-dark:#7BA6F5; --blue-soft:#1A2540;
+    --line:#232E45; --code-bg:#060B15; --code-ink:#E8EDF7;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+  }
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth; scroll-padding-top:72px}
+html{scroll-behavior:smooth}
 body{
-  margin:0; background:var(--bg); color:var(--ink);
+  margin:0; color:var(--body);
+  background:var(--bg);
+  background-image:linear-gradient(180deg, var(--wash) 0%, var(--bg) 620px);
+  background-repeat:no-repeat;
   font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
-  font-size:17px; line-height:1.68; -webkit-font-smoothing:antialiased;
+  font-size:17px; line-height:1.7; -webkit-font-smoothing:antialiased;
 }
 .wrap{max-width:var(--maxw); margin:0 auto; padding:0 22px}
 
-/* ---------- top bar ---------- */
-.bar{
-  position:sticky; top:0; z-index:50; background:color-mix(in srgb, var(--bg) 88%, transparent);
-  backdrop-filter:blur(10px); border-bottom:1px solid var(--line);
-}
-.bar-in{max-width:var(--maxw); margin:0 auto; padding:11px 22px; display:flex; align-items:center; gap:14px}
-.brand{font-weight:800; letter-spacing:-.02em; font-size:15px; text-decoration:none; color:var(--ink); white-space:nowrap}
-.brand span{color:var(--accent)}
-.bar nav{margin-left:auto; display:flex; gap:16px; overflow-x:auto; scrollbar-width:none}
-.bar nav::-webkit-scrollbar{display:none}
-.bar nav a{color:var(--muted); text-decoration:none; font-size:13.5px; font-weight:500; white-space:nowrap}
-.bar nav a:hover{color:var(--accent)}
-.theme{background:none; border:1px solid var(--line); color:var(--muted); border-radius:8px;
-  width:32px; height:32px; cursor:pointer; font-size:14px; flex:none}
-.theme:hover{color:var(--accent); border-color:var(--accent)}
+/* ---------- header ---------- */
+.top{padding:26px 0 0}
+.top-in{max-width:var(--maxw); margin:0 auto; padding:0 22px; display:flex; align-items:center; gap:9px}
+.logo{display:flex; align-items:center; gap:8px; text-decoration:none; color:var(--ink);
+  font-weight:800; font-size:17px; letter-spacing:-.02em}
+.logo i{font-style:normal; color:var(--blue); font-size:18px}
 
 /* ---------- hero ---------- */
-.hero{padding:64px 0 8px; text-align:center}
-.eyebrow{
-  display:inline-block; font-size:12px; font-weight:700; letter-spacing:.13em; text-transform:uppercase;
-  color:var(--accent); background:var(--accent-soft); padding:6px 13px; border-radius:100px; margin-bottom:20px;
-}
+.hero{padding:56px 0 4px; text-align:center}
 h1{
-  font-family:"Instrument Serif",Georgia,serif; font-weight:400; letter-spacing:-.015em;
-  font-size:clamp(40px,7.5vw,62px); line-height:1.06; margin:0 0 18px;
+  color:var(--ink); font-weight:800; letter-spacing:-.035em;
+  font-size:clamp(34px,6.2vw,52px); line-height:1.08; margin:0 0 20px;
 }
-h1 em{font-style:italic; color:var(--accent)}
-.sub{font-size:19px; color:var(--muted); max-width:580px; margin:0 auto 30px}
-.cta-row{display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-bottom:10px}
-.btn{
-  display:inline-flex; align-items:center; gap:8px; padding:13px 24px; border-radius:10px;
-  font-weight:600; font-size:15px; text-decoration:none; border:1px solid transparent; transition:.15s;
-}
-.btn-primary{background:var(--accent); color:#fff}
-.btn-primary:hover{filter:brightness(1.07); transform:translateY(-1px)}
-.btn-ghost{border-color:var(--line); color:var(--ink); background:var(--surface)}
-.btn-ghost:hover{border-color:var(--accent); color:var(--accent)}
-.note{font-size:13.5px; color:var(--muted)}
-.tease{margin:-16px 0 26px; font-size:14.5px}
-.tease a{color:var(--muted); text-decoration:none; border-bottom:1px dashed var(--line); padding-bottom:2px}
-.tease a:hover{color:var(--accent); border-bottom-color:var(--accent)}
+h1 em{font-style:italic; color:var(--blue); font-weight:800}
+.sub{font-size:18.5px; color:var(--body); max-width:560px; margin:0 auto 22px}
+.trust{font-size:14.5px; color:var(--muted); margin:0}
+.trust b{color:var(--ink); font-weight:700}
 
-/* ---------- figures ---------- */
-figure{margin:38px 0}
-figure img{width:100%; height:auto; display:block; border-radius:14px; border:1px solid var(--line)}
-figure.plainfig img{border:0; border-radius:0}
-figcaption{font-size:13.5px; color:var(--muted); text-align:center; margin-top:11px}
+/* ---------- byline ---------- */
+.by{display:flex; gap:14px; align-items:center; margin:34px 0 0;
+  padding:16px 18px; background:var(--surface); border:1px solid var(--line);
+  border-radius:14px; box-shadow:var(--shadow)}
+.by img{width:46px; height:46px; border-radius:50%; flex:none; object-fit:cover; background:var(--blue-soft)}
+.by p{margin:0; font-size:15px; color:var(--body)}
+.by b{color:var(--ink)}
 
 /* ---------- type ---------- */
 h2{
-  font-family:"Instrument Serif",Georgia,serif; font-weight:400; font-size:clamp(29px,4.6vw,38px);
-  line-height:1.16; letter-spacing:-.01em; margin:60px 0 6px;
+  color:var(--ink); font-weight:800; letter-spacing:-.028em;
+  font-size:clamp(25px,3.9vw,32px); line-height:1.2; margin:52px 0 8px;
 }
-h3{font-size:19px; font-weight:700; letter-spacing:-.01em; margin:32px 0 8px}
-p{margin:0 0 17px}
-a{color:var(--accent)}
-.lede{font-size:19px; color:var(--muted); margin-bottom:26px}
-hr{border:0; border-top:1px solid var(--line); margin:56px 0}
-strong{font-weight:650}
+h3{color:var(--ink); font-size:17.5px; font-weight:700; letter-spacing:-.015em; margin:26px 0 6px}
+p{margin:0 0 16px}
+a{color:var(--blue); text-decoration:none; border-bottom:1px solid var(--blue-soft)}
+a:hover{border-bottom-color:var(--blue)}
+.lede{font-size:18px; color:var(--muted); margin-bottom:24px}
+strong{color:var(--ink); font-weight:650}
+hr{border:0; border-top:1px solid var(--line); margin:48px 0}
 
-/* ---------- author ---------- */
-.author{
-  display:flex; gap:24px; align-items:flex-start; background:var(--surface);
-  border:1px solid var(--line); border-radius:16px; padding:28px; margin:40px 0;
-}
-.author-img{
-  width:96px; height:96px; border-radius:50%; flex:none; object-fit:cover;
-  background:var(--accent-soft); border:1px solid var(--line);
-}
-.author p{margin:0 0 11px; font-size:17px; line-height:1.62}
-.author p:last-child{margin-bottom:0}
+/* ---------- figures ---------- */
+figure{margin:32px 0}
+figure img{width:100%; height:auto; display:block; border-radius:16px; border:1px solid var(--line)}
 
-/* ---------- step / service cards ---------- */
-.fn{
-  background:var(--surface); border:1px solid var(--line); border-radius:16px;
-  padding:26px; margin:22px 0; box-shadow:var(--shadow); scroll-margin-top:80px;
-}
-.fn-head{display:flex; align-items:baseline; gap:12px; margin-bottom:4px; flex-wrap:wrap}
-.fn-num{
-  font-family:"Instrument Serif",Georgia,serif; font-size:34px; line-height:1;
-  color:var(--accent); flex:none;
-}
-.fn-title{font-size:22px; font-weight:750; letter-spacing:-.015em; margin:0}
-.fn-sub{color:var(--muted); font-size:15px; margin:0 0 18px}
-.meta{display:flex; flex-wrap:wrap; gap:8px; margin:16px 0}
-.chip{
-  font-size:12.5px; font-weight:600; padding:5px 11px; border-radius:100px;
-  background:var(--bg); border:1px solid var(--line); color:var(--muted);
-}
-.chip b{color:var(--ink); font-weight:650}
+/* ---------- quotes ---------- */
+.q{background:var(--surface); border:1px solid var(--line); border-radius:16px;
+  padding:22px 24px; margin:16px 0; box-shadow:var(--shadow)}
+.q p{margin:0 0 14px; font-size:16px; color:var(--body)}
+.q .who{margin:0; font-size:14px; display:flex; align-items:baseline; gap:7px; flex-wrap:wrap}
+.q .who b{color:var(--ink); font-weight:700}
+.q .who span{color:var(--muted)}
+.q .who i{font-style:normal; font-size:12px; color:var(--muted);
+  border:1px solid var(--line); border-radius:99px; padding:1px 8px}
 
-/* ---------- prompt block ---------- */
-.prompt{position:relative; margin:16px 0 4px}
-.prompt-bar{
-  display:flex; align-items:center; justify-content:space-between; gap:10px;
-  background:var(--code-bg); border-radius:10px 10px 0 0; padding:9px 13px;
-  border-bottom:1px solid rgba(255,255,255,.09);
+/* ---------- steps ---------- */
+.step{display:flex; gap:16px; margin:26px 0}
+.num{
+  flex:none; width:30px; height:30px; border-radius:9px; background:var(--blue);
+  color:#fff; font-size:14px; font-weight:800; display:flex; align-items:center;
+  justify-content:center; margin-top:2px;
 }
-.prompt-label{
-  font-family:"JetBrains Mono",ui-monospace,monospace; font-size:11.5px;
-  letter-spacing:.06em; text-transform:uppercase; color:#9A938A;
-}
-.copy{
-  background:rgba(255,255,255,.09); color:#F2EDE4; border:0; border-radius:6px;
-  padding:5px 11px; font-size:12px; font-weight:600; cursor:pointer;
-  font-family:Inter,sans-serif; transition:.15s; white-space:nowrap;
-}
-.copy:hover{background:var(--accent)}
-.copy.done{background:var(--sage); color:#12140F}
-pre{
-  margin:0; background:var(--code-bg); color:var(--code-ink); border-radius:0 0 10px 10px;
-  padding:17px; overflow-x:auto; font-family:"JetBrains Mono",ui-monospace,monospace;
-  font-size:13px; line-height:1.62; white-space:pre-wrap; word-wrap:break-word;
-}
+.step-body{flex:1; min-width:0}
+.step-body h3{margin:0 0 5px}
+.step-body p{margin:0 0 12px; font-size:16px}
+.step-body p:last-child{margin-bottom:0}
 
-/* ---------- callout ---------- */
-.callout{
-  border-left:3px solid var(--accent); background:var(--surface);
-  padding:16px 20px; border-radius:0 12px 12px 0; margin:26px 0;
-}
-.callout p{margin:0; font-size:15.5px}
-.callout .k{font-weight:700; color:var(--accent)}
+/* ---------- copy block ---------- */
+.box{margin:14px 0 0; border-radius:12px; overflow:hidden; border:1px solid var(--line)}
+.box-bar{display:flex; align-items:center; justify-content:space-between; gap:10px;
+  background:var(--code-bg); padding:9px 13px}
+.box-label{font-family:"JetBrains Mono",ui-monospace,monospace; font-size:11px;
+  letter-spacing:.07em; text-transform:uppercase; color:#8794AD}
+.copy{background:rgba(255,255,255,.11); color:#EEF3FC; border:0; border-radius:6px;
+  padding:5px 12px; font-size:12px; font-weight:600; cursor:pointer;
+  font-family:Inter,sans-serif; transition:.15s; white-space:nowrap}
+.copy:hover{background:var(--blue)}
+.copy.done{background:#16A34A}
+pre{margin:0; background:var(--code-bg); color:var(--code-ink); padding:16px;
+  overflow-x:auto; font-family:"JetBrains Mono",ui-monospace,monospace;
+  font-size:12.5px; line-height:1.6; white-space:pre-wrap; word-wrap:break-word}
 
-/* ---------- testimonials ---------- */
-.quote{
-  background:var(--surface); border:1px solid var(--line); border-radius:14px;
-  padding:22px 24px; margin:18px 0;
-}
-.quote p{margin:0 0 14px; font-size:16.5px; line-height:1.62}
-.quote p:first-child::before{content:"“"; color:var(--accent); font-family:"Instrument Serif",Georgia,serif;
-  font-size:30px; line-height:0; position:relative; top:8px; margin-right:3px}
-.who{display:flex; align-items:baseline; gap:8px; flex-wrap:wrap; font-size:14px; margin:0}
-.who b{font-weight:700; color:var(--ink)}
-.who span{color:var(--muted)}
-.who i{font-style:normal; color:var(--muted); font-size:12.5px; border:1px solid var(--line);
-  border-radius:100px; padding:2px 9px}
-
-/* ---------- lists ---------- */
-ul,ol{padding-left:22px; margin:0 0 18px}
-li{margin-bottom:9px}
-.plain{list-style:none; padding:0}
-.plain li{padding-left:28px; position:relative; margin-bottom:13px}
-.plain li::before{content:"→"; position:absolute; left:0; color:var(--accent); font-weight:700}
-
-/* ---------- numbered steps ---------- */
-.setup{counter-reset:s; list-style:none; padding:0; margin:22px 0}
-.setup li{counter-increment:s; position:relative; padding-left:40px; margin-bottom:14px}
-.setup li::before{
-  content:counter(s); position:absolute; left:0; top:1px;
-  width:26px; height:26px; border-radius:50%; background:var(--accent-soft); color:var(--accent);
-  font-size:13px; font-weight:700; display:flex; align-items:center; justify-content:center;
-}
-kbd{
-  font-family:"JetBrains Mono",ui-monospace,monospace; font-size:12.5px;
-  background:var(--bg); border:1px solid var(--line); border-radius:5px; padding:2px 6px;
-}
-
-/* ---------- mistakes ---------- */
-.miss{border-left:3px solid var(--sage); padding:2px 0 2px 18px; margin:22px 0}
-.miss h3{margin:0 0 5px; font-size:17px}
-.miss p{margin:0; color:var(--muted); font-size:15.5px}
+/* ---------- note ---------- */
+.note{background:var(--blue-soft); border-radius:12px; padding:15px 18px; margin:22px 0}
+.note p{margin:0; font-size:15.5px; color:var(--body)}
+.note b{color:var(--ink)}
 
 /* ---------- table ---------- */
-.tw{overflow-x:auto; margin:22px 0; border:1px solid var(--line); border-radius:12px}
-table{border-collapse:collapse; width:100%; font-size:14.5px; min-width:460px}
-th,td{padding:11px 15px; text-align:left; border-bottom:1px solid var(--line)}
-th{background:var(--surface); font-weight:650; font-size:12.5px; letter-spacing:.05em; text-transform:uppercase; color:var(--muted)}
+.tw{overflow-x:auto; margin:22px 0; border:1px solid var(--line); border-radius:14px;
+  background:var(--surface)}
+table{border-collapse:collapse; width:100%; font-size:15px; min-width:440px}
+th,td{padding:12px 16px; text-align:left; border-bottom:1px solid var(--line)}
+th{font-weight:700; font-size:12px; letter-spacing:.06em; text-transform:uppercase;
+  color:var(--muted); background:var(--raised)}
+td strong{color:var(--ink)}
+td.p{font-weight:700; color:var(--blue); white-space:nowrap}
 tr:last-child td{border-bottom:0}
 
-/* ---------- old-vs-new comparison ---------- */
-.vs{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:26px 0}
-.vs-col{border:1px solid var(--line); border-radius:14px; padding:20px; background:var(--surface)}
-.vs-col h3{margin:0 0 12px; font-size:15px; letter-spacing:.04em; text-transform:uppercase}
-.vs-col ul{margin:0; padding-left:20px}
-.vs-col li{font-size:15px; margin-bottom:9px; color:var(--muted)}
-.vs-old h3{color:var(--muted)}
-.vs-old li{text-decoration:line-through; text-decoration-color:var(--line)}
-.vs-new{border-color:var(--accent)}
-.vs-new h3{color:var(--accent)}
-.vs-new li{color:var(--ink)}
-:not(pre) > code{
-  font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
-  font-size:.88em; background:var(--surface); border:1px solid var(--line);
-  border-radius:6px; padding:1px 6px; color:var(--ink); word-break:break-word;
-}
+/* ---------- list ---------- */
+ul{padding:0; margin:0 0 16px; list-style:none}
+ul li{padding-left:24px; position:relative; margin-bottom:10px}
+ul li::before{content:""; position:absolute; left:2px; top:11px; width:6px; height:6px;
+  border-radius:50%; background:var(--blue)}
 
-@media (max-width:600px){ .vs{grid-template-columns:1fr} }
-
-/* ---------- final cta ---------- */
-.final{
-  background:var(--surface); border:1px solid var(--line); border-radius:18px;
-  padding:38px 28px; text-align:center; margin:52px 0 24px;
-}
-.final h2{margin:0 0 10px}
-.final p{color:var(--muted); max-width:460px; margin:0 auto 22px}
-footer{text-align:center; padding:34px 0 56px; color:var(--muted); font-size:13.5px}
-footer a{color:var(--muted)}
+/* ---------- close ---------- */
+.close{background:var(--surface); border:1px solid var(--line); border-radius:18px;
+  padding:34px 28px; text-align:center; margin:48px 0 20px; box-shadow:var(--shadow)}
+.close h2{margin:0 0 10px}
+.close p{color:var(--body); max-width:440px; margin:0 auto 22px}
+.btn{display:inline-flex; align-items:center; gap:8px; background:var(--blue); color:#fff;
+  padding:14px 26px; border-radius:11px; font-weight:650; font-size:15.5px;
+  text-decoration:none; border:0; transition:.15s}
+.btn:hover{background:var(--blue-dark); transform:translateY(-1px)}
+.fine{font-size:13.5px; color:var(--muted); margin:14px 0 0}
+footer{text-align:center; padding:8px 0 52px; color:var(--muted); font-size:13.5px}
+footer a{color:var(--muted); border:0}
 
 @media (max-width:560px){
   body{font-size:16px}
-  .fn{padding:20px}
-  .bar nav{display:none}
-  .author{flex-direction:column; gap:12px}
+  .by{flex-direction:column; align-items:flex-start; gap:10px}
 }
 </style>
 </head>
 <body>
 
-<div class="bar">
-  <div class="bar-in">
-    <a class="brand" href="#top">Chat<span>SEO</span></a>
-    <nav>
-      <a href="#designers">Who's Doing It</a>
-      <a href="#system">The System</a>
-      <a href="#services">The Services</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#mistakes">Mistakes</a>
-    </nav>
-    <button class="theme" id="themeBtn" aria-label="Toggle theme">◐</button>
+<div class="top">
+  <div class="top-in">
+    <a class="logo" href="https://link.chatseo.app/pb-web-designer-seo-retainer" target="_blank" rel="noopener"><i>⚡</i> ChatSEO</a>
   </div>
 </div>
 
-<div class="wrap" id="top">
+<div class="wrap">
 
   <div class="hero">
-    <span class="eyebrow">Free · Nothing gated</span>
-    <h1>Turn every site you've built<br>into a <em>monthly retainer</em></h1>
-    <p class="sub">The clients you delivered last year already trust you, already have a site, and are already buying SEO from someone else — or from nobody. Here's the system for going back and closing them.</p>
-    <p class="tease"><a href="#proof">The Search Console graph you'll be putting in month three's report →</a></p>
-    <div class="cta-row">
-      <a class="btn btn-primary" href="https://link.chatseo.app/pb-web-designer-seo-retainer" target="_blank" rel="noopener">Run your first client brief free →</a>
-      <a class="btn btn-ghost" href="#system">Read the system</a>
-    </div>
-    <p class="note">Free · No credit card required</p>
+    <h1>Turn the sites you've built<br>into <em>monthly retainers</em></h1>
+    <p class="sub">Your old clients already trust you and already have a website. Here's how web designers charge them $500–1,000/month for SEO — and what they deliver for it.</p>
+    <p class="trust"><b>600+ customers at ChatSEO.</b> Web designers are the ones paying us the most.</p>
   </div>
 
-  <figure class="plainfig">
-    <img src="img/hero-retainer.webp" alt="Diagram: past clients feed into a loop — site delivered, free SEO brief, client says yes, monthly retainer — with the monthly report feeding the renewal." width="1400" height="933">
-    <figcaption>One loop. The brief opens it, the monthly report is what keeps it open.</figcaption>
+  <figure>
+    <img src="img/hero-blue.webp" alt="Flow: the site you built, a free SEO brief, the client says yes, a monthly retainer — with the monthly report feeding the renewal." >
   </figure>
 
-  <div class="author">
-    <img class="author-img" src="img/tw3810.webp" alt="Nicholas" loading="lazy">
-    <div>
-      <p><strong>Hey there, I'm Nicholas 👋</strong></p>
-      <p>I grew my last B2C app to 15K Google clicks/month as a solo founder, then sold it. Turns out I fell in love with SEO along the way.</p>
-      <p>So now I'm building <a href="https://link.chatseo.app/pb-web-designer-seo-retainer" target="_blank" rel="noopener"><strong>ChatSEO.app</strong></a> — an all-in-one <strong>SEO employee</strong> whose job is to make sure you <strong>rank #1 in Google and in AI search</strong>.</p>
-      <p>We passed 600 customers this year, and when I looked at who pays us the most, it wasn't SEO consultants. It was web designers. I got on ten calls to ask why, and this playbook is what they told me. <a href="https://link.chatseo.app/pb-web-designer-seo-retainer" target="_blank" rel="noopener"><strong>Try it free →</strong></a></p>
-    </div>
+  <div class="by">
+    <img src="img/tw3810.webp" alt="Nicholas" loading="lazy">
+    <p><b>Nicholas, founder of ChatSEO.</b> I got on 10+ calls with web designers to ask why an SEO tool was their biggest line item. This page is what they told me — the four steps, and the five things they sell.</p>
   </div>
 
-  <hr>
+  <h2>Web designers already doing it</h2>
+  <p class="lede">Real reviews. The French ones are marked as translated.</p>
 
-  <h2>Every project ends with the same question</h2>
-  <p class="lede">The site is live. The client is happy. And then they ask: "do you also do SEO?"</p>
-  <p>For most people building websites, the honest answer has always been no. Or the slightly worse version — "I know a guy" — followed by an introduction, maybe a small referral fee, and a client relationship that now belongs to somebody else.</p>
-  <p>That handoff is the single most expensive habit in the web design business, and it's worth doing the arithmetic on it once. A $500–1,000/month SEO retainer is $6,000–12,000 a year. Say you've shipped thirty sites in the last three years and half of them eventually bought SEO from somebody. That's not a rounding error. That's a second business you introduced to your own clients.</p>
-
-  <h3>You already own the two hard parts</h3>
-  <p>Every SEO agency on earth spends its whole existence trying to acquire two things you got for free the moment the site went live.</p>
-  <p><strong>Trust.</strong> You've already delivered something. They've already paid you and been happy about it. An SEO agency cold-emailing that same person starts at zero and has to spend three months and a discovery call earning what you already have.</p>
-  <p><strong>Access.</strong> You built the site. You know the CMS, you have the logins, you probably set up the Search Console property yourself. The single most common reason SEO engagements stall in month one is waiting on access. You skip that entirely.</p>
-  <p>What you didn't have was the third part — the actual delivery. That's the only thing that ever made the answer "no."</p>
-
-  <div class="callout">
-    <p><span class="k">In one line.</span> You're not starting an SEO agency. You're adding one line to an invoice you already send, to a client who already pays it.</p>
+  <div class="q">
+    <p>As a web designer, ChatSEO has become my secret weapon. It lets me add a new revenue stream by offering complete SEO services to my web design clients. It generates SEO audits and optimised copy in one click — a huge time saver that raises the value of my offers.</p>
+    <p class="who"><b>Geoffrey Merlet</b> <span>· Web designer</span> <i>translated</i></p>
   </div>
 
-  <h2 id="designers" style="scroll-margin-top:80px">Part 1 — The web designers already doing this</h2>
-  <p class="lede">These are real ChatSEO reviews, unedited. Three of them are translated from French, marked as such.</p>
-  <p>I'm putting these first because the pitch only matters if somebody shaped like you has already made it work. Here's what they wrote, on their own, in public.</p>
-
-  <div class="quote">
-    <p>As a web designer, ChatSEO has become my secret weapon. This AI SEO tool lets me add a new revenue stream to my business by offering complete SEO services to my web design clients. The AI generates SEO audits and optimised copy in one click, which saves me an enormous amount of time while raising the value of my offers. Essential for diversifying your services.</p>
-    <p class="who"><b>Geoffrey Merlet</b> <span>· Web designer</span> <i>translated from French</i></p>
-  </div>
-
-  <div class="quote">
-    <p>ChatSEO with Search Console and Analytics connected produces amazing in-depth results. Using this helped us to secure a multi-year deal with a UK top 100 law firm as they were so impressed with our granular level of reporting. On top of this, the team built a new element into the product that we asked for. Highly recommended!</p>
+  <div class="q">
+    <p>ChatSEO with Search Console and Analytics connected produces amazing in-depth results. Using this helped us secure a multi-year deal with a UK top 100 law firm as they were so impressed with our granular level of reporting.</p>
     <p class="who"><b>Simon Atherley</b> <span>· Founder, SimplyPage1</span></p>
   </div>
 
-  <p>Read that second one again, because it contains the whole strategy in one sentence: the thing that won the multi-year deal wasn't the SEO. It was <strong>the reporting</strong>. The client could finally see what was happening. That's what a retainer actually sells.</p>
-
-  <div class="quote">
-    <p>I use ChatSEO mainly to find keywords and rewrite pages on my site. I really like that it takes in so much context — Search Console, Analytics, the SERP, competitors. I use it mostly to improve the SEO of my web agency's own site. I've been using it for a month and my average position went from 56 to 24. There's still work to do but it's genuinely great. This week it found me a very low-competition position with volume. Three days later, I was in the top 5.</p>
-    <p class="who"><b>Alexandre Soete</b> <span>· CEO, A&amp;F Développement</span> <i>translated from French</i></p>
+  <div class="q">
+    <p>I use it to improve the SEO of my web agency's site. One month in, my average position went from 56 to 24. This week it found me a very low-competition keyword with volume. Three days later I was in the top 5.</p>
+    <p class="who"><b>Alexandre Soete</b> <span>· CEO, A&amp;F Développement</span> <i>translated</i></p>
   </div>
 
-  <div class="quote">
-    <p>I tested ChatSEO on my agency's site. First I asked it to analyse the site and lay out an SEO strategy. Incredible — it surfaced every single improvement point I'd already noted myself. So I thought, alright, we're on the same wavelength. Then I tested it on a page to see what optimisations to make. Really remarkable: it walks you through the structure of the page and its content.</p>
-    <p class="who"><b>David Aumont</b> <span>· CEO, Artdim</span> <i>translated from French</i></p>
-  </div>
-
-  <div class="quote">
-    <p>I've used ChatSEO almost since the beginning. I find it very sharp on recommendations but also on content production — though you do need to give it good context to get good output. Which, when you think about it, is logical. Qualified traffic arriving slowly but surely.</p>
-    <p class="who"><b>Antoine Tournaire</b> <span>· Owner, E-Dilik — web &amp; graphic designer</span> <i>translated from French</i></p>
-  </div>
-
-  <p>And one more, from a freelancer who found a use I didn't expect and which turns out to be step one of the system below — using it on sites he doesn't own yet, to decide who to go after.</p>
-
-  <div class="quote">
-    <p>For me ChatSEO is a genuine revolution. Every day I find a new way to use it: strategic recommendations, technical audits… and even prospecting. That's where the tool surprised me most: I now use it to analyse my prospects' sites, score them as leads, and target my clients much better. A formidable saving of time and effort.</p>
-    <p class="who"><b>Léo Cottu</b> <span>· Freelance SEO &amp; content strategy</span> <i>translated from French</i></p>
-  </div>
-
-  <p><a class="btn btn-primary" href="https://link.chatseo.app/pb-web-designer-seo-retainer" target="_blank" rel="noopener">Run it on one of your own client sites →</a></p>
+  <p>Simon's is the one worth rereading. The multi-year deal wasn't won on the SEO — it was won on <strong>the reporting</strong>. That's what a retainer actually sells.</p>
 
   <hr>
 
-  <h2 id="system" style="scroll-margin-top:80px">Part 2 — The system for reopening old clients</h2>
-  <p class="lede">Four steps. The whole thing runs on the client list already sitting in your invoicing software.</p>
-  <p>The reason this works better than any cold outreach you'll ever do is that you're not asking for a meeting. You're sending someone a specific, personalised piece of information about a website they own and care about — and you happen to be the person who built it. That email gets opened every time.</p>
+  <h2>The 4 steps</h2>
+  <p class="lede">You can start the first one this afternoon.</p>
 
-  <h3>Step 0 — Build the list (20 minutes, once)</h3>
-  <p>Open your invoices from the last three years and write down every client whose site is still live. Then sort them into three groups, because they need different emails:</p>
-  <ul class="plain">
-    <li><strong>Tier A — they already asked.</strong> Anyone who ever said "do you do SEO?" and got a no. These are pre-sold. Start here, today.</li>
-    <li><strong>Tier B — the business is clearly still growing.</strong> They've hired, expanded, added services, changed their prices. They have budget and a reason to want more traffic.</li>
-    <li><strong>Tier C — the site hasn't changed since you delivered it.</strong> Same pages, no blog, nothing added. This is the biggest group and the easiest brief to write, because there is always something to find.</li>
-  </ul>
-  <p>Don't over-qualify. Twenty names is enough to start, and half of the yeses come from people you'd have bet against.</p>
-
-  <h3>Step 1 — Run the brief (10 minutes per client)</h3>
-  <p>This is the whole trick. You don't email them asking whether they'd like to talk about SEO. You email them <em>a finding about their own website</em>. Something specific enough that they read it, and small enough that it's obviously not a sales deck.</p>
-
-  <div class="fn" id="brief">
-    <div class="fn-head"><span class="fn-num">1</span><h3 class="fn-title">The reopening brief</h3></div>
-    <p class="fn-sub">Produces a one-page finding you can paste into an email. Deliberately capped — three items, not thirty, because a wall of problems reads as a sales pitch and one clear problem reads as a favour.</p>
-    <div class="meta">
-      <span class="chip"><b>Takes:</b> 10 min</span>
-      <span class="chip"><b>Returns:</b> 3 findings + 1 headline</span>
-      <span class="chip"><b>Needs:</b> the client's live URL</span>
+  <div class="step">
+    <div class="num">1</div>
+    <div class="step-body">
+      <h3>List 20 past clients whose site is still live</h3>
+      <p>Straight from your invoices. Put anyone who ever asked <em>"do you also do SEO?"</em> at the top — they're pre-sold. Don't over-qualify the rest; half the yeses come from names you'd have bet against.</p>
     </div>
-    <div class="prompt">
-      <div class="prompt-bar">
-        <span class="prompt-label">/reopening-brief</span>
-        <button class="copy">Copy</button>
-      </div>
+  </div>
+
+  <div class="step">
+    <div class="num">2</div>
+    <div class="step-body">
+      <h3>Run this on their site</h3>
+      <p>Paste it into ChatSEO with their URL. You get three findings and one headline sentence — that's the whole email.</p>
+      <div class="box">
+        <div class="box-bar">
+          <span class="box-label">The reopening brief</span>
+          <button class="copy">Copy</button>
+        </div>
 <pre>I built this website for a client and I want to reopen the
 relationship with an SEO offer. Site: [URL]
 
-Read the live site. If you cannot load it, say so and stop —
-do not work from what you think the business does.
+Read the live site. If you can't load it, say so and stop.
 
 Give me exactly THREE findings, chosen because a non-technical
 business owner would immediately understand why they cost money.
-Prefer: a service or product page that exists but targets no
-searched term; a page that should exist and doesn't; a title
-or meta description that is losing clicks it already earns.
+Prefer: a service page that targets no searched term, a page
+that should exist and doesn't, a title losing clicks it already
+earns.
 
-For each finding: what it is, in one plain sentence a business
-owner understands, with no SEO jargon | which page | what
-searching customers are typing instead | what I would change.
+For each: what it is in one plain sentence with no SEO jargon |
+which page | what customers are typing instead | what I'd change.
 
-Never invent a search volume, a ranking or a traffic figure.
-If you do not have the number, write "I'd need Search Console
-access to size this" — do not estimate it.
+Never invent a search volume, ranking or traffic figure. If you
+don't have the number, write "I'd need Search Console access to
+size this" — do not estimate it.
 
-Then write ONE headline sentence I can put at the top of an
-email: the single most valuable thing this site is missing,
-phrased as an opportunity, not a criticism. It must not imply
-the site was built badly.
+Then write ONE headline sentence for the top of an email: the
+single most valuable thing this site is missing, phrased as an
+opportunity, not a criticism. It must not imply the site was
+built badly.
 
 Do not write the email. Do not list alternatives.</pre>
+      </div>
     </div>
-    <p>Note the last constraint in the finding rules. You built this site — a brief that opens with "the site has serious technical issues" is you filing a complaint against yourself. Every finding has to be framed as something the market started asking for <em>after</em> launch, which is almost always true anyway.</p>
   </div>
 
-  <h3>Step 2 — Send it (2 minutes per client)</h3>
-  <p>Short, no attachment, no deck, no calendar link. The brief goes in the body of the email. The ask is a reply, not a meeting.</p>
-
-  <div class="prompt">
-    <div class="prompt-bar">
-      <span class="prompt-label">The email — paste and fill the brackets</span>
-      <button class="copy">Copy</button>
-    </div>
+  <div class="step">
+    <div class="num">3</div>
+    <div class="step-body">
+      <h3>Send this email</h3>
+      <p>No deck, no attachment, no calendar link. Five a day is thirty minutes — two weeks is fifty clients.</p>
+      <div class="box">
+        <div class="box-bar">
+          <span class="box-label">The email</span>
+          <button class="copy">Copy</button>
+        </div>
 <pre>Subject: something I noticed on [site]
 
 Hi [name],
 
 I was looking at [site] the other day — still looks great.
 
-One thing stood out: [the headline sentence from the brief].
+One thing stood out: [headline sentence from the brief].
 
-I pulled together the three things I'd fix first:
+Here are the three things I'd fix first:
 
 1. [finding one]
 2. [finding two]
 3. [finding three]
 
-I've started offering SEO alongside the builds, so if you want
-me to take care of this properly I can. Either way the list
-above is yours.
+I've started offering SEO alongside the builds, so I can take
+care of this properly if you want. Either way the list above
+is yours.
 
 Want me to walk you through it on a quick call?
 
 [you]</pre>
-  </div>
-
-  <p>Two things make this email work, and both are easy to break. The list is <strong>given away unconditionally</strong> — "either way the list above is yours" is the line that makes it a favour instead of a pitch, so don't cut it. And the offer is <strong>one sentence in the middle</strong>, not the subject, not the opening, not a P.S. with a price in it.</p>
-
-  <h3>Step 3 — The call (15 minutes)</h3>
-  <p>You are not pitching SEO on this call. You already sent the value; the call exists to find out what the retainer should contain. Three questions, in this order:</p>
-  <ol class="setup">
-    <li><strong>"What would you want more of — more calls, more orders, more of one specific service?"</strong> This is the outcome you'll write at the top of the proposal, in their words. It's almost never "more traffic."</li>
-    <li><strong>"Have you ever paid anyone for SEO before?"</strong> If yes, ask what happened. You will hear a story about a monthly PDF nobody read and no idea what was done — which tells you exactly what your reporting has to beat.</li>
-    <li><strong>"If this works, what does it need to be worth to you?"</strong> Let them answer first. A surprising number of people name a bigger number than you were going to.</li>
-  </ol>
-  <p>Then say you'll send a one-page proposal that afternoon. Send it that afternoon.</p>
-
-  <h3>Step 4 — The proposal (one page, three tiers)</h3>
-  <p>One page. Not a deck. It restates their goal in their own words, lists what happens every month, and gives three prices. Most people take the middle one, which is why there are three.</p>
-
-  <div class="fn" id="proposal">
-    <div class="fn-head"><span class="fn-num">2</span><h3 class="fn-title">The one-page proposal</h3></div>
-    <p class="fn-sub">Turns the call into a document in about five minutes. Scoped by deliverables per month, never by hours — hours are what turn a retainer back into freelancing.</p>
-    <div class="meta">
-      <span class="chip"><b>Takes:</b> 5 min</span>
-      <span class="chip"><b>Returns:</b> a one-page proposal</span>
-      <span class="chip"><b>Needs:</b> the answers from step 3</span>
-    </div>
-    <div class="prompt">
-      <div class="prompt-bar">
-        <span class="prompt-label">/proposal</span>
-        <button class="copy">Copy</button>
       </div>
-<pre>Write a one-page SEO retainer proposal for a client whose
-website I built.
-
-Client: [name], [what the business does]
-Their goal, in their words: [answer to question 1]
-What went wrong with SEO before: [answer to question 2]
-Site: [URL]
-
-Structure it exactly like this:
-- One sentence restating their goal, in their words, not mine.
-- "What happens every month" — a list of DELIVERABLES, each one
-  a thing they receive or a change they can see on the site.
-  No hours. No "up to". No "ongoing optimisation".
-- Three tiers, cheapest first, each one adding to the last.
-- One short paragraph on what I need from them (access, and
-  approval on anything published).
-- A timeline paragraph that is honest: what moves in month one,
-  what does not move before month three or four.
-
-Do not promise a ranking, a position, or a traffic number, ever.
-Do not invent statistics about their industry.
-Keep the whole thing under 400 words. Plain language.
-
-End with one sentence asking them to pick a tier.
-Do not offer a discount. Do not add a bonus section.</pre>
     </div>
   </div>
 
-  <div class="callout">
-    <p><span class="k">The cadence.</span> Five briefs a day, thirty minutes total. Two weeks is fifty former clients. At the reply rates people report on this — because you built the thing you're writing about — that's a full retainer book from a list you already owned.</p>
+  <div class="step">
+    <div class="num">4</div>
+    <div class="step-body">
+      <h3>Quote a monthly price on the reply</h3>
+      <p>Not a project fee. One page, three tiers, prices below — most people take the middle one, which is why there are three.</p>
+    </div>
   </div>
 
-  <p><a class="btn btn-primary" href="https://link.chatseo.app/pb-web-designer-seo-retainer" target="_blank" rel="noopener">Try the brief on one client, free →</a></p>
+  <div class="note">
+    <p><b>The one line not to cut:</b> "either way the list above is yours." Giving the findings away unconditionally is what makes the email a favour instead of a pitch. And keep the offer to one sentence in the middle — never the subject, never a P.S. with a price in it.</p>
+  </div>
 
   <hr>
 
-  <h2 id="services" style="scroll-margin-top:80px">Part 3 — What you actually deliver</h2>
-  <p class="lede">Five services. Together they're a retainer; individually each one is a thing the client can see happened.</p>
-  <p>This is the part people assume is hard, and it's the part that changed. Every one of these used to require either an SEO hire or a tool you'd need three weeks to learn. What follows is the whole monthly scope.</p>
+  <h2>What you deliver every month</h2>
+  <p class="lede">Roughly 4–5 hours per client, once you've done it twice.</p>
 
-  <figure class="plainfig">
-    <img src="img/services-stack.webp" alt="Diagram: one site you built fans out into audit, technical fixes, page rewrites, new pages and a monthly report, bracketed as one monthly price." loading="lazy" width="1400" height="933">
-    <figcaption>The same site you already delivered, sold five more times.</figcaption>
+  <figure>
+    <img src="img/services-blue.webp" alt="One client site fanning out into audit, technical fixes, page rewrites, new pages and a monthly report." loading="lazy" >
   </figure>
 
-  <div class="fn" id="audit">
-    <div class="fn-head"><span class="fn-num">1</span><h3 class="fn-title">The audit</h3></div>
-    <p class="fn-sub">Month one, every client. This is also what you'll re-run in month six to show what's changed.</p>
-    <div class="meta">
-      <span class="chip"><b>Sell it as:</b> the starting point</span>
-      <span class="chip"><b>Takes:</b> 20 min</span>
-      <span class="chip"><b>Client sees:</b> a prioritised list</span>
-    </div>
-    <div class="prompt">
-      <div class="prompt-bar">
-        <span class="prompt-label">/audit</span>
-        <button class="copy">Copy</button>
-      </div>
-<pre>Audit [URL] for a client on a monthly SEO retainer.
-
-Connect to their Search Console if it is available. If it is
-not, say what you cannot see because of it, and audit the
-site itself only.
-
-Return a maximum of 10 items, ranked by how much money they
-are costing right now — not by how easy they are to fix, and
-not grouped by category.
-
-For each: the issue in one sentence | the affected page or
-pages | why it costs traffic | the fix | whether the fix is
-mine to make or needs the client to decide something.
-
-If a figure is not in the data, write "cannot compute from
-this data" — do not estimate it.
-
-End with the ONE item to do first this month, and why that
-one before the other nine.
-Do not give me a phased 12-month roadmap.</pre>
-    </div>
-  </div>
-
-  <div class="fn" id="fixes">
-    <div class="fn-head"><span class="fn-num">2</span><h3 class="fn-title">Technical fixes</h3></div>
-    <p class="fn-sub">The easiest thing you'll ever bill for, because it's work you already know how to do — you built the site. The value isn't the fixing, it's someone noticing.</p>
-    <div class="meta">
-      <span class="chip"><b>Sell it as:</b> upkeep</span>
-      <span class="chip"><b>Takes:</b> 1-2 h/month</span>
-      <span class="chip"><b>Client sees:</b> a changelog</span>
-    </div>
-    <p>Broken internal links, missing or duplicated titles, pages that lost their meta description in a theme update, images without alt text, a redirect chain from a page you moved eighteen months ago, a robots rule someone added and forgot. Nothing here is glamorous, and no client has ever once checked it themselves. Ship the fixes, send the changelog, that's a month.</p>
-    <p>The reason this belongs in the retainer rather than being thrown in for free is that a site drifts. A theme update in March undoes a fix from January. Continuous is the product.</p>
-  </div>
-
-  <div class="fn" id="rewrites">
-    <div class="fn-head"><span class="fn-num">3</span><h3 class="fn-title">Page rewrites</h3></div>
-    <p class="fn-sub">The fastest visible result you can produce, because you're improving a page Google already ranks instead of waiting on a new one.</p>
-    <div class="meta">
-      <span class="chip"><b>Sell it as:</b> 2-4 pages/month</span>
-      <span class="chip"><b>Takes:</b> 30 min/page</span>
-      <span class="chip"><b>Client sees:</b> before/after</span>
-    </div>
-    <div class="prompt">
-      <div class="prompt-bar">
-        <span class="prompt-label">/rewrite</span>
-        <button class="copy">Copy</button>
-      </div>
-<pre>Rewrite this page for search, for a client site I maintain:
-[URL]
-
-First tell me what the page is currently competing for, based
-on what is actually on it — not what I say it's about.
-
-Then rewrite it to win ONE specific search intent. Say which
-one and why that one.
-
-Keep every factual claim, price, service name and phone number
-exactly as it is on the live page. If something on the page
-looks factually wrong, flag it and ask — do not correct it
-yourself and do not drop it.
-
-Give me: the new title tag, the new meta description, the H1,
-the section headings in order, and the body copy.
-
-Match the reading level and tone of the existing site. This is
-a real business, not a content farm.
-
-Do not add an FAQ block unless the page genuinely answers
-questions customers ask. Do not pad for word count.
-One version. Not three options.</pre>
-    </div>
-  </div>
-
-  <div class="fn" id="pages">
-    <div class="fn-head"><span class="fn-num">4</span><h3 class="fn-title">New pages</h3></div>
-    <p class="fn-sub">Where the retainer stops being maintenance and becomes growth — and, conveniently, where you also end up billing for build work again.</p>
-    <div class="meta">
-      <span class="chip"><b>Sell it as:</b> 1-2 pages/month</span>
-      <span class="chip"><b>Takes:</b> 1 h + build</span>
-      <span class="chip"><b>Client sees:</b> new pages live</span>
-    </div>
-    <div class="prompt">
-      <div class="prompt-bar">
-        <span class="prompt-label">/new-pages</span>
-        <button class="copy">Copy</button>
-      </div>
-<pre>For [URL], find the pages this business should have and
-doesn't.
-
-Base it on what they actually sell and where they sell it —
-read the site first. If they serve specific towns, cities or
-regions, treat that as a real constraint, not a keyword
-opportunity to multiply.
-
-Give me 5 missing pages, ranked by commercial value: someone
-searching this is close to buying.
-
-For each: the page | the search intent behind it | the one
-sentence that has to be true on that page for it to deserve
-to rank | whether it can honestly be written from what this
-business already does.
-
-Kill any idea where the honest answer to that last point is
-no. I would rather have two real pages than five thin ones.
-
-Do not propose a blog calendar. Do not propose pages for
-services they don't offer.</pre>
-    </div>
-  </div>
-
-  <div class="fn" id="report">
-    <div class="fn-head"><span class="fn-num">5</span><h3 class="fn-title">The monthly report</h3></div>
-    <p class="fn-sub">The single most important deliverable in the whole retainer. It's not what earns the result — it's what earns the renewal.</p>
-    <div class="meta">
-      <span class="chip"><b>Sell it as:</b> included</span>
-      <span class="chip"><b>Takes:</b> 15 min</span>
-      <span class="chip"><b>Client sees:</b> what you did</span>
-    </div>
-    <p>Remember Simon's review at the top of this page: the multi-year deal with the law firm was won on <em>reporting</em>. Every client who has ever been burned by an SEO agency was burned the same way — they paid for months without ever being able to tell whether anything happened.</p>
-    <div class="prompt">
-      <div class="prompt-bar">
-        <span class="prompt-label">/monthly-report</span>
-        <button class="copy">Copy</button>
-      </div>
-<pre>Write this month's SEO report for [client], a business whose
-site I maintain on retainer. Site: [URL]
-
-Use their Search Console data for the last 28 days versus the
-previous 28. If I have not connected it, say so at the top and
-write the report from the work log only — do not describe
-traffic you cannot see.
-
-Three sections, in this order:
-
-1. WHAT I DID — the changes I shipped this month, each one a
-   thing they could go and look at.
-2. WHAT MOVED — only figures that are in the data. Compare like
-   for like. If something went down, say it went down and say
-   what I think caused it.
-3. NEXT MONTH — one priority. Not a list.
-
-Write it for a business owner with no SEO knowledge and about
-90 seconds of attention. No jargon, no acronyms without a
-plain-language gloss, under 300 words.
-
-Never present an estimate as a measurement.
-Do not include a chart of impressions if clicks did not move —
-that is the oldest trick in this industry and they know it.</pre>
-    </div>
-  </div>
-
-  <h3>The sixth service, if you want to be early</h3>
-  <p>Clients have started asking a new version of the old question: "why don't we come up when someone asks ChatGPT?" Almost nobody selling websites has an answer yet, which makes it the easiest thing in this whole document to charge for. It's the same work — the pages that get quoted by AI search are the ones that answer a question completely and unambiguously — but it's a service nobody's incumbent SEO agency has put on their invoice yet.</p>
-
-  <hr>
-
-  <h2 id="pricing" style="scroll-margin-top:80px">What to charge</h2>
-  <p class="lede">These are the prices web designers are actually selling to their clients — not what any tool costs you.</p>
   <div class="tw">
   <table>
-    <thead><tr><th>Tier</th><th>Every month</th><th>Typical price</th></tr></thead>
+    <thead><tr><th>Service</th><th>What the client sees</th><th>Time</th></tr></thead>
     <tbody>
-      <tr><td><strong>Starter</strong></td><td>Audit refresh, 2 page rewrites, technical fixes, report</td><td>$497</td></tr>
-      <tr><td><strong>Growth</strong></td><td>Starter + 2 new pages, internal linking, monthly call</td><td>$997</td></tr>
-      <tr><td><strong>Full</strong></td><td>Growth + AI search visibility, quarterly strategy, priority</td><td>$1,997</td></tr>
+      <tr><td><strong>Audit</strong></td><td>A ranked list of what's costing them traffic</td><td>20 min</td></tr>
+      <tr><td><strong>Technical fixes</strong></td><td>A changelog of what you shipped</td><td>1–2 h</td></tr>
+      <tr><td><strong>Page rewrites</strong></td><td>2–4 pages live, before and after</td><td>30 min each</td></tr>
+      <tr><td><strong>New pages</strong></td><td>1–2 new pages published</td><td>1 h + build</td></tr>
+      <tr><td><strong>Monthly report</strong></td><td>What you did, what moved, what's next</td><td>15 min</td></tr>
     </tbody>
   </table>
   </div>
-  <p>Three rules about the number itself, learned the expensive way by everyone who has ever done this:</p>
-  <ul class="plain">
-    <li><strong>Never price by the hour.</strong> The moment it's hourly you've re-created freelancing with extra admin, and every efficiency you gain becomes a pay cut.</li>
-    <li><strong>Six-month minimum, said out loud on the call.</strong> Not to trap them — because SEO genuinely does not show its hand in eight weeks, and a client who leaves in month three concludes it doesn't work. Setting the horizon protects both of you.</li>
-    <li><strong>Bill it as part of the site, not as SEO.</strong> "Website care and growth, $997/month" survives a budget review that "SEO retainer" does not.</li>
-  </ul>
 
-  <h2>What a month actually looks like</h2>
-  <p>The honest time cost, because the version of this that fails is the one where you sold twelve retainers and can't deliver them.</p>
+  <p>The report is the one that matters. Every client who's been burned by an SEO agency was burned the same way — they paid for months and could never tell whether anything happened. Send it even in a flat month: say it was flat, say what you did, say what's next. Clients don't churn on bad numbers, they churn on silence.</p>
+
+  <h2>What to charge</h2>
   <div class="tw">
   <table>
-    <thead><tr><th>Week</th><th>What you do</th><th>Time</th></tr></thead>
+    <thead><tr><th>Tier</th><th>Every month</th><th>Price</th></tr></thead>
     <tbody>
-      <tr><td>1</td><td>Pull the month's data, decide the one priority</td><td>30 min</td></tr>
-      <tr><td>2</td><td>Rewrites and technical fixes, shipped</td><td>2 h</td></tr>
-      <tr><td>3</td><td>New page written, built, published</td><td>1-2 h</td></tr>
-      <tr><td>4</td><td>Report, send, one short check-in</td><td>30 min</td></tr>
+      <tr><td><strong>Starter</strong></td><td>Audit, 2 rewrites, technical fixes, report</td><td class="p">$497</td></tr>
+      <tr><td><strong>Growth</strong></td><td>+ 2 new pages, internal linking, monthly call</td><td class="p">$997</td></tr>
+      <tr><td><strong>Full</strong></td><td>+ AI search visibility, quarterly strategy</td><td class="p">$1,997</td></tr>
     </tbody>
   </table>
   </div>
-  <p>Roughly four to five hours per client per month once you've done it twice. At $997 that's a rate you would not turn down for design work, on revenue that arrives whether or not you sold anything that month.</p>
-
-  <h2 id="mistakes" style="scroll-margin-top:80px">⚠️ The six mistakes that kill this</h2>
-  <div class="miss">
-    <h3>Auditing the site like it isn't yours</h3>
-    <p>You built it. A brief that opens with everything wrong with the site is you writing a complaint about your own work, and the client will read it exactly that way. Frame every finding as something the market wants now.</p>
-  </div>
-  <div class="miss">
-    <h3>Selling "SEO" instead of an outcome</h3>
-    <p>Nobody wants SEO. They want more calls from their area, more orders on the product with the best margin, more of the one service they actually enjoy delivering. Put that sentence at the top of the proposal, in their words.</p>
-  </div>
-  <div class="miss">
-    <h3>Doing it free "to prove it works"</h3>
-    <p>The brief is the free part, and it's already generous. Free months don't convert to paid months — they teach the client that this is a favour, and favours don't get renewed.</p>
-  </div>
-  <div class="miss">
-    <h3>Promising a position or a date</h3>
-    <p>"Top 3 by March" is the promise that ends the relationship in March. Promise the work, the reporting, and an honest read of what moved. That is a promise you can keep every single month.</p>
-  </div>
-  <div class="miss">
-    <h3>Taking a client with no Search Console access</h3>
-    <p>No access means no report, and no report means you're asking someone to pay $997 a month on faith. Get it connected during onboarding or don't start.</p>
-  </div>
-  <div class="miss">
-    <h3>Skipping the month when nothing moved</h3>
-    <p>Some months the graph is flat. Send the report anyway, say it was flat, say what you did and what you're doing next. The clients who churn are almost never the ones with bad numbers — they're the ones who stopped hearing from you.</p>
-  </div>
-
-  <h2>Where this stops being a prompt problem</h2>
-  <p>Everything above works on one client, in one sitting. That's genuinely all you need to send the first brief this afternoon, and I'd rather you did that than read further.</p>
-  <p>What a chat window structurally cannot do is be the second half of a retainer. A retainer is eight clients times twelve months. It needs each client's Search Console connected and staying connected, a record of what you shipped for whom and when, the todos that came out of last month's audit still sitting there this month, and a report that compares against a number somebody actually stored. A conversation has none of that: every new chat starts from zero, and by client four you are the database — which is exactly the point where people quietly stop sending the reports, and then the retainers stop renewing.</p>
-  <p>That's the half ChatSEO holds. One site per client, their Search Console attached to it, the history of every change, the todos, and the monthly read that grades what you shipped. The prompts on this page are the work. The thing underneath is what makes it survive eight clients.</p>
-  <p><a class="btn btn-primary" href="https://link.chatseo.app/pb-web-designer-seo-retainer" target="_blank" rel="noopener">Set up your first client site free →</a></p>
-
-  <h2>Where this still needs you</h2>
-  <ul class="plain">
-    <li><strong>The relationship.</strong> The brief opens the door. The reason they say yes is that they already like working with you, and nothing automates that.</li>
-    <li><strong>Approval on anything that goes live.</strong> It can write the page. It shouldn't be the one deciding to publish it on your client's business.</li>
-    <li><strong>Whether the page can honestly deliver.</strong> The title that earns the click is easy. Whether the business behind it keeps that promise is your call, and your name on the build.</li>
-    <li><strong>Saying no.</strong> Some old clients shouldn't be sold a retainer — the business is too small, or too seasonal, or about to close. Sending them a brief anyway costs you the relationship you were monetising.</li>
+  <ul>
+    <li><strong>Never price by the hour.</strong> That's freelancing with extra admin, and every efficiency you gain becomes a pay cut.</li>
+    <li><strong>Say "six-month minimum" out loud on the call.</strong> SEO doesn't show its hand in eight weeks, and a client who leaves in month three concludes it doesn't work.</li>
+    <li><strong>Never promise a position or a date.</strong> Promise the work, the reporting, and an honest read of what moved.</li>
   </ul>
 
   <hr>
 
-  <h2 id="proof" style="scroll-margin-top:80px">The graph you'll be putting in month three's report</h2>
-  <p class="lede">One founder went from <strong>250 to 750 clicks a day</strong> — +14,500 organic clicks in 100 days.</p>
-  <p>No SEO expertise. He simply ran the recommendations he was given. This is the shape of the graph you're building toward, and the reason the monthly report is the deliverable that renews the contract.</p>
-  <figure>
-    <img src="img/proof-clicks.webp" alt="Search Console graph showing daily clicks rising from around 250 to around 750." loading="lazy">
-  </figure>
-  <p>And what the clients on the other end of these retainers write about it:</p>
+  <h2>Where ChatSEO comes in</h2>
+  <p>The prompt above works on one client in one chat. A retainer is eight clients times twelve months — and a chat window has no memory of what you shipped for whom, no place for each client's Search Console, and nothing to build a monthly comparison against. By client four you become the database, the reports stop going out, and the retainers stop renewing.</p>
+  <p>That's the half ChatSEO holds: one site per client with their Search Console attached, the history of every change, and the monthly read you send them. It does the audits, the rewrites and the new pages — you keep the client and the margin.</p>
 
-  <div class="quote">
-    <p>I found ChatSEO on Reddit a few months ago, the platform is really easy to use, tells you exactly what to do and will even give you answers that you paste straight into your AI coder to make changes really easy. Clicks and impressions are up 46% since I started using ChatSEO.</p>
-    <p class="who"><b>Daniel Hyatt</b> <span>· Founder, TrainMeUK</span></p>
-  </div>
-
-  <div class="quote">
-    <p>Across several of my sites I've seen real position gains and a rise in organic traffic. On this one I actually tripled my clicks in 3 months. I use it almost every day across my different e-commerce stores and I recommend it 100%.</p>
-    <p class="who"><b>Timothée Tabary</b> <span>· Owner, e-commerce stores</span> <i>translated from French</i></p>
-  </div>
-
-  <div class="quote">
-    <p>ChatSEO let me get into the top 5 results on almost all my keywords for my local business in a few months, starting from zero — my main keyword wasn't even in the first 100 results. But above all, there are keywords where SEO is simply not worth doing, and ChatSEO tells me so and gives me local alternatives to grow my services instead. No time wasted.</p>
-    <p class="who"><b>Laurent Romedenne</b> <span>· Local business owner</span> <i>translated from French</i></p>
-  </div>
-
-  <h2>Why this works when the old way didn't</h2>
-  <p>The reason web designers couldn't sell SEO was never demand. The client was asking for it, out loud, at the end of every project.</p>
-
-  <div class="vs">
-    <div class="vs-col vs-old">
-      <h3>Why you said no</h3>
-      <ul>
-        <li>You'd have to learn SEO, or hire it</li>
-        <li>Tools built for SEO agencies, not for you</li>
-        <li>20+ hours a month you don't have</li>
-        <li>Nothing to show the client in month two</li>
-        <li>So: "I know a guy" — and the account leaves</li>
-      </ul>
-    </div>
-    <div class="vs-col vs-new">
-      <h3>What changed</h3>
-      <ul>
-        <li>The delivery is the tool's job, not yours</li>
-        <li>One site per client, their data attached</li>
-        <li>4-5 hours a month per client</li>
-        <li>A report they can read in 90 seconds</li>
-        <li>So: yes — and <strong>$997/month recurring</strong></li>
-      </ul>
-    </div>
-  </div>
-
-  <figure>
-    <img src="img/vs-tools.webp" alt="Comparison of traditional SEO tooling against the ChatSEO approach." loading="lazy">
-  </figure>
-
-  <div class="final" style="margin:44px 0">
-    <h2 style="margin-top:0">Start with one old client</h2>
-    <p>Pick a site you built last year, run the brief on it, and send it. That's the entire first step — and it's free to try. If it lands, you already know what the next fifty emails say.</p>
-    <a class="btn btn-primary" href="https://link.chatseo.app/pb-web-designer-seo-retainer" target="_blank" rel="noopener">Try ChatSEO free →</a>
-    <p class="note" style="margin-top:16px">No credit card required</p>
+  <div class="close">
+    <h2>Try it on one old client</h2>
+    <p>Pick a site you built last year, run the brief, send the email. You get 5 free credits — enough to see whether it lands before you spend anything.</p>
+    <a class="btn" href="https://link.chatseo.app/pb-web-designer-seo-retainer" target="_blank" rel="noopener">Start free →</a>
+    <p class="fine">No credit card required</p>
   </div>
 
   <footer>
-    <p>Built by <a href="https://link.chatseo.app/pb-web-designer-seo-retainer" target="_blank" rel="noopener">Nicholas at ChatSEO</a> · Everything on this page is free to copy and use.</p>
+    <p>Written by <a href="https://link.chatseo.app/pb-web-designer-seo-retainer" target="_blank" rel="noopener">Nicholas at ChatSEO</a> · Copy anything on this page.</p>
   </footer>
 
 </div>
 <script>
-// Theme: remember the viewer's choice, fall back to their system setting.
-(function(){
-  var root=document.documentElement, btn=document.getElementById('themeBtn');
-  try{ var s=localStorage.getItem('theme'); if(s) root.setAttribute('data-theme',s); }catch(e){}
-  btn.addEventListener('click',function(){
-    var cur=root.getAttribute('data-theme');
-    if(!cur) cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
-    var next=cur==='dark'?'light':'dark';
-    root.setAttribute('data-theme',next);
-    try{ localStorage.setItem('theme',next); }catch(e){}
-  });
-})();
-
-// Copy buttons: the whole point of a prompt playbook is getting the prompt out cleanly.
 document.querySelectorAll('.copy').forEach(function(btn){
   btn.addEventListener('click',function(){
-    var pre=btn.closest('.prompt').querySelector('pre');
-    var text=pre.innerText;
+    var text=btn.closest('.box').querySelector('pre').innerText;
     var done=function(){ btn.textContent='Copied'; btn.classList.add('done');
       setTimeout(function(){ btn.textContent='Copy'; btn.classList.remove('done'); },1600); };
     if(navigator.clipboard&&navigator.clipboard.writeText){
