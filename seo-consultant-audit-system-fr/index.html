@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L'audit du consultant SEO, en une conversation</title>
+<meta name="description" content="Rank tracker, outil de mots-clés, outil de backlinks, crawler, Search Console : cinq abonnements pour écrire un seul audit client. Voici la version en une conversation, sur un audit réel.">
+<meta property="og:title" content="L'audit du consultant SEO, en une conversation">
+<meta property="og:description" content="Cinq outils, cinq factures, un seul audit. Voici la version en une conversation, et ce qu'elle a vraiment écrit sur un domaine réel.">
+<meta property="og:image" content="https://chatseo.github.io/playbooks/seo-consultant-audit-system-fr/img/og-card.jpg">
+<meta property="og:url" content="https://chatseo.github.io/playbooks/seo-consultant-audit-system-fr/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFFFFF; --wash:#EDF2FF; --surface:#FFFFFF; --raised:#F7F9FF;
+  --ink:#0B1220; --body:#4B5565; --muted:#6B7688;
+  --blue:#2563EB; --blue-dark:#1D4ED8; --blue-soft:#EAF0FF;
+  --line:#E4E9F2;
+  --shadow:0 1px 2px rgba(16,24,40,.04), 0 8px 24px rgba(16,24,40,.06);
+  --maxw:720px;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0B1120; --wash:#101A30; --surface:#131C2E; --raised:#172136;
+    --ink:#F2F5FA; --body:#B4BECD; --muted:#8D98AA;
+    --blue:#5B8DEF; --blue-dark:#7BA6F5; --blue-soft:#1A2540;
+    --line:#232E45;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; color:var(--body);
+  background:var(--bg);
+  background-image:linear-gradient(180deg, var(--wash) 0%, var(--bg) 620px);
+  background-repeat:no-repeat;
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:17px; line-height:1.7; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 22px}
+
+/* ---------- hero ---------- */
+.hero{padding:72px 0 4px; text-align:center}
+h1{
+  color:var(--ink); font-weight:800; letter-spacing:-.035em;
+  font-size:clamp(34px,6.2vw,52px); line-height:1.08; margin:0 0 20px;
+}
+h1 em{font-style:italic; color:var(--blue); font-weight:800}
+.sub{font-size:18.5px; color:var(--body); max-width:560px; margin:0 auto 22px}
+.trust{font-size:14.5px; color:var(--muted); margin:0}
+.trust b{color:var(--ink); font-weight:700}
+
+/* ---------- type ---------- */
+h2{
+  color:var(--ink); font-weight:800; letter-spacing:-.028em;
+  font-size:clamp(25px,3.9vw,32px); line-height:1.2; margin:52px 0 8px;
+}
+h3{color:var(--ink); font-size:17.5px; font-weight:700; letter-spacing:-.015em; margin:26px 0 6px}
+p{margin:0 0 16px}
+a{color:var(--blue); text-decoration:none; border-bottom:1px solid var(--blue-soft)}
+a:hover{border-bottom-color:var(--blue)}
+.lede{font-size:18px; color:var(--muted); margin-bottom:24px}
+strong{color:var(--ink); font-weight:650}
+hr{border:0; border-top:1px solid var(--line); margin:48px 0}
+
+/* ---------- figures ---------- */
+figure{margin:32px 0}
+figure img{width:100%; height:auto; display:block; border-radius:16px; border:1px solid var(--line)}
+
+/* ---------- quotes ---------- */
+.q{background:var(--surface); border:1px solid var(--line); border-radius:16px;
+  padding:22px 24px; margin:16px 0; box-shadow:var(--shadow)}
+.q-top{display:flex; align-items:center; gap:12px; margin-bottom:14px}
+.av{flex:none; width:42px; height:42px; border-radius:50%; background:var(--blue-soft);
+  color:var(--blue); font-size:14.5px; font-weight:800; letter-spacing:-.01em;
+  display:flex; align-items:center; justify-content:center}
+.q-who{flex:1; min-width:0; line-height:1.35}
+.q-who b{display:block; color:var(--ink); font-weight:700; font-size:15.5px}
+.q-who span{display:block; color:var(--muted); font-size:13.5px}
+.stars{flex:none; color:#F5A623; font-size:15px; letter-spacing:1px}
+.q p{margin:0; font-size:16px; color:var(--body)}
+.q .src{margin:12px 0 0; font-size:13px; color:var(--muted)}
+.q .src a{color:var(--muted); border-bottom:1px solid var(--line)}
+.q .src a:hover{color:var(--blue); border-bottom-color:var(--blue)}
+@media (max-width:460px){ .stars{display:none} }
+
+/* ---------- steps ---------- */
+.step{display:flex; gap:16px; margin:26px 0}
+.num{
+  flex:none; width:30px; height:30px; border-radius:9px; background:var(--blue);
+  color:#fff; font-size:14px; font-weight:800; display:flex; align-items:center;
+  justify-content:center; margin-top:2px;
+}
+.step-body{flex:1; min-width:0}
+.step-body h3{margin:0 0 5px}
+.step-body p{margin:0 0 12px; font-size:16px}
+.step-body p:last-child{margin-bottom:0}
+
+/* ---------- copy block ---------- */
+.box{margin:14px 0 0; border-radius:14px; overflow:hidden; border:1px solid var(--line);
+  background:var(--surface); box-shadow:var(--shadow)}
+.box-bar{display:flex; align-items:center; justify-content:space-between; gap:10px;
+  background:var(--raised); border-bottom:1px solid var(--line); padding:10px 16px}
+.box-label{font-size:11.5px; font-weight:700; letter-spacing:.08em;
+  text-transform:uppercase; color:var(--muted)}
+.copy{background:var(--blue-soft); color:var(--blue); border:0; border-radius:7px;
+  padding:6px 13px; font-size:12.5px; font-weight:650; cursor:pointer;
+  font-family:inherit; transition:.15s; white-space:nowrap}
+.copy:hover{background:var(--blue); color:#fff}
+.copy.done{background:#DCFCE7; color:#15803D}
+pre{margin:0; background:var(--surface); color:var(--ink); padding:18px 20px;
+  overflow-x:auto; font-family:inherit; font-size:15.5px; line-height:1.68;
+  white-space:pre-wrap; word-wrap:break-word}
+
+/* ---------- note ---------- */
+.note{background:var(--blue-soft); border-radius:12px; padding:15px 18px; margin:22px 0}
+.note p{margin:0; font-size:15.5px; color:var(--body)}
+.note b{color:var(--ink)}
+
+/* ---------- table ---------- */
+.tw{overflow-x:auto; margin:22px 0; border:1px solid var(--line); border-radius:14px;
+  background:var(--surface)}
+table{border-collapse:collapse; width:100%; font-size:15px; min-width:440px}
+th,td{padding:12px 16px; text-align:left; border-bottom:1px solid var(--line)}
+th{font-weight:700; font-size:12px; letter-spacing:.06em; text-transform:uppercase;
+  color:var(--muted); background:var(--raised)}
+td strong{color:var(--ink)}
+td.p{font-weight:700; color:var(--blue); white-space:nowrap}
+tr:last-child td{border-bottom:0}
+
+/* ---------- list ---------- */
+ul{padding:0; margin:0 0 16px; list-style:none}
+ul li{padding-left:24px; position:relative; margin-bottom:10px}
+ul li::before{content:""; position:absolute; left:2px; top:11px; width:6px; height:6px;
+  border-radius:50%; background:var(--blue)}
+
+/* ---------- close ---------- */
+.close{background:var(--surface); border:1px solid var(--line); border-radius:18px;
+  padding:34px 28px; text-align:center; margin:48px 0 20px; box-shadow:var(--shadow)}
+.close h2{margin:0 0 10px}
+.close p{color:var(--body); max-width:440px; margin:0 auto 22px}
+.btn{display:inline-flex; align-items:center; gap:8px; background:var(--blue); color:#fff;
+  padding:14px 26px; border-radius:11px; font-weight:650; font-size:15.5px;
+  text-decoration:none; border:0; transition:.15s}
+.btn:hover{background:var(--blue-dark); transform:translateY(-1px)}
+.btn-ghost{background:transparent; color:var(--blue); border:1px solid var(--line)}
+.btn-ghost:hover{background:var(--blue-soft); color:var(--blue); border-color:var(--blue)}
+.cta-row{display:flex; gap:10px; justify-content:center; flex-wrap:wrap}
+.fine{font-size:13.5px; color:var(--muted); margin:14px 0 0}
+footer{text-align:center; padding:8px 0 52px; color:var(--muted); font-size:13.5px}
+footer a{color:var(--muted); border:0}
+
+@media (max-width:560px){
+  body{font-size:16px}
+}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+
+  <div class="hero">
+    <h1>Arrêtez de payer cinq outils<br>pour écrire <em>un seul audit</em></h1>
+    <p class="sub">Rank tracker, outil de mots-clés, outil de backlinks, crawler, Search Console. Cinq abonnements, cinq exports, et le vrai travail commence après : les faire dire la même chose. Voici la version en une conversation, sur un domaine réel.</p>
+    <p class="trust"><b>600+ clients chez ChatSEO.</b> Beaucoup sont consultants ou agences et l'utilisent pour leurs propres clients.</p>
+    <div class="cta-row" style="margin-top:26px">
+      <a class="btn" href="https://link.chatseo.app/pb-seoconsultant-call" target="_blank" rel="noopener">Réserver 15 minutes →</a>
+    </div>
+    <p class="fine" style="margin-top:14px">Avec Nicholas, sur un vrai audit client</p>
+  </div>
+
+  <figure>
+    <img src="img/hero-fr.webp" alt="Flux : cinq outils et cinq factures deviennent une conversation, l'audit revient rédigé, et vous l'envoyez sous votre propre nom." >
+  </figure>
+
+  <h2>Ce que des agences en disent déjà</h2>
+
+  <div class="q">
+    <div class="q-top">
+      <div class="av" aria-hidden="true">SA</div>
+      <div class="q-who"><b>Simon Atherley</b><span>Agence SEO</span></div>
+      <div class="stars" aria-label="5 sur 5">★★★★★</div>
+    </div>
+    <p>ChatSEO, avec la Search Console et Analytics connectés, produit des résultats impressionnants et détaillés. <strong>Ça nous a aidés à signer un contrat pluriannuel avec un cabinet d'avocats du top 100 au Royaume-Uni, tant ils ont été impressionnés par le niveau de détail de nos rapports.</strong> En plus de ça, l'équipe a ajouté une fonctionnalité qu'on avait demandée. Vivement recommandé !</p>
+    <p class="src"><a href="https://www.trustpilot.com/reviews/6a76f4f1ed082394a7302a0a" target="_blank" rel="noopener">Avis vérifié sur Trustpilot</a> · traduit de l'anglais</p>
+  </div>
+
+  <hr>
+
+  <h2>Les 4 étapes</h2>
+  <p class="lede">Lancez-le sur un dossier client cet après-midi et comparez au dernier audit que vous avez fait.</p>
+
+  <div class="step">
+    <div class="num">1</div>
+    <div class="step-body">
+      <h3>Donnez-lui le domaine</h3>
+      <p>Une ligne. Ça marche sur un client que vous suivez depuis des années comme sur un prospect que vous démarchez demain : connectez sa Search Console pour la lecture la plus complète, ou lancez-le en <strong>mode recherche SEO</strong> sur n'importe quel site externe, sans rien connecter du tout.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="num">2</div>
+    <div class="step-body">
+      <h3>Il va chercher ce que cinq outils auraient sorti, vous n'écrivez rien</h3>
+      <p>Positions, mots-clés manquants, backlinks face à des concurrents nommés, problèmes techniques et d'indexation, Search Console, le tout en parallèle, dans le même fil.</p>
+      <figure style="margin:18px 0 0">
+        <img src="img/shot-prompt-fr.webp" alt="Un vrai run ChatSEO : prompt de consultant demandant les positions actuelles, les mots-clés manquants, le profil de backlinks face aux concurrents, les problèmes techniques et la Search Console, avec GSC, GA4 et l'audit concurrentiel de backlinks lancés en parallèle." loading="lazy">
+      </figure>
+      <p style="margin-top:16px"><a href="https://link.chatseo.app/pb-seoconsultant-call" target="_blank" rel="noopener">Réservez 15 minutes</a> si vous préférez qu'on lance le premier ensemble, sur un vrai dossier client.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="num">3</div>
+    <div class="step-body">
+      <h3>Ça revient rédigé, pas exporté</h3>
+      <p>Pas cinq CSV à recouper à la main. Un document : les chiffres, qui gagne vraiment et pourquoi, et ce qu'il faut corriger en premier.</p>
+      <figure style="margin:14px 0 0">
+        <img src="img/shot-work-fr.webp" alt="Le profil de backlinks rédigé par ChatSEO face à deux concurrents nommés, avec domaines référents, taux de dofollow, mots-clés organiques et trafic estimé, plus l'analyse : quel concurrent est une vraie menace SEO et lequel ne l'est pas, et pourquoi les pages profondes restent en position 15-20." loading="lazy">
+      </figure>
+      <p style="margin-top:14px">Ceci a tourné en direct sur chatseo.app, pour cette page. Rien ici n'a été retouché ou raccourci après coup.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="num">4</div>
+    <div class="step-body">
+      <h3>Vous corrigez ce que vous seul savez, et vous envoyez sous votre nom</h3>
+      <p>La relation client, les contraintes que la donnée ne voit pas, le choix de ce qui vaut le coup ce trimestre : ça reste vous. Ce que vous ne faites plus, c'est la collecte.</p>
+    </div>
+  </div>
+
+  <div class="note">
+    <p><b>Connectez la Search Console du client une fois.</b> Tout le reste fonctionne sans elle, mais la comparaison avec ce qui a vraiment bougé (la seule chose qu'un rank tracker ne peut pas dire) n'existe qu'une fois qu'elle est connectée. Faites-le à l'onboarding, sinon le deuxième audit reste une photo isolée.</p>
+  </div>
+
+  <hr>
+
+  <h2>Ce que ça remplace</h2>
+  <p class="lede">Même couverture, un seul fil, une conversation qui se souvient de la précédente.</p>
+
+  <figure>
+    <img src="img/services-fr.webp" alt="Un domaine qui se décline en positions SERP, mots-clés manquants, profil de liens, crawl technique et Search Console, tirés en parallèle." loading="lazy" >
+  </figure>
+
+  <div class="tw">
+  <table>
+    <thead><tr><th>Ce que vous ouvriez avant</th><th>Ce que ChatSEO tire, dans le même fil</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Rank tracker</strong></td><td>Positions de mots-clés en direct</td></tr>
+      <tr><td><strong>Outil de mots-clés</strong></td><td>Volume, difficulté, et les manques face aux concurrents nommés</td></tr>
+      <tr><td><strong>Outil de backlinks</strong></td><td>Domaines référents, ancres, manques de deeplinking</td></tr>
+      <tr><td><strong>Crawler</strong></td><td>Indexation, problèmes techniques, vérifications page par page</td></tr>
+      <tr><td><strong>Search Console</strong></td><td>Ce qui a vraiment bougé, période sur période</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>Rien de tout ça ne remplace le jugement que le client paie chez un consultant. Ce que ça remplace, c'est la partie que personne ne facture jamais vraiment : ouvrir cinq onglets, exporter cinq fichiers, et les faire dire la même chose avant que la vraie réflexion puisse commencer.</p>
+
+  <div class="close">
+    <h2>Lancez-le sur un dossier client</h2>
+    <p>Prenez un domaine que vous connaissez déjà bien et voyez ce qu'il trouve que votre dernier audit n'avait pas vu. Essayez vous-même avec vos crédits gratuits, ou réservez un appel et on lance le premier ensemble.</p>
+    <div class="cta-row">
+      <a class="btn" href="https://link.chatseo.app/pb-seo-consultant-audit-system-fr" target="_blank" rel="noopener">Commencer gratuitement →</a>
+      <a class="btn btn-ghost" href="https://link.chatseo.app/pb-seoconsultant-call" target="_blank" rel="noopener">Réserver 15 minutes</a>
+    </div>
+    <p class="fine">Sans carte bancaire · ou on vous accompagne en direct</p>
+  </div>
+
+  <footer>
+    <p>Écrit par <a href="https://link.chatseo.app/pb-seo-consultant-audit-system-fr" target="_blank" rel="noopener">Nicholas, ChatSEO</a> · Reprenez tout ce qui est sur cette page.</p>
+  </footer>
+
+</div>
+<script>
+document.querySelectorAll('.copy').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var text=btn.closest('.box').querySelector('pre').innerText;
+    var done=function(){ btn.textContent='Copied'; btn.classList.add('done');
+      setTimeout(function(){ btn.textContent='Copy'; btn.classList.remove('done'); },1600); };
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done).catch(fallback);
+    } else { fallback(); }
+    function fallback(){
+      var ta=document.createElement('textarea'); ta.value=text;
+      ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta);
+      ta.select(); try{ document.execCommand('copy'); done(); }catch(e){ btn.textContent='Select manually'; }
+      document.body.removeChild(ta);
+    }
+  });
+});
+</script>
+</body>
+</html>
