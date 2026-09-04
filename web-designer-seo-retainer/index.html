@@ -13,13 +13,13 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#FFFFFF; --wash:#EDF2FF; --surface:#FFFFFF; --raised:#F7F9FF;
   --ink:#0B1220; --body:#4B5565; --muted:#6B7688;
   --blue:#2563EB; --blue-dark:#1D4ED8; --blue-soft:#EAF0FF;
-  --line:#E4E9F2; --code-bg:#0B1220; --code-ink:#E8EDF7;
+  --line:#E4E9F2;
   --shadow:0 1px 2px rgba(16,24,40,.04), 0 8px 24px rgba(16,24,40,.06);
   --maxw:720px;
 }
@@ -28,7 +28,7 @@
     --bg:#0B1120; --wash:#101A30; --surface:#131C2E; --raised:#172136;
     --ink:#F2F5FA; --body:#B4BECD; --muted:#8D98AA;
     --blue:#5B8DEF; --blue-dark:#7BA6F5; --blue-soft:#1A2540;
-    --line:#232E45; --code-bg:#060B15; --code-ink:#E8EDF7;
+    --line:#232E45;
     --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
   }
 }
@@ -110,19 +110,20 @@ figure img{width:100%; height:auto; display:block; border-radius:16px; border:1p
 .step-body p:last-child{margin-bottom:0}
 
 /* ---------- copy block ---------- */
-.box{margin:14px 0 0; border-radius:12px; overflow:hidden; border:1px solid var(--line)}
+.box{margin:14px 0 0; border-radius:14px; overflow:hidden; border:1px solid var(--line);
+  background:var(--surface); box-shadow:var(--shadow)}
 .box-bar{display:flex; align-items:center; justify-content:space-between; gap:10px;
-  background:var(--code-bg); padding:9px 13px}
-.box-label{font-family:"JetBrains Mono",ui-monospace,monospace; font-size:11px;
-  letter-spacing:.07em; text-transform:uppercase; color:#8794AD}
-.copy{background:rgba(255,255,255,.11); color:#EEF3FC; border:0; border-radius:6px;
-  padding:5px 12px; font-size:12px; font-weight:600; cursor:pointer;
-  font-family:Inter,sans-serif; transition:.15s; white-space:nowrap}
-.copy:hover{background:var(--blue)}
-.copy.done{background:#16A34A}
-pre{margin:0; background:var(--code-bg); color:var(--code-ink); padding:16px;
-  overflow-x:auto; font-family:"JetBrains Mono",ui-monospace,monospace;
-  font-size:12.5px; line-height:1.6; white-space:pre-wrap; word-wrap:break-word}
+  background:var(--raised); border-bottom:1px solid var(--line); padding:10px 16px}
+.box-label{font-size:11.5px; font-weight:700; letter-spacing:.08em;
+  text-transform:uppercase; color:var(--muted)}
+.copy{background:var(--blue-soft); color:var(--blue); border:0; border-radius:7px;
+  padding:6px 13px; font-size:12.5px; font-weight:650; cursor:pointer;
+  font-family:inherit; transition:.15s; white-space:nowrap}
+.copy:hover{background:var(--blue); color:#fff}
+.copy.done{background:#DCFCE7; color:#15803D}
+pre{margin:0; background:var(--surface); color:var(--ink); padding:18px 20px;
+  overflow-x:auto; font-family:inherit; font-size:15.5px; line-height:1.68;
+  white-space:pre-wrap; word-wrap:break-word}
 
 /* ---------- product answer excerpt ---------- */
 .answer{background:var(--raised); border:1px solid var(--line); border-radius:14px;
