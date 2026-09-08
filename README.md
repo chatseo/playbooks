@@ -2,6 +2,7 @@
 
 Free, ungated SEO playbooks from [ChatSEO](https://link.chatseo.app/pb-seo-system).
 
+- [The Complete SEO Playbook](https://chatseo.github.io/playbooks/complete-seo-playbook/) — the whole method in ten chapters and eight templates: the five-part model, query selection, opportunity signals, page prioritisation, intent matching, content, multi-surface execution, ranking response, measurement and a 30-day build.
 - [The Chief SEO Officer](https://chatseo.github.io/playbooks/chief-seo-officer/) — seven skills that turn Claude into a Chief SEO Officer: one constraint instead of 47 issues, a scored backlog, and a Monday report you actually read.
 - [L'abonnement SEO du web designer](https://chatseo.github.io/playbooks/web-designer-seo-retainer-fr/) — version française.
 - [The Web Designer's SEO Retainer](https://chatseo.github.io/playbooks/web-designer-seo-retainer/) — every site you've built is a client who already trusts you: the system for reopening them and selling monthly SEO retainers.

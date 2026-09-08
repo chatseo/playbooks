@@ -1,0 +1,1136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Complete SEO Playbook</title>
+<meta name="description" content="Ten chapters and eight templates: the SEO model, query selection, opportunity signals, page prioritisation, intent matching, content creation, multi-surface execution, ranking response, measurement and a 30-day build. Free, nothing gated.">
+<meta property="og:title" content="The Complete SEO Playbook">
+<meta property="og:description" content="A step-by-step system to rank higher, get more traffic and grow revenue. Ten chapters, eight templates, six prompts. Free and ungated.">
+<meta property="og:image" content="https://chatseo.github.io/playbooks/complete-seo-playbook/img/og-card.jpg">
+<meta property="og:url" content="https://chatseo.github.io/playbooks/complete-seo-playbook/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍊</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F7F3EC; --surface:#FFFDF9; --ink:#2B2A28; --muted:#6E6A63;
+  --accent:#D9663D; --accent-soft:#F2D9CE; --sage:#8A9A7B;
+  --line:#E2DACE; --code-bg:#2B2A28; --code-ink:#F2EDE4;
+  --shadow:0 1px 2px rgba(43,42,40,.05), 0 8px 24px rgba(43,42,40,.06);
+  --maxw:760px;
+}
+:root:not([data-theme="light"]){ @media (prefers-color-scheme: dark){
+  --bg:#191817; --surface:#211F1D; --ink:#EFEAE1; --muted:#A29C93;
+  --accent:#E8794F; --accent-soft:#3A2A22; --sage:#9DAD8E;
+  --line:#332F2B; --code-bg:#0F0E0D; --code-ink:#EFEAE1;
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+}}
+:root[data-theme="dark"]{
+  --bg:#191817; --surface:#211F1D; --ink:#EFEAE1; --muted:#A29C93;
+  --accent:#E8794F; --accent-soft:#3A2A22; --sage:#9DAD8E;
+  --line:#332F2B; --code-bg:#0F0E0D; --code-ink:#EFEAE1;
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:72px}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:17px; line-height:1.68; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 22px}
+
+/* ---------- top bar ---------- */
+.bar{
+  position:sticky; top:0; z-index:50; background:color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter:blur(10px); border-bottom:1px solid var(--line);
+}
+.bar-in{max-width:var(--maxw); margin:0 auto; padding:11px 22px; display:flex; align-items:center; gap:14px}
+.brand{font-weight:800; letter-spacing:-.02em; font-size:15px; text-decoration:none; color:var(--ink); white-space:nowrap}
+.brand span{color:var(--accent)}
+.bar nav{margin-left:auto; display:flex; gap:16px; overflow-x:auto; scrollbar-width:none}
+.bar nav::-webkit-scrollbar{display:none}
+.bar nav a{color:var(--muted); text-decoration:none; font-size:13.5px; font-weight:500; white-space:nowrap}
+.bar nav a:hover{color:var(--accent)}
+.theme{background:none; border:1px solid var(--line); color:var(--muted); border-radius:8px;
+  width:32px; height:32px; cursor:pointer; font-size:14px; flex:none}
+.theme:hover{color:var(--accent); border-color:var(--accent)}
+
+/* ---------- hero ---------- */
+.hero{padding:64px 0 8px; text-align:center}
+.eyebrow{
+  display:inline-block; font-size:12px; font-weight:700; letter-spacing:.13em; text-transform:uppercase;
+  color:var(--accent); background:var(--accent-soft); padding:6px 13px; border-radius:100px; margin-bottom:20px;
+}
+h1{
+  font-family:"Instrument Serif",Georgia,serif; font-weight:400; letter-spacing:-.015em;
+  font-size:clamp(40px,7.5vw,62px); line-height:1.06; margin:0 0 18px;
+}
+h1 em{font-style:italic; color:var(--accent)}
+.sub{font-size:19px; color:var(--muted); max-width:560px; margin:0 auto 30px}
+.cta-row{display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-bottom:10px}
+.btn{
+  display:inline-flex; align-items:center; gap:8px; padding:13px 24px; border-radius:10px;
+  font-weight:600; font-size:15px; text-decoration:none; border:1px solid transparent; transition:.15s;
+}
+.btn-primary{background:var(--accent); color:#fff}
+.btn-primary:hover{filter:brightness(1.07); transform:translateY(-1px)}
+.btn-ghost{border-color:var(--line); color:var(--ink); background:var(--surface)}
+.btn-ghost:hover{border-color:var(--accent); color:var(--accent)}
+.note{font-size:13.5px; color:var(--muted)}
+/* Proof tease: opens a loop at line 2 that only closes in the conversion section,
+   which is what buys the scroll past the value section. */
+.tease{margin:-16px 0 26px; font-size:14.5px}
+.tease a{color:var(--muted); text-decoration:none; border-bottom:1px dashed var(--line); padding-bottom:2px}
+.tease a:hover{color:var(--accent); border-bottom-color:var(--accent)}
+
+/* ---------- figures ---------- */
+figure{margin:38px 0}
+figure img{width:100%; height:auto; display:block; border-radius:14px; border:1px solid var(--line)}
+figure.plainfig img{border:0; border-radius:0}
+figcaption{font-size:13.5px; color:var(--muted); text-align:center; margin-top:11px}
+
+/* ---------- type ---------- */
+h2{
+  font-family:"Instrument Serif",Georgia,serif; font-weight:400; font-size:clamp(29px,4.6vw,38px);
+  line-height:1.16; letter-spacing:-.01em; margin:60px 0 6px;
+}
+h3{font-size:19px; font-weight:700; letter-spacing:-.01em; margin:32px 0 8px}
+p{margin:0 0 17px}
+a{color:var(--accent)}
+.lede{font-size:19px; color:var(--muted); margin-bottom:26px}
+hr{border:0; border-top:1px solid var(--line); margin:56px 0}
+strong{font-weight:650}
+
+/* ---------- author ---------- */
+.author{
+  display:flex; gap:24px; align-items:flex-start; background:var(--surface);
+  border:1px solid var(--line); border-radius:16px; padding:28px; margin:40px 0;
+}
+.author-img{
+  width:96px; height:96px; border-radius:50%; flex:none; object-fit:cover;
+  background:var(--accent-soft); border:1px solid var(--line);
+}
+.author p{margin:0 0 11px; font-size:17px; line-height:1.62}
+.author p:last-child{margin-bottom:0}
+
+/* ---------- step cards ---------- */
+.fn{
+  background:var(--surface); border:1px solid var(--line); border-radius:16px;
+  padding:26px; margin:22px 0; box-shadow:var(--shadow); scroll-margin-top:80px;
+}
+.fn-head{display:flex; align-items:baseline; gap:12px; margin-bottom:4px; flex-wrap:wrap}
+.fn-num{
+  font-family:"Instrument Serif",Georgia,serif; font-size:34px; line-height:1;
+  color:var(--accent); flex:none;
+}
+.fn-title{font-size:22px; font-weight:750; letter-spacing:-.015em; margin:0}
+.fn-sub{color:var(--muted); font-size:15px; margin:0 0 18px}
+.meta{display:flex; flex-wrap:wrap; gap:8px; margin:16px 0}
+.chip{
+  font-size:12.5px; font-weight:600; padding:5px 11px; border-radius:100px;
+  background:var(--bg); border:1px solid var(--line); color:var(--muted);
+}
+.chip b{color:var(--ink); font-weight:650}
+
+/* ---------- prompt block ---------- */
+.prompt{position:relative; margin:16px 0 4px}
+.prompt-bar{
+  display:flex; align-items:center; justify-content:space-between; gap:10px;
+  background:var(--code-bg); border-radius:10px 10px 0 0; padding:9px 13px;
+  border-bottom:1px solid rgba(255,255,255,.09);
+}
+.prompt-label{
+  font-family:"JetBrains Mono",ui-monospace,monospace; font-size:11.5px;
+  letter-spacing:.06em; text-transform:uppercase; color:#9A938A;
+}
+.copy{
+  background:rgba(255,255,255,.09); color:#F2EDE4; border:0; border-radius:6px;
+  padding:5px 11px; font-size:12px; font-weight:600; cursor:pointer;
+  font-family:Inter,sans-serif; transition:.15s; white-space:nowrap;
+}
+.copy:hover{background:var(--accent)}
+.copy.done{background:var(--sage); color:#12140F}
+pre{
+  margin:0; background:var(--code-bg); color:var(--code-ink); border-radius:0 0 10px 10px;
+  padding:17px; overflow-x:auto; font-family:"JetBrains Mono",ui-monospace,monospace;
+  font-size:13px; line-height:1.62; white-space:pre-wrap; word-wrap:break-word;
+}
+
+/* ---------- callout ---------- */
+.callout{
+  border-left:3px solid var(--accent); background:var(--surface);
+  padding:16px 20px; border-radius:0 12px 12px 0; margin:26px 0;
+}
+.callout p{margin:0; font-size:15.5px}
+.callout .k{font-weight:700; color:var(--accent)}
+
+/* ---------- lists ---------- */
+ul,ol{padding-left:22px; margin:0 0 18px}
+li{margin-bottom:9px}
+.plain{list-style:none; padding:0}
+.plain li{padding-left:28px; position:relative; margin-bottom:13px}
+.plain li::before{content:"→"; position:absolute; left:0; color:var(--accent); font-weight:700}
+
+/* ---------- setup steps ---------- */
+.setup{counter-reset:s; list-style:none; padding:0; margin:22px 0}
+.setup li{
+  counter-increment:s; position:relative; padding-left:40px; margin-bottom:14px;
+}
+.setup li::before{
+  content:counter(s); position:absolute; left:0; top:1px;
+  width:26px; height:26px; border-radius:50%; background:var(--accent-soft); color:var(--accent);
+  font-size:13px; font-weight:700; display:flex; align-items:center; justify-content:center;
+}
+kbd{
+  font-family:"JetBrains Mono",ui-monospace,monospace; font-size:12.5px;
+  background:var(--bg); border:1px solid var(--line); border-radius:5px; padding:2px 6px;
+}
+
+/* ---------- mistakes ---------- */
+.miss{border-left:3px solid var(--sage); padding:2px 0 2px 18px; margin:22px 0}
+.miss h3{margin:0 0 5px; font-size:17px}
+.miss p{margin:0; color:var(--muted); font-size:15.5px}
+
+/* ---------- table ---------- */
+.tw{overflow-x:auto; margin:22px 0; border:1px solid var(--line); border-radius:12px}
+table{border-collapse:collapse; width:100%; font-size:14.5px; min-width:460px}
+th,td{padding:11px 15px; text-align:left; border-bottom:1px solid var(--line)}
+th{background:var(--surface); font-weight:650; font-size:12.5px; letter-spacing:.05em; text-transform:uppercase; color:var(--muted)}
+tr:last-child td{border-bottom:0}
+
+/* ---------- old-vs-new comparison ---------- */
+.vs{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:26px 0}
+.vs-col{border:1px solid var(--line); border-radius:14px; padding:20px; background:var(--surface)}
+.vs-col h3{margin:0 0 12px; font-size:15px; letter-spacing:.04em; text-transform:uppercase}
+.vs-col ul{margin:0; padding-left:20px}
+.vs-col li{font-size:15px; margin-bottom:9px; color:var(--muted)}
+.vs-old h3{color:var(--muted)}
+.vs-old li{text-decoration:line-through; text-decoration-color:var(--line)}
+.vs-new{border-color:var(--accent)}
+.vs-new h3{color:var(--accent)}
+.vs-new li{color:var(--ink)}
+:not(pre) > code{
+  font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:.88em; background:var(--surface); border:1px solid var(--line);
+  border-radius:6px; padding:1px 6px; color:var(--ink); word-break:break-word;
+}
+
+@media (max-width:600px){ .vs{grid-template-columns:1fr} }
+
+/* ---------- final cta ---------- */
+.final{
+  background:var(--surface); border:1px solid var(--line); border-radius:18px;
+  padding:38px 28px; text-align:center; margin:52px 0 24px;
+}
+.final h2{margin:0 0 10px}
+.final p{color:var(--muted); max-width:460px; margin:0 auto 22px}
+footer{text-align:center; padding:34px 0 56px; color:var(--muted); font-size:13.5px}
+footer a{color:var(--muted)}
+
+@media (max-width:560px){
+  body{font-size:16px}
+  .fn{padding:20px}
+  .bar nav{display:none}
+  .author{flex-direction:column; gap:12px}
+}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="bar-in">
+    <a class="brand" href="#top">Chat<span>SEO</span></a>
+    <nav>
+      <a href="#model">The Model</a>
+      <a href="#queries">Queries</a>
+      <a href="#priority">Priority</a>
+      <a href="#content">Content</a>
+      <a href="#respond">Response</a>
+      <a href="#build">30 Days</a>
+      <a href="#templates">Templates</a>
+    </nav>
+    <button class="theme" id="themeBtn" aria-label="Toggle theme">◐</button>
+  </div>
+</div>
+
+<div class="wrap" id="top">
+
+  <div class="hero">
+    <span class="eyebrow">Free · Nothing gated</span>
+    <h1>I built a complete<br><em>SEO playbook</em></h1>
+    <p class="sub">A step-by-step system to rank higher, get more traffic and grow revenue. Ten chapters, eight templates, six prompts — in the order the work actually has to happen.</p>
+    <p class="tease"><a href="#proof">How a solo founder gained 14,500 organic clicks in 100 days →</a></p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://link.chatseo.app/pb-complete-seo-playbook" target="_blank" rel="noopener">Run it on your own data →</a>
+      <a class="btn btn-ghost" href="#model">Start with the model</a>
+    </div>
+    <p class="note">Free · No credit card required</p>
+  </div>
+
+  <figure class="plainfig">
+    <svg viewBox="0 0 1400 700" width="1400" height="700" role="img" aria-label="Five bars — crawlability, intent, content, authority, conversion — with a dashed line drawn across at the height of the shortest bar, showing that the weakest part caps the result." style="width:100%;height:auto;display:block">
+      <g font-family="Inter,system-ui,sans-serif">
+        <text x="70" y="70" font-size="30" font-weight="700" fill="var(--ink)" letter-spacing="1">THE FIVE PARTS ARE MULTIPLIED, NOT ADDED</text>
+        <text x="70" y="108" font-size="22" fill="var(--muted)">Four of them can be excellent. The result is still the height of the fifth.</text>
+
+        <rect x="120" y="220" width="190" height="360" rx="10" fill="none" stroke="var(--line)" stroke-width="4"/>
+        <rect x="370" y="470" width="190" height="110" rx="10" fill="var(--accent)"/>
+        <rect x="620" y="270" width="190" height="310" rx="10" fill="none" stroke="var(--line)" stroke-width="4"/>
+        <rect x="870" y="350" width="190" height="230" rx="10" fill="none" stroke="var(--line)" stroke-width="4"/>
+        <rect x="1120" y="240" width="190" height="340" rx="10" fill="none" stroke="var(--line)" stroke-width="4"/>
+
+        <line x1="70" y1="470" x2="1350" y2="470" stroke="var(--accent)" stroke-width="3" stroke-dasharray="14 12"/>
+        <line x1="962" y1="62" x2="1028" y2="62" stroke="var(--accent)" stroke-width="3" stroke-dasharray="14 12"/>
+        <text x="1044" y="70" font-size="21" font-weight="700" fill="var(--accent)" letter-spacing="1.4">WHAT YOU ACTUALLY GET</text>
+
+        <line x1="70" y1="582" x2="1350" y2="582" stroke="var(--line)" stroke-width="3"/>
+        <g font-size="23" font-weight="600" text-anchor="middle" fill="var(--ink)" letter-spacing=".6">
+          <text x="215" y="626">CRAWLABILITY</text>
+          <text x="465" y="626">INTENT</text>
+          <text x="715" y="626">CONTENT</text>
+          <text x="965" y="626">AUTHORITY</text>
+          <text x="1215" y="626">CONVERSION</text>
+        </g>
+        <g font-size="19" text-anchor="middle" fill="var(--muted)">
+          <text x="215" y="660">can it be found</text>
+          <text x="465" y="660">is it the right page</text>
+          <text x="715" y="660">is it worth ranking</text>
+          <text x="965" y="660">does anyone vouch</text>
+          <text x="1215" y="660">does it pay</text>
+        </g>
+      </g>
+    </svg>
+    <figcaption>Chapter 1. Whichever bar is shortest is the only one worth working on this month.</figcaption>
+  </figure>
+
+  <div class="author">
+    <img class="author-img" src="img/tw3810.webp" alt="Nicholas" loading="lazy">
+    <div>
+      <p><strong>Hey there, I'm Nicholas 👋</strong></p>
+      <p>I grew my last B2C app to 15K Google clicks/month as a solo founder, then sold it. Turns out I fell in love with SEO along the way.</p>
+      <p>So now I'm building <a href="https://link.chatseo.app/pb-complete-seo-playbook" target="_blank" rel="noopener"><strong>ChatSEO.app</strong></a> — an all-in-one <strong>SEO employee</strong> whose job is to make sure you <strong>rank #1 in Google and in AI search</strong>.</p>
+      <p>This is the whole method I use, written out. Nothing is held back for a paid version. <a href="https://link.chatseo.app/pb-complete-seo-playbook" target="_blank" rel="noopener"><strong>Try it free →</strong></a></p>
+    </div>
+  </div>
+
+  <hr>
+
+  <h2>SEO isn't a checklist. It's a chain.</h2>
+  <p class="lede">Which is why doing more of it rarely works, and why most audits are worthless.</p>
+  <p>A checklist implies the items are independent and additive: fix eleven things, get eleven improvements. That is not how any of this behaves. The five parts of the model in the diagram above are multiplied. A perfect page that Google cannot crawl earns nothing. A page that ranks first for a query nobody buys from earns nothing. A page that ranks, converts, and answers the wrong intent gets a click and a back button.</p>
+  <p>Every part can be at 90% and one part at 10%, and the site performs at 10%. The whole discipline is finding out which part is at 10% before you spend a month on the ones already at 90%.</p>
+  <p>That is also the reason SEO advice sounds contradictory. "Content is king" and "links are everything" and "technical first" are all correct — each one was written by somebody whose weakest link was that part. None of them knows which yours is.</p>
+  <p>So the ten chapters below run in the order the work has to happen: find the constraint, pick the queries, find the pages that are close, rank them, match the intent, write the page, point every surface at it, respond to what Google does next, measure the right numbers, and build the whole loop in thirty days.</p>
+
+  <div class="callout">
+    <p><span class="k">Read it in order once.</span> Then work it out of order forever — you'll only ever be in one chapter at a time, and the chapter you're in is decided by your weakest link, not by the calendar.</p>
+  </div>
+
+  <hr>
+  <h2 id="model">1 · The SEO model</h2>
+  <p class="lede">Five parts decide whether SEO works. In this order, because each one gates the next.</p>
+  <p>The value of a model is not that it is clever. It is that it stops the argument. When five people disagree about what to do next, they are almost always disagreeing about which part is broken — and that is a question with an answer in the data.</p>
+
+  <h3>Crawlability — can Google reach it, and did it keep it</h3>
+  <p>Not "is my site fast". Indexed versus submitted. If Google has 400 of your 1,200 pages, every other conversation is premature, because two thirds of your site is not in the race at all. The common causes are boring: a noindex left on from staging, a canonical pointing everything at the homepage, parameters generating infinite variants, a robots.txt rule someone added in 2021.</p>
+  <p><strong>The number:</strong> indexed pages ÷ pages you actually want indexed. Under 90% and this is your chapter.</p>
+
+  <h3>Intent — is this the kind of page the query wants</h3>
+  <p>The most expensive mistake in SEO, and the least visible, because the page looks fine. You wrote a product page for a query where every result in the top ten is a comparison article. Google is not withholding your ranking; it has already decided what shape of answer this query gets, and you brought the wrong shape.</p>
+  <p><strong>The number:</strong> your CTR against the average CTR of your own pages at the same position. A page that ranks well and gets ignored is an intent problem wearing a ranking costume.</p>
+
+  <h3>Content — is there a reason for this page to exist</h3>
+  <p>Not length. Not keyword coverage. A reason. Something on the page that the five results above it do not have: a number you measured, a screenshot of the actual thing, a step somebody skipped, an opinion with a consequence.</p>
+  <p><strong>The number:</strong> position for the query the page was built for, after 8 weeks of being indexed. Stuck at 20+ with the right intent and a crawlable page means the page did not earn it.</p>
+
+  <h3>Authority — does anything vouch for this</h3>
+  <p>The part everyone over-indexes on, and the only one you cannot fully control. It matters most in competitive commercial SERPs and least in long-tail informational ones, which is exactly why the "just get links" advice fails so often: it is prescribed to sites whose constraint was one of the other four.</p>
+  <p><strong>The number:</strong> how long your last comparable page took to reach page one. If your pages get there in six weeks, authority is not your constraint. If they never get there, it might be.</p>
+
+  <h3>Conversion — does the click turn into anything</h3>
+  <p>SEO that ends at the click is a hobby. This is the part that decides whether the previous four were worth doing, and the part almost no SEO report contains.</p>
+  <p><strong>The number:</strong> qualified clicks — clicks from queries a buyer would type — divided by signups or enquiries. If that ratio is near zero, more traffic makes the problem bigger, not smaller.</p>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Part</th><th>How it fails</th><th>The number that proves it</th><th>The fix</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Crawlability</strong></td><td>Pages missing from the index</td><td>Indexed ÷ intended &lt; 90%</td><td>Technical checklist, chapter 10</td></tr>
+        <tr><td><strong>Intent</strong></td><td>Ranks, gets ignored</td><td>CTR under half its position band</td><td>Intent matching, chapter 5</td></tr>
+        <tr><td><strong>Content</strong></td><td>Stuck at 20+ with nothing wrong</td><td>Position flat 8 weeks after indexing</td><td>Content creation, chapter 6</td></tr>
+        <tr><td><strong>Authority</strong></td><td>Never reaches page one</td><td>Time-to-page-one vs your own average</td><td>Multi-surface execution, chapter 7</td></tr>
+        <tr><td><strong>Conversion</strong></td><td>Traffic that never becomes anything</td><td>Qualified clicks ÷ signups near zero</td><td>Intent matching + measurement, 5 and 9</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout">
+    <p><span class="k">One rule from this chapter:</span> work the earliest broken part, not the most interesting one. Rewriting titles on pages Google is not showing is the most common wasted month in SEO.</p>
+  </div>
+
+  <hr>
+
+  <h2 id="queries">2 · Query selection</h2>
+  <p class="lede">Three filters. A query has to survive all three, and volume is not one of them.</p>
+  <p>Keyword research goes wrong at the first step, because the tool sorts by search volume and volume is the one attribute that has no relationship to whether the query is worth your month. A query with 40 searches a month from people holding a credit card beats one with 12,000 searches from students writing an essay, every time, and no tool will ever tell you which is which. That judgement is yours.</p>
+
+  <h3>Filter 1 — would this person ever pay you</h3>
+  <p>Read the query out loud and ask what the person typing it is trying to finish. Three answers exist: they are trying to buy, trying to learn, or trying to get somewhere. Only the first two are yours, and only the first one pays this quarter.</p>
+  <p>The tell is in the modifiers. <em>best, alternative, vs, pricing, for [industry], software, tool, agency, near me</em> — someone is shopping. <em>what is, why, how does, meaning, examples</em> — someone is learning, which is worth real money but on a longer horizon and only if the page has a next step. Nothing at all, just a bare noun, is usually ambiguous, and ambiguous queries are where budgets go to die.</p>
+
+  <h3>Filter 2 — can you realistically be there</h3>
+  <p>Not "what is the difficulty score". Those are a single number invented from backlink counts, and they cannot see the two things that actually decide it: whether you already have a foothold, and what type of page Google has chosen for this query.</p>
+  <ul class="plain">
+    <li><strong>Do you already rank anywhere?</strong> A query where you sit at 14 is a different project from one where you do not appear at all. The first is a week; the second is a quarter.</li>
+    <li><strong>What type of page wins?</strong> Open the SERP. If the top five are all listicles from publishers and you sell software, your product page will never rank there no matter what you write. You either produce that page type or you pick a different query.</li>
+    <li><strong>Who owns it?</strong> If every result is a site a thousand times your size and the query is commercial, that is a two-year fight. Skip it. There is always a more specific version of the same query with the same buyer behind it.</li>
+  </ul>
+
+  <h3>Filter 3 — is it worth the hours</h3>
+  <p>The arithmetic nobody does. Expected clicks at position 3 × your close rate × what a customer is worth, against the hours the page costs. Do it once and half your keyword list disappears, which is the point.</p>
+  <p>Use <em>your</em> click-through rate at position 3, from your own Search Console, not an industry curve from a blog post. Yours is different, and on branded or niche SERPs it is very different.</p>
+
+  <h3 id="t-worksheet">Template 1 — the query worksheet</h3>
+  <p>One row per candidate. A query that cannot fill every column is not ready to be worked on.</p>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Template · query worksheet</span><button class="copy">Copy</button></div>
+<pre>QUERY:
+Buyer / researcher / neither:
+Modifier that tells you:            (best, vs, pricing, how to, what is…)
+Do I already rank? position:        (blank = no foothold)
+Page type winning the SERP:         (listicle, product, guide, forum, video…)
+Do I have that page type? y/n:
+Top 3 results, and their size:
+Expected clicks at position 3:      (my CTR at 3 × impressions)
+Close rate for this kind of visit:
+Value of one customer:
+Expected value:                     (clicks × close × value)
+Hours to build the page:
+Value per hour:                     (expected value ÷ hours)
+VERDICT: work it / park it / drop it
+</pre>
+  </div>
+
+  <h3>The prompt that fills the worksheet</h3>
+  <p>Give it your business in one line and let it run all three filters. Note what it is forbidden to do: invent a difficulty score, or fill in a CTR it does not have.</p>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Prompt 1 · query shortlist</span><button class="copy">Copy</button></div>
+<pre>Here is my business: [one line — what you sell, to whom, at what price].
+Here is my site: [URL].
+
+Build me a shortlist of queries worth working on. Run all three filters and show your work.
+
+FILTER 1 — BUYER INTENT
+For each candidate query, judge from the wording alone whether the person typing it could
+plausibly become a customer of the business above. Mark each: buyer / researcher / neither.
+Drop everything marked neither. Say which word in the query made the call.
+
+FILTER 2 — REACHABILITY
+For each survivor, check whether I already have a URL ranking in the top 50 for it or for a
+close variant. Then look at what type of page currently fills the top 5 — homepage, product
+page, guide, listicle, forum, video.
+Mark each: reachable (I have a foothold, or the top 5 is not owned by sites far larger than
+mine), stretch, or out of reach.
+If you cannot see live results, write "cannot verify the SERP" for that query rather than
+guessing. Do not invent a difficulty score.
+
+FILTER 3 — WORTH THE WORK
+For each reachable query, estimate the clicks I would get at position 3 using my own measured
+CTR at position 3, and say which CTR you used. If you do not have my Search Console data,
+write "needs my CTR" and leave the number blank. Do not substitute an industry curve.
+Then state the page type this query requires and how many hours that page is.
+
+OUTPUT
+A table, capped at 12 rows: query | intent | reachability | clicks at position 3 | page type
+| hours. Sort by value per hour, never by search volume.
+
+Then name THE ONE query to work on first, in one sentence, with the reason.
+Do not give me a content calendar. Do not list alternatives.</pre>
+  </div>
+
+  <hr>
+  <h2 id="signals">3 · Opportunity signals</h2>
+  <p class="lede">Finding the pages that are one push from moving — and refusing the metrics that only look like insight.</p>
+  <p>Most sites are sitting on a month of easy gains and cannot see them, because the gains are hidden inside averages. A site-wide average position of 18 tells you nothing: it is one number covering a page at 3 and a page at 60, and moving it requires moving everything. The signals below are the opposite — each one names specific URLs with a specific reason they are stuck.</p>
+
+  <h3 id="t-signals">Template 2 — the signal library</h3>
+  <p>Five signals worth acting on. Every one of them is a comparison, not a level — which is why a single Search Console screenshot never reveals them.</p>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Signal</th><th>What it looks like</th><th>What it means</th><th>The move</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Striking distance</strong></td><td>Position 5–15, impressions flat or rising</td><td>Google already believes the page belongs. It is close.</td><td>Strengthen the page against its top query. Cheapest win on the site.</td></tr>
+        <tr><td><strong>Packaging problem</strong></td><td>Position 1–10, CTR under half its band</td><td>You won the spot and lost the click. Nothing is wrong with the ranking.</td><td>Rewrite title and meta against the query people actually typed.</td></tr>
+        <tr><td><strong>Mismatch</strong></td><td>Top query for a page isn't what the page is about</td><td>Google found a use for the page that you didn't intend.</td><td>Either serve that query properly, or build the page it deserves.</td></tr>
+        <tr><td><strong>Cannibalisation</strong></td><td>Two of your URLs, same query, same period</td><td>You are splitting signals and neither page wins.</td><td>Pick the keeper. Merge or redirect the other. Never leave both.</td></tr>
+        <tr><td><strong>Quiet decline</strong></td><td>Position stable, clicks down 20%+</td><td>The SERP changed above you — a new snippet, an AI answer, a better title.</td><td>Re-earn the click, don't chase the ranking. It never moved.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>And the metrics that are vanity wearing a suit</h3>
+  <ul class="plain">
+    <li><strong>An SEO score out of 100.</strong> It is a weighted average of checks a crawler can automate. Nothing in it knows what your pages are for.</li>
+    <li><strong>Domain authority.</strong> A third-party model of a Google signal, not the signal. Useful for a rough comparison, useless as a target — you cannot ship a DA increase.</li>
+    <li><strong>Total keywords ranked.</strong> Goes up when you publish anything at all, including pages ranking at 87 for phrases nobody types.</li>
+    <li><strong>Site-wide average position.</strong> Hides everything that matters, and moves for reasons you did not cause.</li>
+    <li><strong>Impressions on their own.</strong> A page can gain 10,000 impressions and zero clicks by ranking 40th for something popular. That is not progress; that is noise with a chart.</li>
+  </ul>
+  <p>The test for any metric: <strong>if it moved, would you know what to do differently on Monday?</strong> If not, it is a number for a report, not for you.</p>
+
+  <h3>The prompt that runs the scan</h3>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Prompt 2 · opportunity scan</span><button class="copy">Copy</button></div>
+<pre>Use my Search Console data for the last 28 days, compared to the 28 days before.
+
+Find pages matching each of these five signals. Cap each signal at 5 rows, ranked by impressions.
+
+1. STRIKING DISTANCE — average position 5 to 15, impressions flat or rising.
+2. PACKAGING PROBLEM — position 1 to 10, CTR below half of what that position band earns on
+   my own site. Calculate the band average from my data and tell me the number you used.
+3. MISMATCH — the query bringing a page the most impressions is not what that page is about.
+   Show the query and the page title side by side and say why they don't match.
+4. CANNIBALISATION — two or more of my URLs received impressions for the same query in the
+   same period. Name both URLs and their positions.
+5. QUIET DECLINE — position stable within 1 place, clicks down more than 20%. This is a SERP
+   change, not a ranking problem. Say so explicitly.
+
+For every row: URL | query | position | impressions | CTR | which signal.
+
+Do not report anything I did not ask for. Specifically: no site-wide average position, no
+keyword count, no score out of 100. Those move without telling me what to do.
+
+If a figure is not in the data, write "cannot compute from this data". Do not estimate it.
+
+End with the ONE page to act on this week and which signal it came from.
+Do not rank the signals against each other.</pre>
+  </div>
+
+  <hr>
+
+  <h2 id="priority">4 · Page prioritisation</h2>
+  <p class="lede">A scorecard, so the argument becomes arithmetic.</p>
+  <p>The reason SEO backlogs rot is that every item on them looks equally plausible when written as a sentence. "Improve the pricing page" and "fix the blog's internal linking" are the same size on a list and wildly different in expected value. Scoring is not bureaucracy; it is the only thing that makes the list shrink.</p>
+  <p>Five axes. Four go on top, one goes underneath, because effort is a divisor, not a penalty.</p>
+
+  <h3 id="t-scorecard">Template 3 — the page scorecard</h3>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Axis</th><th>0–10 means</th><th>Where the number comes from</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Impressions at stake</strong></td><td>How much demand the page already sees, scaled against your biggest page</td><td>Search Console, last 28 days. Real number only.</td></tr>
+        <tr><td><strong>Proximity</strong></td><td>How close to a click-earning position. 5–10 scores high, 11–20 middling, 21+ low, 1–3 scores <em>zero</em></td><td>Average position. A page at 2 has nowhere to go.</td></tr>
+        <tr><td><strong>CTR gap</strong></td><td>Distance between this page's CTR and its own position band's average</td><td>Your data, not a published curve.</td></tr>
+        <tr><td><strong>Intent match</strong></td><td>How well the page type fits what the top query wants</td><td>Judgement, from query wording vs page type.</td></tr>
+        <tr><td><strong>Effort</strong></td><td>Hours. 1 = a title rewrite. 10 = a new page with original research.</td><td>Your estimate, doubled if you're honest.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p><strong>Score = (impressions + proximity + CTR gap + intent match) ÷ effort.</strong> Nothing more sophisticated is warranted, because three of the four inputs are estimates and a fancier formula just hides that.</p>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Page</th><th>Impr.</th><th>Prox.</th><th>CTR gap</th><th>Intent</th><th>Effort</th><th>Score</th></tr></thead>
+      <tbody>
+        <tr><td>/pricing</td><td>7</td><td>8</td><td>9</td><td>9</td><td>1</td><td><strong>33.0</strong></td></tr>
+        <tr><td>/blog/seo-audit-guide</td><td>9</td><td>6</td><td>7</td><td>5</td><td>3</td><td><strong>9.0</strong></td></tr>
+        <tr><td>/features/reporting</td><td>4</td><td>7</td><td>3</td><td>8</td><td>2</td><td><strong>11.0</strong></td></tr>
+        <tr><td>/blog/new-cluster-hub</td><td>0</td><td>0</td><td>0</td><td>9</td><td>9</td><td><strong>1.0</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Note what the arithmetic does to the last row. The new cluster may well be the right strategic bet, and it still scores last, because its impressions at stake are zero until it exists. That is correct and it is the tension the scorecard exposes rather than resolves: <strong>score ranks the known, not the speculative.</strong> Keep one speculative build running alongside, funded on conviction, and never let it eat the week the scorecard already assigned.</p>
+
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Prompt 3 · score the backlog</span><button class="copy">Copy</button></div>
+<pre>Score every page from the opportunity scan using this scorecard and nothing else.
+
+For each page, score five axes and show every number:
+- IMPRESSIONS AT STAKE (0-10) — actual impressions in the last 28 days, scaled against my
+  highest-impression page. Real numbers only.
+- PROXIMITY (0-10) — how close to a position that earns clicks. Position 5-10 high, 11-20
+  middling, 21+ low, 1-3 scores zero because there is nowhere left to go.
+- CTR GAP (0-10) — distance between this page's CTR and the average CTR of its own position
+  band on my site. No gap scores zero.
+- INTENT MATCH (0-10) — how well the page type matches what the top query wants. If you
+  cannot fetch the page, score from the title alone and mark the row "title only".
+- EFFORT (1-10) — hours of human work. 1 is a title rewrite, 10 is a new researched page.
+
+SCORE = (impressions + proximity + ctr gap + intent match) ÷ effort.
+Show the arithmetic on one line per page.
+
+If any axis cannot be grounded in a number from my data, mark the page "unscored" and leave
+it out of the ranking. Do not fill a gap with an estimate.
+
+Output the table sorted by score, capped at 10 rows.
+Then split it:
+- SHIPS THIS WEEK — exactly one page.
+- WAITS — everything else, each with the one condition that would promote it.
+
+Every shipped item needs a check date and a success metric, written before it ships.
+Give me both in one line.
+
+Do not propose a sprint. One page ships.</pre>
+  </div>
+
+  <hr>
+  <h2 id="intent">5 · Intent matching</h2>
+  <p class="lede">Connecting what you sell to what the query actually wants — without keyword density or a word-count target.</p>
+  <p>Both of those ideas survive because they are measurable, and being measurable is not the same as being causal. No search engine has ranked on keyword density in over a decade, and "2,400 words" is a description of what already ranked, not an instruction for what will. Copying the length of the winner is cargo cult: you observed the plane, you built the runway, nothing landed.</p>
+  <p>What actually has to match is the <strong>shape of the answer</strong>. Google has already decided, for every query, what kind of page satisfies it — and it publishes that decision in the top ten. Your job is to read the decision and then be the best version of it, not to argue with it.</p>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Query shape</th><th>What they actually want</th><th>The page that wins</th><th>The next step that fits</th></tr></thead>
+      <tbody>
+        <tr><td>what is X / how does X work</td><td>To understand, in one sitting</td><td>A definition in the first 40 words, then depth</td><td>A link to the comparison page. Never a demo request.</td></tr>
+        <tr><td>how to do X</td><td>To finish a task today</td><td>Numbered steps, screenshots, the failure cases</td><td>The tool that does step 4 for them</td></tr>
+        <tr><td>best X / top X tools</td><td>A shortlist someone else made</td><td>A list page with real criteria, including where you lose</td><td>Your entry, honestly placed</td></tr>
+        <tr><td>X vs Y</td><td>Permission to stop deciding</td><td>A table, a recommendation, and who should pick the other one</td><td>Free trial. This is the highest-intent page you own.</td></tr>
+        <tr><td>X pricing / X cost</td><td>A number, before they talk to anyone</td><td>Actual prices on the page</td><td>Start now. Hiding the price loses the query.</td></tr>
+        <tr><td>X for [industry] / [use case]</td><td>Proof you've seen their situation</td><td>Their vocabulary, their example, their objection</td><td>Demo or trial. They are close.</td></tr>
+        <tr><td>X alternative</td><td>To leave something that annoys them</td><td>The specific annoyance, named, then your answer</td><td>Migration path. Say how hard it is.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>The bridge is the part people skip</h3>
+  <p>An informational page with no defined next step is a page that ranks for somebody else's benefit. Not a banner — a next step that belongs to the same thought: the "how to do X manually" page ends where the manual method gets painful, and that is exactly where the product goes. If you cannot name the sentence where a reader would want help, the page probably has no commercial reason to exist, and that is fine — just be aware you have written a public service rather than an asset.</p>
+
+  <h3>How to check a page in ninety seconds</h3>
+  <ul class="plain">
+    <li><strong>Search the query in an incognito window.</strong> Not your keyword tool. The live SERP.</li>
+    <li><strong>Name the format of the top five.</strong> If four of five are guides and you have a product page, stop; that is your whole answer.</li>
+    <li><strong>Read your own title as a stranger.</strong> Does it promise the thing the query asked for, in the words the query used?</li>
+    <li><strong>Look at your first screen.</strong> Is the answer there, or is there a 200-word introduction about why the topic matters?</li>
+    <li><strong>Find the next step.</strong> If a satisfied reader has nowhere to go, add one, and make it the thing they'd want next — not the thing you want next.</li>
+  </ul>
+
+  <hr>
+
+  <h2 id="content">6 · Content creation</h2>
+  <p class="lede">The research method, the page structure, and the linking logic — for pages built around a real reason to rank.</p>
+
+  <h3>Research: read the SERP, not the tool</h3>
+  <p>Open the top five results and answer three questions, in writing, before drafting anything. What do they all cover — that is the table stakes, and leaving any of it out gets you dismissed. What format did Google choose — that is not negotiable. And <strong>what does none of them answer</strong> — that is the only reason a sixth page gets to exist.</p>
+  <p>That third question is the entire job. If you cannot answer it, do not write the page. You will spend six hours producing the sixth-best version of something and it will rank exactly there.</p>
+
+  <h3>Structure: answer first, evidence second, depth third</h3>
+  <p>The inverted pyramid, which journalism worked out a century ago and SEO keeps rediscovering. The direct answer in the first 40 words serves three readers at once: the person who wanted only that, the featured snippet, and the AI assistant looking for something extractable. Then the evidence that makes the answer believable. Then the depth for the reader who is still there — and they are the one who converts.</p>
+  <ul class="plain">
+    <li><strong>H1 = the promise, in the query's words.</strong> Not a clever variation of it.</li>
+    <li><strong>First 40 words = the answer.</strong> If the query has no single answer, say what it depends on, in one sentence.</li>
+    <li><strong>H2s are questions a reader has.</strong> If an H2 is a keyword phrase rather than a question, you wrote it for a crawler that stopped caring in 2015.</li>
+    <li><strong>Every claim carries its evidence in the same paragraph.</strong> A number, a screenshot, a source, an example. Claims that travel alone are the ones AI answers refuse to cite.</li>
+    <li><strong>One next step at the end.</strong> Not four.</li>
+  </ul>
+
+  <h3>Internal linking: the part that compounds</h3>
+  <p>Internal links are the only ranking factor you fully control, and most sites treat them as navigation. The logic is simple and worth being strict about: a <strong>hub</strong> page covers the topic broadly and links to every <strong>spoke</strong>; each spoke links back to the hub and sideways to two or three siblings. Anchor text is the query the target page is for, written naturally — not "click here", and not the exact phrase eleven times.</p>
+  <p><strong>Three in, three out</strong> is the working rule. A new page with no internal links pointing at it is a page you published for nobody: Google finds it late, ranks it slowly, and you conclude that content does not work.</p>
+
+  <h3 id="t-brief">Template 4 — the content brief</h3>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Template · content brief</span><button class="copy">Copy</button></div>
+<pre>TARGET QUERY:
+PAGE TYPE GOOGLE CHOSE:            (from the top 5, not from preference)
+THE PROMISE:                       (one sentence, in the query's words)
+THE ANSWER:                        (under 40 words, goes above the fold)
+THE GAP:                           (what none of the top 5 say — the reason to publish)
+TABLE STAKES:                      (what all 5 cover; leaving it out gets you dismissed)
+
+STRUCTURE — max 6 H2s, each a question a reader actually has
+  1.
+  2.
+  3.
+
+EVIDENCE I MUST SUPPLY:            (numbers, screenshots, examples, sources)
+INTERNAL LINKS IN:                 (3 pages that will link here + anchor text)
+INTERNAL LINKS OUT:                (3 pages this links to + anchor text)
+THE NEXT STEP:                     (one action, and why a satisfied reader would want it)
+CHECK DATE:                        (8 weeks out — position for the target query)
+</pre>
+  </div>
+
+  <h3 id="t-onpage">Template 5 — the on-page templates</h3>
+  <p>Fill-in patterns for the four elements that decide whether a ranking becomes a click.</p>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Template · on-page</span><button class="copy">Copy</button></div>
+<pre>TITLE  (under 60 characters, contains the query as typed)
+  How to [do the thing]: [the specific outcome]
+  [Number] [things] for [audience] ([year] — only if the query implies recency)
+  [Product] vs [Product]: which one for [use case]
+
+META DESCRIPTION  (under 155 characters — answer the query, don't describe the page)
+  [The answer, compressed]. [What the page shows you]. [Who it's for].
+
+H1  (the promise, in the query's words — not a clever variation)
+
+FIRST 40 WORDS  (the direct answer, before any context)
+  [Query], in short: [answer]. [The one condition that changes it].
+
+H2 SKELETON  (questions, not keywords)
+  How does it actually work?
+  What does it cost / what does it take?
+  When does this fail?
+  What do I do first?
+
+CLOSING  (one next step, in the same thought as the last paragraph)
+</pre>
+  </div>
+
+  <h3>The prompt that writes the brief</h3>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Prompt 4 · content brief</span><button class="copy">Copy</button></div>
+<pre>Write the brief for one page. The target query is: [query].
+
+Before you write anything, do the research:
+1. Read the top 5 results currently ranking for this query. For each: the page type, the
+   format, and the one thing it leads with.
+2. Name what all five have in common. That is the format Google has already chosen, and the
+   page has to be that format.
+3. Name what none of them answers. That is the only reason a sixth page gets to exist.
+If you cannot load the results, write "cannot read the SERP" and stop. Do not write the brief
+from memory of what pages like this usually contain.
+
+Then give me the brief, in this shape and nothing longer:
+- THE PROMISE — one sentence, what the reader gets, in the words of the query.
+- THE ANSWER — the direct answer in under 40 words, to sit above the fold. If the query has
+  no direct answer, say what it depends on instead.
+- THE GAP — the thing none of the top five say, in one sentence.
+- STRUCTURE — the H2s in order, maximum 6, each a question a reader actually has.
+- EVIDENCE — what has to be on the page for it to be believed, and what I have to supply.
+- INTERNAL LINKS — 3 pages on my site this should link to and 3 that should link to it, with
+  the anchor text for each.
+- THE NEXT STEP — the one action a reader takes at the end.
+
+No word count target. No keyword density. No "use the keyword in the first 100 words".
+Do not give me three title options.
+End with the one sentence I should write first.</pre>
+  </div>
+
+  <hr>
+  <h2 id="surfaces">7 · Multi-surface execution</h2>
+  <p class="lede">Technical, content, links and AI search are four surfaces of one job — not four projects with four owners.</p>
+  <p>The default failure is organisational rather than technical. Technical works through a crawl report. Content works through a calendar. Links work through outreach targets. And each one optimises its own metric on a different part of the site, so a quarter of effort produces four small unrelated gains and no ranking. The fix is not more coordination meetings. It is pointing all four at <strong>one cluster at a time</strong>.</p>
+
+  <figure class="plainfig">
+    <svg viewBox="0 0 1400 620" width="1400" height="620" role="img" aria-label="Four surfaces — technical, content, links and AI search — with arrows converging on a single cluster in the centre." style="width:100%;height:auto;display:block">
+      <g font-family="Inter,system-ui,sans-serif">
+        <rect x="80"  y="90"  width="330" height="110" rx="12" fill="none" stroke="var(--line)" stroke-width="4"/>
+        <rect x="990" y="90"  width="330" height="110" rx="12" fill="none" stroke="var(--line)" stroke-width="4"/>
+        <rect x="80"  y="420" width="330" height="110" rx="12" fill="none" stroke="var(--line)" stroke-width="4"/>
+        <rect x="990" y="420" width="330" height="110" rx="12" fill="none" stroke="var(--line)" stroke-width="4"/>
+        <g font-size="27" font-weight="650" text-anchor="middle" fill="var(--ink)" letter-spacing=".8">
+          <text x="245" y="133">TECHNICAL</text>
+          <text x="1155" y="133">CONTENT</text>
+          <text x="245" y="463">LINKS</text>
+          <text x="1155" y="463">AI SEARCH</text>
+        </g>
+        <g font-size="19" text-anchor="middle" fill="var(--muted)">
+          <text x="245" y="167">spend the crawl here</text>
+          <text x="1155" y="167">answer the gap here</text>
+          <text x="245" y="497">point them at page 2</text>
+          <text x="1155" y="497">make it quotable</text>
+        </g>
+
+        <g stroke="var(--accent)" stroke-width="4" fill="none">
+          <path d="M415 155 L 545 250"/>
+          <path d="M985 155 L 855 250"/>
+          <path d="M415 465 L 545 370"/>
+          <path d="M985 465 L 855 370"/>
+        </g>
+        <g fill="var(--accent)">
+          <polygon points="560,258 528,246 540,278"/>
+          <polygon points="840,258 872,246 860,278"/>
+          <polygon points="560,362 528,374 540,342"/>
+          <polygon points="840,362 872,374 860,342"/>
+        </g>
+
+        <rect x="545" y="248" width="310" height="124" rx="14" fill="var(--accent)"/>
+        <text x="700" y="300" font-size="28" font-weight="700" text-anchor="middle" fill="#FFFDF9" letter-spacing="1">ONE CLUSTER</text>
+        <text x="700" y="338" font-size="21" text-anchor="middle" fill="#FFFDF9" opacity=".85">4–6 pages, one buyer</text>
+
+        <text x="700" y="580" font-size="23" text-anchor="middle" fill="var(--muted)">Four surfaces, one target, for six weeks. Then move the target.</text>
+      </g>
+    </svg>
+    <figcaption>Chapter 7. The same effort, aimed at one thing, is the only version of this that produces a ranking.</figcaption>
+  </figure>
+
+  <h3>Technical serves the cluster</h3>
+  <p>Crawl budget is finite and mostly spent on rubbish: tag archives, parameter variants, paginated listings, old campaign pages. Technical work in a given six weeks means making sure the cluster you are building is crawled quickly and everything competing with it for attention is not. That is a much smaller job than "fix all 200 issues", and it is the half that actually affects the ranking you are chasing.</p>
+
+  <h3>Links serve the pages that are close</h3>
+  <p>The single most wasted link in SEO points at a homepage that already ranks for its own brand. Authority flows: point external links, and every internal link you control, at the page sitting at position 11 for a query worth money. A page at 11 with three good links moves. A homepage with three good links does nothing you can measure.</p>
+
+  <h3>AI search is a citation problem, not a keyword problem</h3>
+  <p>Assistants do not rank ten blue links; they assemble an answer and cite a handful of sources. What gets cited is what can be lifted cleanly: a claim stated in one sentence, a number with its source attached, a definition near the top of the page, a table that survives being read aloud. The practical consequence is that the structure from chapter 6 — answer first, evidence in the same paragraph — is not just good for readers. It is the format that makes a page quotable, and quotable is the new ranked.</p>
+  <p>Two things follow. Vague claims stop earning anything at all, because there is nothing to quote. And brand queries matter more than they did, because an assistant that mentions you creates the search that brings a buyer to your site directly.</p>
+
+  <h3>Content is the only surface that creates the asset</h3>
+  <p>The other three amplify. If the page does not deserve to rank, technical makes it crawlable faster, links make it authoritative at 30, and AI search skips it for something quotable. The order is not negotiable: build the thing, then aim the other three at it.</p>
+
+  <div class="callout">
+    <p><span class="k">The working rule:</span> one cluster, six weeks, all four surfaces. Then move. Four surfaces running independently on four parts of the site is the most common way to spend a year on SEO and have nothing to show for it.</p>
+  </div>
+
+  <hr>
+
+  <h2 id="respond">8 · Ranking response handling</h2>
+  <p class="lede">What Google does after you ship is data. This is the matrix that turns it into a decision instead of a mood.</p>
+  <p>The costly mistake here is not misreading a drop. It is <em>acting</em> on a drop that was never a ranking problem — rewriting a page that held position perfectly while an AI answer appeared above it. The first question is never "how do I fix this". It is "which of these six things happened".</p>
+
+  <h3 id="t-matrix">Template 6 — the ranking response matrix</h3>
+  <div class="tw">
+    <table>
+      <thead><tr><th>What the data shows</th><th>What it is</th><th>What you do</th><th>What you must not do</th></tr></thead>
+      <tbody>
+        <tr><td>Climbed into 4–10</td><td>Working. The page is in the race.</td><td>Nothing to the page. Add internal links and one more piece of evidence.</td><td>Rewrite it. You'll reset a signal that's still settling.</td></tr>
+        <tr><td>Climbed to 1–3</td><td>Won. Now it can only be lost.</td><td>Note the date. Re-check in 90 days. Move to the next page.</td><td>Keep optimising it. Proximity scores zero here for a reason.</td></tr>
+        <tr><td>Position fell 5+, impressions fell with it</td><td>A real ranking loss.</td><td>Find what changed: your edit, a competitor's page, or a new SERP feature. Compare to the week it started.</td><td>Blame an update you haven't dated from the data.</td></tr>
+        <tr><td>Position held, CTR fell</td><td>A SERP change. Not a ranking problem.</td><td>Re-earn the click: title and meta against the current SERP.</td><td>Rewrite the body. It's ranking fine.</td></tr>
+        <tr><td>Position held, CTR held, impressions fell</td><td>Demand fell. Nothing is broken.</td><td>Say so out loud and stop.</td><td>Spend a week "fixing" seasonality.</td></tr>
+        <tr><td>Flat at 11–20 for 8+ weeks</td><td>Plateau. The page is understood and judged insufficient.</td><td>Add what the top 5 have that you don't — usually evidence or a format mismatch.</td><td>Add words. Length was never the constraint.</td></tr>
+        <tr><td>Two URLs trading places on one query</td><td>Cannibalisation.</td><td>Pick the keeper. Merge the other into it and redirect. Do it this week.</td><td>Leave both live and hope Google chooses.</td></tr>
+        <tr><td>Impressions stopped completely</td><td>An indexing problem, not a ranking one.</td><td>Check indexing status, robots, canonical, and whether you shipped a noindex.</td><td>Anything content-related until it's indexed again.</td></tr>
+        <tr><td>Silent since publication, 8+ weeks</td><td>Never entered. This is not a drop.</td><td>Check it's indexed and internally linked. If both are fine, the page had no reason to rank — go back to chapter 6.</td><td>Wait another month.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Date the change from the data, not from memory</h3>
+  <p>Every drop invites the same story: "it must have been the update". Walk the weekly series back to the last week that was flat or rising, and name that week. Half the time it lands on a week you shipped something, which is a far more useful finding than an algorithm you cannot influence.</p>
+
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Prompt 5 · diagnose a move</span><button class="copy">Copy</button></div>
+<pre>This page moved: [URL]. Tell me what happened and what to do about it.
+
+Pull the last 90 days for this URL, week by week, and establish the facts before the story:
+- position by week
+- impressions by week
+- clicks by week
+- the top 5 queries, and how each one moved
+
+Then say which of these six patterns it is, and only these:
+1. POSITION FELL, impressions fell with it — a ranking loss.
+2. POSITION HELD, CTR fell — a SERP change. Someone's title beat yours, or an AI answer sits
+   above you. This is not a ranking problem.
+3. POSITION HELD, CTR held, impressions fell — demand fell. Nothing is broken. Say so and stop.
+4. TWO URLS, one query — cannibalisation. Name both and say which should keep it.
+5. IMPRESSIONS STOPPED — an indexing problem, not a ranking one. Say what to check first.
+6. FLAT SINCE PUBLICATION, 8+ weeks — the page never entered. This is not a drop.
+
+Name the week the change started, taken from the weekly series, not from an update you
+remember. If you think a Google update is involved, ask me for the date rather than
+asserting one.
+
+Do not offer more than one pattern. If the data supports two, say which is more likely and
+why, in one sentence.
+If a figure is not in the data, write "cannot compute from this data".
+
+End with ONE action, and the date I should check whether it worked.</pre>
+  </div>
+
+  <hr>
+  <h2 id="measure">9 · Measurement</h2>
+  <p class="lede">Eight numbers, in a chain. Where the chain breaks is what you work on next month.</p>
+  <p>Measurement in SEO usually fails in one of two directions: a dashboard with forty widgets nobody reads, or a single traffic number that cannot tell you why it moved. The way out is to measure the chain rather than the total, because a chain localises the fault.</p>
+
+  <h3 id="t-dashboard">Template 8 — the weekly dashboard</h3>
+  <p>Eight rows. If a number is flat, write flat. A week where nothing happened is a valid report and should take ninety seconds to read.</p>
+  <div class="tw">
+    <table>
+      <thead><tr><th>#</th><th>The number</th><th>If it's the one that's broken</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><strong>Indexed pages</strong> vs pages you want indexed</td><td>Crawlability. Nothing below this matters yet.</td></tr>
+        <tr><td>2</td><td><strong>Impressions</strong>, this week vs last</td><td>Demand or coverage. Check whether you lost queries or the world stopped asking.</td></tr>
+        <tr><td>3</td><td><strong>Queries in positions 1–3 / 4–10 / 11–20</strong></td><td>The only position metric worth keeping. Movement between bands is the real signal.</td></tr>
+        <tr><td>4</td><td><strong>CTR by position band</strong></td><td>Packaging. You are ranking and not being chosen.</td></tr>
+        <tr><td>5</td><td><strong>Clicks</strong></td><td>The output of 1–4. Never the thing you diagnose from.</td></tr>
+        <tr><td>6</td><td><strong>Qualified clicks</strong> — from queries a buyer would type</td><td>Query selection. You are winning the wrong searches.</td></tr>
+        <tr><td>7</td><td><strong>Signups or enquiries from organic</strong></td><td>Conversion, or intent match on the landing page.</td></tr>
+        <tr><td>8</td><td><strong>Revenue from organic</strong></td><td>The only number that ends the argument about whether any of this worked.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>Row 6 is the one almost nobody tracks and the one that changes behaviour fastest. A month where clicks rose 30% and qualified clicks were flat is a month you got more popular with people who will never buy — useful to know in week two rather than in quarter three.</p>
+
+  <h3>Three numbers to delete from your reporting</h3>
+  <ul class="plain">
+    <li><strong>Average position across the site.</strong> Replaced by row 3. One number covering a page at 3 and a page at 60 is not a measurement, it's an average of two unrelated things.</li>
+    <li><strong>Total keywords ranked.</strong> Rises when you publish anything. Falls when you delete dead pages, which is usually a good week.</li>
+    <li><strong>Any third-party authority score.</strong> It is a model of a signal, updated on someone else's schedule. You cannot ship a change to it.</li>
+  </ul>
+
+  <h3>The cadence that survives contact with a real week</h3>
+  <p>Weekly: the eight numbers, ten minutes, one action. Monthly: the opportunity scan and the scorecard, forty-five minutes, one page ships. Quarterly: back to chapter 1 — has the constraint moved? It usually has, and continuing to work last quarter's constraint is how a good year turns into a flat one.</p>
+
+  <hr>
+
+  <h2 id="build">10 · The 30-day build</h2>
+  <p class="lede">Four weeks. Each one ends in something that exists, not something you understand.</p>
+
+  <figure class="plainfig">
+    <svg viewBox="0 0 1400 480" width="1400" height="480" role="img" aria-label="A four-week timeline: fix the base, map the opportunities, ship one cluster, install the loop." style="width:100%;height:auto;display:block">
+      <g font-family="Inter,system-ui,sans-serif">
+        <line x1="70" y1="230" x2="1330" y2="230" stroke="var(--line)" stroke-width="5"/>
+        <g>
+          <circle cx="180" cy="230" r="26" fill="var(--accent)"/>
+          <circle cx="560" cy="230" r="26" fill="var(--accent)"/>
+          <circle cx="940" cy="230" r="26" fill="var(--accent)"/>
+          <circle cx="1290" cy="230" r="26" fill="var(--accent)"/>
+        </g>
+        <g font-size="25" font-weight="700" fill="var(--accent)" letter-spacing="1.4">
+          <text x="180" y="150" text-anchor="middle">WEEK 1</text>
+          <text x="560" y="150" text-anchor="middle">WEEK 2</text>
+          <text x="940" y="150" text-anchor="middle">WEEK 3</text>
+          <text x="1290" y="150" text-anchor="middle">WEEK 4</text>
+        </g>
+        <g font-size="27" font-weight="600" fill="var(--ink)">
+          <text x="180" y="112" text-anchor="middle">Fix the base</text>
+          <text x="560" y="112" text-anchor="middle">Map the opportunities</text>
+          <text x="940" y="112" text-anchor="middle">Ship one cluster</text>
+          <text x="1290" y="112" text-anchor="middle">Install the loop</text>
+        </g>
+        <g font-size="21" fill="var(--muted)">
+          <text x="180" y="300" text-anchor="middle">indexing is sound</text>
+          <text x="180" y="332" text-anchor="middle">or it isn't, and you know</text>
+          <text x="560" y="300" text-anchor="middle">12 queries scored</text>
+          <text x="560" y="332" text-anchor="middle">one page named</text>
+          <text x="940" y="300" text-anchor="middle">1 hub + 3 spokes</text>
+          <text x="940" y="332" text-anchor="middle">or 5 pages fixed</text>
+          <text x="1290" y="300" text-anchor="middle">check dates set</text>
+          <text x="1290" y="332" text-anchor="middle">dashboard running</text>
+        </g>
+        <text x="700" y="430" font-size="23" text-anchor="middle" fill="var(--muted)">Week 4 is the one everybody skips. It is also the only week that makes month two cheaper than month one.</text>
+      </g>
+    </svg>
+  </figure>
+
+  <h3>Week 1 — fix the technical base</h3>
+  <p>Not a full audit. Four checks, in order, stopping at the first thing that is broken: is everything you want indexed actually indexed; is anything indexed twice; are template pages (tags, author archives, internal search) eating the crawl; and are your commercial pages receiving impressions for the queries they were written for. Page speed, alt text and heading order are not on this list, and that is deliberate — none of them has ever been the reason a site with an indexing gap was not ranking.</p>
+
+  <h3 id="t-technical">Template 7 — the technical checklist</h3>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Template · technical checklist</span><button class="copy">Copy</button></div>
+<pre>STOP AT THE FIRST ONE THAT'S BROKEN. Everything below it is premature.
+
+[ ] INDEXED vs INTENDED
+    pages I want indexed: ____   indexed: ____   gap: ____%
+    > 10% gap = this is the whole job this week
+
+[ ] DUPLICATION
+    [ ] with and without trailing slash resolve to one URL
+    [ ] http redirects to https, www to non-www (or the reverse — pick one)
+    [ ] query parameters don't create indexable variants
+    [ ] pagination isn't indexed as duplicates of page 1
+
+[ ] TEMPLATE PAGES THAT SHOULDN'T RANK
+    [ ] tag archives      [ ] author pages
+    [ ] internal search   [ ] empty category pages
+    [ ] staging or preview URLs in the index
+
+[ ] THE MONEY PAGES
+    [ ] each commercial page is indexed
+    [ ] each receives impressions for the query it was built for
+    [ ] none of them is outranked by my own blog post (cannibalisation)
+
+[ ] SANITY
+    [ ] no stray noindex from a staging deploy
+    [ ] canonicals point at self, not at the homepage
+    [ ] robots.txt blocks nothing I want indexed
+
+VERDICT: is the base sound enough to build on this week?  yes / no
+</pre>
+  </div>
+
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Prompt 6 · week 1 base check</span><button class="copy">Copy</button></div>
+<pre>This is day one of a 30-day SEO build on [URL]. Do the week 1 job only: tell me whether the
+base is sound.
+
+Check in this order and stop at the first one that is broken:
+1. INDEXING — how many pages are indexed versus how many I want indexed. If the gap is more
+   than 10%, that is the problem and nothing below matters yet.
+2. DUPLICATION — pages indexed at more than one URL: trailing slash, http/https, query
+   parameters, paginated variants.
+3. TEMPLATE PAGES — anything indexed that should never rank: tag archives, author pages,
+   internal search results, empty categories.
+4. THE MONEY PAGES — my commercially important pages: indexed, and receiving impressions for
+   the query they were written for?
+
+For each check: the number, then one line saying healthy or not, then the single fix.
+
+Do not give me a full technical audit. Do not mention page speed, alt text or heading order
+unless all four checks above are clean and I ask.
+If a number is not in the data, write "cannot compute from this data" and tell me where I
+would find it.
+
+End with a yes or no: is the base sound enough to start building on this week?</pre>
+  </div>
+
+  <h3>Week 2 — map the opportunities</h3>
+  <p>Query worksheet on twelve candidates, opportunity scan on what you already have, scorecard over both. The week ends with one page named and a check date written down. It does not end with a content calendar — a calendar is a promise about weeks you have not lived yet, and it will be wrong by week three.</p>
+
+  <h3>Week 3 — ship one cluster</h3>
+  <p>Either one hub and three spokes if you are building new, or five existing pages fixed if the scan found striking-distance pages, which it usually does. Fixing five pages that already have impressions beats publishing four new ones almost every time in month one, because the feedback arrives in weeks rather than months and you need the feedback more than you need the pages.</p>
+  <p>Internal links go in as you ship, not afterwards. "I'll do the linking later" is the single most common unfinished task in SEO.</p>
+
+  <h3>Week 4 — install the learning loop</h3>
+  <p>Every change you shipped gets a check date and a success metric. The eight-number dashboard gets built once. The response matrix gets saved where you will actually find it when something moves. This is the week with nothing to show for it, which is exactly why it gets dropped — and dropping it means month two starts from the same blank page as month one.</p>
+
+  <div class="callout">
+    <p><span class="k">If you only get two weeks:</span> do week 1 and week 3. A sound base and five fixed pages beats a perfect plan you didn't ship.</p>
+  </div>
+
+  <hr>
+
+  <h2 id="templates">The eight templates, in one place</h2>
+  <p class="lede">All of them are above, in the chapter where they're used. Nothing is gated, and there's no email form.</p>
+  <ul class="plain">
+    <li><strong><a href="#t-worksheet">1 · Query worksheet</a></strong> — one row per candidate query. If you can't fill every column, it isn't ready to work on.</li>
+    <li><strong><a href="#t-signals">2 · Signal library</a></strong> — the five signals worth acting on, and the five metrics that only look like insight.</li>
+    <li><strong><a href="#t-scorecard">3 · Page scorecard</a></strong> — five axes, one divisor, and a worked example that ranks a real backlog.</li>
+    <li><strong><a href="#t-brief">4 · Content brief</a></strong> — the promise, the answer, the gap, the structure, and the check date.</li>
+    <li><strong><a href="#t-onpage">5 · On-page templates</a></strong> — title, meta, H1, first 40 words, H2 skeleton.</li>
+    <li><strong><a href="#t-matrix">6 · Ranking response matrix</a></strong> — nine patterns, what each one is, and what you must not do.</li>
+    <li><strong><a href="#t-technical">7 · Technical checklist</a></strong> — four checks in order, stopping at the first thing that's broken.</li>
+    <li><strong><a href="#t-dashboard">8 · Weekly dashboard</a></strong> — eight numbers in a chain, so a drop localises itself.</li>
+  </ul>
+  <p>And six prompts: <a href="#queries">query shortlist</a>, <a href="#signals">opportunity scan</a>, <a href="#priority">score the backlog</a>, <a href="#content">content brief</a>, <a href="#respond">diagnose a move</a>, <a href="#build">week 1 base check</a>. Every one of them caps its own output, ends on a single action, and is forbidden from inventing a number — which is the part that makes them safe to trust.</p>
+
+  <hr>
+  <h2 id="mistakes">The five mistakes that kill this</h2>
+
+  <div class="miss">
+    <h3>Working the interesting part instead of the broken one</h3>
+    <p>Content is the fun chapter. It is also the wrong chapter if two thirds of your pages aren't indexed. The model exists to overrule your preference, and it will overrule it in a direction you don't like at least once.</p>
+  </div>
+  <div class="miss">
+    <h3>Sorting by search volume</h3>
+    <p>Volume is the one attribute in a keyword tool with no relationship to whether the query is worth your month. It survives because it's the only column that's always populated.</p>
+  </div>
+  <div class="miss">
+    <h3>Publishing before the reason exists</h3>
+    <p>If you can't name the thing none of the top five say, you are about to spend six hours building the sixth-best page on the topic, and it will rank exactly there.</p>
+  </div>
+  <div class="miss">
+    <h3>Reacting to a drop that wasn't one</h3>
+    <p>Position held, CTR fell means the SERP changed, not your page. Rewriting the body of a page that is still ranking is how a bad week becomes a bad quarter.</p>
+  </div>
+  <div class="miss">
+    <h3>Skipping the check date</h3>
+    <p>"I shipped it" and "it worked" are different claims. Without a date and a metric written before you ship, you accumulate changes and learn nothing — which is indistinguishable from doing no SEO at all, only more expensive.</p>
+  </div>
+
+  <h2>Where this still needs a human</h2>
+  <ul class="plain">
+    <li><strong>Whether the buyer is real.</strong> Filter 1 in chapter 2 is a judgement about your market. No dataset contains it.</li>
+    <li><strong>Whether the page can honestly deliver the query.</strong> You can write the title that earns the click. Only you know if the page behind it keeps the promise, and a click you don't keep is worse than one you never got.</li>
+    <li><strong>What's worth building.</strong> The scorecard ranks what exists. The speculative cluster that scores last might still be the right bet — that's conviction, not arithmetic.</li>
+    <li><strong>The weird stuff.</strong> If a number looks wrong, it might be. Go and look at the page.</li>
+  </ul>
+
+  <hr>
+
+  <h2>What a playbook structurally cannot do</h2>
+  <p class="lede">Worth being straight about, because you'll hit it in week five and it isn't a flaw in the method.</p>
+  <p>Everything above is a method, and a method has no eyes and no memory.</p>
+  <p>Every loop on this page depends on someone noticing. The scorecard needs this month's numbers, exported by hand. The response matrix only fires if somebody spots the movement — and decay never announces itself: a page loses four clicks a week for six months, no alert fires, and by the time it's visible in the monthly total it's a rebuild rather than a fix. The check dates you wrote in week 4 have to be checked by a person who remembers writing them.</p>
+  <p>That's why week 4 is the week everyone drops. It's the only week whose output is a habit rather than a page, and habits are exactly what a printed method can't supply.</p>
+  <p>That gap is the thing I've spent the last year building. <strong>ChatSEO</strong> is the other half: it holds the site, the history, the check dates and the numbers on the other side of a connector, so the Monday scan runs whether or not you remembered, and last month's fix gets graded without you re-deriving what it was supposed to do. Same method as this page. It just doesn't need you to be the memory.</p>
+  <p><a class="btn btn-primary" href="https://link.chatseo.app/pb-complete-seo-playbook" target="_blank" rel="noopener">Try ChatSEO free →</a></p>
+
+  <hr>
+
+  <h2 id="proof" style="scroll-margin-top:80px">How one founder went from 250 → 750 clicks a day</h2>
+  <p class="lede">He added <strong>+14,500 clicks just by chatting with AI.</strong></p>
+  <p>No SEO expertise. He simply ran the recommendations he was given — the same loop as chapters 3, 4 and 8, running without him having to remember it. <a href="https://link.chatseo.app/pb-complete-seo-playbook" target="_blank" rel="noopener"><strong>Start free →</strong></a></p>
+  <figure>
+    <img src="img/proof-clicks.webp" alt="Search Console graph showing daily clicks rising from around 250 to around 750." loading="lazy">
+  </figure>
+
+  <h2>Why this works when old SEO tools don't</h2>
+  <p>Here's the blunt truth about SEO in 2026. Everything on this page works with nothing but Search Console and your own judgement — and you can <a href="https://link.chatseo.app/pb-complete-seo-playbook" target="_blank" rel="noopener">try it here for free</a> if you'd rather not be the one holding all of it in your head.</p>
+
+  <div class="vs">
+    <div class="vs-col vs-old">
+      <h3>Old SEO tools</h3>
+      <ul>
+        <li>A score out of 100 you can't ship a change to</li>
+        <li>Keywords sorted by volume, which decides nothing</li>
+        <li>47 issues and no order to work them in</li>
+        <li>A drop you find out about a month late</li>
+        <li>Five tools that don't talk to each other</li>
+      </ul>
+    </div>
+    <div class="vs-col vs-new">
+      <h3>What you actually want</h3>
+      <ul>
+        <li>The one part of the model that's broken, named</li>
+        <li>Queries ranked by value per hour, on your own CTR</li>
+        <li>One page shipping this week, with a check date</li>
+        <li>The decay caught in week one, not month six</li>
+        <li>One connection, from Search Console to published fix</li>
+      </ul>
+    </div>
+  </div>
+
+  <figure>
+    <img src="img/vs-tools.webp" alt="Comparison of traditional SEO tooling against the ChatSEO approach." loading="lazy">
+  </figure>
+
+  <div class="final" style="margin:44px 0">
+    <h2 style="margin-top:0">That's the entire idea behind ChatSEO</h2>
+    <p>One SEO employee that reads your Search Console, tells you which part of the model is broken, writes the fix, ships it to your site — and tells you a month later whether it worked. From your Claude chat, or from ChatSEO itself.</p>
+    <a class="btn btn-primary" href="https://link.chatseo.app/pb-complete-seo-playbook" target="_blank" rel="noopener">Try ChatSEO free →</a>
+    <p class="note" style="margin-top:16px">No credit card required</p>
+  </div>
+
+  <footer>
+    <p>Built by <a href="https://link.chatseo.app/pb-complete-seo-playbook" target="_blank" rel="noopener">Nicholas at ChatSEO</a> · Everything on this page is free to copy and use.</p>
+  </footer>
+
+</div>
+<script>
+// Theme: remember the viewer's choice, fall back to their system setting.
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  try{ var s=localStorage.getItem('theme'); if(s) root.setAttribute('data-theme',s); }catch(e){}
+  btn.addEventListener('click',function(){
+    var cur=root.getAttribute('data-theme');
+    if(!cur) cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+    var next=cur==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{ localStorage.setItem('theme',next); }catch(e){}
+  });
+})();
+
+// Copy buttons: the whole point of a prompt playbook is getting the prompt out cleanly.
+document.querySelectorAll('.copy').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var pre=btn.closest('.prompt').querySelector('pre');
+    var text=pre.innerText;
+    var done=function(){ btn.textContent='Copied'; btn.classList.add('done');
+      setTimeout(function(){ btn.textContent='Copy'; btn.classList.remove('done'); },1600); };
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done).catch(fallback);
+    } else { fallback(); }
+    function fallback(){
+      var ta=document.createElement('textarea'); ta.value=text;
+      ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta);
+      ta.select(); try{ document.execCommand('copy'); done(); }catch(e){ btn.textContent='Select manually'; }
+      document.body.removeChild(ta);
+    }
+  });
+});
+</script>
+</body>
+</html>
