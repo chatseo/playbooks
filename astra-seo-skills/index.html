@@ -1,0 +1,803 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Six SEO Skills for Astra</title>
+<meta name="description" content="Six SEO skill files for Astra, run against live Search Console and GA4 data: constraint-finder, dead-page-detector, no-overclaiming, intent-mapper, funnel-auditor, self-auditor. Free, nothing gated.">
+<meta property="og:title" content="Six SEO Skills for Astra">
+<meta property="og:description" content="Everyone is testing Astra on code. Almost nobody is writing SEO skills for it. Here are six, with the full files.">
+<meta property="og:image" content="https://chatseo.github.io/playbooks/astra-seo-skills/img/og-card.jpg">
+<meta property="og:url" content="https://chatseo.github.io/playbooks/astra-seo-skills/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍊</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F7F3EC; --surface:#FFFDF9; --ink:#2B2A28; --muted:#6E6A63;
+  --accent:#D9663D; --accent-soft:#F2D9CE; --sage:#8A9A7B;
+  --line:#E2DACE; --code-bg:#2B2A28; --code-ink:#F2EDE4;
+  --shadow:0 1px 2px rgba(43,42,40,.05), 0 8px 24px rgba(43,42,40,.06);
+  --maxw:760px;
+}
+:root:not([data-theme="light"]){ @media (prefers-color-scheme: dark){
+  --bg:#191817; --surface:#211F1D; --ink:#EFEAE1; --muted:#A29C93;
+  --accent:#E8794F; --accent-soft:#3A2A22; --sage:#9DAD8E;
+  --line:#332F2B; --code-bg:#0F0E0D; --code-ink:#EFEAE1;
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+}}
+:root[data-theme="dark"]{
+  --bg:#191817; --surface:#211F1D; --ink:#EFEAE1; --muted:#A29C93;
+  --accent:#E8794F; --accent-soft:#3A2A22; --sage:#9DAD8E;
+  --line:#332F2B; --code-bg:#0F0E0D; --code-ink:#EFEAE1;
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:72px}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:17px; line-height:1.68; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 22px}
+
+/* ---------- top bar ---------- */
+.bar{
+  position:sticky; top:0; z-index:50; background:color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter:blur(10px); border-bottom:1px solid var(--line);
+}
+.bar-in{max-width:var(--maxw); margin:0 auto; padding:11px 22px; display:flex; align-items:center; gap:14px}
+.brand{font-weight:800; letter-spacing:-.02em; font-size:15px; text-decoration:none; color:var(--ink); white-space:nowrap}
+.brand span{color:var(--accent)}
+.bar nav{margin-left:auto; display:flex; gap:16px; overflow-x:auto; scrollbar-width:none}
+.bar nav::-webkit-scrollbar{display:none}
+.bar nav a{color:var(--muted); text-decoration:none; font-size:13.5px; font-weight:500; white-space:nowrap}
+.bar nav a:hover{color:var(--accent)}
+.theme{background:none; border:1px solid var(--line); color:var(--muted); border-radius:8px;
+  width:32px; height:32px; cursor:pointer; font-size:14px; flex:none}
+.theme:hover{color:var(--accent); border-color:var(--accent)}
+
+/* ---------- hero ---------- */
+.hero{padding:64px 0 8px; text-align:center}
+.eyebrow{
+  display:inline-block; font-size:12px; font-weight:700; letter-spacing:.13em; text-transform:uppercase;
+  color:var(--accent); background:var(--accent-soft); padding:6px 13px; border-radius:100px; margin-bottom:20px;
+}
+h1{
+  font-family:"Instrument Serif",Georgia,serif; font-weight:400; letter-spacing:-.015em;
+  font-size:clamp(40px,7.5vw,62px); line-height:1.06; margin:0 0 18px;
+}
+h1 em{font-style:italic; color:var(--accent)}
+.sub{font-size:19px; color:var(--muted); max-width:560px; margin:0 auto 30px}
+.cta-row{display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-bottom:10px}
+.btn{
+  display:inline-flex; align-items:center; gap:8px; padding:13px 24px; border-radius:10px;
+  font-weight:600; font-size:15px; text-decoration:none; border:1px solid transparent; transition:.15s;
+}
+.btn-primary{background:var(--accent); color:#fff}
+.btn-primary:hover{filter:brightness(1.07); transform:translateY(-1px)}
+.btn-ghost{border-color:var(--line); color:var(--ink); background:var(--surface)}
+.btn-ghost:hover{border-color:var(--accent); color:var(--accent)}
+.note{font-size:13.5px; color:var(--muted)}
+/* Proof tease: opens a loop at line 2 that only closes in the conversion section,
+   which is what buys the scroll past the value section. */
+.tease{margin:-16px 0 26px; font-size:14.5px}
+.tease a{color:var(--muted); text-decoration:none; border-bottom:1px dashed var(--line); padding-bottom:2px}
+.tease a:hover{color:var(--accent); border-bottom-color:var(--accent)}
+
+/* ---------- figures ---------- */
+figure{margin:38px 0}
+figure img{width:100%; height:auto; display:block; border-radius:14px; border:1px solid var(--line)}
+figure.plainfig img{border:0; border-radius:0}
+figcaption{font-size:13.5px; color:var(--muted); text-align:center; margin-top:11px}
+
+/* ---------- type ---------- */
+h2{
+  font-family:"Instrument Serif",Georgia,serif; font-weight:400; font-size:clamp(29px,4.6vw,38px);
+  line-height:1.16; letter-spacing:-.01em; margin:60px 0 6px;
+}
+h3{font-size:19px; font-weight:700; letter-spacing:-.01em; margin:32px 0 8px}
+p{margin:0 0 17px}
+a{color:var(--accent)}
+.lede{font-size:19px; color:var(--muted); margin-bottom:26px}
+hr{border:0; border-top:1px solid var(--line); margin:56px 0}
+strong{font-weight:650}
+
+/* ---------- author ---------- */
+.author{
+  display:flex; gap:24px; align-items:flex-start; background:var(--surface);
+  border:1px solid var(--line); border-radius:16px; padding:28px; margin:40px 0;
+}
+.author-img{
+  width:96px; height:96px; border-radius:50%; flex:none; object-fit:cover;
+  background:var(--accent-soft); border:1px solid var(--line);
+}
+.author p{margin:0 0 11px; font-size:17px; line-height:1.62}
+.author p:last-child{margin-bottom:0}
+
+/* ---------- step cards ---------- */
+.fn{
+  background:var(--surface); border:1px solid var(--line); border-radius:16px;
+  padding:26px; margin:22px 0; box-shadow:var(--shadow); scroll-margin-top:80px;
+}
+.fn-head{display:flex; align-items:baseline; gap:12px; margin-bottom:4px; flex-wrap:wrap}
+.fn-num{
+  font-family:"Instrument Serif",Georgia,serif; font-size:34px; line-height:1;
+  color:var(--accent); flex:none;
+}
+.fn-title{font-size:22px; font-weight:750; letter-spacing:-.015em; margin:0}
+.fn-sub{color:var(--muted); font-size:15px; margin:0 0 18px}
+.meta{display:flex; flex-wrap:wrap; gap:8px; margin:16px 0}
+.chip{
+  font-size:12.5px; font-weight:600; padding:5px 11px; border-radius:100px;
+  background:var(--bg); border:1px solid var(--line); color:var(--muted);
+}
+.chip b{color:var(--ink); font-weight:650}
+
+/* ---------- prompt block ---------- */
+.prompt{position:relative; margin:16px 0 4px}
+.prompt-bar{
+  display:flex; align-items:center; justify-content:space-between; gap:10px;
+  background:var(--code-bg); border-radius:10px 10px 0 0; padding:9px 13px;
+  border-bottom:1px solid rgba(255,255,255,.09);
+}
+.prompt-label{
+  font-family:"JetBrains Mono",ui-monospace,monospace; font-size:11.5px;
+  letter-spacing:.06em; text-transform:uppercase; color:#9A938A;
+}
+.copy{
+  background:rgba(255,255,255,.09); color:#F2EDE4; border:0; border-radius:6px;
+  padding:5px 11px; font-size:12px; font-weight:600; cursor:pointer;
+  font-family:Inter,sans-serif; transition:.15s; white-space:nowrap;
+}
+.copy:hover{background:var(--accent)}
+.copy.done{background:var(--sage); color:#12140F}
+pre{
+  margin:0; background:var(--code-bg); color:var(--code-ink); border-radius:0 0 10px 10px;
+  padding:17px; overflow-x:auto; font-family:"JetBrains Mono",ui-monospace,monospace;
+  font-size:13px; line-height:1.62; white-space:pre-wrap; word-wrap:break-word;
+}
+
+/* ---------- callout ---------- */
+.callout{
+  border-left:3px solid var(--accent); background:var(--surface);
+  padding:16px 20px; border-radius:0 12px 12px 0; margin:26px 0;
+}
+.callout p{margin:0; font-size:15.5px}
+.callout .k{font-weight:700; color:var(--accent)}
+
+/* ---------- lists ---------- */
+ul,ol{padding-left:22px; margin:0 0 18px}
+li{margin-bottom:9px}
+.plain{list-style:none; padding:0}
+.plain li{padding-left:28px; position:relative; margin-bottom:13px}
+.plain li::before{content:"→"; position:absolute; left:0; color:var(--accent); font-weight:700}
+
+/* ---------- setup steps ---------- */
+.setup{counter-reset:s; list-style:none; padding:0; margin:22px 0}
+.setup li{
+  counter-increment:s; position:relative; padding-left:40px; margin-bottom:14px;
+}
+.setup li::before{
+  content:counter(s); position:absolute; left:0; top:1px;
+  width:26px; height:26px; border-radius:50%; background:var(--accent-soft); color:var(--accent);
+  font-size:13px; font-weight:700; display:flex; align-items:center; justify-content:center;
+}
+kbd{
+  font-family:"JetBrains Mono",ui-monospace,monospace; font-size:12.5px;
+  background:var(--bg); border:1px solid var(--line); border-radius:5px; padding:2px 6px;
+}
+
+/* ---------- mistakes ---------- */
+.miss{border-left:3px solid var(--sage); padding:2px 0 2px 18px; margin:22px 0}
+.miss h3{margin:0 0 5px; font-size:17px}
+.miss p{margin:0; color:var(--muted); font-size:15.5px}
+
+/* ---------- table ---------- */
+.tw{overflow-x:auto; margin:22px 0; border:1px solid var(--line); border-radius:12px}
+table{border-collapse:collapse; width:100%; font-size:14.5px; min-width:460px}
+th,td{padding:11px 15px; text-align:left; border-bottom:1px solid var(--line)}
+th{background:var(--surface); font-weight:650; font-size:12.5px; letter-spacing:.05em; text-transform:uppercase; color:var(--muted)}
+tr:last-child td{border-bottom:0}
+
+/* ---------- old-vs-new comparison ---------- */
+.vs{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:26px 0}
+.vs-col{border:1px solid var(--line); border-radius:14px; padding:20px; background:var(--surface)}
+.vs-col h3{margin:0 0 12px; font-size:15px; letter-spacing:.04em; text-transform:uppercase}
+.vs-col ul{margin:0; padding-left:20px}
+.vs-col li{font-size:15px; margin-bottom:9px; color:var(--muted)}
+.vs-old h3{color:var(--muted)}
+.vs-old li{text-decoration:line-through; text-decoration-color:var(--line)}
+.vs-new{border-color:var(--accent)}
+.vs-new h3{color:var(--accent)}
+.vs-new li{color:var(--ink)}
+:not(pre) > code{
+  font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:.88em; background:var(--surface); border:1px solid var(--line);
+  border-radius:6px; padding:1px 6px; color:var(--ink); word-break:break-word;
+}
+
+@media (max-width:600px){ .vs{grid-template-columns:1fr} }
+
+/* ---------- final cta ---------- */
+.final{
+  background:var(--surface); border:1px solid var(--line); border-radius:18px;
+  padding:38px 28px; text-align:center; margin:52px 0 24px;
+}
+.final h2{margin:0 0 10px}
+.final p{color:var(--muted); max-width:460px; margin:0 auto 22px}
+footer{text-align:center; padding:34px 0 56px; color:var(--muted); font-size:13.5px}
+footer a{color:var(--muted)}
+
+@media (max-width:560px){
+  body{font-size:16px}
+  .fn{padding:20px}
+  .bar nav{display:none}
+  .author{flex-direction:column; gap:12px}
+}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="bar-in">
+    <a class="brand" href="#top">Chat<span>SEO</span></a>
+    <nav>
+      <a href="#setup">The Data</a>
+      <a href="#skills">The 6 Skills</a>
+      <a href="#rules">Writing Rules</a>
+      <a href="#routine">The Routine</a>
+      <a href="#mistakes">Mistakes</a>
+    </nav>
+    <button class="theme" id="themeBtn" aria-label="Toggle theme">◐</button>
+  </div>
+</div>
+
+<div class="wrap" id="top">
+
+  <div class="hero">
+    <span class="eyebrow">Free · Nothing gated</span>
+    <h1>Six SEO skills<br>for <em>Astra</em></h1>
+    <p class="sub">Everyone is testing Astra on code right now. Almost nobody is writing SEO skills for it. Here are the six I run on my own Search Console and GA4 data — full files, copy them.</p>
+    <p class="tease"><a href="#dead">The one that found 120,354 impressions and 2 clicks on my own site →</a></p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://link.chatseo.app/pb-astra-seo-skills" target="_blank" rel="noopener">Give Astra your live data →</a>
+      <a class="btn btn-ghost" href="#skills">Read the 6 skills</a>
+    </div>
+    <p class="note">Free · No credit card required</p>
+  </div>
+
+  <div class="author">
+    <img class="author-img" src="img/tw3810.webp" alt="Nicholas" loading="lazy">
+    <div>
+      <p><strong>Hey there, I'm Nicholas 👋</strong></p>
+      <p>I grew my last B2C app to 15K Google clicks/month as a solo founder, then sold it. Turns out I fell in love with SEO along the way.</p>
+      <p>So now I'm building <a href="https://link.chatseo.app/pb-astra-seo-skills" target="_blank" rel="noopener"><strong>ChatSEO.app</strong></a> — an all-in-one <strong>SEO employee</strong> whose job is to make sure you <strong>rank #1 in Google and in AI search</strong>.</p>
+      <p>I rebuilt my whole SEO process on Astra this month. These are the six skill files that came out of it. <a href="https://link.chatseo.app/pb-astra-seo-skills" target="_blank" rel="noopener"><strong>Try it free →</strong></a></p>
+    </div>
+  </div>
+
+  <hr>
+
+  <h2>Why a skill file beats a good prompt</h2>
+  <p class="lede">A prompt is a request. A skill file is a rule that outlives your mood.</p>
+  <p>Paste a great prompt and you get a great answer once. Paste it again next month, slightly reworded because you remembered it differently, and you get a different answer — which means you cannot compare this month to last month, which means you learn nothing from either.</p>
+  <p>A skill file removes the wording from the equation. Same rule, same shape, every run. That's the whole reason these six exist as files rather than as a note in a doc.</p>
+  <p>And there's a second reason, specific to Astra, which is the most useful thing I learned building these:</p>
+
+  <div class="callout">
+    <p><span class="k">Astra follows skill files strictly.</span> A vague rule doesn't get ignored — it gets executed vaguely. And two rules that contradict each other can stop the skill working altogether.</p>
+  </div>
+
+  <p>That cuts both ways. It's why these skills are worth having: the constraint you write down is the constraint you get. It's also why a sloppy skill file is worse than no skill file at all, and why there's a whole section below on <a href="#rules">how to write a rule Astra can execute precisely</a>.</p>
+
+  <hr>
+
+  <h2 id="setup">First: Astra needs your actual data</h2>
+  <p class="lede">Six skills that reason about your site are worth nothing if the model can't see your site.</p>
+  <p>Every skill below reads live Search Console and GA4 data. Without that connection you get a well-structured essay about SEO in general — confident, well-formatted, and about nobody's website.</p>
+  <p>The way I do it is the <strong>ChatSEO plugin</strong>: it connects once to your Search Console and GA4 with read-only Google OAuth, and then exposes them to Astra as tools it can query. No API key to generate, no CSV to export, no pasting rows into a chat window.</p>
+
+  <div class="fn">
+    <div class="fn-head"><h3 class="fn-title">Connect it once</h3></div>
+    <p class="fn-sub">Two minutes, then every skill below has something real to read.</p>
+    <ol class="setup">
+      <li>Create a free account at <a href="https://link.chatseo.app/pb-astra-seo-skills" target="_blank" rel="noopener"><strong>chatseo.app</strong></a>, add your site, and click <strong>Connect Google Search Console</strong>. Read-only OAuth. Connect GA4 the same way if you want skill 5.</li>
+      <li>Add ChatSEO to Astra as a plugin. The endpoint is the same for everybody:<br><code>https://api.chatseo.app/mcp</code></li>
+      <li>Ask one question before you save a single skill file — the test below.</li>
+    </ol>
+  </div>
+
+  <p>The test, before anything else:</p>
+<pre>Which of my pages lost the most clicks last month?</pre>
+  <p>If it comes back with your actual URLs, you're connected. If it comes back with advice about how to find pages that lost clicks, you aren't — and every skill below will produce beautifully formatted fiction.</p>
+
+  <div class="callout">
+    <p><span class="k">This is the step people skip.</span> <a href="https://link.chatseo.app/pb-astra-seo-skills" target="_blank" rel="noopener"><strong>Connect ChatSEO free →</strong></a> It's what turns the six files from templates into an audit of your site.</p>
+  </div>
+
+  <hr>
+
+  <h2 id="skills">The 6 skills</h2>
+  <p class="lede">In the order I run them. Each one is the complete file — copy it, save it as a skill in your client, call it by name.</p>
+  <p>Every file below obeys the same three constraints, and they are the product: it <strong>caps its own output</strong>, it <strong>ends on one action</strong>, and it <strong>refuses to state a number it didn't pull</strong>. Delete any of those and you get an audit again.</p>
+
+  <div class="fn" id="constraint">
+    <div class="fn-head"><span class="fn-num">1</span><h3 class="fn-title">constraint-finder</h3></div>
+    <p class="fn-sub"><em>The rule: commit to ONE bottleneck. Audits with 47 findings are banned. One constraint — everything else waits.</em></p>
+    <div class="meta">
+      <span class="chip"><b>Reads:</b> Search Console</span>
+      <span class="chip"><b>Returns:</b> one constraint</span>
+      <span class="chip"><b>When:</b> first, then quarterly</span>
+    </div>
+    <p>This is the skill that makes the other five safe to run. Without it you get five reports and no order to work them in, which is the same as no reports. The refusal to name a second constraint is not a stylistic preference — it's the entire function.</p>
+    <div class="prompt">
+      <div class="prompt-bar"><span class="prompt-label">skill · constraint-finder</span><button class="copy">Copy</button></div>
+<pre>---
+name: constraint-finder
+description: Read the full Search Console funnel and name the single constraint holding the site back. Use first, before any other SEO skill, and once a quarter after that.
+---
+
+Use the connected Search Console data. If no site is set, list my sites and ask which one.
+Do not guess which site I mean.
+
+Pull the last 90 days and walk the funnel in this order. The order is not negotiable —
+each stage gates the one below it.
+
+1. INDEXING — pages indexed versus pages I intend to be indexed
+2. IMPRESSIONS — total, and the direction versus the previous 90 days
+3. POSITION — the distribution: how many queries sit 1-3, 4-10, 11-20, 21+
+4. CTR — actual CTR per position band, against that band's average on THIS site
+5. CONVERSION — if GA4 is connected, clicks to conversions by landing page
+
+Give me one line per stage: the number, the direction, and healthy or not.
+
+Then name THE ONE binding constraint: the EARLIEST stage in that list that is broken.
+Explain in two sentences why that stage and not the next one, using the numbers you pulled.
+A CTR problem is not worth solving on pages Google is not showing.
+
+BANNED: a list of findings. A severity ranking. A second constraint mentioned "for later".
+A summary of the stages that were fine. If you catch yourself writing "additionally", stop.
+
+If a figure is not in the data, write "cannot compute from this data" and move on.
+Never estimate a number, and never carry an estimated number into the next stage.
+
+End with ONE sentence: the constraint, and the single next action.</pre>
+    </div>
+  </div>
+
+  <div class="fn" id="dead">
+    <div class="fn-head"><span class="fn-num">2</span><h3 class="fn-title">dead-page-detector</h3></div>
+    <p class="fn-sub"><em>The rule: flag every page with high impressions and near-zero clicks. Report impressions, clicks, position. No commentary.</em></p>
+    <div class="meta">
+      <span class="chip"><b>Reads:</b> Search Console</span>
+      <span class="chip"><b>Returns:</b> a table, nothing else</span>
+      <span class="chip"><b>When:</b> monthly</span>
+    </div>
+    <p>Ranked. Seen. Never clicked. These pages are the cheapest thing to fix on any site, because you already paid for the ranking — and they're invisible in a clicks report, which is the only report most people open.</p>
+    <p><strong>"No commentary" is the load-bearing rule.</strong> The moment the model starts explaining each row, it starts guessing at causes, and a guessed cause is indistinguishable from a measured one once it's written in the same font.</p>
+    <div class="prompt">
+      <div class="prompt-bar"><span class="prompt-label">skill · dead-page-detector</span><button class="copy">Copy</button></div>
+<pre>---
+name: dead-page-detector
+description: List pages that earn impressions but almost no clicks. Table only, no analysis. Use monthly.
+---
+
+Use the connected Search Console data on my active site. Last 28 days.
+
+Find every page matching ALL THREE:
+- 1,000+ impressions
+- CTR under 0.5%
+- average position between 5 and 25
+
+Return ONE table, ranked by impressions, capped at 10 rows:
+page | impressions | clicks | average position
+
+Then a second table, same cap, of the top query per page:
+page | top query, verbatim | that query's impressions | that query's position
+
+RULES:
+- No commentary. No "why this is happening". No recommendations. No summary line.
+- Do not describe the table you just produced.
+- Do not mark rows as urgent, high priority, or quick wins.
+- If a page qualifies on impressions but the position is outside 5-25, leave it out
+  rather than mentioning it as a borderline case.
+- Every number comes from the data. If a column is unavailable, write "not in data"
+  in that cell. Never fill a cell with an estimate.
+
+End after the second table. Nothing follows it.</pre>
+    </div>
+
+    <h3>What it returned on my own site</h3>
+    <p>Real output, 7 August – 3 September 2026. Over that window the site did <strong>4,723 clicks from 297,075 impressions</strong> — and <strong>4,175 of those clicks, 88%, came from three brand queries</strong>: "chatseo", "chat seo", "chatseo app".</p>
+    <p>Which means the non-brand half of the site was doing this:</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Page</th><th>Impressions</th><th>Clicks</th><th>Avg position</th></tr></thead>
+        <tbody>
+          <tr><td>Free Ahrefs alternative</td><td>120,354</td><td><strong>2</strong></td><td>19.7</td></tr>
+          <tr><td>Free Moz Pro alternative</td><td>23,274</td><td>6</td><td>11.9</td></tr>
+          <tr><td>Free Similarweb alternative</td><td>23,367</td><td>37</td><td>13.6</td></tr>
+          <tr><td>Free Semrush alternative</td><td>14,518</td><td>13</td><td>14.6</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>120,354 impressions and two clicks. I had been looking at a clicks chart that was going up and feeling fine about it, because 88% of it was people typing my own name.</p>
+    <p>Note what the skill did <em>not</em> do: it did not tell me the titles were bad. At position 19.7 a low CTR is what you'd expect — nobody scrolls to the bottom of page two. That distinction is skill 3's job, and it's the reason skill 2 is forbidden from commentary.</p>
+  </div>
+
+  <div class="fn" id="overclaim">
+    <div class="fn-head"><span class="fn-num">3</span><h3 class="fn-title">no-overclaiming</h3></div>
+    <p class="fn-sub"><em>The rule: for every diagnosis, state what the data can't prove yet.</em></p>
+    <div class="meta">
+      <span class="chip"><b>Reads:</b> the previous skill's output</span>
+      <span class="chip"><b>Returns:</b> claim vs. gap</span>
+      <span class="chip"><b>When:</b> after every diagnosis</span>
+    </div>
+    <p>An agency sells you the fix. This skill forces the honest version — and it's the one that changes what you actually do, because half the time the honest version is "we don't know yet, and here's the cheap thing that would tell us".</p>
+    <p>Run it on the output of any other skill. It's a reviewer, not a reporter.</p>
+    <div class="prompt">
+      <div class="prompt-bar"><span class="prompt-label">skill · no-overclaiming</span><button class="copy">Copy</button></div>
+<pre>---
+name: no-overclaiming
+description: Review an SEO diagnosis and separate what the data proves from what it only suggests. Use after every diagnosis, before acting on it.
+---
+
+I will give you a diagnosis — yours or someone else's. Do not re-run the analysis.
+Your job is to audit the claims in it.
+
+For each claim, produce three lines:
+
+CLAIM — the claim, in the words it was made.
+PROVEN BY — the specific data that supports it. Name the metric, the period and the
+  comparison. If the support is "this is generally true in SEO", write "not proven by
+  this data" instead.
+CANNOT PROVE YET — what would have to be true for this claim to be right, that this data
+  does not show. Be specific about the missing observation, not vague about uncertainty.
+
+Then, for the whole diagnosis:
+
+THE CHEAPEST TEST — the single observation that would move the biggest claim from
+  "suggested" to "proven". One test, not a research plan.
+
+Rules:
+- A low CTR at position 18 is not evidence of a bad title. Depth explains it. Say so.
+- A drop that coincides with a date is not caused by that date. Say so.
+- Page-level averages hide query-level, country-level and device-level differences.
+  If a claim rests on a page-level average, that goes in CANNOT PROVE YET, every time.
+- Never soften a claim into vagueness. "May be underperforming" is not honesty, it is
+  noise. Either it is proven, or name exactly what is missing.
+
+If a claim survives with nothing in CANNOT PROVE YET, say so plainly. That is allowed
+and it should be rare.
+
+End with one sentence: which claim is safe to act on today.</pre>
+    </div>
+  </div>
+
+  <div class="fn" id="intent">
+    <div class="fn-head"><span class="fn-num">4</span><h3 class="fn-title">intent-mapper</h3></div>
+    <p class="fn-sub"><em>The rule: build a table of every visitor type and the next step the site should give them.</em></p>
+    <div class="meta">
+      <span class="chip"><b>Reads:</b> Search Console + your pages</span>
+      <span class="chip"><b>Returns:</b> one table</span>
+      <span class="chip"><b>When:</b> quarterly, and after any big content push</span>
+    </div>
+    <p>Traffic is not one audience. The person searching "free ahrefs alternative" and the person searching "how does search console work" arrived at the same site wanting incompatible things, and a page that tries to serve both serves neither.</p>
+    <p>The output is deliberately a table with a column that is usually empty — the next step. Empty cells in that column are the finding.</p>
+    <div class="prompt">
+      <div class="prompt-bar"><span class="prompt-label">skill · intent-mapper</span><button class="copy">Copy</button></div>
+<pre>---
+name: intent-mapper
+description: Map every visitor type arriving from search to the next step the site currently gives them, and name the gaps. Use quarterly.
+---
+
+Use the connected Search Console data on my active site. Last 90 days.
+
+Group my queries into visitor types by what the person is trying to finish, not by topic.
+Derive the groups from the actual queries — do not apply a standard taxonomy and do not
+assume a group exists because most sites have one. Cap at 6 groups.
+
+For each group, give me one row:
+
+VISITOR TYPE | example query, verbatim | clicks | the page they land on |
+WHAT THAT PAGE OFFERS THEM NEXT | is that the right next step? yes / no / nothing offered
+
+Rules for the last two columns:
+- Read the actual landing page. If you cannot load it, write "page not read" and leave
+  the next-step columns empty. Do not infer the next step from the URL.
+- "Nothing offered" is a valid and common answer. Write it rather than describing the
+  navigation bar as a next step.
+- The right next step is the one that visitor would want, not the one I would want. A
+  buyer query gets a trial. A learning query gets the next thing to learn.
+
+Then, below the table, list ONLY the rows where the answer was "no" or "nothing offered".
+
+End by naming the ONE visitor group that sends the most clicks into a dead end, and the
+single next step that group should be given.
+Do not design the page. Do not write the copy.</pre>
+    </div>
+  </div>
+
+  <div class="fn" id="funnel">
+    <div class="fn-head"><span class="fn-num">5</span><h3 class="fn-title">funnel-auditor</h3></div>
+    <p class="fn-sub"><em>The rule: recompute every conversion rate from raw events. Never accept a stacked metric.</em></p>
+    <div class="meta">
+      <span class="chip"><b>Reads:</b> GA4</span>
+      <span class="chip"><b>Returns:</b> the funnel, recomputed</span>
+      <span class="chip"><b>When:</b> monthly</span>
+    </div>
+    <p>Every analytics tool ships pre-stacked funnels, and every pre-stacked funnel encodes a decision someone else made about what counts as a step, a session, and a conversion. Recomputing from raw events costs one extra minute and changes the number surprisingly often.</p>
+    <p>The second rule matters as much as the first: a conversion rate with no denominator stated is not a measurement.</p>
+    <div class="prompt">
+      <div class="prompt-bar"><span class="prompt-label">skill · funnel-auditor</span><button class="copy">Copy</button></div>
+<pre>---
+name: funnel-auditor
+description: Rebuild the organic conversion funnel from raw GA4 events rather than reading a prepared funnel report. Use monthly.
+---
+
+Use the connected GA4 data. Organic search traffic only. Last 30 days.
+
+Do NOT read a prepared funnel, a conversion-rate widget, or any metric that arrives
+already divided. Pull raw event counts and compute every rate yourself.
+
+Build the funnel from events, in this order, and state the exact event name behind
+each step:
+1. landed from organic
+2. viewed a page that can convert
+3. started the conversion action
+4. completed it
+
+For every step give me:
+count | the event name it came from | rate vs the PREVIOUS step | rate vs step 1
+
+Every rate must be written as its arithmetic: "412 / 5,830 = 7.1%". A percentage with
+no visible denominator is not allowed anywhere in the output.
+
+Then:
+- Name the step with the largest drop in absolute users, not in percentage. A step losing
+  60% of 80 people is not the problem when another loses 20% of 5,000.
+- State the date range and the sample size for that step. If the sample is under 100
+  users, say the step is not measurable yet and stop there.
+
+If an event I need does not exist in the data, say which one is missing and what it would
+have to be called. Do not substitute a similar event and do not model the step.
+
+End with ONE sentence: the step to work on, and its arithmetic.</pre>
+    </div>
+  </div>
+
+  <div class="fn" id="self">
+    <div class="fn-head"><span class="fn-num">6</span><h3 class="fn-title">self-auditor</h3></div>
+    <p class="fn-sub"><em>The rule: check my own product's SEO advice against current Google documentation before checking any competitor.</em></p>
+    <div class="meta">
+      <span class="chip"><b>Reads:</b> your pages + Google's docs</span>
+      <span class="chip"><b>Returns:</b> one experiment</span>
+      <span class="chip"><b>When:</b> quarterly</span>
+    </div>
+    <p>The order is the point. It is much more comfortable to audit a competitor, and much more useful to audit yourself — especially if, like me, you sell SEO advice, in which case shipping advice Google has since contradicted is an unusually expensive mistake.</p>
+    <p>And the output is one experiment, not thirty ideas. Thirty ideas is a way of not choosing.</p>
+    <div class="prompt">
+      <div class="prompt-bar"><span class="prompt-label">skill · self-auditor</span><button class="copy">Copy</button></div>
+<pre>---
+name: self-auditor
+description: Check my own site's SEO claims and advice against current Google documentation, before looking at any competitor. Use quarterly.
+---
+
+Audit MY site first. Do not open a competitor, do not run a comparison, and do not
+mention what competitors do. If I ask for a competitor mid-run, finish this audit first.
+
+Step 1 — collect the claims.
+List the SEO claims and recommendations my own pages make. Quote each one verbatim with
+the URL it appears on. Cap at 12 claims, chosen by page traffic.
+
+Step 2 — check each against current Google documentation.
+For each claim, find what Google's own current documentation says. Cite the specific page
+you checked. Mark each claim:
+  SUPPORTED — the documentation says this
+  OUTDATED — the documentation used to support this and no longer does
+  CONTRADICTED — the documentation says the opposite
+  NOT ADDRESSED — Google's docs do not cover it, so this is opinion, not guidance
+
+If you cannot open Google's documentation, write "could not verify against source" for
+that claim. Do not mark a claim SUPPORTED from memory of the documentation.
+
+Step 3 — one experiment.
+From everything above, design exactly ONE experiment: the change to make, the page to make
+it on, the metric that would show it worked, and the date to check.
+
+BANNED: a list of 30 improvements. A prioritised backlog. A "quick wins" section.
+If two experiments seem equally good, pick the one on the page with more impressions and
+say that is why you picked it.
+
+End with the experiment, in five lines.</pre>
+    </div>
+  </div>
+
+  <hr>
+  <h2 id="rules">The warning: how to write a rule Astra can execute</h2>
+  <p class="lede">Astra follows skill files strictly. That's the feature, and it's also the trap.</p>
+  <p>This was the genuinely surprising part of building these, and it's worth more than any individual skill above, because it applies to every skill file you'll ever write.</p>
+
+  <h3>A vague rule doesn't get ignored. It gets executed vaguely.</h3>
+  <p>This is the failure people don't anticipate. You assume a woolly instruction gets skipped, and that the model falls back on good judgement. It doesn't. It follows the rule you wrote, at exactly the precision you wrote it.</p>
+  <div class="vs">
+    <div class="vs-col vs-old">
+      <h3>Vague</h3>
+      <ul>
+        <li>"Focus on the important pages"</li>
+        <li>"Don't give too many recommendations"</li>
+        <li>"Be honest about uncertainty"</li>
+        <li>"Look at recent data"</li>
+      </ul>
+    </div>
+    <div class="vs-col vs-new">
+      <h3>Executable</h3>
+      <ul>
+        <li>"Rank by impressions. Cap at 10 rows."</li>
+        <li>"End with exactly one action. No list."</li>
+        <li>"For each claim, write what the data cannot prove yet."</li>
+        <li>"Last 28 days, versus the 28 before."</li>
+      </ul>
+    </div>
+  </div>
+  <p>The test I use: <strong>could two different people read this rule and produce different output?</strong> If yes, the model will too, and you won't be able to compare this month's run to last month's.</p>
+
+  <h3>Conflicting rules can stop the skill working entirely</h3>
+  <p>This one cost me an afternoon. A skill that says "be thorough" in the description and "cap at 5 rows" in the body has been given two instructions that cannot both be satisfied, and the failure isn't a compromise — it's a skill that stalls, or produces something unrecognisable, or quietly drops one of the two rules without telling you which.</p>
+  <p>The conflicts that actually bite are rarely obvious. Mine were:</p>
+  <ul class="plain">
+    <li><strong>A description that promises breadth, a body that demands focus.</strong> The description is read first, to decide whether to run the skill at all. If it says "comprehensive audit" and the body says "one constraint", you've already lost.</li>
+    <li><strong>"Never estimate" plus a required field that can only be estimated.</strong> Either give it a way out — "write cannot compute from this data" — or don't ask for the field.</li>
+    <li><strong>"No commentary" plus "explain your reasoning".</strong> Pick one per skill. That's why skills 2 and 3 are separate files rather than one clever file.</li>
+  </ul>
+
+  <h3>Four rules for writing the file</h3>
+  <ul class="plain">
+    <li><strong>Write the description as <em>when to use this</em>, not <em>what this is</em>.</strong> It's the sentence that decides whether the skill runs at all.</li>
+    <li><strong>Cap every output with a number.</strong> "A few" is not a cap. "10 rows" is.</li>
+    <li><strong>Give every prohibition an escape hatch.</strong> "Never estimate" needs "write cannot compute from this data" beside it, or the skill has nowhere to go and will improvise.</li>
+    <li><strong>Say what to do with the borderline case.</strong> Most weird output comes from a row that half-qualified and had no instruction attached to it.</li>
+  </ul>
+
+  <div class="callout">
+    <p><span class="k">One skill, one job.</span> Every time I merged two skills to save a step, the merged version got worse at both. Six small files beat two clever ones.</p>
+  </div>
+
+  <hr>
+
+  <h2 id="routine">The routine</h2>
+  <p class="lede">Six skills is not six weekly jobs. Two repeat monthly. The rest fire on a trigger.</p>
+  <ul class="plain">
+    <li><strong>Monthly, 30 minutes</strong> — <strong>2 · dead-page-detector</strong>, then <strong>5 · funnel-auditor</strong>. One finds the traffic you're not converting into clicks, the other the clicks you're not converting into anything.</li>
+    <li><strong>After every diagnosis</strong> — <strong>3 · no-overclaiming</strong>, on whatever the previous skill just told you. This is the cheapest of the six and the one that most often stops a wasted week.</li>
+    <li><strong>Quarterly</strong> — <strong>1 · constraint-finder</strong> to decide what the quarter is about, <strong>4 · intent-mapper</strong> to see who's arriving and where they dead-end, <strong>6 · self-auditor</strong> to check your own advice hasn't gone stale.</li>
+  </ul>
+  <p>Start with two: <strong>constraint-finder</strong> and <strong>dead-page-detector</strong>. Run them for a month before you save the other four. Six new files in one afternoon is how you end up with six files you never call.</p>
+
+  <hr>
+
+  <h2 id="mistakes">The four mistakes that kill this</h2>
+
+  <div class="miss">
+    <h3>Running them without the data connected</h3>
+    <p>Every skill here reasons about your site. Disconnected, they produce fluent, confident, correctly formatted output about nobody's website — and it reads exactly like the real thing.</p>
+  </div>
+  <div class="miss">
+    <h3>Editing out the cap because you want "the full picture"</h3>
+    <p>Every file ends on one action on purpose. The first time you delete that line, you've rebuilt a 47-finding audit with extra steps and a nicer interface.</p>
+  </div>
+  <div class="miss">
+    <h3>Merging skills to save a step</h3>
+    <p>"No commentary" and "explain your reasoning" cannot live in one file. Astra will follow both, badly, or drop one without saying which.</p>
+  </div>
+  <div class="miss">
+    <h3>Trusting a number the skill didn't pull</h3>
+    <p>Every file forbids estimation and gives it a way to say so. If an answer contains a confident figure with no data call behind it, ask where it came from before you act on it.</p>
+  </div>
+
+  <h2>Where this still needs a human</h2>
+  <ul class="plain">
+    <li><strong>Whether the page can honestly deliver the query.</strong> Skill 2 finds the impressions you're not converting. Only you know whether the page behind them keeps its promise.</li>
+    <li><strong>What the right next step is.</strong> Skill 4 finds the dead ends. What belongs there is a business decision.</li>
+    <li><strong>Approval on anything that ships.</strong> These skills diagnose. None of them should be deciding to publish.</li>
+    <li><strong>The weird stuff.</strong> If a number looks wrong, it might be. Go and look at the page.</li>
+  </ul>
+
+  <hr>
+
+  <h2>What a skill file structurally cannot do</h2>
+  <p class="lede">You'll hit this in week three, and it isn't a flaw in the files.</p>
+  <p>A skill file is a rule. It has no memory and it doesn't run on its own.</p>
+  <p>Every one of these six starts from zero. It can re-pull the numbers, but it doesn't know that you rewrote that title in March, what it used to say, or that you were waiting to see whether it moved. Nothing fires when the 120,354-impression page finally starts getting clicks, and nothing fires when it stops — decay never announces itself, and by the time it shows up in a monthly total it's a rebuild rather than a fix.</p>
+  <p>That's the half a chat window can't hold, and it's what <strong>ChatSEO</strong> keeps on the other side of the plugin: the site, the history, the change you shipped and the date you said you'd check it. Astra is the interface and it's a very good one. The record has to live somewhere that doesn't reset between sessions.</p>
+  <p><a class="btn btn-primary" href="https://link.chatseo.app/pb-astra-seo-skills" target="_blank" rel="noopener">Connect ChatSEO free →</a></p>
+
+  <hr>
+
+  <h2 id="proof" style="scroll-margin-top:80px">How one founder went from 250 → 750 clicks a day</h2>
+  <p class="lede">He added <strong>+14,500 clicks just by chatting with AI.</strong></p>
+  <p>No SEO expertise. He simply ran the recommendations he was given — the same loop as skills 1, 2 and 5, running without him having to remember it. <a href="https://link.chatseo.app/pb-astra-seo-skills" target="_blank" rel="noopener"><strong>Start free →</strong></a></p>
+  <figure>
+    <img src="img/proof-clicks.webp" alt="Search Console graph showing daily clicks rising from around 250 to around 750." loading="lazy">
+  </figure>
+
+  <h2>Why this works when old SEO tools don't</h2>
+  <p>Here's the blunt truth about SEO in 2026. Everything on this page runs on nothing but your Search Console, your GA4 and six text files — and you can <a href="https://link.chatseo.app/pb-astra-seo-skills" target="_blank" rel="noopener">try it here for free</a> if you'd rather not be the one remembering to run them.</p>
+
+  <div class="vs">
+    <div class="vs-col vs-old">
+      <h3>Old SEO tools</h3>
+      <ul>
+        <li>47 findings sorted by somebody else's severity score</li>
+        <li>A clicks chart that's 88% your own brand name</li>
+        <li>Conversion rates you can't see the denominator of</li>
+        <li>Advice written before Google's docs changed</li>
+        <li>Five tools that don't talk to each other</li>
+      </ul>
+    </div>
+    <div class="vs-col vs-new">
+      <h3>What you actually want</h3>
+      <ul>
+        <li>One constraint, named, with the reason</li>
+        <li>The pages with 120,354 impressions and 2 clicks</li>
+        <li>Every rate shown as its arithmetic</li>
+        <li>Your own claims checked against current documentation</li>
+        <li>One connection, from Search Console to published fix</li>
+      </ul>
+    </div>
+  </div>
+
+  <figure>
+    <img src="img/vs-tools.webp" alt="Comparison of traditional SEO tooling against the ChatSEO approach." loading="lazy">
+  </figure>
+
+  <div class="final" style="margin:44px 0">
+    <h2 style="margin-top:0">That's the entire idea behind ChatSEO</h2>
+    <p>One SEO employee that reads your Search Console and GA4, tells you the single thing holding the site back, writes the fix, ships it to your site — and tells you a month later whether it worked. From Astra, from Claude, or from ChatSEO itself.</p>
+    <a class="btn btn-primary" href="https://link.chatseo.app/pb-astra-seo-skills" target="_blank" rel="noopener">Try ChatSEO free →</a>
+    <p class="note" style="margin-top:16px">No credit card required</p>
+  </div>
+
+  <footer>
+    <p>Built by <a href="https://link.chatseo.app/pb-astra-seo-skills" target="_blank" rel="noopener">Nicholas at ChatSEO</a> · Everything on this page is free to copy and use.</p>
+  </footer>
+
+</div>
+<script>
+// Theme: remember the viewer's choice, fall back to their system setting.
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  try{ var s=localStorage.getItem('theme'); if(s) root.setAttribute('data-theme',s); }catch(e){}
+  btn.addEventListener('click',function(){
+    var cur=root.getAttribute('data-theme');
+    if(!cur) cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+    var next=cur==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{ localStorage.setItem('theme',next); }catch(e){}
+  });
+})();
+
+// Copy buttons: the whole point of a skill playbook is getting the file out cleanly.
+document.querySelectorAll('.copy').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var pre=btn.closest('.prompt').querySelector('pre');
+    var text=pre.innerText;
+    var done=function(){ btn.textContent='Copied'; btn.classList.add('done');
+      setTimeout(function(){ btn.textContent='Copy'; btn.classList.remove('done'); },1600); };
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done).catch(fallback);
+    } else { fallback(); }
+    function fallback(){
+      var ta=document.createElement('textarea'); ta.value=text;
+      ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta);
+      ta.select(); try{ document.execCommand('copy'); done(); }catch(e){ btn.textContent='Select manually'; }
+      document.body.removeChild(ta);
+    }
+  });
+});
+</script>
+</body>
+</html>
