@@ -2,6 +2,7 @@
 
 Free, ungated SEO playbooks from [ChatSEO](https://link.chatseo.app/pb-seo-system).
 
+- [The SEO Claude Skills Folder](https://chatseo.github.io/playbooks/seo-skills-folder/) — an entire Head of SEO function in one Claude Skills folder: 15 specialist skills across research, optimisation, growth and measurement, plus the 12 shared thresholds they all read.
 - [Six SEO Skills for Astra](https://chatseo.github.io/playbooks/astra-seo-skills/) — the six skill files I run on my own Search Console and GA4: constraint-finder, dead-page-detector, no-overclaiming, intent-mapper, funnel-auditor, self-auditor — plus how to write a rule Astra can actually execute.
 - [The Complete SEO Playbook](https://chatseo.github.io/playbooks/complete-seo-playbook/) — the whole method in ten chapters and eight templates: the five-part model, query selection, opportunity signals, page prioritisation, intent matching, content, multi-surface execution, ranking response, measurement and a 30-day build.
 - [The Chief SEO Officer](https://chatseo.github.io/playbooks/chief-seo-officer/) — seven skills that turn Claude into a Chief SEO Officer: one constraint instead of 47 issues, a scored backlog, and a Monday report you actually read.

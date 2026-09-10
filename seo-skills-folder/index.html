@@ -1,0 +1,1406 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The SEO Claude Skills Folder</title>
+<meta name="description" content="15 specialist SEO skills for Claude, across research, optimisation, growth and measurement. Every skill file in full, nothing gated.">
+<meta property="og:title" content="The SEO Claude Skills Folder">
+<meta property="og:description" content="An entire Head of SEO function in one Claude Skills folder: 15 specialist skills, the full files, free.">
+<meta property="og:image" content="https://chatseo.github.io/playbooks/seo-skills-folder/img/og-card.jpg">
+<meta property="og:url" content="https://chatseo.github.io/playbooks/seo-skills-folder/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📁</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFFFFF; --surface:#FFFFFF; --ink:#000000; --muted:#5A6069;
+  --accent:#1D4ED8; --on-accent:#FFFFFF; --accent-soft:#EEF3FF; --sage:#1D4ED8;
+  --line:#E3E6EB; --code-bg:#0B0F19; --code-ink:#F4F6FA;
+  --shadow:0 1px 2px rgba(0,0,0,.04), 0 8px 24px rgba(0,0,0,.05);
+  --maxw:780px;
+}
+:root:not([data-theme="light"]){ @media (prefers-color-scheme: dark){
+  --bg:#000000; --surface:#0C0E12; --ink:#FFFFFF; --muted:#9AA1AB;
+  --accent:#6EA1FF; --on-accent:#000000; --accent-soft:#111826; --sage:#6EA1FF;
+  --line:#23272E; --code-bg:#0E1117; --code-ink:#F4F6FA;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.5);
+}}
+:root[data-theme="dark"]{
+  --bg:#000000; --surface:#0C0E12; --ink:#FFFFFF; --muted:#9AA1AB;
+  --accent:#6EA1FF; --on-accent:#000000; --accent-soft:#111826; --sage:#6EA1FF;
+  --line:#23272E; --code-bg:#0E1117; --code-ink:#F4F6FA;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.5);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:72px}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:17px; line-height:1.68; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 22px}
+
+/* ---------- top bar ---------- */
+.bar{
+  position:sticky; top:0; z-index:50; background:color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter:blur(10px); border-bottom:1px solid var(--line);
+}
+.bar-in{max-width:var(--maxw); margin:0 auto; padding:11px 22px; display:flex; align-items:center; gap:14px}
+.brand{font-weight:800; letter-spacing:-.02em; font-size:15px; text-decoration:none; color:var(--ink); white-space:nowrap}
+.brand span{color:var(--accent)}
+.bar nav{margin-left:auto; display:flex; gap:16px; overflow-x:auto; scrollbar-width:none}
+.bar nav::-webkit-scrollbar{display:none}
+.bar nav a{color:var(--muted); text-decoration:none; font-size:13.5px; font-weight:500; white-space:nowrap}
+.bar nav a:hover{color:var(--accent)}
+.theme{background:none; border:1px solid var(--line); color:var(--muted); border-radius:8px;
+  width:32px; height:32px; cursor:pointer; font-size:14px; flex:none}
+.theme:hover{color:var(--accent); border-color:var(--accent)}
+
+/* ---------- hero ---------- */
+.hero{padding:64px 0 8px; text-align:center}
+.eyebrow{
+  display:inline-block; font-size:12px; font-weight:700; letter-spacing:.13em; text-transform:uppercase;
+  color:var(--accent); background:var(--accent-soft); padding:6px 13px; border-radius:100px; margin-bottom:20px;
+}
+h1{
+  font-family:"Instrument Serif",Georgia,serif; font-weight:400; letter-spacing:-.015em;
+  font-size:clamp(40px,7.5vw,62px); line-height:1.06; margin:0 0 18px;
+}
+h1 em{font-style:italic; color:var(--accent)}
+.sub{font-size:19px; color:var(--muted); max-width:580px; margin:0 auto 30px}
+.cta-row{display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-bottom:10px}
+.btn{
+  display:inline-flex; align-items:center; gap:8px; padding:13px 24px; border-radius:10px;
+  font-weight:600; font-size:15px; text-decoration:none; border:1px solid transparent; transition:.15s;
+}
+.btn-primary{background:var(--accent); color:var(--on-accent)}
+.btn-primary:hover{filter:brightness(1.08); transform:translateY(-1px)}
+.btn-ghost{border-color:var(--line); color:var(--ink); background:var(--surface)}
+.btn-ghost:hover{border-color:var(--accent); color:var(--accent)}
+.note{font-size:13.5px; color:var(--muted)}
+.tease{margin:-16px 0 26px; font-size:14.5px}
+.tease a{color:var(--muted); text-decoration:none; border-bottom:1px dashed var(--line); padding-bottom:2px}
+.tease a:hover{color:var(--accent); border-bottom-color:var(--accent)}
+
+/* ---------- figures ---------- */
+figure{margin:38px 0}
+figure img{width:100%; height:auto; display:block; border-radius:14px; border:1px solid var(--line)}
+figure.plainfig img{border:0; border-radius:0}
+figcaption{font-size:13.5px; color:var(--muted); text-align:center; margin-top:11px}
+
+/* ---------- type ---------- */
+h2{
+  font-family:"Instrument Serif",Georgia,serif; font-weight:400; font-size:clamp(29px,4.6vw,38px);
+  line-height:1.16; letter-spacing:-.01em; margin:60px 0 6px;
+}
+h3{font-size:19px; font-weight:700; letter-spacing:-.01em; margin:32px 0 8px}
+p{margin:0 0 17px}
+a{color:var(--accent)}
+.lede{font-size:19px; color:var(--muted); margin-bottom:26px}
+hr{border:0; border-top:1px solid var(--line); margin:56px 0}
+strong{font-weight:650}
+
+/* ---------- author ---------- */
+.author{
+  display:flex; gap:24px; align-items:flex-start; background:var(--surface);
+  border:1px solid var(--line); border-radius:16px; padding:28px; margin:40px 0;
+}
+.author-img{
+  width:96px; height:96px; border-radius:50%; flex:none; object-fit:cover;
+  background:var(--accent-soft); border:1px solid var(--line);
+}
+.author p{margin:0 0 11px; font-size:17px; line-height:1.62}
+.author p:last-child{margin-bottom:0}
+
+/* ---------- skill cards ---------- */
+.group-head{
+  display:flex; align-items:center; gap:12px; margin:46px 0 6px;
+}
+.group-head span{
+  font-size:12px; font-weight:800; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--accent); background:var(--accent-soft); padding:5px 12px; border-radius:100px; flex:none;
+}
+.group-head hr{flex:1; margin:0; border-top:1px solid var(--line)}
+.group-sub{color:var(--muted); font-size:15.5px; margin:0 0 18px}
+.fn{
+  background:var(--surface); border:1px solid var(--line); border-radius:16px;
+  padding:24px 26px; margin:14px 0; box-shadow:var(--shadow); scroll-margin-top:80px;
+}
+.fn-head{display:flex; align-items:baseline; gap:12px; margin-bottom:4px; flex-wrap:wrap}
+.fn-num{
+  font-family:"Instrument Serif",Georgia,serif; font-size:30px; line-height:1;
+  color:var(--accent); flex:none;
+}
+.fn-title{font-size:20px; font-weight:750; letter-spacing:-.015em; margin:0}
+.fn-sub{color:var(--muted); font-size:15px; margin:0 0 14px}
+.meta{display:flex; flex-wrap:wrap; gap:8px; margin:14px 0}
+.chip{
+  font-size:12.5px; font-weight:600; padding:5px 11px; border-radius:100px;
+  background:var(--bg); border:1px solid var(--line); color:var(--muted);
+}
+.chip b{color:var(--ink); font-weight:650}
+
+/* ---------- dropdown ---------- */
+details.drop{
+  border:1px solid var(--line); border-radius:12px; background:var(--bg);
+  margin:14px 0 0; overflow:hidden;
+}
+details.drop + details.drop{margin-top:8px}
+details.drop > summary{
+  cursor:pointer; list-style:none; padding:12px 16px; display:flex; align-items:center; gap:10px;
+  font-size:14.5px; font-weight:600; color:var(--accent); user-select:none;
+}
+details.drop > summary::-webkit-details-marker{display:none}
+details.drop > summary::before{
+  content:"›"; font-size:19px; line-height:1; color:var(--accent);
+  transition:transform .18s ease; display:inline-block; flex:none;
+}
+details.drop[open] > summary::before{transform:rotate(90deg)}
+details.drop > summary:hover{background:var(--accent-soft)}
+details.drop[open] > summary{border-bottom:1px solid var(--line)}
+.drop-body{padding:14px 16px 16px}
+.drop-body > *:last-child{margin-bottom:0}
+.drop-body .prompt{margin:0}
+.drop-note{font-size:13.5px; color:var(--muted); margin:0 0 12px}
+
+/* ---------- prompt block ---------- */
+.prompt{position:relative; margin:16px 0 4px}
+.prompt-bar{
+  display:flex; align-items:center; justify-content:space-between; gap:10px;
+  background:var(--code-bg); border-radius:10px 10px 0 0; padding:9px 13px;
+  border-bottom:1px solid rgba(255,255,255,.09);
+}
+.prompt-label{
+  font-family:"JetBrains Mono",ui-monospace,monospace; font-size:11.5px;
+  letter-spacing:.06em; text-transform:uppercase; color:#8C93A0;
+}
+.copy{
+  background:rgba(255,255,255,.12); color:#F5F5F5; border:0; border-radius:6px;
+  padding:5px 11px; font-size:12px; font-weight:600; cursor:pointer;
+  font-family:Inter,sans-serif; transition:.15s; white-space:nowrap;
+}
+.copy:hover{background:#1D4ED8; color:#FFFFFF}
+.copy.done{background:#1D4ED8; color:#FFFFFF}
+pre{
+  margin:0; background:var(--code-bg); color:var(--code-ink); border-radius:0 0 10px 10px;
+  padding:17px; overflow-x:auto; font-family:"JetBrains Mono",ui-monospace,monospace;
+  font-size:12.5px; line-height:1.62; white-space:pre-wrap; word-wrap:break-word;
+}
+
+/* ---------- callout ---------- */
+.callout{
+  border-left:3px solid var(--accent); background:var(--accent-soft);
+  padding:16px 20px; border-radius:0 12px 12px 0; margin:26px 0;
+}
+.callout p{margin:0; font-size:15.5px}
+.callout .k{font-weight:700; color:var(--accent)}
+
+/* ---------- lists ---------- */
+ul,ol{padding-left:22px; margin:0 0 18px}
+li{margin-bottom:9px}
+.plain{list-style:none; padding:0}
+.plain li{padding-left:28px; position:relative; margin-bottom:13px}
+.plain li::before{content:"→"; position:absolute; left:0; color:var(--accent); font-weight:700}
+
+/* ---------- setup steps ---------- */
+.setup{counter-reset:s; list-style:none; padding:0; margin:22px 0}
+.setup li{counter-increment:s; position:relative; padding-left:40px; margin-bottom:14px}
+.setup li::before{
+  content:counter(s); position:absolute; left:0; top:1px;
+  width:26px; height:26px; border-radius:50%; background:var(--accent); color:var(--on-accent);
+  font-size:13px; font-weight:700; display:flex; align-items:center; justify-content:center;
+}
+kbd{
+  font-family:"JetBrains Mono",ui-monospace,monospace; font-size:12.5px;
+  background:var(--bg); border:1px solid var(--line); border-radius:5px; padding:2px 6px;
+}
+
+/* ---------- table ---------- */
+.tw{overflow-x:auto; margin:18px 0; border:1px solid var(--line); border-radius:12px}
+table{border-collapse:collapse; width:100%; font-size:14.5px; min-width:420px}
+th,td{padding:10px 15px; text-align:left; border-bottom:1px solid var(--line)}
+th{background:var(--surface); font-weight:650; font-size:12.5px; letter-spacing:.05em; text-transform:uppercase; color:var(--muted)}
+tr:last-child td{border-bottom:0}
+td b{color:var(--accent)}
+
+/* ---------- old-vs-new comparison ---------- */
+.vs{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:26px 0}
+.vs-col{border:1px solid var(--line); border-radius:14px; padding:20px; background:var(--surface)}
+.vs-col h3{margin:0 0 12px; font-size:15px; letter-spacing:.04em; text-transform:uppercase}
+.vs-col ul{margin:0; padding-left:20px}
+.vs-col li{font-size:15px; margin-bottom:9px; color:var(--muted)}
+.vs-old h3{color:var(--muted)}
+.vs-old li{text-decoration:line-through; text-decoration-color:var(--line)}
+.vs-new{border-color:var(--accent)}
+.vs-new h3{color:var(--accent)}
+.vs-new li{color:var(--ink)}
+:not(pre) > code{
+  font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:.88em; background:var(--surface); border:1px solid var(--line);
+  border-radius:6px; padding:1px 6px; color:var(--ink); word-break:break-word;
+}
+@media (max-width:600px){ .vs{grid-template-columns:1fr} }
+
+/* ---------- final cta ---------- */
+.final{
+  background:var(--surface); border:1px solid var(--accent); border-radius:18px;
+  padding:38px 28px; text-align:center; margin:52px 0 24px;
+}
+.final h2{margin:0 0 10px}
+.final p{color:var(--muted); max-width:470px; margin:0 auto 22px}
+footer{text-align:center; padding:34px 0 56px; color:var(--muted); font-size:13.5px}
+footer a{color:var(--muted)}
+
+@media (max-width:560px){
+  body{font-size:16px}
+  .fn{padding:20px}
+  .bar nav{display:none}
+  .author{flex-direction:column; gap:12px}
+}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="bar-in">
+    <a class="brand" href="#top">Chat<span>SEO</span></a>
+    <nav>
+      <a href="#install">Install</a>
+      <a href="#thresholds">Thresholds</a>
+      <a href="#skills">The 15 Skills</a>
+      <a href="#proof">Proof</a>
+    </nav>
+    <button class="theme" id="themeBtn" aria-label="Toggle theme">◐</button>
+  </div>
+</div>
+
+<div class="wrap" id="top">
+
+  <div class="hero">
+    <span class="eyebrow">Free · Nothing gated</span>
+    <h1>The SEO Claude<br><em>Skills Folder</em></h1>
+    <p class="sub">An entire Head of SEO function in one folder: 15 specialist skills across research, optimisation, growth and measurement. Every file is here in full — open a dropdown, copy it, save it.</p>
+    <p class="tease"><a href="#proof">How one founder went from 250 to 750 clicks a day on this method →</a></p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://link.chatseo.app/pb-seo-skills-folder" target="_blank" rel="noopener">Give the folder your live data →</a>
+      <a class="btn btn-ghost" href="#skills">Read the 15 skills</a>
+    </div>
+    <p class="note">Free · No credit card required</p>
+  </div>
+
+  <div class="author">
+    <img class="author-img" src="img/tw3810.webp" alt="Nicholas" loading="lazy">
+    <div>
+      <p><strong>Hey there, I'm Nicholas 👋</strong></p>
+      <p>I grew my last B2C app to 15K Google clicks/month as a solo founder, then sold it. Turns out I fell in love with SEO along the way.</p>
+      <p>So now I'm building <a href="https://link.chatseo.app/pb-seo-skills-folder" target="_blank" rel="noopener"><strong>ChatSEO.app</strong></a> — an all-in-one <strong>SEO employee</strong> whose job is to make sure you <strong>rank #1 in Google and in AI search</strong>.</p>
+      <p>This folder is the version of my process that fits in a text editor. <a href="https://link.chatseo.app/pb-seo-skills-folder" target="_blank" rel="noopener"><strong>Try it free →</strong></a></p>
+    </div>
+  </div>
+
+  <hr>
+
+  <h2>These aren't saved prompts</h2>
+  <p class="lede">A prompt is a request. A skill is a job description that outlives your mood.</p>
+  <p>Paste a great prompt today and you get a great answer today. Paste it again next month, reworded slightly because you remembered it differently, and the answer has a different shape — so you can't compare the two, so neither one taught you anything.</p>
+  <p>A skill file takes the wording out of the equation. Same inputs, same steps, same output format, every run. Which is why each of the 15 files below carries seven things a prompt never does:</p>
+
+  <figure class="plainfig">
+    <svg viewBox="0 0 700 500" role="img" aria-label="Anatomy of one skill file: required inputs, step-by-step process, exact output format, worked example, quality checks, common traps and a reusable template, all sitting on a shared definitions and thresholds file." style="width:100%;height:auto">
+      <style>
+        .ink-s{stroke:var(--ink);fill:none;stroke-width:1.5}
+        .hair{stroke:var(--line);stroke-width:1}
+        .acc-s{stroke:var(--accent);fill:none;stroke-width:1.5}
+        .acc-f{fill:var(--accent)}
+        .t{fill:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:16px}
+        .m{fill:var(--muted);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em}
+        .b{fill:var(--accent);font-family:Inter,system-ui,sans-serif;font-size:15px;font-weight:700}
+        .bs{fill:var(--muted);font-family:Inter,system-ui,sans-serif;font-size:12.5px}
+      </style>
+      <rect x="160" y="8" width="380" height="356" rx="14" class="ink-s"/>
+      <text x="182" y="38" class="m">ONE-SKILL.MD</text>
+      <line x1="160" y1="54" x2="540" y2="54" class="hair"/>
+      <g>
+        <rect x="184" y="76" width="9" height="9" class="acc-f"/><text x="206" y="85" class="t">Required inputs</text>
+        <line x1="184" y1="105" x2="516" y2="105" class="hair"/>
+        <rect x="184" y="120" width="9" height="9" class="acc-f"/><text x="206" y="129" class="t">Step-by-step process</text>
+        <line x1="184" y1="149" x2="516" y2="149" class="hair"/>
+        <rect x="184" y="164" width="9" height="9" class="acc-f"/><text x="206" y="173" class="t">Exact output format</text>
+        <line x1="184" y1="193" x2="516" y2="193" class="hair"/>
+        <rect x="184" y="208" width="9" height="9" class="acc-f"/><text x="206" y="217" class="t">Worked example</text>
+        <line x1="184" y1="237" x2="516" y2="237" class="hair"/>
+        <rect x="184" y="252" width="9" height="9" class="acc-f"/><text x="206" y="261" class="t">Quality checks</text>
+        <line x1="184" y1="281" x2="516" y2="281" class="hair"/>
+        <rect x="184" y="296" width="9" height="9" class="acc-f"/><text x="206" y="305" class="t">Common traps</text>
+        <line x1="184" y1="325" x2="516" y2="325" class="hair"/>
+        <rect x="184" y="340" width="9" height="9" class="acc-f"/><text x="206" y="349" class="t">Reusable template</text>
+      </g>
+      <line x1="350" y1="364" x2="350" y2="412" class="acc-s"/>
+      <rect x="90" y="412" width="520" height="72" rx="12" class="acc-s"/>
+      <text x="350" y="443" class="b" text-anchor="middle">Shared definitions &amp; thresholds</text>
+      <text x="350" y="466" class="bs" text-anchor="middle">one file · read by all 15 skills · the reason two skills agree</text>
+    </svg>
+    <figcaption>Every skill in the folder has the same seven parts, and they all sit on one shared thresholds file.</figcaption>
+  </figure>
+
+  <p>That last box is the part people leave out, and it's the part that does the most work. If the keyword skill calls a query "low CTR" at one number and the reporting skill calls it low at another, the folder contradicts itself and you stop trusting it. One shared file, twelve numbers, no drift.</p>
+
+  <hr>
+
+  <h2 id="install">Install it in four minutes</h2>
+  <p class="lede">The folder is designed for messy inputs. That's the whole point of it.</p>
+
+  <figure class="plainfig">
+    <svg viewBox="0 0 760 250" role="img" aria-label="Messy inputs — a Search Console export, a crawl file, a screenshot or a typed URL — all feed into the SEO skills folder, which returns one next action." style="width:100%;height:auto">
+      <style>
+        .ink-s2{stroke:var(--ink);fill:none;stroke-width:1.5}
+        .arw{stroke:var(--muted);fill:none;stroke-width:1.3}
+        .arw2{stroke:var(--ink);fill:none;stroke-width:2}
+        .acc-s2{stroke:var(--accent);fill:none;stroke-width:2}
+        .t2{fill:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:14px}
+        .b2{fill:var(--accent);font-family:Inter,system-ui,sans-serif;font-size:15px;font-weight:750}
+        .bs2{fill:var(--muted);font-family:Inter,system-ui,sans-serif;font-size:12.5px}
+      </style>
+      <defs>
+        <marker id="ah" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+          <path d="M0,0 L8,4 L0,8 z" fill="var(--muted)"/>
+        </marker>
+        <marker id="ahk" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+          <path d="M0,0 L9,4.5 L0,9 z" fill="var(--ink)"/>
+        </marker>
+      </defs>
+      <rect x="8" y="14" width="158" height="40" rx="8" class="ink-s2"/><text x="87" y="39" class="t2" text-anchor="middle">A GSC export</text>
+      <rect x="8" y="70" width="158" height="40" rx="8" class="ink-s2"/><text x="87" y="95" class="t2" text-anchor="middle">A crawl file</text>
+      <rect x="8" y="126" width="158" height="40" rx="8" class="ink-s2"/><text x="87" y="151" class="t2" text-anchor="middle">A screenshot</text>
+      <rect x="8" y="182" width="158" height="40" rx="8" class="ink-s2"/><text x="87" y="207" class="t2" text-anchor="middle">A typed URL</text>
+      <path d="M168 34 C 230 34, 240 100, 296 112" class="arw" marker-end="url(#ah)"/>
+      <path d="M168 90 C 230 90, 245 108, 296 116" class="arw" marker-end="url(#ah)"/>
+      <path d="M168 146 C 230 146, 245 132, 296 122" class="arw" marker-end="url(#ah)"/>
+      <path d="M168 202 C 230 202, 240 140, 296 126" class="arw" marker-end="url(#ah)"/>
+      <path d="M306 66 h60 l12 16 h96 a10 10 0 0 1 10 10 v70 a10 10 0 0 1 -10 10 h-168 a10 10 0 0 1 -10 -10 v-86 a10 10 0 0 1 10 -10 z" class="acc-s2"/>
+      <text x="390" y="112" class="b2" text-anchor="middle">SEO Skills Folder</text>
+      <text x="390" y="134" class="bs2" text-anchor="middle">15 skills · 12 shared thresholds</text>
+      <path d="M494 118 h72" class="arw2" marker-end="url(#ahk)"/>
+      <rect x="580" y="92" width="172" height="52" rx="9" class="ink-s2"/>
+      <text x="666" y="123" class="t2" text-anchor="middle">One next action</text>
+    </svg>
+    <figcaption>Give it what you actually have. Every skill ends on a single action, not a list of 47 findings.</figcaption>
+  </figure>
+
+  <div class="fn">
+    <div class="fn-head"><h3 class="fn-title">Set it up once</h3></div>
+    <p class="fn-sub">Then every skill below has something real to read.</p>
+    <ol class="setup">
+      <li>Make a folder called <code>seo</code>. Save each skill below as its own <code>.md</code> file inside it, named after the <code>name:</code> line in its frontmatter.</li>
+      <li>Save the <a href="#thresholds"><strong>shared thresholds file</strong></a> alongside them as <code>_thresholds.md</code>. Do this even if you only ever use three skills — it's what stops two skills disagreeing.</li>
+      <li>Give Claude the folder: attach it to a Project, or drop it wherever your Claude client loads skills from. Then call a skill by name.</li>
+      <li>Connect your real data before you run anything — the step below.</li>
+    </ol>
+  </div>
+
+  <h3>The step people skip</h3>
+  <p>Fifteen skills that reason about your site are worth nothing if the model can't see your site. Every skill below reads Search Console data. Without it you get a well-structured essay about SEO in general — confident, beautifully formatted, and about nobody's website.</p>
+  <p>You can paste CSV exports by hand, and the skills are written to accept that. The way I do it is the <strong>ChatSEO plugin</strong>: one read-only Google OAuth connection, then Claude can query Search Console and GA4 as tools. No export, no pasting, and it can re-pull next month without you.</p>
+
+  <div class="callout">
+    <p><span class="k">Test it before you save a single file.</span> Ask: <em>"Which of my pages lost the most clicks last month?"</em> Real URLs back means you're connected. Advice about <em>how</em> to find those pages means you aren't — and all 15 skills will produce fiction in a nice table. <a href="https://link.chatseo.app/pb-seo-skills-folder" target="_blank" rel="noopener"><strong>Connect ChatSEO free →</strong></a></p>
+  </div>
+
+  <hr>
+
+  <h2 id="thresholds">The 12 shared thresholds</h2>
+  <p class="lede">Every skill reads this file. Open a scale to see the numbers it uses.</p>
+  <p>SEO advice falls apart on undefined words. "Low CTR", "thin content", "a good link", "a big drop" — every one of those is a judgement call, and a model left to make it will make a different one each time. So the folder makes the calls once, here, and every skill defers to this file.</p>
+
+  <details class="drop">
+    <summary>Scale 1 · Position bands and what CTR is expected in each</summary>
+    <div class="drop-body">
+      <p class="drop-note">Used by: GSC analysis, on-page, dead pages, reporting.</p>
+      <div class="tw"><table>
+        <thead><tr><th>Band</th><th>Avg position</th><th>Read as</th></tr></thead>
+        <tbody>
+          <tr><td><b>Winning</b></td><td>1.0 – 3.0</td><td>Defend. Only touch if CTR is below this site's own band average.</td></tr>
+          <tr><td><b>Striking distance</b></td><td>3.1 – 10.0</td><td>Cheapest clicks on the site. Work here first.</td></tr>
+          <tr><td><b>Page two</b></td><td>10.1 – 20.0</td><td>Real intent, wrong page. Usually an intent or internal-link problem.</td></tr>
+          <tr><td><b>Noise</b></td><td>20.1+</td><td>Ignore unless impressions exceed the floor in scale 2.</td></tr>
+        </tbody>
+      </table></div>
+      <p class="drop-note" style="margin:0">CTR is always judged against <strong>this site's own average for that band</strong>, never a published industry table. Brand queries are excluded from the average first — they inflate it enough to hide everything else.</p>
+    </div>
+  </details>
+
+  <details class="drop">
+    <summary>Scale 2 · The opportunity floor — when a number is big enough to act on</summary>
+    <div class="drop-body">
+      <p class="drop-note">Used by: every skill that ranks anything.</p>
+      <ul class="plain" style="margin-bottom:12px">
+        <li><strong>1,000+ impressions / 28 days</strong> for a page to enter any priority list.</li>
+        <li><strong>100+ impressions / 28 days</strong> for a single query to be named individually.</li>
+        <li><strong>30 clicks</strong> minimum before a CTR figure is treated as signal rather than noise.</li>
+        <li><strong>3 months of history</strong> before any trend is called a trend.</li>
+      </ul>
+      <p class="drop-note" style="margin:0">Below a floor, the correct output is "below the floor, not ranked" — not a smaller-font recommendation.</p>
+    </div>
+  </details>
+
+  <details class="drop">
+    <summary>Scale 3 · Intent classes and the cluster rule</summary>
+    <div class="drop-body">
+      <p class="drop-note">Used by: keyword clustering, search intent, topical map, content brief.</p>
+      <div class="tw"><table>
+        <thead><tr><th>Class</th><th>Signal in the SERP</th><th>Page that wins it</th></tr></thead>
+        <tbody>
+          <tr><td><b>Informational</b></td><td>Guides, forums, videos, People Also Ask</td><td>Explainer or tutorial</td></tr>
+          <tr><td><b>Comparison</b></td><td>Listicles, "best", "vs", review sites</td><td>Comparison or alternatives page</td></tr>
+          <tr><td><b>Transactional</b></td><td>Product pages, pricing, ads above the fold</td><td>Product, pricing or signup page</td></tr>
+          <tr><td><b>Navigational</b></td><td>One brand owns the top 3</td><td>Nothing. Don't target it.</td></tr>
+        </tbody>
+      </table></div>
+      <p class="drop-note" style="margin:0"><strong>Cluster rule:</strong> 3 or more queries sharing one intent class and one realistic destination URL = one cluster, named after its highest-impression query. Fewer than 3 = merge into a neighbour or drop. One cluster maps to <strong>exactly one URL</strong> — that constraint is what prevents cannibalisation later.</p>
+    </div>
+  </details>
+
+  <details class="drop">
+    <summary>Scale 4 · Decay and cannibalisation — the two definitions people fudge</summary>
+    <div class="drop-body">
+      <p class="drop-note">Used by: content refresh, traffic drop diagnosis, internal linking.</p>
+      <p><strong>Decayed</strong> = clicks down 30% or more over the last 90 days versus the 90 before, while impressions are flat or down less than 10%. Impressions holding is what separates decay (you lost the click) from a demand drop (nobody searched).</p>
+      <p><strong>Cannibalisation</strong> = two or more URLs from your site ranking in the top 20 for the same query inside one 28-day window, with neither above position 5. Two URLs where one sits at 2 and the other at 14 is not cannibalisation — it's a strong page and a weak one.</p>
+      <p style="margin:0"><strong>Seasonal</strong> = the same shape appeared in the same weeks last year. Always check this before diagnosing anything as a drop.</p>
+    </div>
+  </details>
+
+  <details class="drop">
+    <summary>Scale 5 · Link quality tiers, A to D</summary>
+    <div class="drop-body">
+      <p class="drop-note">Used by: backlink audit, link building.</p>
+      <div class="tw"><table>
+        <thead><tr><th>Tier</th><th>What it is</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr><td><b>A</b></td><td>Editorial link, topically relevant site, page gets real search traffic</td><td>Study it. Get more like it.</td></tr>
+          <tr><td><b>B</b></td><td>Relevant site, but a directory, profile or resource list</td><td>Keep. Don't chase more.</td></tr>
+          <tr><td><b>C</b></td><td>Irrelevant topic, or a page with no traffic of its own</td><td>Ignore. Not worth a disavow.</td></tr>
+          <tr><td><b>D</b></td><td>Paid network, scraper, spun content, obvious footprint</td><td>Document. Disavow only with a manual action.</td></tr>
+        </tbody>
+      </table></div>
+      <p class="drop-note" style="margin:0">Tier is assigned from what you can actually see. A link whose tier can't be determined is written as <code>tier unknown</code> — never rounded up to B.</p>
+    </div>
+  </details>
+
+  <details class="drop">
+    <summary>Scale 6 · The confidence scale — the most important one in the folder</summary>
+    <div class="drop-body">
+      <p class="drop-note">Used by: every skill, on every claim about cause.</p>
+      <div class="tw"><table>
+        <thead><tr><th>Label</th><th>Means</th><th>Allowed to</th></tr></thead>
+        <tbody>
+          <tr><td><b>Confirmed</b></td><td>Visible in the data provided, with the figure quoted</td><td>Drive the recommendation</td></tr>
+          <tr><td><b>Probable</b></td><td>Consistent with the data, but the data can't prove it</td><td>Be named, with the test that would confirm it</td></tr>
+          <tr><td><b>Unverifiable</b></td><td>Would need data that wasn't provided</td><td>Be listed as what to pull next. Nothing else.</td></tr>
+        </tbody>
+      </table></div>
+      <p class="drop-note" style="margin:0">Every skill is forbidden from producing a number that isn't in its inputs. The instruction is literal — <em>write "cannot compute from this data" and move on</em> — and it's the difference between an audit you can act on and an essay that sounds like one.</p>
+    </div>
+  </details>
+
+  <details class="drop">
+    <summary>Copy the full shared file</summary>
+    <div class="drop-body">
+      <div class="prompt">
+        <div class="prompt-bar"><span class="prompt-label">_thresholds.md</span><button class="copy">Copy</button></div>
+<pre>---
+name: seo-thresholds
+description: Shared SEO definitions and thresholds. Every skill in this folder reads this file before deciding whether a number matters. Never override these locally.
+---
+
+POSITION BANDS
+  winning 1.0-3.0 | striking distance 3.1-10.0 | page two 10.1-20.0 | noise 20.1+
+  CTR is judged against THIS site's own average for that band, brand queries excluded.
+  Never use a published industry CTR table.
+
+OPPORTUNITY FLOORS
+  page enters a priority list:      1,000+ impressions / 28 days
+  query named individually:           100+ impressions / 28 days
+  CTR treated as signal:               30+ clicks
+  a trend may be called a trend:        3+ months of history
+  Below a floor, output "below the floor, not ranked". Do not rank it quietly.
+
+INTENT CLASSES
+  informational | comparison | transactional | navigational
+  Navigational queries owned by one brand in the top 3 are never targeted.
+
+CLUSTER RULE
+  3+ queries, one intent class, one realistic destination URL = one cluster.
+  Name the cluster after its highest-impression query.
+  Fewer than 3 queries: merge into a neighbour or drop it.
+  One cluster maps to EXACTLY ONE URL.
+
+DECAY
+  clicks down 30%+ over 90 days vs the prior 90, AND impressions flat or down &lt;10%.
+  If impressions fell too, it is a demand change, not decay. Say so.
+
+CANNIBALISATION
+  2+ of my URLs in the top 20 for one query in one 28-day window, neither above
+  position 5. One strong page plus one weak page is not cannibalisation.
+
+SEASONALITY
+  Before diagnosing any drop, check the same weeks last year. Same shape = seasonal.
+
+LINK TIERS
+  A editorial, relevant, page has its own search traffic
+  B relevant but directory / profile / resource list
+  C irrelevant topic, or page with no traffic
+  D paid network, scraper, spun, obvious footprint
+  Undeterminable tier is written "tier unknown". Never round up.
+
+CONFIDENCE SCALE — applies to every claim about cause
+  confirmed     visible in the data provided; quote the figure
+  probable      consistent with the data; name the test that would confirm it
+  unverifiable  needs data not provided; list it as what to pull next
+
+FORECASTING
+  Requires 6+ months of history. Output a range, never a single number.
+  State the assumption the range depends on.
+
+UNIVERSAL RULES
+  Never state a number that is not in the inputs. Write
+  "cannot compute from this data" and move on. Never estimate, and never carry
+  an estimated number into a later step.
+  Every skill ends on ONE action. Not a ranked list of actions. One.</pre>
+      </div>
+    </div>
+  </details>
+
+  <hr>
+
+  <h2 id="skills">The 15 skills</h2>
+  <p class="lede">Four groups, in the order you'd actually run them. Every file is complete — open the dropdown and copy it.</p>
+
+  <figure class="plainfig">
+    <svg viewBox="0 0 760 300" role="img" aria-label="The four groups of the folder: research, optimize, grow and measure, with their skills listed under each." style="width:100%;height:auto">
+      <style>
+        .col-h{fill:var(--accent);font-family:Inter,system-ui,sans-serif;font-size:13px;font-weight:800;letter-spacing:.14em}
+        .col-i{fill:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:13.5px}
+        .rule{stroke:var(--line);stroke-width:1}
+        .rule-k{stroke:var(--ink);stroke-width:1.5}
+        .ar{fill:var(--accent);font-family:Inter,system-ui,sans-serif;font-size:12px}
+      </style>
+      <line x1="190" y1="14" x2="190" y2="252" class="rule"/>
+      <line x1="380" y1="14" x2="380" y2="252" class="rule"/>
+      <line x1="570" y1="14" x2="570" y2="252" class="rule"/>
+      <line x1="8" y1="272" x2="752" y2="272" class="rule-k"/>
+      <g><text x="16" y="34" class="col-h">RESEARCH</text>
+        <text x="16" y="86" class="ar">→</text><text x="36" y="86" class="col-i">Keyword clustering</text>
+        <text x="16" y="126" class="ar">→</text><text x="36" y="126" class="col-i">Search intent</text>
+        <text x="16" y="166" class="ar">→</text><text x="36" y="166" class="col-i">Competitor gap</text>
+        <text x="16" y="206" class="ar">→</text><text x="36" y="206" class="col-i">Topical map</text></g>
+      <g><text x="206" y="34" class="col-h">OPTIMIZE</text>
+        <text x="206" y="86" class="ar">→</text><text x="226" y="86" class="col-i">Technical audit</text>
+        <text x="206" y="126" class="ar">→</text><text x="226" y="126" class="col-i">On-page</text>
+        <text x="206" y="166" class="ar">→</text><text x="226" y="166" class="col-i">Internal links</text>
+        <text x="206" y="206" class="ar">→</text><text x="226" y="206" class="col-i">Content refresh</text></g>
+      <g><text x="396" y="34" class="col-h">GROW</text>
+        <text x="396" y="86" class="ar">→</text><text x="416" y="86" class="col-i">Content brief</text>
+        <text x="396" y="126" class="ar">→</text><text x="416" y="126" class="col-i">Backlinks</text>
+        <text x="396" y="166" class="ar">→</text><text x="416" y="166" class="col-i">Local SEO</text>
+        <text x="396" y="206" class="ar">→</text><text x="416" y="206" class="col-i">AI answers</text></g>
+      <g><text x="586" y="34" class="col-h">MEASURE</text>
+        <text x="586" y="86" class="ar">→</text><text x="606" y="86" class="col-i">GSC analysis</text>
+        <text x="586" y="126" class="ar">→</text><text x="606" y="126" class="col-i">Traffic drops</text>
+        <text x="586" y="166" class="ar">→</text><text x="606" y="166" class="col-i">Reporting</text></g>
+      <text x="380" y="294" class="col-i" text-anchor="middle" style="fill:var(--muted);font-size:12.5px">All 15 read the same thresholds file. All 15 end on one action.</text>
+    </svg>
+  </figure>
+
+  <div class="group-head"><span>Research</span><hr></div>
+  <p class="group-sub">What to go after, and what to leave alone.</p>
+
+  <div class="fn" id="s1">
+    <div class="fn-head"><span class="fn-num">1</span><h3 class="fn-title">keyword-clustering</h3></div>
+    <p class="fn-sub"><em>The rule: one cluster, one URL. Anything that can't own a URL gets merged or dropped.</em></p>
+    <div class="meta"><span class="chip"><b>Reads:</b> GSC queries or a keyword list</span><span class="chip"><b>Returns:</b> clusters, one per URL</span></div>
+    <p>Most keyword lists fail because they're sorted by volume. This one is sorted by whether a single page could plausibly rank for the whole group — which is the only property that turns a list into a content plan.</p>
+    <details class="drop"><summary>Open the full skill file</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">skill · keyword-clustering</span><button class="copy">Copy</button></div>
+<pre>---
+name: keyword-clustering
+description: Turn a raw query list into clusters that each map to one URL. Use before any content planning.
+---
+
+Read _thresholds.md first. Apply the cluster rule and the intent classes from it.
+
+INPUTS — ask for what is missing, do not proceed without it:
+- a query list with impressions (GSC export or connected Search Console), or a keyword list
+- the site's existing URLs, if you have them
+
+PROCESS
+1. Drop every query under the individual-query floor.
+2. Drop navigational queries owned by another brand in the top 3.
+3. Assign each remaining query an intent class.
+4. Group queries that share an intent class AND could be satisfied by one page.
+5. Name each cluster after its highest-impression query.
+6. Map each cluster to ONE URL: an existing one if it fits, otherwise "new page".
+7. Merge or drop any cluster left with fewer than 3 queries.
+
+OUTPUT — one table, ranked by total cluster impressions, capped at 15 rows:
+cluster | intent | total impressions | query count | destination URL | new or existing
+
+RULES
+- A query appears in exactly one cluster. If it fits two, the cluster with more
+  impressions takes it, and you say which one lost it.
+- Never invent search volume. If impressions are missing, write "not in data".
+- No difficulty score. You cannot see one, and inventing one is worse than omitting it.
+
+End with ONE line: the cluster to build first, and whether it is new or existing.</pre></div>
+    </div></details>
+  </div>
+
+  <div class="fn" id="s2">
+    <div class="fn-head"><span class="fn-num">2</span><h3 class="fn-title">search-intent</h3></div>
+    <p class="fn-sub"><em>The rule: read the SERP that exists, not the intent you'd prefer the query had.</em></p>
+    <div class="meta"><span class="chip"><b>Reads:</b> a SERP screenshot or pasted results</span><span class="chip"><b>Returns:</b> the page format that wins</span></div>
+    <p>Nearly every "we wrote the content and it didn't rank" story is this: a guide aimed at a query where Google is only showing product pages. The format is the fight, and you can see who won it before you write anything.</p>
+    <details class="drop"><summary>Open the full skill file</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">skill · search-intent</span><button class="copy">Copy</button></div>
+<pre>---
+name: search-intent
+description: Read a live SERP and name the page format that can rank. Use before writing or rewriting any page.
+---
+
+Read _thresholds.md first. Use its intent classes.
+
+INPUTS — ask for what is missing:
+- the query, and the country and language it should be read in
+- the SERP itself: a screenshot, a paste of the top 10, or a live fetch
+If you cannot see the SERP, say so and stop. Do not describe what the SERP
+"probably" looks like — that is the one failure mode of this skill.
+
+PROCESS
+1. List the top 10 results: URL, page type, and whether it is a brand's own page.
+2. Count the page types. The majority type is the format Google is rewarding.
+3. Note SERP features present: ads, People Also Ask, video, images, local pack,
+   shopping, AI overview.
+4. Assign the intent class from _thresholds.md.
+5. Judge whether a page of the winning format is realistic for this site.
+
+OUTPUT
+- intent class, one word
+- winning format, one line, with the count that justifies it (e.g. "7 of 10 are listicles")
+- SERP features present, comma separated
+- what would have to be true for us to rank, 2 bullets maximum
+- verdict: TARGET or SKIP, with the reason in one sentence
+
+RULES
+- Only describe results you can actually see. Never reconstruct a SERP from memory —
+  rankings change and yours are months stale.
+- If the top 3 are one brand's own properties, the verdict is SKIP.
+
+End with ONE line: TARGET or SKIP, and the format to build if TARGET.</pre></div>
+    </div></details>
+  </div>
+
+  <div class="fn" id="s3">
+    <div class="fn-head"><span class="fn-num">3</span><h3 class="fn-title">competitor-gap</h3></div>
+    <p class="fn-sub"><em>The rule: only report gaps you could realistically close. A gap you can't close is trivia.</em></p>
+    <div class="meta"><span class="chip"><b>Reads:</b> your queries + a competitor's pages</span><span class="chip"><b>Returns:</b> closable gaps only</span></div>
+    <p>Gap analyses usually produce a list of everything a bigger competitor ranks for, which is demoralising and useless. The filter here is winnability, and it cuts the list by about 90%.</p>
+    <details class="drop"><summary>Open the full skill file</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">skill · competitor-gap</span><button class="copy">Copy</button></div>
+<pre>---
+name: competitor-gap
+description: Find the topics a competitor covers that you could realistically take. Use quarterly.
+---
+
+Read _thresholds.md first.
+
+INPUTS — ask for what is missing:
+- my site and my current queries (connected Search Console, or an export)
+- 1-3 competitor domains, and their pages if you can fetch or be given them
+Never work from a competitor's traffic estimate. You do not have their Search Console.
+
+PROCESS
+1. Build the topic list they cover and I do not.
+2. Remove anything where I already have a page in the winning or striking band.
+3. Remove anything that needs an asset I do not have: proprietary data, a physical
+   location, a product I do not sell, a team I do not have.
+4. For what remains, check whether I already rank ANYWHERE for a related query.
+   Sites with an existing foothold on a topic close gaps far faster than sites without.
+5. Rank the survivors by foothold first, impressions second.
+
+OUTPUT — one table, capped at 10 rows:
+topic | their page | do I rank for anything related | my best related position | why it is closable
+
+RULES
+- Every "closable" claim cites something visible: my own position, my own impressions,
+  or a page of theirs you actually read.
+- Confidence label on every row, per the confidence scale.
+- No estimate of their traffic, their authority score, or their budget. Ever.
+- Do not list gaps you removed in steps 2-3. The value here is the removal.
+
+End with ONE line: the single topic to take first, and the foothold that makes it winnable.</pre></div>
+    </div></details>
+  </div>
+
+  <div class="fn" id="s4">
+    <div class="fn-head"><span class="fn-num">4</span><h3 class="fn-title">topical-map</h3></div>
+    <p class="fn-sub"><em>The rule: every page has a parent and a job. No orphans, no duplicates.</em></p>
+    <div class="meta"><span class="chip"><b>Reads:</b> your clusters</span><span class="chip"><b>Returns:</b> a hub-and-spoke tree</span></div>
+    <p>This is the skill that stops you writing the same page three times over two years. It runs on the output of skill 1, and it's the artefact you keep — the internal-linking skill later reads it as its input.</p>
+    <details class="drop"><summary>Open the full skill file</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">skill · topical-map</span><button class="copy">Copy</button></div>
+<pre>---
+name: topical-map
+description: Turn clusters into a hub-and-spoke map where every page has a parent and one job. Use after keyword-clustering.
+---
+
+Read _thresholds.md first.
+
+INPUTS — ask for what is missing:
+- the cluster table from keyword-clustering
+- the site's existing URLs and what each one currently targets
+
+PROCESS
+1. Name 3-6 hubs. A hub is a topic the site wants to be known for, not a keyword.
+2. Assign every cluster to exactly one hub. A cluster that fits no hub either
+   proves a missing hub or does not belong on this site — say which.
+3. Under each hub, order spokes: existing pages first, then new ones by impressions.
+4. Flag every existing URL that targets the same cluster as another existing URL.
+   That is a cannibalisation candidate — apply the definition in _thresholds.md.
+5. Flag every existing URL that maps to no cluster. That is an orphan.
+
+OUTPUT
+For each hub:
+  HUB NAME — the hub URL, existing or "to build"
+  spokes: URL or "new" | cluster | status: live, refresh, build, or merge
+
+Then two short lists:
+  CANNIBALISATION — pairs of URLs on one cluster, with the recommended survivor
+  ORPHANS — URLs mapping to no cluster, with keep or retire
+
+RULES
+- Maximum 6 hubs. If you want a seventh, one of the six is really two topics —
+  say which, and still give me six.
+- Never assign one cluster to two hubs.
+- Do not estimate how long anything takes. You do not know who is writing it.
+
+End with ONE line: the hub to build out first, and its first spoke.</pre></div>
+    </div></details>
+  </div>
+
+  <div class="group-head"><span>Optimize</span><hr></div>
+  <p class="group-sub">Fix what you already have before you write anything new.</p>
+
+  <div class="fn" id="s5">
+    <div class="fn-head"><span class="fn-num">5</span><h3 class="fn-title">technical-audit</h3></div>
+    <p class="fn-sub"><em>The rule: name the one issue costing the most traffic. Everything else waits.</em></p>
+    <div class="meta"><span class="chip"><b>Reads:</b> a crawl export or Search Console coverage</span><span class="chip"><b>Returns:</b> one issue</span></div>
+    <p>Technical audits are where 47-item checklists come from, and a 47-item checklist gets read once and never worked. The banned-output section of this file is longer than its process section, and that's deliberate.</p>
+    <details class="drop"><summary>Open the full skill file</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">skill · technical-audit</span><button class="copy">Copy</button></div>
+<pre>---
+name: technical-audit
+description: Find the single technical issue costing the most organic traffic. Use quarterly, or after a migration.
+---
+
+Read _thresholds.md first.
+
+INPUTS — ask for what is missing:
+- a crawl export (any tool), or the Search Console page indexing report, or both
+- optionally: Core Web Vitals, the robots.txt, the XML sitemap
+
+PROCESS — in this order, because each stage gates the one below it
+1. INDEXABLE — are the pages I want indexed actually indexed? Count them.
+2. REACHABLE — are they linked from anywhere? Count orphans.
+3. CORRECT — canonicals, redirects, status codes. Count wrong ones.
+4. FAST — Core Web Vitals, only if stages 1-3 are clean.
+Stop at the first stage that is broken. A speed problem does not matter on a page
+that is not indexed.
+
+For the broken stage, quantify it: how many URLs, and how many impressions or
+clicks sit behind them. If you cannot tie it to traffic, say "traffic impact not
+computable from this data" — do not assert that it is severe.
+
+OUTPUT
+- one line per stage: the count, and pass or fail
+- THE ISSUE: the earliest failing stage, in one sentence
+- the affected URLs, capped at 10, with the figure that makes it the issue
+- the fix, as one instruction a developer could act on today
+
+BANNED
+- a severity-ranked list of findings
+- a second issue mentioned "while you're in there"
+- a summary of the stages that passed
+- the words "quick win", "low-hanging fruit", or "best practice"
+- any recommendation that is not tied to a number you pulled
+
+End with ONE sentence: the issue, and the single fix.</pre></div>
+    </div></details>
+  </div>
+
+  <div class="fn" id="s6">
+    <div class="fn-head"><span class="fn-num">6</span><h3 class="fn-title">on-page</h3></div>
+    <p class="fn-sub"><em>The rule: rewrite what's underperforming its own position band. Leave the rest alone.</em></p>
+    <div class="meta"><span class="chip"><b>Reads:</b> one URL + its GSC queries</span><span class="chip"><b>Returns:</b> a title, a meta, an H1</span></div>
+    <p>Not a generic optimisation pass — it only fires on pages ranking well and being clicked badly, judged against that band's average on your own site. Those pages are the cheapest traffic you will ever buy, because the ranking is already paid for.</p>
+    <details class="drop"><summary>Open the full skill file</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">skill · on-page</span><button class="copy">Copy</button></div>
+<pre>---
+name: on-page
+description: Rewrite the title, meta and H1 of a page that ranks well but is clicked badly. Use monthly on the worst offender.
+---
+
+Read _thresholds.md first. Use its position bands and CTR rule.
+
+INPUTS — ask for what is missing:
+- the URL, and its current title, meta description and H1
+- that URL's Search Console queries: impressions, clicks, CTR, average position
+- the page's actual content, fetched or pasted
+
+PROCESS
+1. Compute this site's average CTR for the band this page sits in, brand queries excluded.
+2. Compare the page's CTR to that average. If it is at or above, STOP and say
+   "this page is performing at band average — do not touch it". That is a valid output.
+3. Find the highest-impression query the page ranks for that the title does not answer.
+4. Check the page body actually delivers that query. If it does not, the fix is content,
+   not a title — say so and stop.
+5. Write ONE title (max 60 characters), ONE meta description (max 155), ONE H1.
+
+OUTPUT
+current CTR vs band average, with both numbers
+the query the title is missing
+  TITLE:   ... (character count)
+  META:    ... (character count)
+  H1:      ...
+one line on what changed and why
+
+RULES
+- One version of each. Do not give me three options to choose between.
+- Never write a benefit the page does not contain. Quote the line that supports it.
+- Never state a CTR you did not compute from the data given.
+- No emoji, no brackets stuffed with keywords, no year unless the page updates yearly.
+
+End with ONE action: ship these three fields, or fix the content first.</pre></div>
+    </div></details>
+  </div>
+
+  <div class="fn" id="s7">
+    <div class="fn-head"><span class="fn-num">7</span><h3 class="fn-title">internal-links</h3></div>
+    <p class="fn-sub"><em>The rule: link from pages that already have authority to pages that need it. Nothing else.</em></p>
+    <div class="meta"><span class="chip"><b>Reads:</b> the topical map + GSC</span><span class="chip"><b>Returns:</b> exact links to add</span></div>
+    <p>The most underused lever in SEO, and the easiest to do badly. This one names source page, target page, anchor text and the paragraph to put it in — because "improve your internal linking" is not an instruction anyone can follow.</p>
+    <details class="drop"><summary>Open the full skill file</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">skill · internal-links</span><button class="copy">Copy</button></div>
+<pre>---
+name: internal-links
+description: Produce a specific list of internal links to add, with source, target, anchor and placement. Use monthly.
+---
+
+Read _thresholds.md first.
+
+INPUTS — ask for what is missing:
+- the topical map, or the list of URLs and what each targets
+- Search Console clicks per page, last 28 days
+- the content of the candidate source pages, so anchors can be placed truthfully
+
+PROCESS
+1. Rank pages by clicks. The top decile are the authority pages.
+2. Identify targets: pages in the page-two band, and pages that are new or orphaned.
+3. For each target, find up to 3 authority pages whose content genuinely relates.
+   Relevance is judged on the source page's actual text, not on its title.
+4. For each pair, write the anchor text and quote the sentence it belongs in or beside.
+5. Reject any pair where you cannot quote a real sentence. That link would be a bolt-on
+   and reads like one.
+
+OUTPUT — one table, capped at 15 rows:
+source URL | target URL | anchor text | the existing sentence it attaches to
+
+RULES
+- Never invent the sentence. If you were not given the source page's content, ask for it.
+- Anchor text describes the target, is 2-5 words, and is not "click here" or the bare URL.
+- Do not repeat the same anchor to the same target more than twice across the site.
+- No link graph diagram, no authority score, no PageRank estimate. You cannot see them.
+
+End with ONE line: the single link that should be added first, and why that one.</pre></div>
+    </div></details>
+  </div>
+
+  <div class="fn" id="s8">
+    <div class="fn-head"><span class="fn-num">8</span><h3 class="fn-title">content-refresh</h3></div>
+    <p class="fn-sub"><em>The rule: separate decay from a demand drop before recommending anything.</em></p>
+    <div class="meta"><span class="chip"><b>Reads:</b> 180 days of GSC</span><span class="chip"><b>Returns:</b> one page to refresh</span></div>
+    <p>Half of what gets called "content decay" is just fewer people searching, and rewriting a page can't fix that. The impressions test in scale 4 is what tells the two apart, and it takes one line of the data you already have.</p>
+    <details class="drop"><summary>Open the full skill file</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">skill · content-refresh</span><button class="copy">Copy</button></div>
+<pre>---
+name: content-refresh
+description: Find pages that lost clicks while demand held, and say exactly what to change. Use monthly.
+---
+
+Read _thresholds.md first. Use its decay definition literally.
+
+INPUTS — ask for what is missing:
+- Search Console: clicks, impressions and average position per page, for the last
+  90 days AND the 90 days before that
+- optionally the same window last year, for the seasonality check
+
+PROCESS
+1. Compute the change in clicks and in impressions for every page.
+2. Apply the decay definition. Pages failing the impressions half are NOT decayed —
+   put them in a separate short list labelled "demand change, not decay".
+3. For the decayed pages, check the position change. Position down means you lost
+   ranking; position flat with clicks down means you lost the click, which is a
+   title, snippet or SERP-feature problem.
+4. Check seasonality before finalising anything.
+5. Pick the one page with the largest absolute click loss that is genuinely decayed.
+
+OUTPUT
+DECAYED — table capped at 8: page | clicks before/after | impressions before/after |
+position before/after | lost ranking or lost the click
+DEMAND CHANGE — page list only, one line, no recommendations
+THE ONE TO FIX — the page, the diagnosis in one sentence, the change to make
+
+RULES
+- Never recommend "refresh and republish". Name the specific change: the section that
+  is now wrong, the query the page stopped answering, or the snippet that stopped earning.
+- If the position data is missing, say "cannot distinguish ranking loss from CTR loss
+  without position data" and ask for it. Do not guess which one it is.
+- Percentages are shown with both raw numbers. A 40% drop from 5 clicks is not news.
+
+End with ONE action: the page, and the single change to make to it.</pre></div>
+    </div></details>
+  </div>
+
+  <div class="group-head"><span>Grow</span><hr></div>
+  <p class="group-sub">New surface: pages, links, maps, and AI answers.</p>
+
+  <div class="fn" id="s9">
+    <div class="fn-head"><span class="fn-num">9</span><h3 class="fn-title">content-brief</h3></div>
+    <p class="fn-sub"><em>The rule: the brief is built from the SERP that exists, and it names what to leave out.</em></p>
+    <div class="meta"><span class="chip"><b>Reads:</b> a cluster + its SERP</span><span class="chip"><b>Returns:</b> a writer-ready brief</span></div>
+    <p>A brief that only says what to include produces a page that says everything and ranks for nothing. The exclusions section is the one writers actually thank you for.</p>
+    <details class="drop"><summary>Open the full skill file</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">skill · content-brief</span><button class="copy">Copy</button></div>
+<pre>---
+name: content-brief
+description: Build a brief a writer can execute without asking questions. Use after search-intent has returned TARGET.
+---
+
+Read _thresholds.md first.
+
+INPUTS — ask for what is missing:
+- the cluster: its queries and their impressions
+- the search-intent verdict for the head query, including the winning format
+- what this site can credibly claim: product, data, experience
+If the intent verdict is missing, run search-intent first. Do not brief blind.
+
+PROCESS
+1. State the format the SERP is rewarding, from the intent verdict.
+2. Take the sections from what the ranking pages actually cover, not from a template.
+3. Add the section only this site could write — the product, the data, the experience.
+   If there isn't one, say so plainly. That is a real finding about the page's odds.
+4. Name what to LEAVE OUT: subtopics belonging to a different cluster, and background
+   the reader of this query already has.
+5. Set the length from the ranking pages, as a range, not a target word count.
+
+OUTPUT
+  URL:        the destination, from the topical map
+  FORMAT:     one line, with the SERP evidence
+  TITLE:      one working title, max 60 characters
+  SECTIONS:   H2s in order, each with one line on what it must answer
+  MUST CITE:  the specific data, screenshot or example the page needs
+  LEAVE OUT:  3-5 bullets
+  LENGTH:     a range, with what the ranking pages run at
+
+RULES
+- No keyword density, no LSI list, no "include the keyword 5 times". None of that is real.
+- Never invent a statistic for the writer to cite. Name the source they must go get.
+- One title. Not three.
+
+End with ONE line: what the writer opens first.</pre></div>
+    </div></details>
+  </div>
+
+  <div class="fn" id="s10">
+    <div class="fn-head"><span class="fn-num">10</span><h3 class="fn-title">backlink-audit</h3></div>
+    <p class="fn-sub"><em>The rule: tier every link A to D, then only chase more of what tier A already worked.</em></p>
+    <div class="meta"><span class="chip"><b>Reads:</b> a backlink export</span><span class="chip"><b>Returns:</b> tiers + one target</span></div>
+    <p>Link building goes wrong when it starts from a list of prospects instead of from the links you already earned. The A-tier links you have are a description of who links to sites like yours — that's the prospect list.</p>
+    <details class="drop"><summary>Open the full skill file</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">skill · backlink-audit</span><button class="copy">Copy</button></div>
+<pre>---
+name: backlink-audit
+description: Tier existing backlinks, then derive the next link target from the tier A pattern. Use quarterly.
+---
+
+Read _thresholds.md first. Use its link tiers exactly.
+
+INPUTS — ask for what is missing:
+- a backlink export from any tool: source URL, target URL, anchor text
+- optionally, whether there is a manual action in Search Console
+
+PROCESS
+1. Tier every link A to D. Where you cannot see enough to judge, write "tier unknown".
+2. Count each tier. Report the counts before any analysis.
+3. Look only at tier A. What do those sites have in common: topic, format, why they linked?
+4. Find which of my pages earned them. That page type is my linkable asset.
+5. Name one prospect type — not one specific site — that matches the tier A pattern.
+
+OUTPUT
+tier counts: A / B / C / D / unknown
+TIER A — table: source | my page they linked | why they linked, in 5 words
+THE PATTERN — one sentence
+MY LINKABLE ASSET — the page or page type, with the count of A-tier links it earned
+NEXT TARGET — the prospect type, and the page I would pitch
+
+RULES
+- Never recommend disavowing without a manual action. Say so explicitly if D-tier
+  links exist: "D-tier links present; no action unless a manual action appears."
+- No domain authority, no spam score, no trust flow. Those are vendor metrics you
+  cannot see, and quoting one you were not given is inventing a number.
+- Do not write outreach copy here. That is a different job.
+
+End with ONE line: the single prospect type to approach, and the asset to pitch.</pre></div>
+    </div></details>
+  </div>
+
+  <div class="fn" id="s11">
+    <div class="fn-head"><span class="fn-num">11</span><h3 class="fn-title">local-seo</h3></div>
+    <p class="fn-sub"><em>The rule: the profile and the site have to say the same thing. Check that before anything else.</em></p>
+    <div class="meta"><span class="chip"><b>Reads:</b> the GBP profile + site</span><span class="chip"><b>Returns:</b> one mismatch to fix</span></div>
+    <p>Local rankings turn on consistency far more than on content, and the fastest wins are almost always a category, a service area or a name that disagrees between the profile and the site.</p>
+    <details class="drop"><summary>Open the full skill file</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">skill · local-seo</span><button class="copy">Copy</button></div>
+<pre>---
+name: local-seo
+description: Reconcile a Google Business Profile against the website and name the one fix. Use monthly.
+---
+
+Read _thresholds.md first.
+
+INPUTS — ask for what is missing:
+- the Google Business Profile: name, primary category, secondary categories,
+  service areas, hours, description
+- the website's contact or location page
+- optionally: Business Profile insights, and the top 3 local competitors' categories
+If you cannot see the profile, ask for a screenshot. Do not describe a generic profile.
+
+PROCESS
+1. Compare, field by field: business name, address, phone, hours, services.
+   Any disagreement between profile and site is the finding. Stop hunting after that.
+2. Check the primary category against what the business actually sells.
+   The primary category does more for local ranking than every other field combined.
+3. Compare categories against the local competitors, if given.
+4. Check the site has a page for each real service area. Not a doorway page per town —
+   a real page per area you genuinely serve.
+5. Check reviews only for whether recent ones are answered. Never estimate review counts.
+
+OUTPUT
+MISMATCHES — table: field | on the profile | on the site
+CATEGORY — current primary, and whether it matches what is sold, with the reason
+SERVICE AREAS — areas claimed with no page, and pages with no area
+THE ONE FIX — the single change with the largest expected effect, and why
+
+RULES
+- Never invent a category name. Only use categories you were shown or that appear
+  in Google's list; if unsure, describe it and ask.
+- No "post weekly to your profile" advice unless the insights data shows posts
+  are already earning views.
+
+End with ONE action: the single field to correct today.</pre></div>
+    </div></details>
+  </div>
+
+  <div class="fn" id="s12">
+    <div class="fn-head"><span class="fn-num">12</span><h3 class="fn-title">ai-answers</h3></div>
+    <p class="fn-sub"><em>The rule: cited, mentioned or absent. Three states, no vibes.</em></p>
+    <div class="meta"><span class="chip"><b>Reads:</b> AI answers you paste in</span><span class="chip"><b>Returns:</b> the citable gap</span></div>
+    <p>GEO gets talked about in the abstract constantly. This skill makes it concrete: run your real questions, record which of three states you're in, and fix the specific thing that makes a page quotable rather than merely correct.</p>
+    <details class="drop"><summary>Open the full skill file</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">skill · ai-answers</span><button class="copy">Copy</button></div>
+<pre>---
+name: ai-answers
+description: Audit whether AI assistants cite you for your core questions, and fix what makes a page citable. Use monthly.
+---
+
+Read _thresholds.md first. Use the confidence scale on every claim.
+
+INPUTS — ask for what is missing:
+- 5-10 questions a buyer would actually ask, in their words
+- the AI answers themselves, pasted in, with which assistant produced each
+- my pages that should have been the source
+I cannot see what an assistant returned unless you paste it. If answers are missing,
+give me the question list to run and stop there — that is a complete, useful output.
+
+PROCESS
+1. For each question, record one of three states:
+   CITED     — my page is linked or named as a source
+   MENTIONED — my brand appears with no link
+   ABSENT    — neither
+2. For CITED, note which page and which sentence was used. That sentence is the pattern.
+3. For ABSENT, note who was cited instead and what shape their content took:
+   a direct definition, a table, a step list, a number with a date.
+4. Compare my page to the cited source on ONE axis: is the answer extractable as a
+   standalone passage, or is it distributed across the page?
+5. Name the single page change that would make the passage extractable.
+
+OUTPUT
+- table: question | state | who was cited | my page that should have won
+- counts: cited / mentioned / absent
+- THE PATTERN — what the cited sources have in common, one sentence
+- THE FIX — one page, one change, with the passage rewritten as it should appear
+
+RULES
+- Never claim a page "will be cited". State the change and the confidence label.
+- Never report a state for a question whose answer you were not given.
+- No made-up share-of-voice percentage. Report the counts you actually recorded.
+
+End with ONE action: the page to rewrite, and the passage to put at the top of it.</pre></div>
+    </div></details>
+  </div>
+
+  <div class="group-head"><span>Measure</span><hr></div>
+  <p class="group-sub">The part that tells you whether any of the above worked.</p>
+
+  <div class="fn" id="s13">
+    <div class="fn-head"><span class="fn-num">13</span><h3 class="fn-title">gsc-analysis</h3></div>
+    <p class="fn-sub"><em>The rule: strip brand queries first. Everything else is a lie until you do.</em></p>
+    <div class="meta"><span class="chip"><b>Reads:</b> a GSC export or the connection</span><span class="chip"><b>Returns:</b> the one binding constraint</span></div>
+    <p>On my own site, 88% of clicks came from three brand queries. Every chart that included them said the site was healthy. Stripping brand is the first move in this file for exactly that reason.</p>
+    <details class="drop"><summary>Open the full skill file</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">skill · gsc-analysis</span><button class="copy">Copy</button></div>
+<pre>---
+name: gsc-analysis
+description: Read the full Search Console funnel and name the single constraint holding the site back. Run first, then quarterly.
+---
+
+Read _thresholds.md first. Use its bands and floors.
+
+INPUTS — ask for what is missing:
+- Search Console, connected or exported: queries and pages, last 90 days,
+  and the 90 days before for comparison
+- my brand terms, so they can be excluded. If I have not given them, ask.
+  Do not guess which queries are branded.
+
+PROCESS — the order gates itself; each stage decides whether the next one matters
+1. BRAND SPLIT — clicks from brand vs non-brand. Report both, then work non-brand only.
+2. IMPRESSIONS — total and direction vs the prior 90 days.
+3. POSITION — how many queries sit in each band from _thresholds.md.
+4. CTR — actual CTR per band, against this site's own average for that band.
+5. PAGES — pages above the impressions floor with CTR under the band average.
+
+One line per stage: the number, the direction, healthy or not.
+
+Then name THE ONE binding constraint: the EARLIEST broken stage, with two sentences
+on why that stage and not the next, quoting the numbers you pulled. A CTR problem is
+not worth solving on pages Google is barely showing.
+
+BANNED
+- a list of findings, a severity ranking, a second constraint "for later"
+- a recap of the stages that were fine
+- the word "additionally"
+
+If a figure is not in the data, write "cannot compute from this data" and move on.
+Never estimate, and never carry an estimate into a later stage.
+
+End with ONE sentence: the constraint, and the single next action.</pre></div>
+    </div></details>
+  </div>
+
+  <div class="fn" id="s14">
+    <div class="fn-head"><span class="fn-num">14</span><h3 class="fn-title">traffic-drop</h3></div>
+    <p class="fn-sub"><em>The rule: every cause gets a confidence label. "Probably the update" is not a diagnosis.</em></p>
+    <div class="meta"><span class="chip"><b>Reads:</b> before/after GSC + a change log</span><span class="chip"><b>Returns:</b> a labelled cause</span></div>
+    <p>The reason drops stay unsolved is that the first plausible story gets accepted. Forcing confirmed / probable / unverifiable onto every candidate is what keeps the real cause in play long enough to be found.</p>
+    <details class="drop"><summary>Open the full skill file</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">skill · traffic-drop</span><button class="copy">Copy</button></div>
+<pre>---
+name: traffic-drop
+description: Diagnose an organic traffic drop with a confidence label on every candidate cause. Use when traffic falls.
+---
+
+Read _thresholds.md first. The confidence scale is mandatory here.
+
+INPUTS — ask for what is missing:
+- the date the drop started, or the data to find it
+- Search Console for 60 days before and everything since: clicks, impressions,
+  position, by page and by query
+- what changed on the site and when: deploys, redesigns, migrations, deletions
+- the same window last year, for seasonality
+If there is no change log, say so — it is the single most common reason a drop
+stays unexplained, and I would rather you tell me than fill the gap with a guess.
+
+PROCESS
+1. Locate the drop precisely: which day, and is it a cliff or a slope?
+   A cliff points at something we did. A slope points at competition or decay.
+2. Isolate it: is the drop site-wide, or one section, or one page, or one query?
+   Never diagnose site-wide without checking whether it is one page.
+3. Split clicks from impressions. Impressions holding while clicks fell means we
+   lost the click, not the ranking — a different cause entirely.
+4. Check seasonality against last year before considering anything else.
+5. Test candidates IN THIS ORDER, and label each confirmed / probable / unverifiable:
+   our own change · indexing or coverage change · position loss on specific queries ·
+   SERP layout change · demand change · algorithm update
+   Algorithm update is LAST because it is unfalsifiable and ends the investigation.
+
+OUTPUT
+- the drop: date, size in clicks, cliff or slope
+- the scope: site-wide, section, page or query, with the numbers
+- candidate table: cause | confidence | the evidence | how to confirm it
+- THE DIAGNOSIS — the highest-confidence cause, in one sentence
+
+RULES
+- No cause is stated without its label. A probable cause is never written as the cause.
+- Never blame an algorithm update you cannot date and correlate.
+- If everything is unverifiable, say that, and list what data to pull. That is
+  a correct answer, and a better one than a confident wrong story.
+
+End with ONE action: the fix if confirmed, or the exact data to pull if not.</pre></div>
+    </div></details>
+  </div>
+
+  <div class="fn" id="s15">
+    <div class="fn-head"><span class="fn-num">15</span><h3 class="fn-title">seo-reporting</h3></div>
+    <p class="fn-sub"><em>The rule: report what changed and what you did about it. Forecast as a range or not at all.</em></p>
+    <div class="meta"><span class="chip"><b>Reads:</b> the month's GSC + your actions</span><span class="chip"><b>Returns:</b> a one-page report</span></div>
+    <p>The last skill closes the loop the first fourteen open: what you shipped, what moved, what didn't, and what's next — short enough that someone actually reads it.</p>
+    <details class="drop"><summary>Open the full skill file</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">skill · seo-reporting</span><button class="copy">Copy</button></div>
+<pre>---
+name: seo-reporting
+description: Write the monthly SEO report: what changed, what we did, what is next. Use monthly.
+---
+
+Read _thresholds.md first. Use its forecasting rule.
+
+INPUTS — ask for what is missing:
+- Search Console for the month and the month before: clicks, impressions,
+  position, split brand and non-brand
+- what we actually shipped this month, with dates
+- optionally GA4 conversions from organic
+
+PROCESS
+1. Report non-brand clicks first, with brand shown separately underneath.
+2. For each thing we shipped, check whether the pages it touched moved. Attribute
+   only where the timing and the page line up. Otherwise write "no measurable
+   change yet" — with the date it shipped, so next month can revisit it.
+3. Name what moved that we did NOT cause. Being honest about luck is what makes
+   the attributed wins believable.
+4. Forecast only with 6+ months of history, and only as a range with its assumption.
+   Otherwise write "not enough history to forecast" and give the trend direction.
+
+OUTPUT — the whole report fits on one page
+  THE NUMBER — non-brand clicks, this month vs last, with the raw figures
+  WE SHIPPED — bullet per item: what, when, did it move
+  MOVED WITHOUT US — 1-3 lines
+  DIDN'T WORK — anything shipped 60+ days ago with no movement. Do not skip this section.
+  NEXT — one action, carried from whichever skill named it
+
+RULES
+- Every percentage is shown with the raw numbers behind it.
+- Never attribute a rise to work whose dates do not line up. Say "timing does not
+  support attribution".
+- No projection of revenue from clicks unless given a conversion rate and a value.
+- No chart descriptions. Numbers, sentences.
+
+End with ONE line: the single thing next month is about.</pre></div>
+    </div></details>
+  </div>
+
+  <hr>
+
+  <h2>What the folder can't do</h2>
+  <p class="lede">Worth saying plainly, because you'll hit it in week two.</p>
+  <p>Fifteen files make Claude reason like an SEO operator. They don't make it <em>employed</em> as one. Four things are structurally outside what a folder of text can do:</p>
+  <ul class="plain">
+    <li><strong>It can't see the rows you didn't paste.</strong> Export a 1,000-row CSV and the answer is about those 1,000 rows, not your site.</li>
+    <li><strong>It can't refresh itself.</strong> Next month is a new export, pasted by you, on a day you remembered.</li>
+    <li><strong>It has no memory of last month's answer.</strong> Which means it can't tell you whether the fix you shipped actually moved anything — the one question all of this is for.</li>
+    <li><strong>It can't ship the fix.</strong> The on-page skill writes the title. Someone still pastes it into the CMS.</li>
+  </ul>
+  <p>That gap is exactly what I've been building <a href="https://link.chatseo.app/pb-seo-skills-folder" target="_blank" rel="noopener"><strong>ChatSEO</strong></a> to close: it holds the Search Console connection so nothing gets pasted, it remembers what it told you in March, and it can push the fix to your site and check a month later whether it worked. The folder above is genuinely the same thinking — this is the version that doesn't need you to remember to run it.</p>
+
+  <hr>
+
+  <h2 id="proof" style="scroll-margin-top:80px">How one founder went from 250 → 750 clicks a day</h2>
+  <p>This is the Search Console graph from a ChatSEO user running this exact loop — find the binding constraint, fix the pages already ranking, recheck the following month. No new content, no link building.</p>
+  <figure>
+    <img src="img/proof-clicks.webp" alt="Search Console graph showing daily clicks rising from around 250 to around 750." loading="lazy">
+  </figure>
+
+  <h2>Why this works when SEO tools don't</h2>
+  <p>Everything on this page runs on a Search Console export and 15 text files — and you can <a href="https://link.chatseo.app/pb-seo-skills-folder" target="_blank" rel="noopener">try it here for free</a> if you'd rather not be the one remembering to run them.</p>
+
+  <div class="vs">
+    <div class="vs-col vs-old">
+      <h3>Old SEO tools</h3>
+      <ul>
+        <li>47 findings ranked by somebody else's severity score</li>
+        <li>A clicks chart that's 88% your own brand name</li>
+        <li>"Low CTR" meaning something different on every screen</li>
+        <li>A cause for the drop, stated with no confidence at all</li>
+        <li>Five tools that don't talk to each other</li>
+      </ul>
+    </div>
+    <div class="vs-col vs-new">
+      <h3>What you actually want</h3>
+      <ul>
+        <li>One constraint, named, with the number behind it</li>
+        <li>Brand stripped out before anything is measured</li>
+        <li>Twelve thresholds, defined once, shared by all 15 skills</li>
+        <li>Confirmed, probable or unverifiable on every claim</li>
+        <li>One connection, from Search Console to shipped fix</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="final" style="margin:44px 0">
+    <h2 style="margin-top:0">That's the whole idea behind ChatSEO</h2>
+    <p>One SEO employee that reads your Search Console, names the single thing holding the site back, writes the fix, ships it — and tells you a month later whether it worked.</p>
+    <a class="btn btn-primary" href="https://link.chatseo.app/pb-seo-skills-folder" target="_blank" rel="noopener">Try ChatSEO free →</a>
+    <p class="note" style="margin-top:16px">No credit card required</p>
+  </div>
+
+  <footer>
+    <p>Built by <a href="https://link.chatseo.app/pb-seo-skills-folder" target="_blank" rel="noopener">Nicholas at ChatSEO</a> · Everything on this page is free to copy and use.</p>
+  </footer>
+
+</div>
+<script>
+// Theme: remember the viewer's choice, fall back to their system setting.
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  try{ var s=localStorage.getItem('theme'); if(s) root.setAttribute('data-theme',s); }catch(e){}
+  btn.addEventListener('click',function(){
+    var cur=root.getAttribute('data-theme');
+    if(!cur) cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+    var next=cur==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{ localStorage.setItem('theme',next); }catch(e){}
+  });
+})();
+
+// Copy buttons: getting the skill file out cleanly is the whole point of the page.
+document.querySelectorAll('.copy').forEach(function(btn){
+  btn.addEventListener('click',function(e){
+    e.preventDefault();
+    var pre=btn.closest('.prompt').querySelector('pre');
+    var text=pre.innerText;
+    var done=function(){ btn.textContent='Copied'; btn.classList.add('done');
+      setTimeout(function(){ btn.textContent='Copy'; btn.classList.remove('done'); },1600); };
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done).catch(fallback);
+    } else { fallback(); }
+    function fallback(){
+      var ta=document.createElement('textarea'); ta.value=text;
+      ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta);
+      ta.select(); try{ document.execCommand('copy'); done(); }catch(e){ btn.textContent='Select manually'; }
+      document.body.removeChild(ta);
+    }
+  });
+});
+</script>
+</body>
+</html>
