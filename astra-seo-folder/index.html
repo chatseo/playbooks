@@ -1,0 +1,1598 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Astra/Fable SEO Folder</title>
+<meta name="description" content="15 SEO skills for Astra and Fable, from auditing your site to knowing exactly which pages to fix and why. Plus the shared GSC data file, the scoring model and three workflows. Every file in full, nothing gated.">
+<meta property="og:title" content="The Astra/Fable SEO Folder">
+<meta property="og:description" content="15 skills, the shared GSC data file, the scoring model and three SEO workflows in one folder. Every file in full, free.">
+<meta property="og:image" content="https://chatseo.github.io/playbooks/astra-seo-folder/img/og-card.jpg">
+<meta property="og:url" content="https://chatseo.github.io/playbooks/astra-seo-folder/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗂️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFFFFF; --surface:#FFFFFF; --ink:#000000; --muted:#5A6069;
+  --accent:#1D4ED8; --on-accent:#FFFFFF; --accent-soft:#EEF3FF; --sage:#1D4ED8;
+  --line:#E3E6EB; --code-bg:#0B0F19; --code-ink:#F4F6FA;
+  --shadow:0 1px 2px rgba(0,0,0,.04), 0 8px 24px rgba(0,0,0,.05);
+  --maxw:780px;
+}
+:root:not([data-theme="light"]){ @media (prefers-color-scheme: dark){
+  --bg:#000000; --surface:#0C0E12; --ink:#FFFFFF; --muted:#9AA1AB;
+  --accent:#6EA1FF; --on-accent:#000000; --accent-soft:#111826; --sage:#6EA1FF;
+  --line:#23272E; --code-bg:#0E1117; --code-ink:#F4F6FA;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.5);
+}}
+:root[data-theme="dark"]{
+  --bg:#000000; --surface:#0C0E12; --ink:#FFFFFF; --muted:#9AA1AB;
+  --accent:#6EA1FF; --on-accent:#000000; --accent-soft:#111826; --sage:#6EA1FF;
+  --line:#23272E; --code-bg:#0E1117; --code-ink:#F4F6FA;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.5);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:72px}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:17px; line-height:1.68; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 22px}
+
+/* ---------- top bar ---------- */
+.bar{
+  position:sticky; top:0; z-index:50; background:color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter:blur(10px); border-bottom:1px solid var(--line);
+}
+.bar-in{max-width:var(--maxw); margin:0 auto; padding:11px 22px; display:flex; align-items:center; gap:14px}
+.brand{font-weight:800; letter-spacing:-.02em; font-size:15px; text-decoration:none; color:var(--ink); white-space:nowrap}
+.brand span{color:var(--accent)}
+.bar nav{margin-left:auto; display:flex; gap:16px; overflow-x:auto; scrollbar-width:none}
+.bar nav::-webkit-scrollbar{display:none}
+.bar nav a{color:var(--muted); text-decoration:none; font-size:13.5px; font-weight:500; white-space:nowrap}
+.bar nav a:hover{color:var(--accent)}
+.theme{background:none; border:1px solid var(--line); color:var(--muted); border-radius:8px;
+  width:32px; height:32px; cursor:pointer; font-size:14px; flex:none}
+.theme:hover{color:var(--accent); border-color:var(--accent)}
+
+/* ---------- hero ---------- */
+.hero{padding:64px 0 8px; text-align:center}
+.eyebrow{
+  display:inline-block; font-size:12px; font-weight:700; letter-spacing:.13em; text-transform:uppercase;
+  color:var(--accent); background:var(--accent-soft); padding:6px 13px; border-radius:100px; margin-bottom:20px;
+}
+h1{
+  font-family:"Instrument Serif",Georgia,serif; font-weight:400; letter-spacing:-.015em;
+  font-size:clamp(40px,7.5vw,62px); line-height:1.06; margin:0 0 18px;
+}
+h1 em{font-style:italic; color:var(--accent)}
+.sub{font-size:19px; color:var(--muted); max-width:580px; margin:0 auto 30px}
+.cta-row{display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-bottom:10px}
+.btn{
+  display:inline-flex; align-items:center; gap:8px; padding:13px 24px; border-radius:10px;
+  font-weight:600; font-size:15px; text-decoration:none; border:1px solid transparent; transition:.15s;
+}
+.btn-primary{background:var(--accent); color:var(--on-accent)}
+.btn-primary:hover{filter:brightness(1.08); transform:translateY(-1px)}
+.btn-ghost{border-color:var(--line); color:var(--ink); background:var(--surface)}
+.btn-ghost:hover{border-color:var(--accent); color:var(--accent)}
+.note{font-size:13.5px; color:var(--muted)}
+.tease{margin:-16px 0 26px; font-size:14.5px}
+.tease a{color:var(--muted); text-decoration:none; border-bottom:1px dashed var(--line); padding-bottom:2px}
+.tease a:hover{color:var(--accent); border-bottom-color:var(--accent)}
+
+/* ---------- figures ---------- */
+figure{margin:38px 0}
+figure img{width:100%; height:auto; display:block; border-radius:14px; border:1px solid var(--line)}
+figure.plainfig img{border:0; border-radius:0}
+figcaption{font-size:13.5px; color:var(--muted); text-align:center; margin-top:11px}
+
+/* ---------- type ---------- */
+h2{
+  font-family:"Instrument Serif",Georgia,serif; font-weight:400; font-size:clamp(29px,4.6vw,38px);
+  line-height:1.16; letter-spacing:-.01em; margin:60px 0 6px;
+}
+h3{font-size:19px; font-weight:700; letter-spacing:-.01em; margin:32px 0 8px}
+p{margin:0 0 17px}
+a{color:var(--accent)}
+.lede{font-size:19px; color:var(--muted); margin-bottom:26px}
+hr{border:0; border-top:1px solid var(--line); margin:56px 0}
+strong{font-weight:650}
+
+/* ---------- author ---------- */
+.author{
+  display:flex; gap:24px; align-items:flex-start; background:var(--surface);
+  border:1px solid var(--line); border-radius:16px; padding:28px; margin:40px 0;
+}
+.author-img{
+  width:96px; height:96px; border-radius:50%; flex:none; object-fit:cover;
+  background:var(--accent-soft); border:1px solid var(--line);
+}
+.author p{margin:0 0 11px; font-size:17px; line-height:1.62}
+.author p:last-child{margin-bottom:0}
+
+/* ---------- skill cards ---------- */
+.group-head{
+  display:flex; align-items:center; gap:12px; margin:46px 0 6px;
+}
+.group-head span{
+  font-size:12px; font-weight:800; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--accent); background:var(--accent-soft); padding:5px 12px; border-radius:100px; flex:none;
+}
+.group-head hr{flex:1; margin:0; border-top:1px solid var(--line)}
+.group-sub{color:var(--muted); font-size:15.5px; margin:0 0 18px}
+.fn{
+  background:var(--surface); border:1px solid var(--line); border-radius:16px;
+  padding:24px 26px; margin:14px 0; box-shadow:var(--shadow); scroll-margin-top:80px;
+}
+.fn-head{display:flex; align-items:baseline; gap:12px; margin-bottom:4px; flex-wrap:wrap}
+.fn-num{
+  font-family:"Instrument Serif",Georgia,serif; font-size:30px; line-height:1;
+  color:var(--accent); flex:none;
+}
+.fn-title{font-size:20px; font-weight:750; letter-spacing:-.015em; margin:0}
+.fn-sub{color:var(--muted); font-size:15px; margin:0 0 14px}
+.meta{display:flex; flex-wrap:wrap; gap:8px; margin:14px 0}
+.chip{
+  font-size:12.5px; font-weight:600; padding:5px 11px; border-radius:100px;
+  background:var(--bg); border:1px solid var(--line); color:var(--muted);
+}
+.chip b{color:var(--ink); font-weight:650}
+
+/* ---------- dropdown ---------- */
+details.drop{
+  border:1px solid var(--line); border-radius:12px; background:var(--bg);
+  margin:14px 0 0; overflow:hidden;
+}
+details.drop + details.drop{margin-top:8px}
+details.drop > summary{
+  cursor:pointer; list-style:none; padding:12px 16px; display:flex; align-items:center; gap:10px;
+  font-size:14.5px; font-weight:600; color:var(--accent); user-select:none;
+}
+details.drop > summary::-webkit-details-marker{display:none}
+details.drop > summary::before{
+  content:"›"; font-size:19px; line-height:1; color:var(--accent);
+  transition:transform .18s ease; display:inline-block; flex:none;
+}
+details.drop[open] > summary::before{transform:rotate(90deg)}
+details.drop > summary:hover{background:var(--accent-soft)}
+details.drop[open] > summary{border-bottom:1px solid var(--line)}
+.drop-body{padding:14px 16px 16px}
+.drop-body > *:last-child{margin-bottom:0}
+.drop-body .prompt{margin:0}
+.drop-note{font-size:13.5px; color:var(--muted); margin:0 0 12px}
+
+/* ---------- prompt block ---------- */
+.prompt{position:relative; margin:16px 0 4px}
+.prompt-bar{
+  display:flex; align-items:center; justify-content:space-between; gap:10px;
+  background:var(--code-bg); border-radius:10px 10px 0 0; padding:9px 13px;
+  border-bottom:1px solid rgba(255,255,255,.09);
+}
+.prompt-label{
+  font-family:"JetBrains Mono",ui-monospace,monospace; font-size:11.5px;
+  letter-spacing:.06em; text-transform:uppercase; color:#8C93A0;
+}
+.copy{
+  background:rgba(255,255,255,.12); color:#F5F5F5; border:0; border-radius:6px;
+  padding:5px 11px; font-size:12px; font-weight:600; cursor:pointer;
+  font-family:Inter,sans-serif; transition:.15s; white-space:nowrap;
+}
+.copy:hover{background:#1D4ED8; color:#FFFFFF}
+.copy.done{background:#1D4ED8; color:#FFFFFF}
+pre{
+  margin:0; background:var(--code-bg); color:var(--code-ink); border-radius:0 0 10px 10px;
+  padding:17px; overflow-x:auto; font-family:"JetBrains Mono",ui-monospace,monospace;
+  font-size:12.5px; line-height:1.62; white-space:pre-wrap; word-wrap:break-word;
+}
+
+/* ---------- callout ---------- */
+.callout{
+  border-left:3px solid var(--accent); background:var(--accent-soft);
+  padding:16px 20px; border-radius:0 12px 12px 0; margin:26px 0;
+}
+.callout p{margin:0; font-size:15.5px}
+.callout .k{font-weight:700; color:var(--accent)}
+
+/* ---------- lists ---------- */
+ul,ol{padding-left:22px; margin:0 0 18px}
+li{margin-bottom:9px}
+.plain{list-style:none; padding:0}
+.plain li{padding-left:28px; position:relative; margin-bottom:13px}
+.plain li::before{content:"→"; position:absolute; left:0; color:var(--accent); font-weight:700}
+
+/* ---------- setup steps ---------- */
+.setup{counter-reset:s; list-style:none; padding:0; margin:22px 0}
+.setup li{counter-increment:s; position:relative; padding-left:40px; margin-bottom:14px}
+.setup li::before{
+  content:counter(s); position:absolute; left:0; top:1px;
+  width:26px; height:26px; border-radius:50%; background:var(--accent); color:var(--on-accent);
+  font-size:13px; font-weight:700; display:flex; align-items:center; justify-content:center;
+}
+kbd{
+  font-family:"JetBrains Mono",ui-monospace,monospace; font-size:12.5px;
+  background:var(--bg); border:1px solid var(--line); border-radius:5px; padding:2px 6px;
+}
+
+/* ---------- table ---------- */
+.tw{overflow-x:auto; margin:18px 0; border:1px solid var(--line); border-radius:12px}
+table{border-collapse:collapse; width:100%; font-size:14.5px; min-width:420px}
+th,td{padding:10px 15px; text-align:left; border-bottom:1px solid var(--line)}
+th{background:var(--surface); font-weight:650; font-size:12.5px; letter-spacing:.05em; text-transform:uppercase; color:var(--muted)}
+tr:last-child td{border-bottom:0}
+td b{color:var(--accent)}
+
+/* ---------- old-vs-new comparison ---------- */
+.vs{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:26px 0}
+.vs-col{border:1px solid var(--line); border-radius:14px; padding:20px; background:var(--surface)}
+.vs-col h3{margin:0 0 12px; font-size:15px; letter-spacing:.04em; text-transform:uppercase}
+.vs-col ul{margin:0; padding-left:20px}
+.vs-col li{font-size:15px; margin-bottom:9px; color:var(--muted)}
+.vs-old h3{color:var(--muted)}
+.vs-old li{text-decoration:line-through; text-decoration-color:var(--line)}
+.vs-new{border-color:var(--accent)}
+.vs-new h3{color:var(--accent)}
+.vs-new li{color:var(--ink)}
+:not(pre) > code{
+  font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:.88em; background:var(--surface); border:1px solid var(--line);
+  border-radius:6px; padding:1px 6px; color:var(--ink); word-break:break-word;
+}
+@media (max-width:600px){ .vs{grid-template-columns:1fr} }
+
+/* ---------- final cta ---------- */
+.final{
+  background:var(--surface); border:1px solid var(--accent); border-radius:18px;
+  padding:38px 28px; text-align:center; margin:52px 0 24px;
+}
+.final h2{margin:0 0 10px}
+.final p{color:var(--muted); max-width:470px; margin:0 auto 22px}
+footer{text-align:center; padding:34px 0 56px; color:var(--muted); font-size:13.5px}
+footer a{color:var(--muted)}
+
+@media (max-width:560px){
+  body{font-size:16px}
+  .fn{padding:20px}
+  .bar nav{display:none}
+  .author{flex-direction:column; gap:12px}
+}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="bar-in">
+    <a class="brand" href="#top">Chat<span>SEO</span></a>
+    <nav>
+      <a href="#install">Install</a>
+      <a href="#data">Data file</a>
+      <a href="#scoring">Scoring</a>
+      <a href="#skills">The 15 Skills</a>
+      <a href="#workflows">Workflows</a>
+      <a href="#proof">Proof</a>
+    </nav>
+    <button class="theme" id="themeBtn" aria-label="Toggle theme">◐</button>
+  </div>
+</div>
+
+<div class="wrap" id="top">
+
+  <div class="hero">
+    <span class="eyebrow">Free · Nothing gated</span>
+    <h1>The Astra/Fable<br><em>SEO Folder</em></h1>
+    <p class="sub">15 skills that take you from auditing your site to knowing exactly which pages to fix and why. Plus the shared GSC data file, the scoring model and the three workflows that chain them. Every file is here in full.</p>
+    <p class="tease"><a href="#proof">How one founder went from 250 to 750 clicks a day on this method →</a></p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://link.chatseo.app/pb-astra-seo-folder" target="_blank" rel="noopener">Run the folder on live data →</a>
+      <a class="btn btn-ghost" href="#skills">Read the 15 skills</a>
+    </div>
+    <p class="note">Free · No credit card required</p>
+  </div>
+
+  <div class="author">
+    <img class="author-img" src="img/tw3810.webp" alt="Nicholas" loading="lazy">
+    <div>
+      <p><strong>Hey there, I'm Nicholas 👋</strong></p>
+      <p>I grew my last B2C app to 15K Google clicks/month as a solo founder, then sold it. Turns out I fell in love with SEO along the way.</p>
+      <p>So now I'm building <a href="https://link.chatseo.app/pb-astra-seo-folder" target="_blank" rel="noopener"><strong>ChatSEO.app</strong></a> — an all-in-one <strong>SEO employee</strong> whose job is to make sure you <strong>rank #1 in Google and in AI search</strong>.</p>
+      <p>This folder is the version of my process that runs in Astra. <a href="https://link.chatseo.app/pb-astra-seo-folder" target="_blank" rel="noopener"><strong>Try it free →</strong></a></p>
+    </div>
+  </div>
+
+  <hr>
+
+  <h2>Why a folder, and not 15 prompts</h2>
+  <p class="lede">Fifteen prompts give you fifteen opinions. A folder gives you one.</p>
+  <p>I ran SEO out of a prompt library for a year. It worked until it didn't: the "quick win" prompt would call a page a quick win, the "priority" prompt would rank the same page ninth, and the monthly report would say something else again. None of them were wrong. They just weren't reading the same numbers, or agreeing on what "low CTR" meant.</p>
+  <p>So I rebuilt the whole thing as a folder for Astra running Fable. Astra is the interface, Fable is the model doing the reasoning, and the folder works in any Claude client that loads skill files. Three things make it a system rather than a pile of prompts:</p>
+
+  <figure class="plainfig">
+    <svg viewBox="0 0 760 330" role="img" aria-label="The folder structure: one shared GSC data file and one scoring model at the root, fifteen skill files that all read them, and three workflow files that chain the skills." style="width:100%;height:auto">
+      <style>
+        .ink-s{stroke:var(--ink);fill:none;stroke-width:1.5}
+        .hair{stroke:var(--line);stroke-width:1}
+        .acc-s{stroke:var(--accent);fill:none;stroke-width:1.8}
+        .arw{stroke:var(--muted);fill:none;stroke-width:1.3}
+        .t{fill:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:14px}
+        .m{fill:var(--muted);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.06em}
+        .b{fill:var(--accent);font-family:Inter,system-ui,sans-serif;font-size:15px;font-weight:750}
+        .bs{fill:var(--muted);font-family:Inter,system-ui,sans-serif;font-size:12.5px}
+      </style>
+      <defs>
+        <marker id="ah0" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="var(--muted)"/></marker>
+      </defs>
+      <rect x="20" y="20" width="330" height="62" rx="10" class="acc-s"/>
+      <text x="36" y="46" class="m">GSC-DATA.MD</text>
+      <text x="36" y="68" class="t">Your Search Console export, in one place</text>
+      <rect x="410" y="20" width="330" height="62" rx="10" class="acc-s"/>
+      <text x="426" y="46" class="m">SCORING.MD</text>
+      <text x="426" y="68" class="t">Opportunity ÷ effort, defined once</text>
+      <path d="M185 82 L185 120" class="arw" marker-end="url(#ah0)"/>
+      <path d="M575 82 L575 120" class="arw" marker-end="url(#ah0)"/>
+      <rect x="20" y="124" width="720" height="96" rx="12" class="ink-s"/>
+      <text x="36" y="150" class="m">15 SKILLS</text>
+      <text x="36" y="176" class="t">best-page-analyser · keyword-opportunity-finder · search-intent-classifier · quick-win-detector</text>
+      <text x="36" y="196" class="t">topical-authority-mapper · content-brief-builder · title-meta-rewriter · internal-link-builder · …</text>
+      <text x="36" y="212" class="bs">every skill reads both root files before it says a number</text>
+      <path d="M380 220 L380 256" class="arw" marker-end="url(#ah0)"/>
+      <rect x="20" y="260" width="720" height="56" rx="12" class="ink-s"/>
+      <text x="36" y="284" class="m">3 WORKFLOWS</text>
+      <text x="36" y="305" class="t">Fix what already ranks (weekly) · Build what's missing (monthly) · Protect and report (monthly)</text>
+    </svg>
+    <figcaption>Two root files every skill reads, fifteen skills, three workflows that chain them. That's the whole folder.</figcaption>
+  </figure>
+
+  <ul class="plain">
+    <li><strong>One data file.</strong> Every skill reads <code>gsc-data.md</code>, so skill 4 and skill 13 are looking at the same rows, not at whatever you happened to paste that day.</li>
+    <li><strong>One scoring model.</strong> "Opportunity" and "effort" are defined once in <code>scoring.md</code>. A quick win is a quick win in every file, and the priority list is the same list whichever skill produced it.</li>
+    <li><strong>One action per skill.</strong> Every file caps its own output and ends on a single thing to do. Not a ranked list of things. One. That constraint is the product.</li>
+  </ul>
+
+  <hr>
+
+  <h2 id="install">Install it in four minutes</h2>
+  <p class="lede">A folder, two root files, fifteen skill files, three workflow files.</p>
+
+  <div class="fn">
+    <div class="fn-head"><h3 class="fn-title">Set it up once</h3></div>
+    <p class="fn-sub">Then every skill below has something real to read.</p>
+    <ol class="setup">
+      <li>Make a folder called <code>seo</code>. Save the two root files below inside it as <code>gsc-data.md</code> and <code>scoring.md</code>. Do this first, even if you only ever use three skills. It is what stops two skills disagreeing.</li>
+      <li>Save each of the 15 skills as its own <code>.md</code> file in the same folder, named after the <code>name:</code> line in its frontmatter. Same for the three workflow files.</li>
+      <li>Give Astra the folder: put it where your project's other skills live, or attach it to a Project if you're in Claude. Then call a skill by name, or call a workflow and let it call the skills.</li>
+      <li>Fill <code>gsc-data.md</code> with your real data before you run anything. The step below.</li>
+    </ol>
+  </div>
+
+  <h3>The step people skip</h3>
+  <p>Fifteen skills that reason about your site are worth nothing if the model can't see your site. Every skill below reads Search Console numbers out of <code>gsc-data.md</code>. Leave it empty and you get a well-structured essay about SEO in general: confident, beautifully formatted, and about nobody's website.</p>
+  <p>You can fill the file from CSV exports by hand, and the section below walks through exactly which exports. The way I do it is the <strong>ChatSEO plugin</strong>: one read-only Google OAuth connection, then Astra can query Search Console and GA4 as tools. No export, no pasting, and every skill can re-pull next month without you.</p>
+
+  <div class="callout">
+    <p><span class="k">Test it before you save a single file.</span> Ask: <em>"Which of my pages lost the most clicks last month?"</em> Real URLs back means the model can see your data. Advice about <em>how</em> to find those pages means it can't, and all 15 skills will produce fiction in a nice table. <a href="https://link.chatseo.app/pb-astra-seo-folder" target="_blank" rel="noopener"><strong>Connect ChatSEO free →</strong></a></p>
+  </div>
+
+  <hr>
+
+  <h2 id="data">The shared GSC data file</h2>
+  <p class="lede">One file, filled once a month, read by all fifteen skills.</p>
+  <p>Most SEO prompts fail at the input, not the reasoning. You paste 200 rows into one chat and 300 into the next, brand queries in one and not the other, a 28-day window here and a 3-month window there. Then you wonder why the answers don't agree.</p>
+  <p><code>gsc-data.md</code> fixes the input. It holds four things: the site and the window, the brand terms to strip out before any average is computed, the exports themselves, and a changelog of what you shipped and when. That last block is what lets the reporting skill say "this rise lines up with the title change on the 12th" instead of guessing.</p>
+
+  <h3>How to fill it, by hand</h3>
+  <ol class="setup">
+    <li>In Search Console, open <strong>Performance → Search results</strong>. Set the date range to <strong>last 3 months</strong> and turn on <strong>Compare</strong> against the previous period, so both windows land in one export.</li>
+    <li>Use <strong>Export</strong> (top right) to download the CSV. You get one file per tab. Paste the <strong>Pages</strong> table and the <strong>Queries</strong> table into the file, top 500 rows of each is plenty.</li>
+    <li>The standard export does not pair queries with pages. For the skills that need pairs (quick wins, cannibalization), filter the report on one page, export its queries, and paste that block under that page's URL. Do this for your top 10 pages only.</li>
+    <li>List your brand terms. Every skill excludes them before computing an average, because brand CTR is high enough to hide everything else.</li>
+  </ol>
+  <p>If your export only shows one period, export twice and paste both, labelled. And if this list already feels like a monthly chore: it is, and it's the exact chore the <a href="https://link.chatseo.app/pb-astra-seo-folder" target="_blank" rel="noopener">ChatSEO connection</a> removes. The file format stays the same either way.</p>
+
+  <details class="drop" open>
+    <summary>Copy the data file template</summary>
+    <div class="drop-body">
+      <div class="prompt">
+        <div class="prompt-bar"><span class="prompt-label">gsc-data.md</span><button class="copy">Copy</button></div>
+<pre>---
+name: gsc-data
+description: The one Search Console dataset every skill in this folder reads. Skills never ask for data that is in here, and never use data that is not.
+---
+
+SITE
+  property:      https://example.com/          &lt;- replace
+  window:        last 3 months (YYYY-MM-DD to YYYY-MM-DD)
+  compared to:   previous 3 months (YYYY-MM-DD to YYYY-MM-DD)
+  country:       all | one country code
+  exported on:   YYYY-MM-DD
+
+BRAND TERMS — strip every query containing these before computing any average
+  example, examples, example.com, &lt;founder name&gt;
+
+BAND AVERAGES — computed by best-page-analyser on first run, then pasted here
+  winning (1.0-3.0)            avg CTR: __%   non-brand
+  striking distance (3.1-10.0) avg CTR: __%   non-brand
+  page two (10.1-20.0)         avg CTR: __%   non-brand
+  Leave blank until skill 1 has run once. Skills that need a band average and
+  find it blank must say "band averages not yet computed, run best-page-analyser".
+
+PAGES — paste the Pages export, current period AND previous period
+  url | clicks | impressions | ctr | position | prev clicks | prev impressions | prev ctr | prev position
+  ...
+
+QUERIES — paste the Queries export, current period AND previous period
+  query | clicks | impressions | ctr | position | prev clicks | prev impressions | prev ctr | prev position
+  ...
+
+QUERY x PAGE — optional, top 10 pages only
+  ## https://example.com/page-one/
+  query | clicks | impressions | ctr | position
+  ...
+  ## https://example.com/page-two/
+  ...
+
+CHANGELOG — one line per shipped change, newest first
+  YYYY-MM-DD | url | what changed (title / meta / section / links / schema / new page) | which skill proposed it
+  ...
+
+RULES FOR EVERY SKILL READING THIS FILE
+  - If a section a skill needs is empty, say which section and stop. Do not
+    proceed on general knowledge.
+  - Brand terms are excluded before any average, ratio or ranking.
+  - A page or query that is not in this file does not exist for the purpose of
+    the skill. Never add one from memory.
+  - The window is the window. Never compare the current period to anything
+    other than the "compared to" period listed above.</pre>
+      </div>
+    </div>
+  </details>
+
+  <hr>
+
+  <h2 id="scoring">The scoring model</h2>
+  <p class="lede">One formula, so every skill ranks things the same way.</p>
+  <p>The question behind every SEO decision is the same one: <em>how many clicks is this worth, and how much work is it?</em> Most tools answer with a severity score somebody else designed. This folder answers with your own numbers.</p>
+  <p>Opportunity is the clicks a page or query would gain if its CTR reached the average of the band above it, on this site, brand excluded. Effort is a four-step ladder from "change the title" to "rebuild the section". Priority is one divided by the other. That's it, and it's enough: every skill that ranks anything ranks by priority, so the quick-win skill, the priority skill and the monthly report agree by construction.</p>
+
+  <div class="tw"><table>
+    <thead><tr><th>Effort</th><th>What it means</th><th>Typical fix</th></tr></thead>
+    <tbody>
+      <tr><td><b>1</b></td><td>Under an hour, no new content</td><td>Title, meta description</td></tr>
+      <tr><td><b>2</b></td><td>Half a day, existing page</td><td>Rewrite one section, add internal links, add schema</td></tr>
+      <tr><td><b>3</b></td><td>Days, one page</td><td>Full rewrite, or a new page from a brief</td></tr>
+      <tr><td><b>4</b></td><td>Weeks, many pages</td><td>Site structure, templates, technical change</td></tr>
+    </tbody>
+  </table></div>
+
+  <details class="drop" open>
+    <summary>Copy the scoring model</summary>
+    <div class="drop-body">
+      <div class="prompt">
+        <div class="prompt-bar"><span class="prompt-label">scoring.md</span><button class="copy">Copy</button></div>
+<pre>---
+name: scoring
+description: Shared definitions and the opportunity/effort model. Every skill in this folder reads this before it ranks, labels or recommends anything. Never override these locally.
+---
+
+POSITION BANDS
+  winning 1.0-3.0 | striking distance 3.1-10.0 | page two 10.1-20.0 | noise 20.1+
+  CTR is judged against THIS site's own non-brand average for that band,
+  taken from gsc-data.md. Never use a published industry CTR table.
+
+FLOORS — below a floor, write "below the floor, not ranked". Do not rank it quietly.
+  page enters a priority list:    200+ impressions in the current window
+  query named individually:        50+ impressions in the current window
+  CTR treated as signal:           20+ clicks
+  a trend may be called a trend:   both periods present in gsc-data.md
+
+OPPORTUNITY — in clicks, for one page or one query
+  band        = position band of its average position
+  target_ctr  = this site's average CTR of the band ABOVE it
+                (for the winning band, target_ctr = current ctr, opportunity = 0)
+  opportunity = impressions x max(0, target_ctr - ctr)
+  Round to a whole number. Show the three inputs next to it, always.
+
+EFFORT
+  1  title and meta only
+  2  one section rewritten, or internal links added, or schema added
+  3  full rewrite, or a new page from a brief
+  4  site structure, template or technical change
+  When unsure between two levels, take the higher one.
+
+PRIORITY = opportunity / effort. Rank descending. Ties go to the lower effort.
+
+QUICK WIN = position 4.0-15.0 AND effort 1 or 2 AND opportunity &gt;= 20 clicks.
+  All three. A page at position 2 is not a quick win, it is a page to defend.
+
+DECAY = clicks down 30%+ versus the previous period, AND impressions flat or
+  down less than 10%. If impressions fell too, it is a demand change. Say so.
+
+CANNIBALIZATION = 2+ of my URLs in the top 20 for one query, neither above
+  position 5. One strong page plus one weak page is not cannibalization.
+
+SEASONALITY = before diagnosing any drop, ask whether the same weeks last year
+  are in the data. If they are not, label the diagnosis "seasonality unchecked".
+
+CONFIDENCE — attach one label to every claim about cause
+  confirmed     visible in gsc-data.md; quote the figure
+  probable      consistent with the data; name the test that would confirm it
+  unverifiable  needs data not in the file; list it as what to pull next
+
+UNIVERSAL RULES
+  Never state a number that is not in gsc-data.md or computed from it by the
+  formulas above. Write "cannot compute from this data" and move on. Never
+  estimate, and never carry an estimated number into a later step.
+  Every skill ends on ONE action. Not a ranked list of actions. One.</pre>
+      </div>
+    </div>
+  </details>
+
+  <hr>
+
+  <h2 id="skills">The 15 skills</h2>
+  <p class="lede">In the order from the post, which is roughly the order you'd meet them. Every file is complete: open the dropdown and copy it.</p>
+  <p>Every file below obeys the same three constraints, and they are the product: it <strong>reads the two root files first</strong>, it <strong>refuses to state a number it didn't get from them</strong>, and it <strong>ends on one action</strong>. Delete any of those and you have a prompt again.</p>
+
+  <figure class="plainfig">
+    <svg viewBox="0 0 760 300" role="img" aria-label="The fifteen skills arranged by job: audit, plan, fix, protect and report, with the skills listed under each." style="width:100%;height:auto">
+      <style>
+        .col-h{fill:var(--accent);font-family:Inter,system-ui,sans-serif;font-size:13px;font-weight:800;letter-spacing:.14em}
+        .col-i{fill:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:13px}
+        .rule{stroke:var(--line);stroke-width:1}
+        .rule-k{stroke:var(--ink);stroke-width:1.5}
+        .ar{fill:var(--accent);font-family:Inter,system-ui,sans-serif;font-size:12px}
+      </style>
+      <line x1="152" y1="14" x2="152" y2="252" class="rule"/>
+      <line x1="304" y1="14" x2="304" y2="252" class="rule"/>
+      <line x1="456" y1="14" x2="456" y2="252" class="rule"/>
+      <line x1="608" y1="14" x2="608" y2="252" class="rule"/>
+      <line x1="8" y1="272" x2="752" y2="272" class="rule-k"/>
+      <g><text x="14" y="34" class="col-h">AUDIT</text>
+        <text x="14" y="86" class="ar">1</text><text x="30" y="86" class="col-i">Best pages</text>
+        <text x="14" y="126" class="ar">2</text><text x="30" y="126" class="col-i">Keyword opps</text>
+        <text x="14" y="166" class="ar">4</text><text x="30" y="166" class="col-i">Quick wins</text>
+        <text x="14" y="206" class="ar">13</text><text x="36" y="206" class="col-i">Priority rank</text></g>
+      <g><text x="166" y="34" class="col-h">PLAN</text>
+        <text x="166" y="86" class="ar">3</text><text x="182" y="86" class="col-i">Search intent</text>
+        <text x="166" y="126" class="ar">5</text><text x="182" y="126" class="col-i">Topical map</text>
+        <text x="166" y="166" class="ar">11</text><text x="188" y="166" class="col-i">Competitor gap</text>
+        <text x="166" y="206" class="ar">6</text><text x="182" y="206" class="col-i">Content brief</text></g>
+      <g><text x="318" y="34" class="col-h">FIX</text>
+        <text x="318" y="86" class="ar">7</text><text x="334" y="86" class="col-i">Title &amp; meta</text>
+        <text x="318" y="126" class="ar">8</text><text x="334" y="126" class="col-i">Internal links</text>
+        <text x="318" y="166" class="ar">12</text><text x="340" y="166" class="col-i">Schema</text>
+        <text x="318" y="206" class="ar">14</text><text x="340" y="206" class="col-i">Draft</text></g>
+      <g><text x="470" y="34" class="col-h">PROTECT</text>
+        <text x="470" y="86" class="ar">9</text><text x="486" y="86" class="col-i">Cannibalization</text>
+        <text x="470" y="126" class="ar">10</text><text x="492" y="126" class="col-i">Content decay</text></g>
+      <g><text x="622" y="34" class="col-h">REPORT</text>
+        <text x="622" y="86" class="ar">15</text><text x="644" y="86" class="col-i">Rank audit</text></g>
+      <text x="380" y="294" class="col-i" text-anchor="middle" style="fill:var(--muted);font-size:12.5px">All 15 read gsc-data.md and scoring.md. All 15 end on one action.</text>
+    </svg>
+  </figure>
+
+  <div class="fn" id="s1">
+    <div class="fn-head"><span class="fn-num">1</span><h3 class="fn-title">best-page-analyser</h3></div>
+    <p class="fn-sub"><em>The rule: your best pages are ranked by what they could earn, not by what they earn today.</em></p>
+    <div class="meta"><span class="chip"><b>Reads:</b> PAGES in gsc-data.md</span><span class="chip"><b>Returns:</b> 10 pages, each with a verdict</span></div>
+    <p>Sorting pages by clicks tells you what already works. Sorting them by opportunity tells you where the next clicks are, which is a different list and the only one worth having. This skill also computes the band averages every other skill leans on, so it runs first.</p>
+    <details class="drop"><summary>Open the full skill file</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">skill · best-page-analyser</span><button class="copy">Copy</button></div>
+<pre>---
+name: best-page-analyser
+description: Rank the site's pages by opportunity, not by clicks, and give each one a verdict. Run first, and again whenever gsc-data.md is refreshed.
+---
+
+Read gsc-data.md and scoring.md first.
+
+INPUTS — stop and say which is missing if it is not in gsc-data.md:
+- the PAGES section, with both periods
+- the BRAND TERMS list
+
+PROCESS
+1. Drop every page under the page floor in scoring.md.
+2. Compute the non-brand average CTR per position band from the QUERIES section.
+   Write the three numbers out. Tell me to paste them into BAND AVERAGES in
+   gsc-data.md so the other skills can use them.
+3. For every remaining page, compute opportunity using scoring.md. Show the
+   three inputs (impressions, ctr, target_ctr) next to it.
+4. Give each page one verdict:
+   DEFEND   winning band, CTR at or above its band average
+   PUSH     striking distance or page two, opportunity above 20 clicks
+   RESCUE   clicks down 30%+ versus the previous period (hand to content-decay-tracker)
+   IGNORE   noise band, or opportunity under 20 clicks
+5. Sort by opportunity, descending.
+
+OUTPUT — one table, capped at 10 rows:
+url | position | impressions | ctr | band avg ctr | opportunity | verdict
+
+RULES
+- Opportunity is only computed with the formula in scoring.md. Never estimate
+  a "potential traffic" figure any other way.
+- A page whose position is in the winning band gets opportunity 0, even if its
+  CTR looks low. Say "defend" and move on.
+- If BAND AVERAGES cannot be computed because QUERIES is empty, say so and stop.
+
+End with ONE line: the single PUSH page to open first, and why in ten words.</pre></div>
+    </div></details>
+  </div>
+
+  <div class="fn" id="s2">
+    <div class="fn-head"><span class="fn-num">2</span><h3 class="fn-title">keyword-opportunity-finder</h3></div>
+    <p class="fn-sub"><em>The rule: the best keyword is one Google already shows you for, and you keep losing.</em></p>
+    <div class="meta"><span class="chip"><b>Reads:</b> QUERIES in gsc-data.md</span><span class="chip"><b>Returns:</b> 15 queries, each with a destination</span></div>
+    <p>Keyword research usually starts from a tool's volume estimate for a query you've never ranked for. This starts from queries you already get impressions on at position 8 to 30. Google has already told you the page is relevant. It just hasn't been convinced it's the best one.</p>
+    <details class="drop"><summary>Open the full skill file</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">skill · keyword-opportunity-finder</span><button class="copy">Copy</button></div>
+<pre>---
+name: keyword-opportunity-finder
+description: Find the queries the site already gets impressions for but does not win, and say which page should own each one. Use before any content planning.
+---
+
+Read gsc-data.md and scoring.md first.
+
+INPUTS — stop and say which is missing:
+- the QUERIES section, both periods
+- the PAGES section (to map queries to existing URLs)
+- BRAND TERMS
+
+PROCESS
+1. Drop brand queries and every query under the query floor.
+2. Keep queries with average position between 8.0 and 30.0. Above 8 is
+   already winning enough; below 30 is not yet a signal.
+3. Compute opportunity for each with scoring.md.
+4. For each query, find the existing URL most likely ranking for it: the page
+   whose topic matches, using QUERY x PAGE if present, otherwise your best
+   reading of the PAGES list. Mark that reading "probable" if you had to guess.
+5. Decide: STRENGTHEN the existing page, or NEW PAGE if no existing page is
+   a credible home for the query.
+6. Group queries that a single page could satisfy. One group, one destination.
+
+OUTPUT — one table, capped at 15 rows, sorted by opportunity:
+query | position | impressions | opportunity | destination URL or "new" | action
+
+RULES
+- Never invent search volume. Impressions are the only demand number allowed.
+- No difficulty score. You cannot see one, and inventing one is worse than
+  leaving it out.
+- A query maps to exactly one destination. If it fits two pages, that is a
+  cannibalization-detector job. Say so and pick the higher-impression page.
+
+End with ONE line: the single query to go after this month, and its destination.</pre></div>
+    </div></details>
+  </div>
+
+  <div class="fn" id="s3">
+    <div class="fn-head"><span class="fn-num">3</span><h3 class="fn-title">search-intent-classifier</h3></div>
+    <p class="fn-sub"><em>The rule: read the SERP that exists, not the intent you'd prefer the query had.</em></p>
+    <div class="meta"><span class="chip"><b>Reads:</b> a SERP screenshot or pasted results</span><span class="chip"><b>Returns:</b> intent class + the page format that wins</span></div>
+    <p>Nearly every "we wrote the page and it didn't rank" story is this: a guide aimed at a query where Google only shows product pages. The format is the fight, and you can see who won it before you write a word. This is the one skill that needs something other than the data file, because the data file can't see a results page.</p>
+    <details class="drop"><summary>Open the full skill file</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">skill · search-intent-classifier</span><button class="copy">Copy</button></div>
+<pre>---
+name: search-intent-classifier
+description: Read a live SERP and name the intent class and the page format that can rank. Use before writing or rewriting any page.
+---
+
+Read scoring.md first.
+
+INPUTS — ask for what is missing:
+- the query, and the country and language it should be read in
+- the SERP itself: a screenshot, a paste of the top 10, or a live fetch
+If you cannot see the SERP, say so and stop. Do not describe what the SERP
+"probably" looks like. That is the one failure mode of this skill.
+
+INTENT CLASSES
+  informational  guides, forums, videos, People Also Ask dominate
+  comparison     listicles, "best", "vs", review sites dominate
+  transactional  product pages, pricing, ads above the fold dominate
+  navigational   one brand owns the top 3. Never target it.
+
+PROCESS
+1. List the top 10 results: URL, page type, and whether it is a brand's own page.
+2. Count the page types. The majority type is the format Google is rewarding.
+3. Note SERP features present: ads, People Also Ask, video, images, local
+   pack, shopping, AI overview.
+4. Assign the intent class.
+5. Judge whether a page of the winning format is realistic for this site.
+
+OUTPUT
+- intent class, one word
+- winning format, one line, with the count that justifies it ("7 of 10 are listicles")
+- SERP features present, comma separated
+- what would have to be true for us to rank, 2 bullets maximum
+- verdict: TARGET or SKIP, with the reason in one sentence
+
+RULES
+- Only describe results you can actually see. Never reconstruct a SERP from
+  memory. Rankings change and yours are months stale.
+- If the top 3 are one brand's own properties, the verdict is SKIP.
+- Hand the intent class to content-brief-builder. Never write the page from here.
+
+End with ONE line: TARGET or SKIP, and the format if TARGET.</pre></div>
+    </div></details>
+  </div>
+
+  <div class="fn" id="s4">
+    <div class="fn-head"><span class="fn-num">4</span><h3 class="fn-title">quick-win-detector</h3></div>
+    <p class="fn-sub"><em>The rule: position 4 to 15, effort 1 or 2, at least 20 clicks on the table. All three, or it isn't one.</em></p>
+    <div class="meta"><span class="chip"><b>Reads:</b> PAGES + QUERY x PAGE</span><span class="chip"><b>Returns:</b> 7 quick wins, each with the fix type</span></div>
+    <p>"Quick win" is the most abused phrase in SEO because nobody defines it. The scoring model does: a page close enough to move, a fix small enough to ship this week, and enough clicks at stake to bother. This skill finds those and nothing else, and it names the fix, not just the page.</p>
+    <details class="drop"><summary>Open the full skill file</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">skill · quick-win-detector</span><button class="copy">Copy</button></div>
+<pre>---
+name: quick-win-detector
+description: Find the pages that meet the quick-win definition in scoring.md and name the specific fix for each. Use weekly.
+---
+
+Read gsc-data.md and scoring.md first.
+
+INPUTS — stop and say which is missing:
+- the PAGES section with BAND AVERAGES filled in
+- QUERY x PAGE for the top pages. If it is empty, say "query-to-page pairs
+  missing: fix type will be limited to title/meta" and continue on PAGES only.
+
+PROCESS
+1. Keep pages with average position 4.0 to 15.0 and above the page floor.
+2. Compute opportunity with scoring.md. Drop anything under 20 clicks.
+3. For each remaining page, diagnose the cheapest fix from the data:
+   TITLE/META   CTR below band average, position stable -> effort 1
+   INTRO        top query's words absent from the page's title and first 100
+                words (only if the page text was provided) -> effort 2
+   LINKS        position 8-15 with impressions rising, few internal links
+                (only if a crawl or link count was provided) -> effort 2
+   SCHEMA       page type matches a rich-result type and has no schema
+                (only if the page source was provided) -> effort 2
+   If you cannot tell which, write "fix: unknown, open the page" and effort 2.
+4. Drop anything that needed effort 3 or 4. That is not a quick win.
+5. Rank by priority = opportunity / effort.
+
+OUTPUT — one table, capped at 7 rows:
+url | position | impressions | ctr | band avg ctr | opportunity | fix | effort | priority
+
+RULES
+- Never label a winning-band page a quick win. It is a page to defend.
+- Every "fix" must be justified by a number in gsc-data.md or a file the
+  user provided. No "the content could be better".
+- If nothing meets the definition, say "no quick wins this week" and stop.
+  A short list is a valid output. An inflated one is not.
+
+End with ONE line: the single quick win to ship today, and the fix.</pre></div>
+    </div></details>
+  </div>
+
+  <div class="fn" id="s5">
+    <div class="fn-head"><span class="fn-num">5</span><h3 class="fn-title">topical-authority-mapper</h3></div>
+    <p class="fn-sub"><em>The rule: a topic is a pillar page plus the supporting pages Google expects to find next to it. Count what's missing.</em></p>
+    <div class="meta"><span class="chip"><b>Reads:</b> QUERIES + PAGES</span><span class="chip"><b>Returns:</b> 5 pillars, coverage per cluster</span></div>
+    <p>Sites don't rank for topics because they have one great page. They rank because they have the whole shelf. This skill builds the shelf from your own query data, marks each cluster covered, thin or missing, and tells you which missing page closes the biggest gap.</p>
+    <details class="drop"><summary>Open the full skill file</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">skill · topical-authority-mapper</span><button class="copy">Copy</button></div>
+<pre>---
+name: topical-authority-mapper
+description: Build the site's topic map from its own query data, mark coverage per cluster, and name the missing page that matters most. Use monthly, before briefing new content.
+---
+
+Read gsc-data.md and scoring.md first.
+
+INPUTS — stop and say which is missing:
+- the QUERIES section (non-brand)
+- the PAGES section
+- optionally, the output of keyword-opportunity-finder
+
+PROCESS
+1. Drop brand queries and queries under the query floor.
+2. Group the remaining queries into topics: a PILLAR is a broad head term the
+   site gets impressions for; a CLUSTER is a group of 3+ queries under it that
+   one page could satisfy. Fewer than 3 queries: fold into the nearest cluster.
+3. Cap at 5 pillars, chosen by total impressions.
+4. For each cluster, find the URL that currently ranks for most of its queries
+   and mark coverage:
+   COVERED  a page exists and ranks in the top 10 for the cluster's top query
+   THIN     a page exists but ranks 11+ for the top query
+   MISSING  no page in PAGES plausibly targets the cluster
+5. Sum the impressions of every MISSING and THIN cluster per pillar.
+
+OUTPUT
+For each pillar (max 5):
+  pillar | total impressions | clusters covered / thin / missing
+Then one table of the MISSING and THIN clusters, capped at 10 rows, sorted by impressions:
+  cluster (named after its top query) | pillar | impressions | coverage | current URL or "none"
+
+RULES
+- The map is built from gsc-data.md only. Do not add topics the site has no
+  impressions for; that is competitor-gap-analyser's job.
+- One cluster maps to exactly one URL. That constraint is what prevents
+  cannibalization later.
+- Never state a "topical authority score". There is no such number in the data.
+
+End with ONE line: the single MISSING cluster to brief first, and its pillar.</pre></div>
+    </div></details>
+  </div>
+
+  <div class="fn" id="s6">
+    <div class="fn-head"><span class="fn-num">6</span><h3 class="fn-title">content-brief-builder</h3></div>
+    <p class="fn-sub"><em>The rule: a brief tells the writer what has to be true on the page. It does not write the page.</em></p>
+    <div class="meta"><span class="chip"><b>Reads:</b> one cluster + one intent verdict</span><span class="chip"><b>Returns:</b> a one-page brief</span></div>
+    <p>A brief is where the research becomes something a person, or skill 14, can execute. It takes one cluster from the topical map, one verdict from the intent classifier, and produces the outline, the questions the page must answer, and the internal links it must carry. Short on purpose. A brief that runs to four pages is a draft with no author.</p>
+    <details class="drop"><summary>Open the full skill file</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">skill · content-brief-builder</span><button class="copy">Copy</button></div>
+<pre>---
+name: content-brief-builder
+description: Turn one cluster and one intent verdict into a one-page brief a writer or draft-writer can execute. Use once per new or rewritten page.
+---
+
+Read gsc-data.md and scoring.md first.
+
+INPUTS — ask for what is missing:
+- the target cluster: its top query and the 3-10 queries under it
+- the intent class and winning format, from search-intent-classifier
+- the destination URL, existing or "new", and the pillar it belongs to
+- optionally: the top 3 ranking pages' headings, if the user pasted them
+
+PROCESS
+1. State the one job of the page in a sentence: who searches this and what
+   they need to leave with.
+2. Write the H1 and an outline of H2s. The outline follows the winning format,
+   not a generic template. A comparison page gets a comparison outline.
+3. List the questions the page must answer, drawn from the cluster's queries.
+   One question per query, deduplicated.
+4. List the entities and terms the page must mention, only ones present in the
+   cluster's queries or the pasted competitor headings.
+5. List internal links: 3-5 pages from PAGES that should link TO this page,
+   with the anchor text (a query the page targets), and 2-3 this page should
+   link OUT to.
+6. Give 3 title candidates under 60 characters and one meta description under
+   155 characters.
+7. If competitor headings were provided, give a length range from them.
+   If not, write "length: not observed".
+
+OUTPUT — under 400 words, in this order:
+job | H1 | outline | questions | terms | internal links in | internal links out |
+titles | meta | length
+
+RULES
+- No word counts, keyword densities or "LSI keywords" pulled from nowhere.
+- Every internal link source must be a URL in gsc-data.md.
+- Do not write body copy. That is draft-writer's job.
+
+End with ONE line: the single section that must be the best on the web for
+this page to rank.</pre></div>
+    </div></details>
+  </div>
+
+  <div class="fn" id="s7">
+    <div class="fn-head"><span class="fn-num">7</span><h3 class="fn-title">title-meta-rewriter</h3></div>
+    <p class="fn-sub"><em>The rule: the title says what the top query says, and promises only what the page delivers.</em></p>
+    <div class="meta"><span class="chip"><b>Reads:</b> one URL + its queries</span><span class="chip"><b>Returns:</b> one title, one meta, chosen</span></div>
+    <p>The highest-leverage fix in SEO is still a title change on a page that ranks 5th with a CTR below its band. It's effort 1, and it moves within days. This skill writes three candidates from the page's own top queries and then, crucially, picks one. You don't get to A/B test in your head.</p>
+    <details class="drop"><summary>Open the full skill file</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">skill · title-meta-rewriter</span><button class="copy">Copy</button></div>
+<pre>---
+name: title-meta-rewriter
+description: Rewrite one page's title and meta description from its own query data, and pick one. Use on any page flagged TITLE/META by quick-win-detector.
+---
+
+Read gsc-data.md and scoring.md first.
+
+INPUTS — ask for what is missing:
+- the URL
+- its current title and meta description (paste them; do not fetch from memory)
+- its queries from QUERY x PAGE, or the top QUERIES you can attribute to it
+- what the page actually contains, in one sentence from the user
+
+PROCESS
+1. Name the top query by impressions and the CTR gap versus its band average.
+2. Diagnose in one sentence why the current title underperforms: query words
+   missing, promise unclear, truncated, or duplicate of another page's title.
+3. Write 3 titles, each under 60 characters, each starting with or containing
+   the top query's words in natural order. One plain, one with a specific
+   benefit the page delivers, one with a number that is ACTUALLY on the page.
+4. Write 1 meta description under 155 characters that says what the reader
+   gets and ends with a verb.
+5. Pick ONE title. Say why in one sentence, using the CTR gap.
+
+OUTPUT
+diagnosis | title A | title B | title C | meta | chosen: A/B/C, reason
+
+RULES
+- No number, year or claim in a title that the user has not confirmed is on
+  the page. "2026 guide" on a page that says nothing about 2026 is banned.
+- No clickbait patterns: "you won't believe", "the secret", "ultimate".
+- Do not change the title of a winning-band page unless its CTR is below its
+  band average. Say "defend, do not touch" instead.
+- Character counts are shown next to each candidate.
+
+End with ONE line: the chosen title, ready to paste.</pre></div>
+    </div></details>
+  </div>
+
+  <div class="fn" id="s8">
+    <div class="fn-head"><span class="fn-num">8</span><h3 class="fn-title">internal-link-builder</h3></div>
+    <p class="fn-sub"><em>The rule: the anchor is a query the target already ranks for, and the source is a page that already has traffic.</em></p>
+    <div class="meta"><span class="chip"><b>Reads:</b> one target URL + PAGES + QUERIES</span><span class="chip"><b>Returns:</b> 8 links with anchor and placement</span></div>
+    <p>Internal links are the cheapest ranking signal you control completely, and the one most sites leave to a "related posts" widget. This skill picks sources that have impressions of their own, anchors that match what the target already ranks for, and tells you which sentence to put the link in.</p>
+    <details class="drop"><summary>Open the full skill file</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">skill · internal-link-builder</span><button class="copy">Copy</button></div>
+<pre>---
+name: internal-link-builder
+description: Propose internal links to one target page, with source, anchor and placement, from pages that already have traffic. Use on any page flagged LINKS, or on any new page after it is published.
+---
+
+Read gsc-data.md and scoring.md first.
+
+INPUTS — ask for what is missing:
+- the target URL and its top 3 queries
+- the PAGES section (candidate sources)
+- optionally: the text of candidate source pages, or a crawl export with
+  existing internal links
+
+PROCESS
+1. Candidate sources are pages in PAGES above the page floor. Rank them by
+   topical closeness to the target's top query: shared words, same pillar.
+2. Drop any source that already links to the target, if a crawl was provided.
+3. For each source, choose an anchor: one of the target's top 3 queries, or a
+   close natural variant of it. Never the bare URL, never "click here".
+4. For each, write the sentence the link belongs in. If the source text was
+   provided, quote the existing sentence to edit. If not, write a sentence to
+   add and mark it "new sentence".
+5. Cap at 8 links. Fewer is fine.
+
+OUTPUT — one table:
+source URL | source impressions | anchor text | placement sentence | existing or new sentence
+
+RULES
+- No site-wide links: no nav, footer or sidebar suggestions. Body links only.
+- Never suggest a source page that is not in gsc-data.md.
+- Two links from the same source to the same target is one link. Do not pad.
+- If the target's queries are not in the file, say so and stop. You cannot
+  choose an anchor without them.
+
+End with ONE line: the single link to add first, source and anchor.</pre></div>
+    </div></details>
+  </div>
+
+  <div class="fn" id="s9">
+    <div class="fn-head"><span class="fn-num">9</span><h3 class="fn-title">cannibalization-detector</h3></div>
+    <p class="fn-sub"><em>The rule: two URLs in the top 20 for one query, neither above 5. One strong page and one weak page is not cannibalization.</em></p>
+    <div class="meta"><span class="chip"><b>Reads:</b> QUERY x PAGE</span><span class="chip"><b>Returns:</b> 10 conflicts, each with a verdict</span></div>
+    <p>Cannibalization is over-diagnosed by tools and under-fixed by people, because the tool flags every query with two URLs and the person can't tell which ones matter. The definition in the scoring model cuts the list to conflicts where neither page is winning. Those are the ones where merging actually moves a ranking.</p>
+    <details class="drop"><summary>Open the full skill file</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">skill · cannibalization-detector</span><button class="copy">Copy</button></div>
+<pre>---
+name: cannibalization-detector
+description: Find queries where two or more of the site's pages compete and neither wins, and say what to do with each pair. Use monthly.
+---
+
+Read gsc-data.md and scoring.md first.
+
+INPUTS — stop and say which is missing:
+- the QUERY x PAGE section. Without it this skill cannot run. Say
+  "query-to-page pairs missing, export queries per page for the top 10 pages"
+  and stop. Do not infer pairs from the PAGES list.
+
+PROCESS
+1. For every query that appears under 2 or more URLs, list the URLs with
+   position and impressions.
+2. Apply the definition in scoring.md: keep only pairs where both URLs are in
+   the top 20 and neither is above position 5.
+3. Drop queries under the query floor.
+4. For each remaining conflict, choose a verdict:
+   MERGE         same intent, same audience: fold the weaker into the stronger, redirect
+   DIFFERENTIATE different intent (one informational, one transactional): retitle
+                 the weaker page toward its own intent
+   REDIRECT      the weaker page has no queries of its own
+   LEAVE         positions are moving apart month over month; check again next month
+5. Rank by the query's impressions.
+
+OUTPUT — one table, capped at 10 rows:
+query | impressions | URL A (position) | URL B (position) | verdict | which page survives
+
+RULES
+- The surviving page is the one with more clicks across ALL its queries, not
+  the one with the better position on this one query. Show both numbers.
+- Never recommend deleting a page without a redirect target.
+- If no pair meets the definition, say "no cannibalization by this definition"
+  and stop. Do not lower the bar to produce a list.
+
+End with ONE line: the single conflict to resolve first, and its verdict.</pre></div>
+    </div></details>
+  </div>
+
+  <div class="fn" id="s10">
+    <div class="fn-head"><span class="fn-num">10</span><h3 class="fn-title">content-decay-tracker</h3></div>
+    <p class="fn-sub"><em>The rule: decay is clicks down with impressions holding. If impressions fell too, nobody searched, and no rewrite fixes that.</em></p>
+    <div class="meta"><span class="chip"><b>Reads:</b> PAGES, both periods</span><span class="chip"><b>Returns:</b> 10 decayed pages, each classified</span></div>
+    <p>The pages that used to carry the site are the ones nobody looks at, because they used to be fine. This skill compares the two periods in the data file and separates real decay, where you lost the click, from demand change, where the query itself shrank. The fix is different and so is the urgency.</p>
+    <details class="drop"><summary>Open the full skill file</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">skill · content-decay-tracker</span><button class="copy">Copy</button></div>
+<pre>---
+name: content-decay-tracker
+description: Find the pages losing clicks while demand holds, separate decay from demand change, and say which to refresh first. Use monthly.
+---
+
+Read gsc-data.md and scoring.md first.
+
+INPUTS — stop and say which is missing:
+- the PAGES section with BOTH periods. One period is not enough to detect
+  anything. Say so and stop.
+- the CHANGELOG (to rule out changes we made ourselves)
+
+PROCESS
+1. For every page above the page floor, compute clicks change and impressions
+   change versus the previous period, in percent, with the raw numbers.
+2. Apply the definition in scoring.md:
+   DECAY          clicks down 30%+, impressions flat or down less than 10%
+   DEMAND CHANGE  clicks down 30%+ AND impressions down 10%+
+   Everything else is not this skill's business.
+3. Check the CHANGELOG. If we changed the page inside the window, label the
+   decay "self-inflicted, probable" and name the change.
+4. Check seasonality per scoring.md. If last year's data is not in the file,
+   label every finding "seasonality unchecked".
+5. For each DECAY page, recommend one of:
+   REFRESH      position slipped 2+ places: update the content, re-check intent
+   RETITLE      position held, CTR fell: hand to title-meta-rewriter
+   CONSOLIDATE  a newer page of ours now ranks for its queries: hand to
+                cannibalization-detector
+6. Rank by clicks lost.
+
+OUTPUT — one table, capped at 10 rows:
+url | clicks now | clicks before | change | impressions change | position change | label | recommendation
+
+RULES
+- Every percentage is shown with the two raw numbers behind it.
+- Demand-change pages are listed separately, in 3 rows maximum, with no
+  recommendation. There is nothing to rewrite.
+- Never attribute a drop to an algorithm update. You cannot see one in this data.
+
+End with ONE line: the single page to refresh first, and the recommendation.</pre></div>
+    </div></details>
+  </div>
+
+  <div class="fn" id="s11">
+    <div class="fn-head"><span class="fn-num">11</span><h3 class="fn-title">competitor-gap-analyser</h3></div>
+    <p class="fn-sub"><em>The rule: a gap is a topic a competitor ranks for that we have no page for. Not a keyword they beat us on.</em></p>
+    <div class="meta"><span class="chip"><b>Reads:</b> a competitor's ranking pages, pasted</span><span class="chip"><b>Returns:</b> 10 topics, each with a verdict</span></div>
+    <p>The data file only knows about your site, so this skill needs one thing from outside it: a competitor's top pages or queries, pasted from whatever tool you use, or read off the SERPs. It then does the part tools don't: it checks each gap against your own topical map and says whether it's worth a page.</p>
+    <details class="drop"><summary>Open the full skill file</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">skill · competitor-gap-analyser</span><button class="copy">Copy</button></div>
+<pre>---
+name: competitor-gap-analyser
+description: Compare a competitor's ranking topics with the site's own coverage and name the gaps worth a page. Use quarterly, or when planning new content.
+---
+
+Read gsc-data.md and scoring.md first.
+
+INPUTS — ask for what is missing:
+- one competitor domain
+- that competitor's top ranking pages or queries, pasted from a tool export or
+  from SERPs the user looked at. If none is provided, say "I cannot see a
+  competitor's rankings; paste their top pages or queries" and stop. Do not
+  describe what a competitor "probably" ranks for.
+- the output of topical-authority-mapper, if it has run
+
+PROCESS
+1. Group the competitor's pages or queries into topics, the same way
+   topical-authority-mapper does.
+2. For each topic, check our coverage in PAGES and QUERIES:
+   NO PAGE     nothing in PAGES plausibly targets it, and we have no impressions
+   WEAK        we have impressions but average position 20+
+   COVERED     we rank in the top 20. Not a gap. Drop it.
+3. For each NO PAGE or WEAK topic, judge fit: is this topic something our
+   site should credibly own, given the pillars we already have? YES / NO.
+4. Where the competitor's demand number is present in the paste, show it and
+   label it "competitor tool estimate". Where it is not, write "demand: not in data".
+5. Rank by fit first, then by our impressions if WEAK, then by the estimate.
+
+OUTPUT — one table, capped at 10 rows:
+topic | competitor URL | our coverage | our impressions or "none" | fit | verdict: BRIEF / SKIP
+
+RULES
+- Never merge a competitor's estimate with our GSC numbers in one column.
+  They are not the same unit.
+- A gap with fit NO is listed once with SKIP and no further commentary.
+- Do not recommend copying the competitor's page. Hand BRIEF topics to
+  search-intent-classifier, then content-brief-builder.
+
+End with ONE line: the single gap to brief first, and why it fits.</pre></div>
+    </div></details>
+  </div>
+
+  <div class="fn" id="s12">
+    <div class="fn-head"><span class="fn-num">12</span><h3 class="fn-title">schema-generator</h3></div>
+    <p class="fn-sub"><em>The rule: one schema type per page, matching what the page is, using only facts that are on the page.</em></p>
+    <div class="meta"><span class="chip"><b>Reads:</b> one page's content or source</span><span class="chip"><b>Returns:</b> one JSON-LD block</span></div>
+    <p>Schema is effort 2 and it either earns a richer result or it doesn't, but it never hurts as long as it's true. Most generated schema fails on the second half: invented ratings, a FAQ block for questions the page never asks. This skill generates one type, from the page, and refuses the rest.</p>
+    <details class="drop"><summary>Open the full skill file</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">skill · schema-generator</span><button class="copy">Copy</button></div>
+<pre>---
+name: schema-generator
+description: Generate one valid JSON-LD block for one page, of the type that matches the page, using only facts present on it. Use on pages flagged SCHEMA, or on any new page before publishing.
+---
+
+Read scoring.md first (for the one-action rule).
+
+INPUTS — ask for what is missing:
+- the URL
+- the page's content, pasted or fetched. If you cannot see the page, say so
+  and stop. Schema written from a URL alone is invented.
+- whether the page already has schema (paste it if so)
+
+PROCESS
+1. Name the page type from its content, and pick ONE schema type:
+   Article / BlogPosting   an editorial page with an author and a date
+   Product                 a product with a name, and a price if shown
+   FAQPage                 a page with visible question-and-answer pairs
+   HowTo                   a page with numbered steps the reader performs
+   Organization            the home or about page only
+   BreadcrumbList          add alongside any type above, if the breadcrumb is visible
+   If the page matches none, say "no schema type fits this page" and stop.
+2. Fill the block only with values that are visibly on the page: names, dates,
+   prices, questions, steps. Copy them exactly.
+3. If the page already has schema, say whether to replace or merge, and why.
+4. Validate: every required property present, valid JSON, no empty strings.
+
+OUTPUT
+- schema type, and the one sentence that justifies it
+- the JSON-LD block, ready to paste inside a script tag of type application/ld+json
+- where to paste it: in the page head, or in the template if the CMS handles it
+- the one property you left out and why, if any was required but not on the page
+
+RULES
+- No aggregateRating, review, or ratingValue unless the page visibly shows
+  reviews with a count. Invented ratings are a manual-action risk.
+- No FAQPage for questions that do not appear on the page as questions.
+- No dates, authors or prices that are not on the page.
+- One type. Do not stack Article and FAQPage and HowTo on one page.
+
+End with ONE line: the type, and "paste into head" or "paste into template".</pre></div>
+    </div></details>
+  </div>
+
+  <div class="fn" id="s13">
+    <div class="fn-head"><span class="fn-num">13</span><h3 class="fn-title">page-priority-ranker</h3></div>
+    <p class="fn-sub"><em>The rule: one list, sorted by opportunity over effort, with the skill to run next on each row. This is the decision.</em></p>
+    <div class="meta"><span class="chip"><b>Reads:</b> outputs of skills 1, 4, 9, 10</span><span class="chip"><b>Returns:</b> 10 rows, and the one for this week</span></div>
+    <p>This is the skill the post promises: exactly which pages to fix and why. It takes whatever the audit and protect skills found, puts everything through the same scoring model, and produces one ranked list where every row says what's at stake, what it costs, how sure we are, and which skill does the work. Then it picks the top one.</p>
+    <details class="drop"><summary>Open the full skill file</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">skill · page-priority-ranker</span><button class="copy">Copy</button></div>
+<pre>---
+name: page-priority-ranker
+description: Merge everything the audit skills found into one priority list scored by opportunity over effort, and name the page for this week. Run after best-page-analyser, quick-win-detector, cannibalization-detector and content-decay-tracker.
+---
+
+Read gsc-data.md and scoring.md first.
+
+INPUTS — use what is present, and say which are missing:
+- the outputs of best-page-analyser, quick-win-detector, cannibalization-
+  detector and content-decay-tracker, pasted or from earlier in this session
+- if none are present, run on PAGES alone with the opportunity formula and
+  effort 2 for every row, and label every effort "assumed"
+
+PROCESS
+1. Collect every page named by any input skill into one list. A page named
+   twice is one row; keep the highest opportunity and note both sources.
+2. For each row, carry over or compute: opportunity (scoring.md formula),
+   effort (from the fix type the source skill named), priority = opportunity
+   / effort, confidence label.
+3. Attach the NEXT SKILL for the row:
+   TITLE/META fix    -> title-meta-rewriter
+   LINKS fix         -> internal-link-builder
+   SCHEMA fix        -> schema-generator
+   DECAY refresh     -> content-brief-builder, then draft-writer
+   CANNIBALIZATION   -> the verdict from cannibalization-detector
+   DEFEND            -> none, remove from the list
+4. Sort by priority, descending. Ties go to the lower effort, then to the
+   higher confidence.
+5. Cap at 10 rows.
+
+OUTPUT — one table:
+rank | url | source skill | opportunity | effort | priority | confidence | next skill
+
+RULES
+- Every opportunity number was computed by scoring.md or carried from a skill
+  that did. Never adjust a number "to reflect strategic importance".
+- Confidence is shown per row. A "probable" row with a huge opportunity does
+  not outrank a "confirmed" row unless its priority is at least double.
+- Do not add pages from general knowledge of "what usually matters".
+
+End with ONE line: the single page to work on this week, the next skill to
+run on it, and the opportunity in clicks.</pre></div>
+    </div></details>
+  </div>
+
+  <div class="fn" id="s14">
+    <div class="fn-head"><span class="fn-num">14</span><h3 class="fn-title">draft-writer</h3></div>
+    <p class="fn-sub"><em>The rule: write the brief, only the brief, and mark every claim that needs a human's proof.</em></p>
+    <div class="meta"><span class="chip"><b>Reads:</b> one brief from skill 6</span><span class="chip"><b>Returns:</b> a draft with [SOURCE NEEDED] marks</span></div>
+    <p>AI drafts fail for one reason: they sound finished. They carry a confident statistic nobody checked and an example nobody lived. This skill writes to the brief's outline and length, and every sentence that needs a fact, a number or an experience gets flagged instead of faked. The draft is done when a human has cleared the flags.</p>
+    <details class="drop"><summary>Open the full skill file</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">skill · draft-writer</span><button class="copy">Copy</button></div>
+<pre>---
+name: draft-writer
+description: Write a first draft from a content-brief-builder brief, in the winning format, with every unverified claim flagged. Use once per brief. Never without a brief.
+---
+
+Read scoring.md first (for the universal rules).
+
+INPUTS — stop if missing:
+- a brief from content-brief-builder: job, H1, outline, questions, terms,
+  internal links, length. If there is no brief, say "run content-brief-builder
+  first" and stop. Do not write from a keyword.
+- optionally: the user's own notes, examples, numbers or experience to include
+
+PROCESS
+1. Follow the outline exactly. Same H2s, same order. If a section cannot be
+   written honestly, write the heading and "[SECTION NEEDS INPUT: what]".
+2. Answer every question in the brief, each in the section where it belongs.
+3. Use the brief's terms naturally. Never repeat a term to hit a count.
+4. Place every internal link from the brief in a sentence where it earns its
+   place, with the brief's anchor text.
+5. Flag, do not fake:
+   [SOURCE NEEDED]  any statistic, study or external claim
+   [EXPERIENCE]     any place where a real example from the user would replace
+                    a generic one
+   [VERIFY]         any product fact, price, feature or date
+6. Stay within the brief's length range. If the brief said "length: not
+   observed", write to the outline and stop when the questions are answered.
+7. End the draft with the user's CTA if one was given, otherwise "[CTA]".
+
+OUTPUT
+The draft, in markdown, with the H1 and every H2 from the brief.
+Then a short list: every flag in the draft, one per line, so the user can
+clear them in order.
+
+RULES
+- No opening with "In today's fast-paced world" or any sentence about how
+  important the topic is. Start with the answer.
+- No invented statistics, quotes, case studies or customer names. Flag them.
+- Write in the second person unless the brief says otherwise.
+- The draft is not finished until every flag is cleared by a human. Say so
+  at the top.
+
+End with ONE line: the single flag the user should clear first, because the
+page cannot publish without it.</pre></div>
+    </div></details>
+  </div>
+
+  <div class="fn" id="s15">
+    <div class="fn-head"><span class="fn-num">15</span><h3 class="fn-title">rank-audit-reporter</h3></div>
+    <p class="fn-sub"><em>The rule: every percentage has its raw numbers next to it, and every rise is matched to a dated change or it isn't attributed.</em></p>
+    <div class="meta"><span class="chip"><b>Reads:</b> PAGES, both periods + CHANGELOG</span><span class="chip"><b>Returns:</b> a one-screen monthly report</span></div>
+    <p>The monthly report is where SEO earns or loses its budget, and most reports lose it by being a chart with adjectives. This one is four short sections and a line. What moved because of us, what moved without us, what we shipped that didn't work, and the single thing next month is about. The changelog in the data file is what makes the first section honest.</p>
+    <details class="drop"><summary>Open the full skill file</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">skill · rank-audit-reporter</span><button class="copy">Copy</button></div>
+<pre>---
+name: rank-audit-reporter
+description: Write the monthly report from gsc-data.md and the changelog: what moved because of us, what moved without us, what did not work, and the one focus for next month. Use once a month, last.
+---
+
+Read gsc-data.md and scoring.md first.
+
+INPUTS — stop and say which is missing:
+- the PAGES section with both periods
+- the QUERIES section with both periods
+- the CHANGELOG. If it is empty, say "no changelog: nothing can be attributed
+  this month" and write only sections 2 and 4.
+
+PROCESS
+1. Site totals: clicks, impressions, non-brand CTR, versus the previous period,
+   with raw numbers.
+2. For every CHANGELOG entry inside the window, find its page in PAGES and
+   compare both periods. Attribute a rise ONLY if the change date precedes the
+   rise and the page's impressions did not also jump. Label each "confirmed",
+   "probable" or "timing does not support attribution".
+3. Find the 3 biggest movers, up and down, that are NOT in the changelog.
+   These moved without us.
+4. Find every changelog entry older than 60 days whose page has not moved.
+   These did not work. Do not skip this section because it is uncomfortable.
+5. Take the top row from page-priority-ranker if it ran this month, otherwise
+   the top PUSH page from best-page-analyser, as next month's focus.
+
+OUTPUT — under 300 words, in this order:
+TOTALS         2 lines, raw numbers and percentages
+MOVED BECAUSE OF US   one line per attributed change, with the confidence label
+MOVED WITHOUT US      3 lines maximum
+DIDN'T WORK           one line per stale change, or "nothing shipped 60+ days ago"
+NEXT           one action, carried from whichever skill named it
+
+RULES
+- Every percentage is shown with the raw numbers behind it.
+- Never attribute a rise to work whose date does not line up. Write "timing
+  does not support attribution".
+- No revenue projection from clicks unless the user gave a conversion rate
+  and a value per conversion.
+- No chart descriptions. Numbers and sentences.
+
+End with ONE line: the single thing next month is about.</pre></div>
+    </div></details>
+  </div>
+
+  <hr>
+
+  <h2 id="workflows">The three workflows</h2>
+  <p class="lede">Fifteen skills is a toolbox. Three workflows is a routine.</p>
+  <p>Nobody runs fifteen skills. You run three routines, and each routine calls the skills it needs in order and hands the output of one to the next. Each workflow is a file too, so you call it by name and let it drive. The whole cadence is under three hours a month.</p>
+
+  <figure class="plainfig">
+    <svg viewBox="0 0 760 290" role="img" aria-label="Three workflows as chains of skills: weekly fix-what-ranks, monthly build-what's-missing, monthly protect-and-report. Every chain ends on one shipped change." style="width:100%;height:auto">
+      <style>
+        .wf-h{fill:var(--accent);font-family:Inter,system-ui,sans-serif;font-size:13px;font-weight:800;letter-spacing:.12em}
+        .wf-w{fill:var(--muted);font-family:Inter,system-ui,sans-serif;font-size:12px}
+        .wf-s{fill:var(--ink);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px}
+        .wf-box{stroke:var(--ink);fill:none;stroke-width:1.3}
+        .wf-end{stroke:var(--accent);fill:none;stroke-width:1.8}
+        .wf-endt{fill:var(--accent);font-family:Inter,system-ui,sans-serif;font-size:12.5px;font-weight:700}
+        .wf-arw{stroke:var(--muted);fill:none;stroke-width:1.2}
+      </style>
+      <defs><marker id="ah3" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 z" fill="var(--muted)"/></marker></defs>
+      <g>
+        <text x="8" y="26" class="wf-h">A · FIX WHAT ALREADY RANKS</text><text x="752" y="26" class="wf-w" text-anchor="end">weekly · 30 min</text>
+        <rect x="8" y="40" width="118" height="30" rx="7" class="wf-box"/><text x="67" y="59" class="wf-s" text-anchor="middle">best-page</text>
+        <path d="M126 55 h14" class="wf-arw" marker-end="url(#ah3)"/>
+        <rect x="142" y="40" width="118" height="30" rx="7" class="wf-box"/><text x="201" y="59" class="wf-s" text-anchor="middle">quick-win</text>
+        <path d="M260 55 h14" class="wf-arw" marker-end="url(#ah3)"/>
+        <rect x="276" y="40" width="118" height="30" rx="7" class="wf-box"/><text x="335" y="59" class="wf-s" text-anchor="middle">priority-ranker</text>
+        <path d="M394 55 h14" class="wf-arw" marker-end="url(#ah3)"/>
+        <rect x="410" y="40" width="150" height="30" rx="7" class="wf-box"/><text x="485" y="59" class="wf-s" text-anchor="middle">title-meta / links</text>
+        <path d="M560 55 h14" class="wf-arw" marker-end="url(#ah3)"/>
+        <rect x="576" y="40" width="176" height="30" rx="7" class="wf-end"/><text x="664" y="59" class="wf-endt" text-anchor="middle">ship one change</text>
+      </g>
+      <g>
+        <text x="8" y="120" class="wf-h">B · BUILD WHAT'S MISSING</text><text x="752" y="120" class="wf-w" text-anchor="end">monthly · 2 h</text>
+        <rect x="8" y="134" width="100" height="30" rx="7" class="wf-box"/><text x="58" y="153" class="wf-s" text-anchor="middle">keyword-opp</text>
+        <path d="M108 149 h12" class="wf-arw" marker-end="url(#ah3)"/>
+        <rect x="122" y="134" width="100" height="30" rx="7" class="wf-box"/><text x="172" y="153" class="wf-s" text-anchor="middle">intent</text>
+        <path d="M222 149 h12" class="wf-arw" marker-end="url(#ah3)"/>
+        <rect x="236" y="134" width="100" height="30" rx="7" class="wf-box"/><text x="286" y="153" class="wf-s" text-anchor="middle">topical-map</text>
+        <path d="M336 149 h12" class="wf-arw" marker-end="url(#ah3)"/>
+        <rect x="350" y="134" width="100" height="30" rx="7" class="wf-box"/><text x="400" y="153" class="wf-s" text-anchor="middle">brief</text>
+        <path d="M450 149 h12" class="wf-arw" marker-end="url(#ah3)"/>
+        <rect x="464" y="134" width="100" height="30" rx="7" class="wf-box"/><text x="514" y="153" class="wf-s" text-anchor="middle">draft, schema</text>
+        <path d="M564 149 h12" class="wf-arw" marker-end="url(#ah3)"/>
+        <rect x="578" y="134" width="174" height="30" rx="7" class="wf-end"/><text x="665" y="153" class="wf-endt" text-anchor="middle">ship one page</text>
+      </g>
+      <g>
+        <text x="8" y="214" class="wf-h">C · PROTECT AND REPORT</text><text x="752" y="214" class="wf-w" text-anchor="end">monthly · 45 min</text>
+        <rect x="8" y="228" width="130" height="30" rx="7" class="wf-box"/><text x="73" y="247" class="wf-s" text-anchor="middle">decay-tracker</text>
+        <path d="M138 243 h14" class="wf-arw" marker-end="url(#ah3)"/>
+        <rect x="154" y="228" width="130" height="30" rx="7" class="wf-box"/><text x="219" y="247" class="wf-s" text-anchor="middle">cannibalization</text>
+        <path d="M284 243 h14" class="wf-arw" marker-end="url(#ah3)"/>
+        <rect x="300" y="228" width="130" height="30" rx="7" class="wf-box"/><text x="365" y="247" class="wf-s" text-anchor="middle">internal-links</text>
+        <path d="M430 243 h14" class="wf-arw" marker-end="url(#ah3)"/>
+        <rect x="446" y="228" width="130" height="30" rx="7" class="wf-box"/><text x="511" y="247" class="wf-s" text-anchor="middle">rank-audit</text>
+        <path d="M576 243 h14" class="wf-arw" marker-end="url(#ah3)"/>
+        <rect x="592" y="228" width="160" height="30" rx="7" class="wf-end"/><text x="672" y="247" class="wf-endt" text-anchor="middle">one-screen report</text>
+      </g>
+    </svg>
+    <figcaption>Every chain ends on one shipped change, one shipped page, or one report. Never on a list.</figcaption>
+  </figure>
+
+  <div class="fn" id="w1">
+    <div class="fn-head"><span class="fn-num">A</span><h3 class="fn-title">workflow-fix-what-ranks</h3></div>
+    <p class="fn-sub"><em>Weekly, 30 minutes. The one that produces most of the clicks, because it only touches pages Google already likes.</em></p>
+    <div class="meta"><span class="chip"><b>Calls:</b> 1 → 4 → 13 → 7 or 8</span><span class="chip"><b>Ends on:</b> one shipped change, logged</span></div>
+    <details class="drop"><summary>Open the workflow file</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">workflow · fix-what-ranks</span><button class="copy">Copy</button></div>
+<pre>---
+name: workflow-fix-what-ranks
+description: The weekly loop. Find the page closest to more clicks, fix the cheapest thing on it, ship it, log it. Run every Monday.
+---
+
+Read gsc-data.md and scoring.md first. If gsc-data.md is older than 35 days,
+say so and stop: the loop runs on fresh data or not at all.
+
+STEPS — run each skill, hand its output to the next, do not skip
+1. best-page-analyser. Keep its table in the session.
+2. quick-win-detector. If it returns "no quick wins this week", go to step 5
+   with the top PUSH page from step 1 instead.
+3. page-priority-ranker, on the outputs of 1 and 2. Take row 1 only.
+4. Run the NEXT SKILL that row names: title-meta-rewriter, internal-link-builder
+   or schema-generator. Present its single output.
+5. Ask me to ship it. Do not proceed until I say it is live.
+6. Write the CHANGELOG line for gsc-data.md:
+   today's date | url | what changed | which skill proposed it
+   Tell me to paste it.
+
+RULES
+- One change per week. If I ask for a second, remind me that the reporter
+  cannot attribute two changes on one page in one window, then do it if I insist.
+- Never touch a DEFEND page in this workflow.
+- Total output across all steps under 600 words. Tables count.
+
+End with ONE line: what shipped, and the date to re-check it (28 days on).</pre></div>
+    </div></details>
+  </div>
+
+  <div class="fn" id="w2">
+    <div class="fn-head"><span class="fn-num">B</span><h3 class="fn-title">workflow-build-whats-missing</h3></div>
+    <p class="fn-sub"><em>Monthly, about two hours. The one that grows the shelf. One page a month, chosen from data, not from a content calendar.</em></p>
+    <div class="meta"><span class="chip"><b>Calls:</b> 2 → 3 → 11 → 5 → 6 → 14 → 12</span><span class="chip"><b>Ends on:</b> one page, briefed and drafted</span></div>
+    <details class="drop"><summary>Open the workflow file</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">workflow · build-whats-missing</span><button class="copy">Copy</button></div>
+<pre>---
+name: workflow-build-whats-missing
+description: The monthly build. Find the one page the site is missing, confirm the SERP wants it, brief it, draft it, mark it up. Run in the first week of the month.
+---
+
+Read gsc-data.md and scoring.md first.
+
+STEPS — run each skill, hand its output to the next
+1. keyword-opportunity-finder. Keep the rows marked NEW PAGE.
+2. topical-authority-mapper. Keep the MISSING clusters.
+3. competitor-gap-analyser, only if I paste a competitor's pages. Otherwise
+   say "skipped: no competitor data" and continue.
+4. Merge the candidates from 1, 2 and 3 into one list. Rank by impressions,
+   with any competitor estimate shown separately. Pick the top 3.
+5. search-intent-classifier on each of the 3. I will paste the SERPs, or you
+   fetch them if you can. Keep the first one that returns TARGET. If all three
+   return SKIP, take the next 3 and repeat once, then stop and say so.
+6. content-brief-builder on the TARGET cluster.
+7. Stop and show me the brief. Do not draft until I approve it.
+8. draft-writer on the approved brief.
+9. schema-generator on the draft, if a type fits.
+10. Write the CHANGELOG line for gsc-data.md and tell me to paste it when the
+    page is live.
+
+RULES
+- One page per run. The second-best candidate goes in a "next month" line
+  at the end, and nowhere else.
+- Never brief a cluster whose SERP you have not seen. Step 5 is not optional.
+- If step 1 and step 2 return nothing above the floors, say "the site has no
+  data-backed gap this month; grow the existing pages instead" and stop.
+
+End with ONE line: the page being built, its target query, and the flag
+count left in the draft.</pre></div>
+    </div></details>
+  </div>
+
+  <div class="fn" id="w3">
+    <div class="fn-head"><span class="fn-num">C</span><h3 class="fn-title">workflow-protect-and-report</h3></div>
+    <p class="fn-sub"><em>Monthly, 45 minutes, last thing. The one that keeps what you built and tells you honestly whether the month worked.</em></p>
+    <div class="meta"><span class="chip"><b>Calls:</b> 10 → 9 → 8 → 15</span><span class="chip"><b>Ends on:</b> one report, one focus</span></div>
+    <details class="drop"><summary>Open the workflow file</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">workflow · protect-and-report</span><button class="copy">Copy</button></div>
+<pre>---
+name: workflow-protect-and-report
+description: The month-end loop. Catch decay and cannibalization before they cost a quarter, patch the worst one with links, then write the report. Run on the last working day of the month, after gsc-data.md is refreshed.
+---
+
+Read gsc-data.md and scoring.md first. Confirm gsc-data.md was exported this
+week. If not, stop and ask for a fresh export: a month-end report on
+mid-month data is not a report.
+
+STEPS — run each skill, hand its output to the next
+1. content-decay-tracker. Keep the DECAY rows.
+2. cannibalization-detector. If QUERY x PAGE is empty, it will stop; note
+   "cannibalization unchecked" for the report and continue.
+3. Take the single worst row across 1 and 2: the DECAY page with the most
+   clicks lost, or the cannibalization conflict with the most impressions,
+   whichever has the larger number.
+4. If it is a DECAY page marked RETITLE or REFRESH: internal-link-builder
+   on it. Present the first link only.
+   If it is a cannibalization conflict: present the verdict and the surviving
+   page. Do not execute a merge; that is a human decision.
+5. Ask me to ship the link or approve the verdict. Write the CHANGELOG line.
+6. rank-audit-reporter. Its NEXT line becomes next month's focus.
+
+RULES
+- Steps 1 and 2 may each return "nothing found". That is a good month, not a
+  failure. Say so in the report.
+- Never fix more than one thing in this workflow. The other rows are carried
+  into the report's DIDN'T WORK or MOVED WITHOUT US sections, not acted on.
+- Total output under 700 words including the report.
+
+End with ONE line: next month's single focus, from the report.</pre></div>
+    </div></details>
+  </div>
+
+  <h3>The routine, on a calendar</h3>
+  <div class="tw"><table>
+    <thead><tr><th>When</th><th>Workflow</th><th>Time</th><th>Ends on</th></tr></thead>
+    <tbody>
+      <tr><td><b>Every Monday</b></td><td>A · Fix what already ranks</td><td>30 min</td><td>One title, link or schema change, live and logged</td></tr>
+      <tr><td><b>First week of the month</b></td><td>B · Build what's missing</td><td>2 h</td><td>One new page, briefed, drafted, flags to clear</td></tr>
+      <tr><td><b>Last working day</b></td><td>C · Protect and report</td><td>45 min</td><td>One report, one focus for next month</td></tr>
+      <tr><td><b>Same day, first</b></td><td>Refresh <code>gsc-data.md</code></td><td>15 min</td><td>Fresh exports, band averages re-pasted</td></tr>
+    </tbody>
+  </table></div>
+  <p>Six changes a month, one page a month, one report. That's the whole cadence, and the reason it works is that every one of those changes was chosen by the same scoring model from the same data, and the report checks them against a changelog instead of a memory.</p>
+
+  <hr>
+
+  <h2>What the folder can't do</h2>
+  <p class="lede">Worth saying plainly, because you'll hit it in week two.</p>
+  <p>Fifteen skills, a data file and a scoring model make Astra reason like an SEO operator. They don't make it <em>employed</em> as one. Four things are structurally outside what a folder of text can do:</p>
+  <ul class="plain">
+    <li><strong>It can't see the rows you didn't paste.</strong> <code>gsc-data.md</code> holds what you exported. The answer is about those 500 pages, not your site.</li>
+    <li><strong>It can't pair queries with pages on its own.</strong> The standard export doesn't, so the two skills that need pairs run on your top 10 pages, the ones you filtered by hand.</li>
+    <li><strong>It can't refresh itself.</strong> Next month is a new export, pasted by you, on a day you remembered. The changelog only knows what you told it.</li>
+    <li><strong>It can't ship the fix.</strong> The rewriter writes the title. Someone still pastes it into the CMS, and someone still checks 28 days later.</li>
+  </ul>
+  <p>That gap is exactly what I've been building <a href="https://link.chatseo.app/pb-astra-seo-folder" target="_blank" rel="noopener"><strong>ChatSEO</strong></a> to close: it holds the Search Console connection so nothing gets exported, it has every query-to-page pair for every page, it remembers what it told you in March, and it can push the fix to your site and check a month later whether it worked. The folder above is genuinely the same thinking. This is the version that doesn't need you to remember to run it.</p>
+
+  <hr>
+
+  <h2 id="proof" style="scroll-margin-top:80px">How one founder went from 250 → 750 clicks a day</h2>
+  <p>This is the Search Console graph from a ChatSEO user running this exact loop: find the pages already ranking, fix the cheapest thing on them, recheck the following month. No new content, no link building.</p>
+  <figure>
+    <img src="img/proof-clicks.webp" alt="Search Console graph showing daily clicks rising from around 250 to around 750." loading="lazy">
+  </figure>
+
+  <h2>Why this works when SEO tools don't</h2>
+  <p>Everything on this page runs on a Search Console export, two root files and eighteen text files. You can <a href="https://link.chatseo.app/pb-astra-seo-folder" target="_blank" rel="noopener">try it here for free</a> if you'd rather not be the one doing the exporting.</p>
+
+  <div class="vs">
+    <div class="vs-col vs-old">
+      <h3>Old SEO tools</h3>
+      <ul>
+        <li>47 issues ranked by somebody else's severity score</li>
+        <li>A "quick wins" tab that means something different in every tool</li>
+        <li>A traffic chart with no idea what you changed</li>
+        <li>Fifteen prompts, fifteen opinions, no way to compare them</li>
+        <li>Five tools that don't talk to each other</li>
+      </ul>
+    </div>
+    <div class="vs-col vs-new">
+      <h3>What you actually want</h3>
+      <ul>
+        <li>Exactly which pages to fix, and why, in clicks</li>
+        <li>One definition of a quick win, shared by every skill</li>
+        <li>A report that ties every rise to a dated change</li>
+        <li>Fifteen skills reading one data file and one scoring model</li>
+        <li>One connection, from Search Console to shipped fix</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="final" style="margin:44px 0">
+    <h2 style="margin-top:0">That's the whole idea behind ChatSEO</h2>
+    <p>One SEO employee that reads your Search Console, tells you exactly which page to fix and why, writes the fix, ships it, and tells you a month later whether it worked.</p>
+    <a class="btn btn-primary" href="https://link.chatseo.app/pb-astra-seo-folder" target="_blank" rel="noopener">Try ChatSEO free →</a>
+    <p class="note" style="margin-top:16px">No credit card required</p>
+  </div>
+
+  <footer>
+    <p>Built by <a href="https://link.chatseo.app/pb-astra-seo-folder" target="_blank" rel="noopener">Nicholas at ChatSEO</a> · Everything on this page is free to copy and use.</p>
+  </footer>
+
+</div>
+<script>
+// Theme: remember the viewer's choice, fall back to their system setting.
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  try{ var s=localStorage.getItem('theme'); if(s) root.setAttribute('data-theme',s); }catch(e){}
+  btn.addEventListener('click',function(){
+    var cur=root.getAttribute('data-theme');
+    if(!cur) cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+    var next=cur==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{ localStorage.setItem('theme',next); }catch(e){}
+  });
+})();
+
+// Copy buttons: getting the skill file out cleanly is the whole point of the page.
+document.querySelectorAll('.copy').forEach(function(btn){
+  btn.addEventListener('click',function(e){
+    e.preventDefault();
+    var pre=btn.closest('.prompt').querySelector('pre');
+    var text=pre.innerText;
+    var done=function(){ btn.textContent='Copied'; btn.classList.add('done');
+      setTimeout(function(){ btn.textContent='Copy'; btn.classList.remove('done'); },1600); };
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done).catch(fallback);
+    } else { fallback(); }
+    function fallback(){
+      var ta=document.createElement('textarea'); ta.value=text;
+      ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta);
+      ta.select(); try{ document.execCommand('copy'); done(); }catch(e){ btn.textContent='Select manually'; }
+      document.body.removeChild(ta);
+    }
+  });
+});
+</script>
+</body>
+</html>
