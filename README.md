@@ -2,6 +2,7 @@
 
 Free, ungated SEO playbooks from [ChatSEO](https://link.chatseo.app/pb-seo-system).
 
+- [The AI Head of SEO](https://chatseo.github.io/playbooks/ai-head-of-seo/) — not every company has a Head of SEO: the 15 SEO functions, the operating brief that makes them one job, and the seven outputs it hands you every week — strategy, keyword priorities, content plan, fix queue, shipped changes, Monday's action list, performance report.
 - [The Full Claude SEO Department](https://chatseo.github.io/playbooks/full-seo-department/) — 50 agents and 50 skills across ten SEO functions: every agent has a role, a system prompt, inputs/outputs, guardrails and a first task, and runs one skill. All 100 files in full, plus a zip.
 - [The Astra/Fable SEO Folder](https://chatseo.github.io/playbooks/astra-seo-folder/) — 15 skills that take you from auditing your site to knowing exactly which pages to fix and why, plus the shared GSC data file, the scoring model and the three workflows that chain them.
 - [The SEO Claude Skills Folder](https://chatseo.github.io/playbooks/seo-skills-folder/) — an entire Head of SEO function in one Claude Skills folder: 15 specialist skills across research, optimisation, growth and measurement, plus the 12 shared thresholds they all read.

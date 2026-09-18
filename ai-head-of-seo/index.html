@@ -1,0 +1,954 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The AI Head of SEO</title>
+<meta name="description" content="Not every company has a Head of SEO. This is the one I built: 15 SEO functions, one operating brief, seven outputs a week. Every prompt is here in full, nothing gated.">
+<meta property="og:title" content="The AI Head of SEO">
+<meta property="og:description" content="15 SEO functions. One operating brief. Seven things it hands you every week. Every prompt, free and ungated.">
+<meta property="og:image" content="https://chatseo.github.io/playbooks/ai-head-of-seo/img/og-card.jpg">
+<meta property="og:url" content="https://chatseo.github.io/playbooks/ai-head-of-seo/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧭</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFFFFF; --surface:#FFFFFF; --ink:#000000; --muted:#5A6069;
+  --accent:#1D4ED8; --on-accent:#FFFFFF; --accent-soft:#EEF3FF; --sage:#1D4ED8;
+  --line:#E3E6EB; --code-bg:#0B0F19; --code-ink:#F4F6FA;
+  --shadow:0 1px 2px rgba(0,0,0,.04), 0 8px 24px rgba(0,0,0,.05);
+  --maxw:780px;
+}
+:root:not([data-theme="light"]){ @media (prefers-color-scheme: dark){
+  --bg:#000000; --surface:#0C0E12; --ink:#FFFFFF; --muted:#9AA1AB;
+  --accent:#6EA1FF; --on-accent:#000000; --accent-soft:#111826; --sage:#6EA1FF;
+  --line:#23272E; --code-bg:#0E1117; --code-ink:#F4F6FA;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.5);
+}}
+:root[data-theme="dark"]{
+  --bg:#000000; --surface:#0C0E12; --ink:#FFFFFF; --muted:#9AA1AB;
+  --accent:#6EA1FF; --on-accent:#000000; --accent-soft:#111826; --sage:#6EA1FF;
+  --line:#23272E; --code-bg:#0E1117; --code-ink:#F4F6FA;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.5);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:72px}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:17px; line-height:1.68; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 22px}
+
+/* ---------- top bar ---------- */
+.bar{
+  position:sticky; top:0; z-index:50; background:color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter:blur(10px); border-bottom:1px solid var(--line);
+}
+.bar-in{max-width:var(--maxw); margin:0 auto; padding:11px 22px; display:flex; align-items:center; gap:14px}
+.brand{font-weight:800; letter-spacing:-.02em; font-size:15px; text-decoration:none; color:var(--ink); white-space:nowrap}
+.brand span{color:var(--accent)}
+.bar nav{margin-left:auto; display:flex; gap:16px; overflow-x:auto; scrollbar-width:none}
+.bar nav::-webkit-scrollbar{display:none}
+.bar nav a{color:var(--muted); text-decoration:none; font-size:13.5px; font-weight:500; white-space:nowrap}
+.bar nav a:hover{color:var(--accent)}
+.theme{background:none; border:1px solid var(--line); color:var(--muted); border-radius:8px;
+  width:32px; height:32px; cursor:pointer; font-size:14px; flex:none}
+.theme:hover{color:var(--accent); border-color:var(--accent)}
+
+/* ---------- hero ---------- */
+.hero{padding:64px 0 8px; text-align:center}
+.eyebrow{
+  display:inline-block; font-size:12px; font-weight:700; letter-spacing:.13em; text-transform:uppercase;
+  color:var(--accent); background:var(--accent-soft); padding:6px 13px; border-radius:100px; margin-bottom:20px;
+}
+h1{
+  font-family:"Instrument Serif",Georgia,serif; font-weight:400; letter-spacing:-.015em;
+  font-size:clamp(40px,7.5vw,62px); line-height:1.06; margin:0 0 18px;
+}
+h1 em{font-style:italic; color:var(--accent)}
+.sub{font-size:19px; color:var(--muted); max-width:580px; margin:0 auto 30px}
+.cta-row{display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-bottom:10px}
+.btn{
+  display:inline-flex; align-items:center; gap:8px; padding:13px 24px; border-radius:10px;
+  font-weight:600; font-size:15px; text-decoration:none; border:1px solid transparent; transition:.15s;
+}
+.btn-primary{background:var(--accent); color:var(--on-accent)}
+.btn-primary:hover{filter:brightness(1.08); transform:translateY(-1px)}
+.btn-ghost{border-color:var(--line); color:var(--ink); background:var(--surface)}
+.btn-ghost:hover{border-color:var(--accent); color:var(--accent)}
+.note{font-size:13.5px; color:var(--muted)}
+.tease{margin:-16px 0 26px; font-size:14.5px}
+.tease a{color:var(--muted); text-decoration:none; border-bottom:1px dashed var(--line); padding-bottom:2px}
+.tease a:hover{color:var(--accent); border-bottom-color:var(--accent)}
+
+/* ---------- figures ---------- */
+figure{margin:38px 0}
+figure img{width:100%; height:auto; display:block; border-radius:14px; border:1px solid var(--line)}
+figure.plainfig img{border:0; border-radius:0}
+figcaption{font-size:13.5px; color:var(--muted); text-align:center; margin-top:11px}
+
+/* ---------- type ---------- */
+h2{
+  font-family:"Instrument Serif",Georgia,serif; font-weight:400; font-size:clamp(29px,4.6vw,38px);
+  line-height:1.16; letter-spacing:-.01em; margin:60px 0 6px;
+}
+h3{font-size:19px; font-weight:700; letter-spacing:-.01em; margin:32px 0 8px}
+p{margin:0 0 17px}
+a{color:var(--accent)}
+.lede{font-size:19px; color:var(--muted); margin-bottom:26px}
+hr{border:0; border-top:1px solid var(--line); margin:56px 0}
+strong{font-weight:650}
+
+/* ---------- author ---------- */
+.author{
+  display:flex; gap:24px; align-items:flex-start; background:var(--surface);
+  border:1px solid var(--line); border-radius:16px; padding:28px; margin:40px 0;
+}
+.author-img{
+  width:96px; height:96px; border-radius:50%; flex:none; object-fit:cover;
+  background:var(--accent-soft); border:1px solid var(--line);
+}
+.author p{margin:0 0 11px; font-size:17px; line-height:1.62}
+.author p:last-child{margin-bottom:0}
+
+/* ---------- skill cards ---------- */
+.group-head{
+  display:flex; align-items:center; gap:12px; margin:46px 0 6px;
+}
+.group-head span{
+  font-size:12px; font-weight:800; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--accent); background:var(--accent-soft); padding:5px 12px; border-radius:100px; flex:none;
+}
+.group-head hr{flex:1; margin:0; border-top:1px solid var(--line)}
+.group-sub{color:var(--muted); font-size:15.5px; margin:0 0 18px}
+.fn{
+  background:var(--surface); border:1px solid var(--line); border-radius:16px;
+  padding:24px 26px; margin:14px 0; box-shadow:var(--shadow); scroll-margin-top:80px;
+}
+.fn-head{display:flex; align-items:baseline; gap:12px; margin-bottom:4px; flex-wrap:wrap}
+.fn-num{
+  font-family:"Instrument Serif",Georgia,serif; font-size:30px; line-height:1;
+  color:var(--accent); flex:none;
+}
+.fn-title{font-size:20px; font-weight:750; letter-spacing:-.015em; margin:0}
+.fn-sub{color:var(--muted); font-size:15px; margin:0 0 14px}
+.meta{display:flex; flex-wrap:wrap; gap:8px; margin:14px 0}
+.chip{
+  font-size:12.5px; font-weight:600; padding:5px 11px; border-radius:100px;
+  background:var(--bg); border:1px solid var(--line); color:var(--muted);
+}
+.chip b{color:var(--ink); font-weight:650}
+
+/* ---------- dropdown ---------- */
+details.drop{
+  border:1px solid var(--line); border-radius:12px; background:var(--bg);
+  margin:14px 0 0; overflow:hidden;
+}
+details.drop + details.drop{margin-top:8px}
+details.drop > summary{
+  cursor:pointer; list-style:none; padding:12px 16px; display:flex; align-items:center; gap:10px;
+  font-size:14.5px; font-weight:600; color:var(--accent); user-select:none;
+}
+details.drop > summary::-webkit-details-marker{display:none}
+details.drop > summary::before{
+  content:"›"; font-size:19px; line-height:1; color:var(--accent);
+  transition:transform .18s ease; display:inline-block; flex:none;
+}
+details.drop[open] > summary::before{transform:rotate(90deg)}
+details.drop > summary:hover{background:var(--accent-soft)}
+details.drop[open] > summary{border-bottom:1px solid var(--line)}
+.drop-body{padding:14px 16px 16px}
+.drop-body > *:last-child{margin-bottom:0}
+.drop-body .prompt{margin:0}
+.drop-note{font-size:13.5px; color:var(--muted); margin:0 0 12px}
+
+/* ---------- prompt block ---------- */
+.prompt{position:relative; margin:16px 0 4px}
+.prompt-bar{
+  display:flex; align-items:center; justify-content:space-between; gap:10px;
+  background:var(--code-bg); border-radius:10px 10px 0 0; padding:9px 13px;
+  border-bottom:1px solid rgba(255,255,255,.09);
+}
+.prompt-label{
+  font-family:"JetBrains Mono",ui-monospace,monospace; font-size:11.5px;
+  letter-spacing:.06em; text-transform:uppercase; color:#8C93A0;
+}
+.copy{
+  background:rgba(255,255,255,.12); color:#F5F5F5; border:0; border-radius:6px;
+  padding:5px 11px; font-size:12px; font-weight:600; cursor:pointer;
+  font-family:Inter,sans-serif; transition:.15s; white-space:nowrap;
+}
+.copy:hover{background:#1D4ED8; color:#FFFFFF}
+.copy.done{background:#1D4ED8; color:#FFFFFF}
+pre{
+  margin:0; background:var(--code-bg); color:var(--code-ink); border-radius:0 0 10px 10px;
+  padding:17px; overflow-x:auto; font-family:"JetBrains Mono",ui-monospace,monospace;
+  font-size:12.5px; line-height:1.62; white-space:pre-wrap; word-wrap:break-word;
+}
+
+/* ---------- callout ---------- */
+.callout{
+  border-left:3px solid var(--accent); background:var(--accent-soft);
+  padding:16px 20px; border-radius:0 12px 12px 0; margin:26px 0;
+}
+.callout p{margin:0; font-size:15.5px}
+.callout .k{font-weight:700; color:var(--accent)}
+
+/* ---------- lists ---------- */
+ul,ol{padding-left:22px; margin:0 0 18px}
+li{margin-bottom:9px}
+.plain{list-style:none; padding:0}
+.plain li{padding-left:28px; position:relative; margin-bottom:13px}
+.plain li::before{content:"→"; position:absolute; left:0; color:var(--accent); font-weight:700}
+
+/* ---------- setup steps ---------- */
+.setup{counter-reset:s; list-style:none; padding:0; margin:22px 0}
+.setup li{counter-increment:s; position:relative; padding-left:40px; margin-bottom:14px}
+.setup li::before{
+  content:counter(s); position:absolute; left:0; top:1px;
+  width:26px; height:26px; border-radius:50%; background:var(--accent); color:var(--on-accent);
+  font-size:13px; font-weight:700; display:flex; align-items:center; justify-content:center;
+}
+kbd{
+  font-family:"JetBrains Mono",ui-monospace,monospace; font-size:12.5px;
+  background:var(--bg); border:1px solid var(--line); border-radius:5px; padding:2px 6px;
+}
+
+/* ---------- table ---------- */
+.tw{overflow-x:auto; margin:18px 0; border:1px solid var(--line); border-radius:12px}
+table{border-collapse:collapse; width:100%; font-size:14.5px; min-width:420px}
+th,td{padding:10px 15px; text-align:left; border-bottom:1px solid var(--line)}
+th{background:var(--surface); font-weight:650; font-size:12.5px; letter-spacing:.05em; text-transform:uppercase; color:var(--muted)}
+tr:last-child td{border-bottom:0}
+td b{color:var(--accent)}
+
+/* ---------- old-vs-new comparison ---------- */
+.vs{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:26px 0}
+.vs-col{border:1px solid var(--line); border-radius:14px; padding:20px; background:var(--surface)}
+.vs-col h3{margin:0 0 12px; font-size:15px; letter-spacing:.04em; text-transform:uppercase}
+.vs-col ul{margin:0; padding-left:20px}
+.vs-col li{font-size:15px; margin-bottom:9px; color:var(--muted)}
+.vs-old h3{color:var(--muted)}
+.vs-old li{text-decoration:line-through; text-decoration-color:var(--line)}
+.vs-new{border-color:var(--accent)}
+.vs-new h3{color:var(--accent)}
+.vs-new li{color:var(--ink)}
+:not(pre) > code{
+  font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:.88em; background:var(--surface); border:1px solid var(--line);
+  border-radius:6px; padding:1px 6px; color:var(--ink); word-break:break-word;
+}
+@media (max-width:600px){ .vs{grid-template-columns:1fr} }
+
+/* ---------- final cta ---------- */
+.final{
+  background:var(--surface); border:1px solid var(--accent); border-radius:18px;
+  padding:38px 28px; text-align:center; margin:52px 0 24px;
+}
+.final h2{margin:0 0 10px}
+.final p{color:var(--muted); max-width:470px; margin:0 auto 22px}
+footer{text-align:center; padding:34px 0 56px; color:var(--muted); font-size:13.5px}
+footer a{color:var(--muted)}
+
+@media (max-width:560px){
+  body{font-size:16px}
+  .fn{padding:20px}
+  .bar nav{display:none}
+  .author{flex-direction:column; gap:12px}
+}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="bar-in">
+    <a class="brand" href="#top">Chat<span>SEO</span></a>
+    <nav>
+      <a href="#connect">Connect</a>
+      <a href="#brief">The brief</a>
+      <a href="#functions">15 functions</a>
+      <a href="#outputs">7 outputs</a>
+      <a href="#proof">Proof</a>
+    </nav>
+    <button class="theme" id="themeBtn" aria-label="Toggle theme">◐</button>
+  </div>
+</div>
+
+<div class="wrap" id="top">
+
+  <div class="hero">
+    <span class="eyebrow">Free · Nothing gated</span>
+    <h1>The AI<br><em>Head of SEO</em></h1>
+    <p class="sub">Not every company has a Head of SEO. This is the one I built: 15 SEO functions, one operating brief, and seven things it hands you every week. Every prompt is on this page.</p>
+    <p class="tease"><a href="#proof">How one founder went from 250 to 750 clicks a day on this loop →</a></p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://link.chatseo.app/pb-ai-head-of-seo" target="_blank" rel="noopener">Get your AI Head of SEO free →</a>
+      <a class="btn btn-ghost" href="#functions">Read the 15 functions</a>
+    </div>
+    <p class="note">Free · No credit card required</p>
+  </div>
+
+  <div class="author">
+    <img class="author-img" src="img/tw3810.webp" alt="Nicholas" loading="lazy">
+    <div>
+      <p><strong>Hey there, I'm Nicholas 👋</strong></p>
+      <p>I grew my last B2C app to 15K Google clicks/month as a solo founder, then sold it. Turns out I fell in love with SEO along the way.</p>
+      <p>So now I'm building <a href="https://link.chatseo.app/pb-ai-head-of-seo" target="_blank" rel="noopener"><strong>ChatSEO.app</strong></a> — an all-in-one <strong>SEO employee</strong> whose job is to make sure you <strong>rank #1 in Google and in AI search</strong>.</p>
+      <p>This page is that employee's job description, written out in full. <a href="https://link.chatseo.app/pb-ai-head-of-seo" target="_blank" rel="noopener"><strong>Try it free →</strong></a></p>
+    </div>
+  </div>
+
+  <figure>
+    <img src="img/post-card.webp" alt="The AI Chief SEO Officer: 15 SEO functions arranged around seven wedges — research, analyze, fix, execute, track, plan, optimize — and the seven outputs underneath: connect your real data, the SEO strategy, the fix queue, changes executed, weekly action list, performance report." loading="lazy">
+    <figcaption>The card from the post. Everything on it is below, in the same order.</figcaption>
+  </figure>
+
+  <hr>
+
+  <h2>A Head of SEO owns outputs. A tool produces data.</h2>
+  <p class="lede">That one sentence is the whole design. Fifteen functions exist because seven outputs need them — not the other way round.</p>
+  <p>Every SEO tool you've paid for is an analyst. It runs a function, hands you the result and leaves the decision to you. Fifteen of those is fifteen tabs on a Monday morning and nothing shipped by Friday.</p>
+  <p>A Head of SEO is accountable for something different: the strategy exists, the keyword priorities are ranked, the content plan is written, the fix queue is ordered, the fixes are live, Monday's action list is on the table before the coffee's cold, and the performance report says whether last month worked. Seven outputs. The functions are just how they get made.</p>
+  <p>So every function on this page carries three constraints that a tool never does: it reads <strong>your</strong> live data or refuses to answer, it names <strong>which output</strong> it's feeding, and it ends in <strong>one action</strong> — not a list of 47 findings sorted by someone else's severity score.</p>
+
+  <figure class="plainfig">
+    <svg viewBox="0 0 760 340" role="img" aria-label="Your site, your Search Console and your analytics feed the 15 functions, grouped into research, analyze, fix, optimize, plan, execute and track. The functions produce seven outputs: the SEO strategy, keyword priorities, content plan, fix queue, changes executed, weekly action list, performance report." style="width:100%;height:auto">
+      <style>
+        .k1{stroke:var(--ink);fill:none;stroke-width:1.5}
+        .a1{stroke:var(--accent);fill:none;stroke-width:2}
+        .ar1{stroke:var(--muted);fill:none;stroke-width:1.3}
+        .h1{fill:var(--accent);font-family:Inter,system-ui,sans-serif;font-size:12px;font-weight:800;letter-spacing:.14em}
+        .t1{fill:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:13.5px}
+        .b1{fill:var(--accent);font-family:Inter,system-ui,sans-serif;font-size:15px;font-weight:750}
+        .s1{fill:var(--muted);font-family:Inter,system-ui,sans-serif;font-size:12px}
+        .w1{fill:var(--ink);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:.06em}
+      </style>
+      <defs>
+        <marker id="m1" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="var(--muted)"/></marker>
+      </defs>
+      <text x="14" y="30" class="h1">CONNECT</text>
+      <rect x="14" y="52" width="150" height="38" rx="8" class="k1"/><text x="89" y="76" class="t1" text-anchor="middle">Your site</text>
+      <rect x="14" y="104" width="150" height="38" rx="8" class="k1"/><text x="89" y="128" class="t1" text-anchor="middle">Search Console</text>
+      <rect x="14" y="156" width="150" height="38" rx="8" class="k1"/><text x="89" y="180" class="t1" text-anchor="middle">Analytics</text>
+      <path d="M166 71 C 200 71, 205 118, 236 124" class="ar1" marker-end="url(#m1)"/>
+      <path d="M166 123 C 200 123, 205 124, 236 128" class="ar1" marker-end="url(#m1)"/>
+      <path d="M166 175 C 200 175, 205 138, 236 132" class="ar1" marker-end="url(#m1)"/>
+      <text x="246" y="30" class="h1">15 FUNCTIONS</text>
+      <rect x="246" y="52" width="230" height="150" rx="12" class="a1"/>
+      <text x="361" y="84" class="b1" text-anchor="middle">The operating brief</text>
+      <text x="262" y="112" class="w1">RESEARCH · ANALYZE · FIX</text>
+      <text x="262" y="134" class="w1">OPTIMIZE · PLAN</text>
+      <text x="262" y="156" class="w1">EXECUTE · TRACK</text>
+      <text x="361" y="186" class="s1" text-anchor="middle">every function ends in one action</text>
+      <path d="M478 127 h56" class="ar1" marker-end="url(#m1)"/>
+      <text x="548" y="30" class="h1">7 OUTPUTS</text>
+      <text x="548" y="62" class="t1">→ The SEO strategy</text>
+      <text x="548" y="88" class="t1">→ Keyword priorities</text>
+      <text x="548" y="114" class="t1">→ Content plan</text>
+      <text x="548" y="140" class="t1">→ Fix queue</text>
+      <text x="548" y="166" class="t1">→ Changes executed</text>
+      <text x="548" y="192" class="t1">→ Weekly action list</text>
+      <text x="548" y="218" class="t1">→ Performance report</text>
+      <line x1="14" y1="252" x2="746" y2="252" style="stroke:var(--line);stroke-width:1"/>
+      <text x="380" y="284" class="s1" text-anchor="middle">Connect once. Run the functions. The outputs are what a Head of SEO is paid for.</text>
+      <text x="380" y="308" class="s1" text-anchor="middle">Nothing on the right gets produced without something on the left being read first.</text>
+    </svg>
+  </figure>
+
+  <p>The guide is four parts, in the order you'll do them: <strong>connect</strong> your data (five minutes), save the <strong>operating brief</strong> (one prompt, once), run the <strong>15 functions</strong> (the same 15 from the post, same order), and let them roll up into the <strong>7 outputs</strong> on a fixed cadence.</p>
+
+  <hr>
+
+  <h2 id="connect">Connect it: your site, your Search Console, your analytics</h2>
+  <p class="lede">The one part you do once. Skip it and all 15 functions produce beautifully formatted fiction.</p>
+
+  <div class="fn">
+    <div class="fn-head"><h3 class="fn-title">Step 1 — Connect Search Console to ChatSEO</h3></div>
+    <p class="fn-sub">Read-only OAuth. There is no API key to generate anywhere on this page.</p>
+    <p>Create a free account at <a href="https://link.chatseo.app/pb-ai-head-of-seo" target="_blank" rel="noopener"><strong>chatseo.app</strong></a>, add your site, then click <strong>Connect Google Search Console</strong> and authorize with the Google account that owns the property. Connect Google Analytics the same way if you use it — the performance report reads conversions from it, and writes "not connected" if it can't.</p>
+  </div>
+
+  <div class="fn">
+    <div class="fn-head"><h3 class="fn-title">Step 2 — Add the connector to Claude</h3></div>
+    <p class="fn-sub">The MCP endpoint is the same for everybody. The full guide with screenshots is in your dashboard under <strong>MCP / API</strong>.</p>
+    <div class="prompt"><div class="prompt-bar"><span class="prompt-label">MCP endpoint</span><button class="copy">Copy</button></div>
+<pre>https://api.chatseo.app/mcp</pre></div>
+    <details class="drop"><summary>Claude Desktop — easiest if you're not a developer</summary><div class="drop-body">
+      <p style="margin:0">Click your account at the very bottom of the sidebar → <strong>Settings</strong>. Scroll to the bottom of the settings sidebar, under <strong>Platform → Customize</strong>. Open the <strong>Connectors</strong> tab → <strong>Add</strong>, top right. Paste the URL and connect. A browser tab opens once to sign you in.</p>
+    </div></details>
+    <details class="drop"><summary>Claude Code — one command</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">terminal</span><button class="copy">Copy</button></div>
+<pre>claude mcp add --transport http chatseo https://api.chatseo.app/mcp</pre></div>
+      <p class="drop-note" style="margin:12px 0 0">Run it, open a new session, done.</p>
+    </div></details>
+    <details class="drop"><summary>Cursor, ChatGPT, VS Code — same URL, three menus</summary><div class="drop-body">
+      <p style="margin:0"><strong>Cursor</strong> — add it as an HTTP MCP server in <code>.cursor/mcp.json</code> and restart. <strong>ChatGPT / Codex</strong> — Settings → Connectors → Add custom connector, paste the URL, it handles the OAuth. <strong>VS Code</strong> — add it as an MCP server in your Copilot settings.</p>
+    </div></details>
+  </div>
+
+  <div class="fn">
+    <div class="fn-head"><h3 class="fn-title">Step 3 — Prove it's connected</h3></div>
+    <p class="fn-sub">One question before you save a single prompt.</p>
+    <div class="prompt"><div class="prompt-bar"><span class="prompt-label">test</span><button class="copy">Copy</button></div>
+<pre>Which of my pages lost the most clicks last month?</pre></div>
+    <p style="margin-top:14px">If it comes back with your actual URLs and numbers, you have a Head of SEO. If it comes back with advice about <em>how</em> to find those pages, it's still just Claude, and everything below will reason confidently about a site it has never seen.</p>
+  </div>
+
+  <div class="callout">
+    <p><span class="k">This is the step people skip.</span> Fifteen functions that reason about your site are worth nothing if the model can't see your site. <a href="https://link.chatseo.app/pb-ai-head-of-seo" target="_blank" rel="noopener"><strong>Connect ChatSEO free →</strong></a> It's the one thing that makes the other fifteen work.</p>
+  </div>
+
+  <hr>
+
+  <h2 id="brief">The operating brief</h2>
+  <p class="lede">One prompt that turns "Claude with a data connection" into a Head of SEO. Save it as your Project instructions and never paste it again.</p>
+  <p>Everything the 15 functions have in common lives here so none of them has to repeat it: what data it may use, what it may never invent, how confident it's allowed to sound, which output each piece of work belongs to, and the shape every answer takes. A function without this brief is a prompt. With it, it's a job.</p>
+  <p>Replace <code>{site}</code> with your domain. The rest is yours as written.</p>
+
+  <div class="prompt"><div class="prompt-bar"><span class="prompt-label">project instructions · the operating brief</span><button class="copy">Copy</button></div>
+<pre>You are the Head of SEO for {site}. You are not an analyst and not an assistant. You own outcomes, not reports.
+
+DATA
+You have read access to this site's Search Console and analytics through the connected tools. Pull live data before answering anything about performance. If a tool is not connected, say which one and stop. Never describe the site from memory or from general knowledge of SEO.
+Never produce a number that is not in the data. If it cannot be computed, write "cannot compute from this data". Do not estimate.
+Exclude brand queries before measuring anything, and say how many rows that removed.
+Label every claim about cause: CONFIRMED (visible in the data, figure quoted) / PROBABLE (consistent with the data, unproven, with the test that would confirm it) / UNVERIFIABLE (needs data we do not have).
+
+THE 15 FUNCTIONS
+When I name a function, run it exactly as its prompt is written.
+01 Search Console analysis · 02 Keyword research · 03 Competitor analysis · 04 Technical audit · 05 On-page optimization · 06 Content planning · 07 Internal linking · 08 Schema markup · 09 Traffic drop diagnosis · 10 Opportunity detection · 11 AI search visibility · 12 Fix execution · 13 Scheduled SEO tasks · 14 Performance tracking · 15 Weekly SEO priorities
+
+THE 7 OUTPUTS
+Everything you do feeds exactly one of these, and you name which at the top of every answer:
+- The SEO strategy (quarterly)
+- Keyword priorities (monthly)
+- Content plan (monthly)
+- Fix queue (always current, reordered weekly)
+- Changes executed (a log, one row per shipped change)
+- Weekly action list (Monday)
+- Performance report (Monday, 4-week view; full version monthly)
+
+FLOORS
+A page enters a priority list at 1,000+ impressions in 28 days. A query is named individually at 100+ impressions in 28 days. CTR is a signal after 30 clicks, not before. A trend needs 3 months. Below a floor, write "below the floor" — not a smaller recommendation.
+
+HOW YOU ANSWER
+- The decision first, then the evidence. Never the other way round.
+- One action per run. If I want a list, I will ask for a list. Do not offer alternatives.
+- Every action carries: the page or query, the exact change, the metric that will move, and the date to check it.
+- Effort in hours. Impact as a range from the data. An honest "not worth it" when that is the truth.
+- Under 300 words unless the function says otherwise. No introductions, no summaries.</pre></div>
+
+  <p style="margin-top:22px">Two lines in there do most of the work. <em>"Never produce a number that is not in the data"</em> is what separates a report you can act on from an essay that sounds like one — you'll hit "cannot compute" often, and that's the brief working. And <em>"one action per run"</em> is the whole reason to call this a Head of SEO instead of a dashboard.</p>
+
+  <hr>
+
+  <h2 id="functions">The 15 functions</h2>
+  <p class="lede">The same fifteen from the post, in the same order. Each one says what it reads, which output it feeds, and ends in one action. Open the dropdown, copy, run.</p>
+  <p>The wedge chip tells you which part of the operating system a function belongs to — research, analyze, fix, optimize, plan, execute or track. The <em>feeds</em> chip tells you which of the seven outputs it exists for. If a function fed nothing, it wouldn't be here.</p>
+
+  <div class="fn" id="f1">
+    <div class="fn-head"><span class="fn-num">01</span><h3 class="fn-title">Search Console analysis</h3></div>
+    <p class="fn-sub"><em>Find the one position band where the most clicks are being left on the table.</em></p>
+    <div class="meta"><span class="chip"><b>Wedge:</b> Analyze</span><span class="chip"><b>Feeds:</b> Performance report · Weekly action list</span><span class="chip"><b>Cadence:</b> Monday</span></div>
+    <p>This is the Monday opener. It doesn't summarise the site — it names the constraint. Four position bands, one gap, five queries inside it, one page to touch.</p>
+    <details class="drop"><summary>Open the prompt</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">function · 01 search console analysis</span><button class="copy">Copy</button></div>
+<pre>FUNCTION 01 — Search Console analysis
+Feeds: Performance report · Weekly action list
+
+Pull the last 28 days and the previous 28 from Search Console for {site}: clicks, impressions, CTR, position, by page and by query. Exclude brand queries first and say how many rows that removed.
+
+1. State the site's totals for both periods and the delta, brand excluded.
+2. Cut the query set into position bands: 1-3, 3.1-10, 10.1-20, 20+. For each band: number of queries, clicks, band CTR.
+3. Name the ONE band where the gap between impressions and clicks is largest in absolute clicks. That is the constraint.
+4. Inside that band, list the 5 queries above 100 impressions with the lowest CTR relative to the band average, with the page each one lands on.
+
+Output: the constraint in one sentence with the numbers behind it, then the 5 queries, then ONE action on ONE page — the change, the metric that will move, the date to check.
+Do not list alternatives. If a figure is not in the data, write "cannot compute from this data".</pre></div>
+    </div></details>
+  </div>
+
+  <div class="fn" id="f2">
+    <div class="fn-head"><span class="fn-num">02</span><h3 class="fn-title">Keyword research</h3></div>
+    <p class="fn-sub"><em>Start from what Google already shows you for. A tool's volume column is somebody else's site.</em></p>
+    <div class="meta"><span class="chip"><b>Wedge:</b> Research</span><span class="chip"><b>Feeds:</b> Keyword priorities</span><span class="chip"><b>Cadence:</b> Monthly</span></div>
+    <p>Keyword lists fail because they're sorted by volume. This one is sorted by whether one page of yours could plausibly own the whole cluster — the only property that turns a list into a plan.</p>
+    <details class="drop"><summary>Open the prompt</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">function · 02 keyword research</span><button class="copy">Copy</button></div>
+<pre>FUNCTION 02 — Keyword research
+Feeds: Keyword priorities
+
+Start from what Google already shows us for, not from a tool's volume column. Pull every query with 100+ impressions over the last 90 days, brand excluded.
+
+1. Cluster queries that share one intent and could realistically be answered by one URL. 3+ queries = a cluster, named after its highest-impression query. Fewer = merge into a neighbour or drop.
+2. For each cluster: total impressions, best current position, the URL of ours that currently ranks (or "none").
+3. Classify intent: informational / comparison / transactional / navigational. Drop navigational.
+4. Rank clusters by: impressions × (1 if we have a URL at position 4-20, 0.5 if we rank 21+, 0.3 if no URL). Show the arithmetic.
+
+Output: the top 10 clusters as a table (cluster · intent · impressions · our URL · position · score), then ONE cluster to work this month and the one reason it beat #2.
+Do not invent search volumes. If a number is not in the data, write "cannot compute from this data".</pre></div>
+    </div></details>
+  </div>
+
+  <div class="fn" id="f3">
+    <div class="fn-head"><span class="fn-num">03</span><h3 class="fn-title">Competitor analysis</h3></div>
+    <p class="fn-sub"><em>Not "who are the competitors" — which page type beats you, on which queries, most consistently.</em></p>
+    <div class="meta"><span class="chip"><b>Wedge:</b> Analyze</span><span class="chip"><b>Feeds:</b> The SEO strategy · Keyword priorities</span><span class="chip"><b>Cadence:</b> Quarterly</span></div>
+    <p>Twenty queries where you're close, three competitors, and one question: what shape of page is winning? The answer is usually a single pattern, and it's worth more than a domain-authority score.</p>
+    <details class="drop"><summary>Open the prompt</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">function · 03 competitor analysis</span><button class="copy">Copy</button></div>
+<pre>FUNCTION 03 — Competitor analysis
+Feeds: The SEO strategy · Keyword priorities
+Needs: 3 competitor domains from me. Ask if missing, then stop.
+
+Take the top 20 non-brand queries by impressions where we rank 4-20.
+1. Fetch the live top 10 for each if you have a search or fetch tool. If you do not, ask me to paste the top 10 URLs per query and stop.
+2. Record which of the 3 competitors appear, at what position, and the page type they used: guide / comparison / product / tool / other.
+3. Count, per competitor: on how many of the 20 queries do they outrank us, and with which page type most often.
+
+Output: one table (query · our position · competitor · their position · page type), then the single pattern — the ONE page type or topic where one competitor beats us most consistently — and ONE page we should build or rewrite to take it, with the query it targets.
+Do not estimate domain authority, traffic or budgets. If a fact is not visible in the SERP or in our data, write "unverifiable".</pre></div>
+    </div></details>
+  </div>
+
+  <div class="fn" id="f4">
+    <div class="fn-head"><span class="fn-num">04</span><h3 class="fn-title">Technical audit</h3></div>
+    <p class="fn-sub"><em>Audit only what blocks clicks on pages that already earn impressions. Ignore the rest.</em></p>
+    <div class="meta"><span class="chip"><b>Wedge:</b> Fix</span><span class="chip"><b>Feeds:</b> Fix queue</span><span class="chip"><b>Cadence:</b> Monthly</span></div>
+    <p>A crawler audits the whole site and returns 400 issues. A Head of SEO audits the fifty pages that matter and returns the one that's blocking. Three ratings, and the cosmetic one is discarded on sight.</p>
+    <details class="drop"><summary>Open the prompt</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">function · 04 technical audit</span><button class="copy">Copy</button></div>
+<pre>FUNCTION 04 — Technical audit
+Feeds: Fix queue
+
+Audit only what blocks clicks on pages that already earn impressions. Pull the top 50 pages by impressions, last 28 days.
+
+For each page, using fetch or crawl tools if you have them (if not, ask me for a crawl export and stop), check:
+- HTTP status and any redirect chain
+- indexable: no noindex, canonical points to itself
+- title and H1 present, and unique across the 50
+- response time or LCP, if measurable
+- mobile rendering problems visible in the HTML
+
+Rate every finding: BLOCKING (the page cannot rank or be indexed) / DEGRADING (ranks but loses clicks) / COSMETIC.
+
+Output: counts per rating, the BLOCKING findings listed with URL and the exact fix, then ONE fix to ship first — the one touching the most impressions. Effort in hours.
+Ignore COSMETIC entirely. Do not report an issue you did not observe on a fetched page. If you could not fetch a page, write "not checked".</pre></div>
+    </div></details>
+  </div>
+
+  <div class="fn" id="f5">
+    <div class="fn-head"><span class="fn-num">05</span><h3 class="fn-title">On-page optimization</h3></div>
+    <p class="fn-sub"><em>One page, one query, one rewrite. Body copy stays untouched unless you ask.</em></p>
+    <div class="meta"><span class="chip"><b>Wedge:</b> Optimize</span><span class="chip"><b>Feeds:</b> Fix queue · Changes executed</span><span class="chip"><b>Cadence:</b> Per page</span></div>
+    <p>The cheapest click on most sites is a title tag that doesn't contain the query the page already ranks for. This function finds that query and rewrites the two lines Google actually displays.</p>
+    <details class="drop"><summary>Open the prompt</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">function · 05 on-page optimization</span><button class="copy">Copy</button></div>
+<pre>FUNCTION 05 — On-page optimization
+Feeds: Fix queue · Changes executed
+Needs: one URL from me. If none is given, take the page named by the latest Search Console analysis.
+
+1. Pull this page's queries, last 28 days: impressions, clicks, CTR, position. Brand excluded.
+2. Fetch the live page. Record the current title, meta description, H1, H2s and word count.
+3. Identify the ONE query with the most impressions where the page sits at position 3-15 and the title does not contain the query's core terms.
+4. Rewrite the title (60 characters or fewer) and the meta description (155 or fewer) around that query. Keep the brand suffix if there is one. Propose an H2 change only if a query above 100 impressions has no matching section on the page.
+
+Output: current vs proposed title and description side by side, the query and its numbers, the metric that should move (CTR in that position band) and the date to check it (28 days). Then stop.
+One page, one query, one rewrite. Do not touch body copy unless asked. Do not promise a ranking change.</pre></div>
+    </div></details>
+  </div>
+
+  <div class="fn" id="f6">
+    <div class="fn-head"><span class="fn-num">06</span><h3 class="fn-title">Content planning</h3></div>
+    <p class="fn-sub"><em>No piece without a cluster behind it. No "thought leadership" without impressions.</em></p>
+    <div class="meta"><span class="chip"><b>Wedge:</b> Plan</span><span class="chip"><b>Feeds:</b> Content plan</span><span class="chip"><b>Cadence:</b> Monthly</span></div>
+    <p>Reads the clusters from 02 and the winning page type from 03, and turns them into four pieces a month — each with a two-line brief and an honest "extend the existing page" where that's cheaper than a new one.</p>
+    <details class="drop"><summary>Open the prompt</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">function · 06 content planning</span><button class="copy">Copy</button></div>
+<pre>FUNCTION 06 — Content planning
+Feeds: Content plan
+Reads: the clusters from Keyword research (02) and the winning page type from Competitor analysis (03). If 02 has not been run this month, run it first.
+
+1. Take every cluster where we have no URL, or our URL ranks 21+.
+2. For each: intent class, the page type that wins its SERP (from 03, or "unknown" if 03 has not run), the cluster's total impressions, and whether an existing page could be extended instead of a new one built.
+3. Score: impressions ÷ effort in hours (new page = 8h, extension = 3h). Show the numbers.
+4. Cap the plan at 4 pieces per month.
+
+Output: this month's 4 pieces as a table (working title · target cluster · page type · new or extend · effort · impressions at stake), each with a 2-line brief: the question the page answers, and the one thing it must contain that the competitors' pages lack. Then name the ONE to write first.
+Do not add a piece without a cluster behind it. Do not invent impressions for topics we have never appeared for.</pre></div>
+    </div></details>
+  </div>
+
+  <div class="fn" id="f7">
+    <div class="fn-head"><span class="fn-num">07</span><h3 class="fn-title">Internal linking</h3></div>
+    <p class="fn-sub"><em>From the pages that already have authority, to the pages that are almost there.</em></p>
+    <div class="meta"><span class="chip"><b>Wedge:</b> Optimize</span><span class="chip"><b>Feeds:</b> Fix queue</span><span class="chip"><b>Cadence:</b> Monthly</span></div>
+    <p>Ten strong pages, the targets stuck at 4–15, and the links that should exist between them but don't. With the anchor text and the sentence it belongs in, so the link is a paste, not a project.</p>
+    <details class="drop"><summary>Open the prompt</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">function · 07 internal linking</span><button class="copy">Copy</button></div>
+<pre>FUNCTION 07 — Internal linking
+Feeds: Fix queue
+
+1. Pull pages by impressions, last 28 days. Split them: STRONG = the top 10 pages by clicks. TARGET = pages ranking 4-15 on a query with 500+ impressions.
+2. Fetch each STRONG page and list its outgoing internal links. If you cannot fetch, ask me for a crawl export and stop.
+3. For each TARGET page: which STRONG pages are topically related (they share a query stem or a section topic) but do not link to it.
+4. For each missing link, propose the anchor text — the target's main query in natural wording — and the exact sentence in the STRONG page where it fits.
+
+Output: a table of at most 10 links to add (from · to · anchor · where in the page), ordered by the TARGET page's impressions. Then ONE link to add today.
+Do not propose links from pages you did not fetch. Do not propose navigation or footer changes.</pre></div>
+    </div></details>
+  </div>
+
+  <div class="fn" id="f8">
+    <div class="fn-head"><span class="fn-num">08</span><h3 class="fn-title">Schema markup</h3></div>
+    <p class="fn-sub"><em>Only the type the page honestly supports, built only from values visible on the page.</em></p>
+    <div class="meta"><span class="chip"><b>Wedge:</b> Fix</span><span class="chip"><b>Feeds:</b> Fix queue · Changes executed</span><span class="chip"><b>Cadence:</b> Per page</span></div>
+    <p>Most schema advice is "add FAQPage to everything". This function is allowed to answer "no schema — nothing on this page qualifies", and it never invents a rating count.</p>
+    <details class="drop"><summary>Open the prompt</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">function · 08 schema markup</span><button class="copy">Copy</button></div>
+<pre>FUNCTION 08 — Schema markup
+Feeds: Fix queue · Changes executed
+Needs: one URL, or take the page from the latest On-page run.
+
+1. Fetch the page. Extract any existing JSON-LD and list its @type values.
+2. Decide the ONE schema type the page's content actually supports: Article, Product, FAQPage (only if the page already shows visible questions and answers), HowTo (only with visible steps), Organization, or none.
+3. Write the complete JSON-LD block using only values visible on the page: headline, dates, author, prices, questions. Do not invent ratings, review counts or dates.
+4. State where it goes (inside the head) and how to verify it: Google's Rich Results Test, paste the URL.
+
+Output: the JSON-LD in a code block, the type you chose and one line on why the others do not apply, then the one thing to check in 28 days: this page's impressions under Search Console's search-appearance filter.
+If the page supports no type honestly, write "no schema — nothing on this page qualifies" and stop.</pre></div>
+    </div></details>
+  </div>
+
+  <div class="fn" id="f9">
+    <div class="fn-head"><span class="fn-num">09</span><h3 class="fn-title">Traffic drop diagnosis</h3></div>
+    <p class="fn-sub"><em>Seasonal first. Then where it lives. Then a cause with a confidence label, or "hold".</em></p>
+    <div class="meta"><span class="chip"><b>Wedge:</b> Analyze</span><span class="chip"><b>Feeds:</b> Weekly action list · Performance report</span><span class="chip"><b>Cadence:</b> Triggered</span></div>
+    <p>The function that runs when clicks are down 15% and everyone has a theory. It checks last year before it checks anything else, and it's allowed to say "unverifiable — recheck Thursday" instead of naming an algorithm update.</p>
+    <details class="drop"><summary>Open the prompt</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">function · 09 traffic drop diagnosis</span><button class="copy">Copy</button></div>
+<pre>FUNCTION 09 — Traffic drop diagnosis
+Feeds: Weekly action list · Performance report
+Run when clicks are down 15%+ week on week, or when I ask.
+
+1. Confirm the drop: last 7 days vs the previous 7, AND vs the same 7 days last year. If last year shows the same dip, label it SEASONAL and stop.
+2. Find where it lives: by page, by query, by country, by device. Name the single dimension that explains the largest share of lost clicks, with the number.
+3. Inside that dimension, check which applies: impressions fell too (demand or indexing) / impressions held and CTR fell (SERP layout or title) / impressions held and position fell (ranking). Check that the affected pages return 200 and are indexable.
+4. Label the cause: CONFIRMED / PROBABLE / UNVERIFIABLE, with the figure or the test that would confirm it.
+
+Output: the drop in one line with both comparisons, where it lives, the labelled cause, and ONE action — or "hold, recheck on {date}" if the cause is UNVERIFIABLE.
+Do not attribute a drop to an algorithm update without a dated source. Do not estimate lost revenue.</pre></div>
+    </div></details>
+  </div>
+
+  <div class="fn" id="f10">
+    <div class="fn-head"><span class="fn-num">10</span><h3 class="fn-title">Opportunity detection</h3></div>
+    <p class="fn-sub"><em>The cheapest clicks on the site right now, valued in clicks, using your own CTR curve.</em></p>
+    <div class="meta"><span class="chip"><b>Wedge:</b> Research</span><span class="chip"><b>Feeds:</b> Weekly action list · Keyword priorities</span><span class="chip"><b>Cadence:</b> Monthly</span></div>
+    <p>Three signals — striking distance, page-two intent, CTR gap — each valued in clicks with the arithmetic shown. Never a published CTR curve: those are averages of other people's sites.</p>
+    <details class="drop"><summary>Open the prompt</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">function · 10 opportunity detection</span><button class="copy">Copy</button></div>
+<pre>FUNCTION 10 — Opportunity detection
+Feeds: Weekly action list · Keyword priorities
+
+Find the cheapest clicks on the site right now. Pull queries, last 28 days, brand excluded.
+
+Score three signals and show the arithmetic:
+A. Striking distance — queries at position 4-10 with 500+ impressions. Value = impressions × (this site's position 1-3 CTR − the query's current CTR).
+B. Page-two intent — queries at 11-20 with 1,000+ impressions where we have a page that mentions the query. Value = impressions × this site's position 6-10 CTR.
+C. CTR gap — queries at 1-3 whose CTR is 30%+ below this site's own 1-3 average. Value = impressions × (average − actual).
+
+Output: the top 5 across A, B and C as one table (query · page · position · impressions · signal · value in clicks), then ONE opportunity to take this week and the exact change that takes it.
+Use this site's own band CTRs, never a published CTR curve. If a band has fewer than 30 clicks, write "below the floor" for it.</pre></div>
+    </div></details>
+  </div>
+
+  <div class="fn" id="f11">
+    <div class="fn-head"><span class="fn-num">11</span><h3 class="fn-title">AI search visibility</h3></div>
+    <p class="fn-sub"><em>Are you cited, is a competitor cited, and what does their cited page have that yours doesn't?</em></p>
+    <div class="meta"><span class="chip"><b>Wedge:</b> Track</span><span class="chip"><b>Feeds:</b> The SEO strategy · Performance report</span><span class="chip"><b>Cadence:</b> Quarterly</span></div>
+    <p>Ten buyer questions, three AI surfaces, and a count. This function reports only what the answers showed — it's forbidden from claiming how any AI system ranks, because nobody outside those companies knows.</p>
+    <details class="drop"><summary>Open the prompt</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">function · 11 ai search visibility</span><button class="copy">Copy</button></div>
+<pre>FUNCTION 11 — AI search visibility
+Feeds: The SEO strategy · Performance report
+Needs: the 10 questions a buyer asks before choosing a product like ours. Ask me if missing, then stop.
+
+1. For each question, query the AI surfaces you can reach (a search tool that returns AI answers; otherwise ask me to paste the answers from ChatGPT, Perplexity and Google's AI Overview). Record: are we cited, is a competitor cited, which URL, and what claim the citation supports.
+2. For every question where a competitor is cited and we are not, fetch their cited page and name the specific thing it has that ours lacks: a direct answer in the first 100 words, a comparison table, named numbers, a dated update, a named author.
+3. Count: cited / not cited / not checked.
+
+Output: a table (question · cited: us / competitor / none · URL · what the cited page has that ours lacks), then ONE page to change and the ONE element to add to it.
+Do not claim how any AI system ranks or selects sources. Report only what the answers actually showed. Anything you could not check is "not checked".</pre></div>
+    </div></details>
+  </div>
+
+  <div class="fn" id="f12">
+    <div class="fn-head"><span class="fn-num">12</span><h3 class="fn-title">Fix execution</h3></div>
+    <p class="fn-sub"><em>The change in the exact form it ships. Applied if the site is connected, pasted if it isn't. Logged either way.</em></p>
+    <div class="meta"><span class="chip"><b>Wedge:</b> Execute</span><span class="chip"><b>Feeds:</b> Changes executed</span><span class="chip"><b>Cadence:</b> Weekly</span></div>
+    <p>Where most SEO stops — a recommendation in a doc — this function starts. One fix per run, produced as HTML or JSON-LD or a redirect rule, confirmed live where it can be, and written into the log with the date it gets checked.</p>
+    <details class="drop"><summary>Open the prompt</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">function · 12 fix execution</span><button class="copy">Copy</button></div>
+<pre>FUNCTION 12 — Fix execution
+Feeds: Changes executed
+Takes: the top item of the Fix queue, or the fix I name.
+
+1. Restate the fix in one line: page, change, the metric expected to move, the check date.
+2. Produce the change in the exact form it ships: the new title tag and meta description as HTML, the JSON-LD block, the internal link with its anchor and the sentence it sits in, or the redirect rule. Nothing left to paraphrase.
+3. If you have a publishing tool connected to this site's CMS: apply the change, then fetch the live page and confirm the new value is present. If you do not: output the change and the precise place to paste it, and stop.
+4. Log it as one row I can paste into the Changes executed list: date · page · change · expected metric · check date.
+
+Output: the ship-ready change, the confirmation (or the paste instruction), the log row. Then stop.
+One fix per run. Do not batch. Do not touch anything that was not in the fix.</pre></div>
+    </div></details>
+  </div>
+
+  <div class="fn" id="f13">
+    <div class="fn-head"><span class="fn-num">13</span><h3 class="fn-title">Scheduled SEO tasks</h3></div>
+    <p class="fn-sub"><em>The standing calendar: what runs Monday, what runs monthly, what fires on a trigger, what gets rechecked at +28 days.</em></p>
+    <div class="meta"><span class="chip"><b>Wedge:</b> Execute</span><span class="chip"><b>Feeds:</b> Every output, on time</span><span class="chip"><b>Cadence:</b> Once</span></div>
+    <p>A Head of SEO's real edge isn't a smarter audit — it's that the audit happens on the 15th whether or not anyone remembered. This function writes that calendar, and creates the tasks if it has a tool that can.</p>
+    <details class="drop"><summary>Open the prompt</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">function · 13 scheduled seo tasks</span><button class="copy">Copy</button></div>
+<pre>FUNCTION 13 — Scheduled SEO tasks
+Feeds: every output, on time
+
+Set up the standing schedule for {site}. For each entry: the function, its cadence, its trigger, and what it hands off to.
+
+Weekly, Monday: 01 Search Console analysis → 14 Performance tracking → 15 Weekly SEO priorities.
+Weekly, any weekday: 12 Fix execution on the top item of the Fix queue.
+Triggered: 09 Traffic drop diagnosis when clicks fall 15%+ week on week.
+Monthly, the 1st: 02 Keyword research → 10 Opportunity detection → 06 Content planning.
+Monthly, the 15th: 04 Technical audit → 07 Internal linking.
+Quarterly: 03 Competitor analysis → 11 AI search visibility → rewrite the SEO strategy.
+28 days after every executed change: re-pull the metric named in its log row and mark it MOVED / FLAT / WORSE.
+
+If you have a scheduling tool, create each of these as a scheduled task carrying the exact function prompt. If you do not, output the schedule as a table I can put in a calendar, and tell me plainly that you cannot run them yourself.
+Output: the schedule, then the next task due and its date.</pre></div>
+    </div></details>
+  </div>
+
+  <div class="fn" id="f14">
+    <div class="fn-head"><span class="fn-num">14</span><h3 class="fn-title">Performance tracking</h3></div>
+    <p class="fn-sub"><em>Every shipped change, checked against the metric it promised. Moved, flat or worse — with both numbers.</em></p>
+    <div class="meta"><span class="chip"><b>Wedge:</b> Track</span><span class="chip"><b>Feeds:</b> Performance report</span><span class="chip"><b>Cadence:</b> Monday</span></div>
+    <p>Four blocks: site totals with three comparisons, the change log graded, the ten target queries, and the AI-citation count. Then one sentence about next month. It refuses to credit a change whose dates don't line up.</p>
+    <details class="drop"><summary>Open the prompt</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">function · 14 performance tracking</span><button class="copy">Copy</button></div>
+<pre>FUNCTION 14 — Performance tracking
+Feeds: Performance report
+Reads: the Changes executed log. Ask for it if you do not have it.
+
+1. Site level, brand excluded: clicks, impressions, CTR, position — last 28 days vs the previous 28, and vs the same 28 last year. Conversions from analytics if it is connected, otherwise write "not connected".
+2. For every change in the log whose check date has passed: pull the metric named in its row, before vs after, and mark it MOVED (10%+ in the intended direction) / FLAT / WORSE. Quote both numbers.
+3. Rankings: the 10 target queries from Keyword priorities — position now vs 28 days ago.
+4. AI visibility: the cited / not cited count from the last AI search visibility run, if one exists.
+
+Output: four short blocks in that order, every figure with its comparison, then ONE sentence: the single thing this month's numbers say next month is about.
+Do not attribute a rise to a change whose dates do not line up — write "timing does not support attribution". No projections.</pre></div>
+    </div></details>
+  </div>
+
+  <div class="fn" id="f15">
+    <div class="fn-head"><span class="fn-num">15</span><h3 class="fn-title">Weekly SEO priorities</h3></div>
+    <p class="fn-sub"><em>At most three. The first one is the week. No introduction, no summary, no fourth item.</em></p>
+    <div class="meta"><span class="chip"><b>Wedge:</b> Plan</span><span class="chip"><b>Feeds:</b> Weekly action list</span><span class="chip"><b>Cadence:</b> Monday</span></div>
+    <p>This is the output you actually read. It gathers what 01, 09, 10, 06 and the fix queue produced, scores them on impressions per hour, and writes the week in under 200 words — including what it dropped, so you don't re-argue it on Tuesday.</p>
+    <details class="drop"><summary>Open the prompt</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">function · 15 weekly seo priorities</span><button class="copy">Copy</button></div>
+<pre>FUNCTION 15 — Weekly SEO priorities
+Feeds: Weekly action list
+Run on Monday, after 01 and 14.
+
+1. Gather the candidates: the action from 01, the top opportunity from the latest 10, the top Fix queue item, any open drop from 09, and the next piece from 06.
+2. Score each: impressions at stake ÷ effort in hours. Show the numbers.
+3. Pick at most 3. Rank them. The first one is the week.
+
+Output, in this exact format, under 200 words:
+THIS WEEK: the one action — page, change, who does it, the metric that moves, the check date.
+ALSO, IF TIME: two more, one line each.
+NOT THIS WEEK: what you dropped and why, one line each.
+CHECKING: changes whose 28-day check falls this week, with their metric.
+
+No introduction, no summary, no fourth item. If the data does not support a confident first action, say so and give the cheapest diagnostic instead.</pre></div>
+    </div></details>
+  </div>
+
+  <hr>
+
+  <h2 id="outputs">The 7 outputs, and when each one appears</h2>
+  <p class="lede">This is what the job actually delivers. The functions are the how.</p>
+
+  <div class="tw"><table>
+    <thead><tr><th>Output</th><th>Built from</th><th>Cadence</th></tr></thead>
+    <tbody>
+      <tr><td><b>The SEO strategy</b></td><td>03 Competitor analysis · 11 AI search visibility · the last quarter's performance reports</td><td>Quarterly</td></tr>
+      <tr><td><b>Keyword priorities</b></td><td>02 Keyword research · 10 Opportunity detection · 03's page-type pattern</td><td>Monthly</td></tr>
+      <tr><td><b>Content plan</b></td><td>06 Content planning, reading 02 and 03</td><td>Monthly, 4 pieces</td></tr>
+      <tr><td><b>Fix queue</b></td><td>04 Technical audit · 05 On-page · 07 Internal linking · 08 Schema</td><td>Always current, reordered Monday</td></tr>
+      <tr><td><b>Changes executed</b></td><td>12 Fix execution — one log row per shipped change</td><td>As they ship</td></tr>
+      <tr><td><b>Weekly action list</b></td><td>15 Weekly SEO priorities, reading 01, 09, 10, 06 and the queue</td><td>Monday</td></tr>
+      <tr><td><b>Performance report</b></td><td>14 Performance tracking · 01 · 09 · the change log</td><td>Monday (4-week view), monthly in full</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>A Monday, start to finish</h3>
+  <p>Three functions, in order, before you open anything else. <strong>01</strong> names this week's constraint. <strong>14</strong> grades every change whose 28-day check has come due and gives you the four-week view. <strong>15</strong> takes both, plus whatever's at the top of the fix queue, and writes the week. Then <strong>12</strong> ships the first item, any day you have twenty minutes. That's the loop — and the +28-day check in 14 is what closes it.</p>
+
+  <figure class="plainfig">
+    <svg viewBox="0 0 760 268" role="img" aria-label="The weekly loop: Search Console analysis and performance tracking feed weekly priorities, which produce the action list; fix execution ships the first item and logs it; 28 days later performance tracking grades the change and the loop repeats." style="width:100%;height:auto">
+      <style>
+        .k2{stroke:var(--ink);fill:none;stroke-width:1.5}
+        .a2{stroke:var(--accent);fill:none;stroke-width:2}
+        .ar2{stroke:var(--muted);fill:none;stroke-width:1.3}
+        .ard{stroke:var(--accent);fill:none;stroke-width:1.5;stroke-dasharray:5 4}
+        .n2{fill:var(--accent);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.06em}
+        .t2{fill:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:13px}
+        .s2{fill:var(--muted);font-family:Inter,system-ui,sans-serif;font-size:12px}
+        .b2{fill:var(--accent);font-family:Inter,system-ui,sans-serif;font-size:14px;font-weight:750}
+      </style>
+      <defs>
+        <marker id="m2" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="var(--muted)"/></marker>
+        <marker id="m3" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="var(--accent)"/></marker>
+      </defs>
+      <text x="14" y="26" class="s2">MONDAY</text>
+      <rect x="14" y="40" width="184" height="54" rx="9" class="k2"/>
+      <text x="26" y="60" class="n2">01</text><text x="26" y="80" class="t2">Search Console analysis</text>
+      <rect x="14" y="110" width="184" height="54" rx="9" class="k2"/>
+      <text x="26" y="130" class="n2">14</text><text x="26" y="150" class="t2">Performance tracking</text>
+      <path d="M200 67 C 230 67, 236 100, 262 104" class="ar2" marker-end="url(#m2)"/>
+      <path d="M200 137 C 230 137, 236 112, 262 108" class="ar2" marker-end="url(#m2)"/>
+      <rect x="272" y="78" width="160" height="54" rx="9" class="a2"/>
+      <text x="284" y="98" class="n2">15</text><text x="284" y="118" class="b2">Weekly priorities</text>
+      <path d="M434 105 h44" class="ar2" marker-end="url(#m2)"/>
+      <rect x="488" y="78" width="140" height="54" rx="9" class="k2"/>
+      <text x="558" y="100" class="t2" text-anchor="middle">Weekly action</text><text x="558" y="118" class="t2" text-anchor="middle">list</text>
+      <text x="488" y="26" class="s2">ANY WEEKDAY</text>
+      <path d="M558 134 v34" class="ar2" marker-end="url(#m2)"/>
+      <rect x="488" y="178" width="140" height="54" rx="9" class="k2"/>
+      <text x="500" y="198" class="n2">12</text><text x="500" y="218" class="t2">Fix execution</text>
+      <text x="14" y="184" class="s2" style="font-size:11px">+28 DAYS</text>
+      <path d="M486 205 H206" class="ard" marker-end="url(#m3)"/>
+      <rect x="14" y="192" width="184" height="46" rx="9" class="a2"/>
+      <text x="106" y="220" class="b2" text-anchor="middle">grade the change</text>
+      <path d="M106 190 V172" class="ard" marker-end="url(#m3)"/>
+      <text x="380" y="262" class="s2" text-anchor="middle">Every shipped change comes back to 14 with a date on it. That's what makes it tracking instead of reporting.</text>
+    </svg>
+  </figure>
+
+  <h3>The monthly and quarterly layer</h3>
+  <p>The 1st of the month: <strong>02 → 10 → 06</strong>, which refreshes the keyword priorities and writes the content plan. The 15th: <strong>04 → 07</strong>, which refills the fix queue. Once a quarter: <strong>03 → 11</strong>, and the strategy gets rewritten with what they found. Function <strong>13</strong> is that whole calendar, written once.</p>
+
+  <hr>
+
+  <h2>Four mistakes that turn it back into a tool</h2>
+  <ul class="plain">
+    <li><strong>Running functions without the brief.</strong> Each prompt assumes the floors, the confidence labels and the "no invented numbers" rule are already loaded. Without them you get a good analyst, which is the thing you already had.</li>
+    <li><strong>Asking 15 for "everything you'd recommend".</strong> The moment the weekly list has eight items it's a dashboard again. Three, ranked, the first one is the week. If you want more, run 10 and read the table — that's what it's for.</li>
+    <li><strong>Skipping the check date.</strong> A fix without a date in the log never gets graded, so 14 can't tell you whether it worked, so next month you're guessing. The date is the fix.</li>
+    <li><strong>Running 03 and 11 monthly.</strong> Competitors and AI citations move slowly; checking them every four weeks produces noise you'll act on. Quarterly, and let the strategy absorb it.</li>
+  </ul>
+
+  <h3>Where it still needs you</h3>
+  <p>It can't decide what the business wants — which product line matters this quarter, which market you're entering, what a conversion is worth. Give it those in the brief and it will optimise toward them. Leave them out and it will optimise toward clicks, which is sometimes right and often not. And it will hand you a page to write; the writing is still yours, or someone's.</p>
+
+  <hr>
+
+  <h2>What the prompts can't do</h2>
+  <p class="lede">Worth saying plainly, because two of the fifteen functions are the ones you'll notice.</p>
+  <p>Fifteen prompts and a data connection make Claude reason like a Head of SEO. Four things are structurally outside what prompts can do, and two of them are functions on this very page:</p>
+  <ul class="plain">
+    <li><strong>13 can't run itself.</strong> A chat has no calendar. Save the schedule and it's a beautiful table, and on the 15th someone still has to remember to open it.</li>
+    <li><strong>12 can't touch a site it can't reach.</strong> Without a connected CMS, "fix execution" ends at a perfectly formatted title tag you paste in yourself.</li>
+    <li><strong>14 has no memory of last month.</strong> It grades changes against a log you keep and paste. Lose the log, lose the tracking — and tracking is the whole point.</li>
+    <li><strong>None of them see rows you didn't pull.</strong> A pasted export is a snapshot; the site keeps moving after you close the tab.</li>
+  </ul>
+  <p>That gap is exactly what I've been building <a href="https://link.chatseo.app/pb-ai-head-of-seo" target="_blank" rel="noopener"><strong>ChatSEO</strong></a> to close: it holds the Search Console and analytics connections so nothing is pasted, it runs the scheduled tasks on their dates, it can push a fix to your site and verify it live, and it remembers what it told you in March so it can grade it in April. The fifteen functions above are the same thinking — this is the version that's actually employed.</p>
+
+  <hr>
+
+  <h2 id="proof" style="scroll-margin-top:80px">How one founder went from 250 → 750 clicks a day</h2>
+  <p>This is the Search Console graph from a ChatSEO user running this exact loop — find the constraint, fix the pages already ranking, grade the change at 28 days, repeat. No new content, no link building.</p>
+  <figure>
+    <img src="img/proof-clicks.webp" alt="Search Console graph showing daily clicks rising from around 250 to around 750." loading="lazy">
+  </figure>
+
+  <h2>Why this works when SEO tools don't</h2>
+  <p>Everything on this page runs on one data connection and sixteen prompts — and you can <a href="https://link.chatseo.app/pb-ai-head-of-seo" target="_blank" rel="noopener">try the employed version for free</a> if you'd rather not be the one remembering to run them.</p>
+
+  <div class="vs">
+    <div class="vs-col vs-old">
+      <h3>Old SEO tools</h3>
+      <ul>
+        <li>Fifteen reports and nobody who owns any of them</li>
+        <li>Advice about SEO in general, about nobody's site</li>
+        <li>47 issues ranked by somebody else's severity score</li>
+        <li>A fix written in a doc, shipped never</li>
+        <li>Monday spent reading, not deciding</li>
+      </ul>
+    </div>
+    <div class="vs-col vs-new">
+      <h3>What you actually want</h3>
+      <ul>
+        <li>Fifteen functions that each end in one action</li>
+        <li>Every number pulled live from your own Search Console</li>
+        <li>One constraint, named, with the figure behind it</li>
+        <li>The change shipped, then graded 28 days later</li>
+        <li>The week's action list before your coffee's cold</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="final" style="margin:44px 0">
+    <h2 style="margin-top:0">That's the whole idea behind ChatSEO</h2>
+    <p>Not every company has a Head of SEO. This one connects to your site, your Search Console and your analytics, runs the fifteen functions on schedule, ships the fixes, and hands you the seven outputs every week.</p>
+    <a class="btn btn-primary" href="https://link.chatseo.app/pb-ai-head-of-seo" target="_blank" rel="noopener">Get your AI Head of SEO free →</a>
+    <p class="note" style="margin-top:16px">No credit card required</p>
+  </div>
+
+  <footer>
+    <p>Built by <a href="https://link.chatseo.app/pb-ai-head-of-seo" target="_blank" rel="noopener">Nicholas at ChatSEO</a> · Everything on this page is free to copy and use.</p>
+  </footer>
+
+</div>
+<script>
+// Theme: remember the viewer's choice, fall back to their system setting.
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  try{ var s=localStorage.getItem('theme'); if(s) root.setAttribute('data-theme',s); }catch(e){}
+  btn.addEventListener('click',function(){
+    var cur=root.getAttribute('data-theme');
+    if(!cur) cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+    var next=cur==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{ localStorage.setItem('theme',next); }catch(e){}
+  });
+})();
+
+// Copy buttons: getting the skill file out cleanly is the whole point of the page.
+document.querySelectorAll('.copy').forEach(function(btn){
+  btn.addEventListener('click',function(e){
+    e.preventDefault();
+    var pre=btn.closest('.prompt').querySelector('pre');
+    var text=pre.innerText;
+    var done=function(){ btn.textContent='Copied'; btn.classList.add('done');
+      setTimeout(function(){ btn.textContent='Copy'; btn.classList.remove('done'); },1600); };
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done).catch(fallback);
+    } else { fallback(); }
+    function fallback(){
+      var ta=document.createElement('textarea'); ta.value=text;
+      ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta);
+      ta.select(); try{ document.execCommand('copy'); done(); }catch(e){ btn.textContent='Select manually'; }
+      document.body.removeChild(ta);
+    }
+  });
+});
+</script>
+</body>
+</html>
