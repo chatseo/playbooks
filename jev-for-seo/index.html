@@ -1,0 +1,716 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jev for SEO</title>
+<meta name="description" content="Jev answers yes or no 100x faster and cheaper than an LLM. Here are the four SEO jobs that turns into: filter a full GSC export, classify intent into your taxonomy, find cannibalisation across every page pair, score AI drafts. Every request written out. Nothing gated.">
+<meta property="og:title" content="Jev for SEO">
+<meta property="og:description" content="SEO at scale is thousands of tiny judgments. Four workflows that hand them to Jev: filter, classify, cannibalisation, draft scoring. Every request written out, free and ungated.">
+<meta property="og:image" content="https://chatseo.github.io/playbooks/jev-for-seo/img/og-card.jpg">
+<meta property="og:url" content="https://chatseo.github.io/playbooks/jev-for-seo/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚖️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFFFFF; --surface:#FFFFFF; --ink:#000000; --muted:#5A6069;
+  --accent:#1D4ED8; --on-accent:#FFFFFF; --accent-soft:#EEF3FF; --sage:#1D4ED8;
+  --line:#E3E6EB; --code-bg:#0B0F19; --code-ink:#F4F6FA;
+  --shadow:0 1px 2px rgba(0,0,0,.04), 0 8px 24px rgba(0,0,0,.05);
+  --maxw:780px;
+}
+:root:not([data-theme="light"]){ @media (prefers-color-scheme: dark){
+  --bg:#000000; --surface:#0C0E12; --ink:#FFFFFF; --muted:#9AA1AB;
+  --accent:#6EA1FF; --on-accent:#000000; --accent-soft:#111826; --sage:#6EA1FF;
+  --line:#23272E; --code-bg:#0E1117; --code-ink:#F4F6FA;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.5);
+}}
+:root[data-theme="dark"]{
+  --bg:#000000; --surface:#0C0E12; --ink:#FFFFFF; --muted:#9AA1AB;
+  --accent:#6EA1FF; --on-accent:#000000; --accent-soft:#111826; --sage:#6EA1FF;
+  --line:#23272E; --code-bg:#0E1117; --code-ink:#F4F6FA;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.5);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:72px}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:17px; line-height:1.68; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 22px}
+
+/* ---------- top bar ---------- */
+.bar{
+  position:sticky; top:0; z-index:50; background:color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter:blur(10px); border-bottom:1px solid var(--line);
+}
+.bar-in{max-width:var(--maxw); margin:0 auto; padding:11px 22px; display:flex; align-items:center; gap:14px}
+.brand{font-weight:800; letter-spacing:-.02em; font-size:15px; text-decoration:none; color:var(--ink); white-space:nowrap}
+.brand span{color:var(--accent)}
+.bar nav{margin-left:auto; display:flex; gap:16px; overflow-x:auto; scrollbar-width:none}
+.bar nav::-webkit-scrollbar{display:none}
+.bar nav a{color:var(--muted); text-decoration:none; font-size:13.5px; font-weight:500; white-space:nowrap}
+.bar nav a:hover{color:var(--accent)}
+.theme{background:none; border:1px solid var(--line); color:var(--muted); border-radius:8px;
+  width:32px; height:32px; cursor:pointer; font-size:14px; flex:none}
+.theme:hover{color:var(--accent); border-color:var(--accent)}
+
+/* ---------- hero ---------- */
+.hero{padding:64px 0 8px; text-align:center}
+.eyebrow{
+  display:inline-block; font-size:12px; font-weight:700; letter-spacing:.13em; text-transform:uppercase;
+  color:var(--accent); background:var(--accent-soft); padding:6px 13px; border-radius:100px; margin-bottom:20px;
+}
+h1{
+  font-family:"Instrument Serif",Georgia,serif; font-weight:400; letter-spacing:-.015em;
+  font-size:clamp(40px,7.5vw,62px); line-height:1.06; margin:0 0 18px;
+}
+h1 em{font-style:italic; color:var(--accent)}
+.sub{font-size:19px; color:var(--muted); max-width:580px; margin:0 auto 30px}
+.cta-row{display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-bottom:10px}
+.btn{
+  display:inline-flex; align-items:center; gap:8px; padding:13px 24px; border-radius:10px;
+  font-weight:600; font-size:15px; text-decoration:none; border:1px solid transparent; transition:.15s;
+}
+.btn-primary{background:var(--accent); color:var(--on-accent)}
+.btn-primary:hover{filter:brightness(1.08); transform:translateY(-1px)}
+.btn-ghost{border-color:var(--line); color:var(--ink); background:var(--surface)}
+.btn-ghost:hover{border-color:var(--accent); color:var(--accent)}
+.note{font-size:13.5px; color:var(--muted)}
+.tease{margin:-16px 0 26px; font-size:14.5px}
+.tease a{color:var(--muted); text-decoration:none; border-bottom:1px dashed var(--line); padding-bottom:2px}
+.tease a:hover{color:var(--accent); border-bottom-color:var(--accent)}
+
+/* ---------- figures ---------- */
+figure{margin:38px 0}
+figure img{width:100%; height:auto; display:block; border-radius:14px; border:1px solid var(--line)}
+figure.plainfig img{border:0; border-radius:0}
+figcaption{font-size:13.5px; color:var(--muted); text-align:center; margin-top:11px}
+
+/* ---------- type ---------- */
+h2{
+  font-family:"Instrument Serif",Georgia,serif; font-weight:400; font-size:clamp(29px,4.6vw,38px);
+  line-height:1.16; letter-spacing:-.01em; margin:60px 0 6px;
+}
+h3{font-size:19px; font-weight:700; letter-spacing:-.01em; margin:32px 0 8px}
+p{margin:0 0 17px}
+a{color:var(--accent)}
+.lede{font-size:19px; color:var(--muted); margin-bottom:26px}
+hr{border:0; border-top:1px solid var(--line); margin:56px 0}
+strong{font-weight:650}
+
+/* ---------- author ---------- */
+.author{
+  display:flex; gap:24px; align-items:flex-start; background:var(--surface);
+  border:1px solid var(--line); border-radius:16px; padding:28px; margin:40px 0;
+}
+.author-img{
+  width:96px; height:96px; border-radius:50%; flex:none; object-fit:cover;
+  background:var(--accent-soft); border:1px solid var(--line);
+}
+.author p{margin:0 0 11px; font-size:17px; line-height:1.62}
+.author p:last-child{margin-bottom:0}
+
+/* ---------- cards ---------- */
+.group-head{display:flex; align-items:center; gap:12px; margin:46px 0 6px}
+.group-head span{
+  font-size:12px; font-weight:800; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--accent); background:var(--accent-soft); padding:5px 12px; border-radius:100px; flex:none;
+}
+.group-head hr{flex:1; margin:0; border-top:1px solid var(--line)}
+.fn{
+  background:var(--surface); border:1px solid var(--line); border-radius:16px;
+  padding:24px 26px; margin:14px 0; box-shadow:var(--shadow); scroll-margin-top:80px;
+}
+.fn-head{display:flex; align-items:baseline; gap:12px; margin-bottom:4px; flex-wrap:wrap}
+.fn-num{font-family:"Instrument Serif",Georgia,serif; font-size:30px; line-height:1; color:var(--accent); flex:none}
+.fn-title{font-size:20px; font-weight:750; letter-spacing:-.015em; margin:0}
+.fn-sub{color:var(--muted); font-size:15px; margin:0 0 14px}
+.meta{display:flex; flex-wrap:wrap; gap:8px; margin:14px 0}
+.chip{font-size:12.5px; font-weight:600; padding:5px 11px; border-radius:100px; background:var(--bg); border:1px solid var(--line); color:var(--muted)}
+.chip b{color:var(--ink); font-weight:650}
+
+/* ---------- dropdown ---------- */
+details.drop{border:1px solid var(--line); border-radius:12px; background:var(--bg); margin:14px 0 0; overflow:hidden}
+details.drop + details.drop{margin-top:8px}
+details.drop > summary{
+  cursor:pointer; list-style:none; padding:12px 16px; display:flex; align-items:center; gap:10px;
+  font-size:14.5px; font-weight:600; color:var(--accent); user-select:none;
+}
+details.drop > summary::-webkit-details-marker{display:none}
+details.drop > summary::before{content:"›"; font-size:19px; line-height:1; color:var(--accent); transition:transform .18s ease; display:inline-block; flex:none}
+details.drop[open] > summary::before{transform:rotate(90deg)}
+details.drop > summary:hover{background:var(--accent-soft)}
+details.drop[open] > summary{border-bottom:1px solid var(--line)}
+.drop-body{padding:14px 16px 16px}
+.drop-body > *:last-child{margin-bottom:0}
+.drop-body .prompt{margin:0}
+.drop-note{font-size:13.5px; color:var(--muted); margin:0 0 12px}
+
+/* ---------- prompt block ---------- */
+.prompt{position:relative; margin:16px 0 4px}
+.prompt-bar{
+  display:flex; align-items:center; justify-content:space-between; gap:10px;
+  background:var(--code-bg); border-radius:10px 10px 0 0; padding:9px 13px;
+  border-bottom:1px solid rgba(255,255,255,.09);
+}
+.prompt-label{font-family:"JetBrains Mono",ui-monospace,monospace; font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; color:#8C93A0}
+.copy{
+  background:rgba(255,255,255,.12); color:#F5F5F5; border:0; border-radius:6px;
+  padding:5px 11px; font-size:12px; font-weight:600; cursor:pointer;
+  font-family:Inter,sans-serif; transition:.15s; white-space:nowrap;
+}
+.copy:hover{background:#1D4ED8; color:#FFFFFF}
+.copy.done{background:#1D4ED8; color:#FFFFFF}
+pre{
+  margin:0; background:var(--code-bg); color:var(--code-ink); border-radius:0 0 10px 10px;
+  padding:17px; overflow-x:auto; font-family:"JetBrains Mono",ui-monospace,monospace;
+  font-size:12.5px; line-height:1.62; white-space:pre-wrap; word-wrap:break-word;
+}
+
+/* ---------- callout ---------- */
+.callout{border-left:3px solid var(--accent); background:var(--accent-soft); padding:16px 20px; border-radius:0 12px 12px 0; margin:26px 0}
+.callout p{margin:0 0 10px; font-size:15.5px}
+.callout p:last-child{margin:0}
+.callout .k{font-weight:700; color:var(--accent)}
+
+/* ---------- lists ---------- */
+ul,ol{padding-left:22px; margin:0 0 18px}
+li{margin-bottom:9px}
+.plain{list-style:none; padding:0}
+.plain li{padding-left:28px; position:relative; margin-bottom:13px}
+.plain li::before{content:"→"; position:absolute; left:0; color:var(--accent); font-weight:700}
+.setup{counter-reset:s; list-style:none; padding:0; margin:22px 0}
+.setup li{counter-increment:s; position:relative; padding-left:40px; margin-bottom:14px}
+.setup li::before{
+  content:counter(s); position:absolute; left:0; top:1px;
+  width:26px; height:26px; border-radius:50%; background:var(--accent); color:var(--on-accent);
+  font-size:13px; font-weight:700; display:flex; align-items:center; justify-content:center;
+}
+kbd{font-family:"JetBrains Mono",ui-monospace,monospace; font-size:12.5px; background:var(--bg); border:1px solid var(--line); border-radius:5px; padding:2px 6px}
+
+/* ---------- table ---------- */
+.tw{overflow-x:auto; margin:18px 0; border:1px solid var(--line); border-radius:12px}
+table{border-collapse:collapse; width:100%; font-size:14.5px; min-width:420px}
+th,td{padding:10px 15px; text-align:left; border-bottom:1px solid var(--line)}
+th{background:var(--surface); font-weight:650; font-size:12.5px; letter-spacing:.05em; text-transform:uppercase; color:var(--muted)}
+tr:last-child td{border-bottom:0}
+td b{color:var(--accent)}
+
+/* ---------- old-vs-new ---------- */
+.vs{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:26px 0}
+.vs-col{border:1px solid var(--line); border-radius:14px; padding:20px; background:var(--surface)}
+.vs-col h3{margin:0 0 12px; font-size:15px; letter-spacing:.04em; text-transform:uppercase}
+.vs-col ul{margin:0; padding-left:20px}
+.vs-col li{font-size:15px; margin-bottom:9px; color:var(--muted)}
+.vs-old h3{color:var(--muted)}
+.vs-old li{text-decoration:line-through; text-decoration-color:var(--line)}
+.vs-new{border-color:var(--accent)}
+.vs-new h3{color:var(--accent)}
+.vs-new li{color:var(--ink)}
+:not(pre) > code{
+  font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:.88em; background:var(--surface); border:1px solid var(--line);
+  border-radius:6px; padding:1px 6px; color:var(--ink); word-break:break-word;
+}
+@media (max-width:600px){ .vs{grid-template-columns:1fr} }
+
+/* ---------- final cta ---------- */
+.final{background:var(--surface); border:1px solid var(--accent); border-radius:18px; padding:38px 28px; text-align:center; margin:52px 0 24px}
+.final h2{margin:0 0 10px}
+.final p{color:var(--muted); max-width:470px; margin:0 auto 22px}
+footer{text-align:center; padding:34px 0 56px; color:var(--muted); font-size:13.5px}
+footer a{color:var(--muted)}
+
+@media (max-width:560px){
+  body{font-size:16px}
+  .fn{padding:20px}
+  .bar nav{display:none}
+  .author{flex-direction:column; gap:12px}
+}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="bar-in">
+    <a class="brand" href="#top">Chat<span>SEO</span></a>
+    <nav>
+      <a href="#what">What Jev is</a>
+      <a href="#access">Get access</a>
+      <a href="#workflows">4 workflows</a>
+      <a href="#routine">The routine</a>
+      <a href="#mistakes">Mistakes</a>
+      <a href="#proof">Proof</a>
+    </nav>
+    <button class="theme" id="themeBtn" aria-label="Toggle theme">◐</button>
+  </div>
+</div>
+
+<div class="wrap" id="top">
+
+  <div class="hero">
+    <span class="eyebrow">Free · Nothing gated</span>
+    <h1>Jev<br><em>for SEO</em></h1>
+    <p class="sub">SEO at scale is thousands of tiny judgments. Jev answers each one with a yes, a no, or a probability, in a few hundred milliseconds, for a fraction of a cent. These are the four jobs that turns into, with every request written out.</p>
+    <p class="tease"><a href="#proof">How one founder went from 250 to 750 clicks a day on judgments like these →</a></p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://link.chatseo.app/pb-jev-for-seo" target="_blank" rel="noopener">Get your SEO employee free →</a>
+      <a class="btn btn-ghost" href="#workflows">Read the 4 workflows</a>
+    </div>
+    <p class="note">Free · No credit card required</p>
+  </div>
+
+  <div class="author">
+    <img class="author-img" src="img/tw3810.webp" alt="Nicholas" loading="lazy">
+    <div>
+      <p><strong>Hey there, I'm Nicholas 👋</strong></p>
+      <p>I grew my last B2C app to 15K Google clicks/month as a solo founder, then sold it. Turns out I fell in love with SEO along the way.</p>
+      <p>So now I'm building <a href="https://link.chatseo.app/pb-jev-for-seo" target="_blank" rel="noopener"><strong>ChatSEO.app</strong></a> — an all-in-one <strong>SEO employee</strong> whose job is to make sure you <strong>rank #1 in Google and in AI search</strong>.</p>
+      <p>This page is what I'd hand that employee the day Jev lands in its toolbox. <a href="https://link.chatseo.app/pb-jev-for-seo" target="_blank" rel="noopener"><strong>Try it free →</strong></a></p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p><span class="k">Full disclosure before anything else.</span> I don't have access to Jev yet. It launched on 15 September 2026 behind a waitlist, and I'm on it like everyone else.</p>
+    <p>Everything on this page is built from TypeSafe's documentation and cookbooks, the launch post, the open-source projects that appeared in the first week, roughly five hundred Hacker News comments, and what I know about doing SEO at scale. Every workflow below is a <strong>hypothesis</strong>: the request is written out in full so you can run it the day you get in, and so can I. When I do, I'll update this page with what held up and what didn't.</p>
+  </div>
+
+  <hr>
+
+  <h2 id="what">An LLM talks. Jev decides.</h2>
+  <p class="lede">The whole idea fits in one sentence: Jev doesn't generate text. You send it some state and a typed question, and it returns a probability.</p>
+  <p>Jev is the first model from <strong>TypeSafe</strong>, a San Francisco lab founded by Diogo Almeida, who worked at OpenAI on the instruction-following methods behind ChatGPT. They call it a "System One" model, after Kahneman's fast, intuitive mode of thinking. It has no chat interface and no chain of thought. It reads your input and puts probability mass on the answers you allowed. That's the whole trick, and it has three consequences that matter for SEO.</p>
+  <ul>
+    <li><strong>It cannot answer outside the schema.</strong> Ask "commercial, informational, transactional or navigational?" and you get one of those four with a probability each. There is no fifth answer, no preamble, no "great question!", no JSON that fails to parse on row 4,812.</li>
+    <li><strong>It is fast because it doesn't write.</strong> TypeSafe quotes 70 to 500 milliseconds end to end. Third parties measured a median of about 244ms through Vercel's gateway. Questions in one request run in parallel, so asking forty costs about the same latency as asking one.</li>
+    <li><strong>It is priced like a database query.</strong> Published pricing is $0.042 per million input tokens and nothing for output. On that price, judging a 50,000-keyword export is a back-of-envelope dime. Sampling 500 and guessing the rest stops being a rational trade-off.</li>
+  </ul>
+
+  <h3>The three question types</h3>
+  <p>Every request is one <code>state</code> plus a map of named questions. There are exactly three kinds, and every SEO judgment on this page is one of them.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Type</th><th>Asks</th><th>Returns</th><th>SEO use</th></tr></thead>
+    <tbody>
+      <tr><td><b>noul</b></td><td>Is this statement true?</td><td><code>noul</code>: probability of yes, 0 to 1</td><td>Keep or prune. Same intent or not. Claim supported or not.</td></tr>
+      <tr><td><b>choice</b></td><td>Which one of these options?</td><td><code>choice</code> + a probability per option + <code>confidence</code></td><td>Intent class. Funnel stage. Which page should win.</td></tr>
+      <tr><td><b>score</b></td><td>Where on this rubric?</td><td><code>score</code> (weighted position) + probabilities + <code>confidence</code></td><td>Draft quality. Brief coverage. Severity of a cannibalisation.</td></tr>
+    </tbody>
+  </table></div>
+  <p>The names are theirs, not mine. "Noul" is what TypeSafe calls a yes/no question. Two response fields do the real work downstream: the <strong>probability</strong> tells you the answer, and the <strong>confidence</strong> tells you whether to act on it without a human. TypeSafe's own guidance is act automatically above 0.9, act cautiously between 0.5 and 0.9, and route to a person below 0.5. Every workflow below uses those three bands.</p>
+
+  <figure class="plainfig">
+    <svg viewBox="0 0 760 330" role="img" aria-label="A Search Console export is split into batches by your code. Each batch goes to Jev as one request carrying one question per row. Jev returns a probability per row. Your code applies thresholds: above 0.9 act automatically, between 0.5 and 0.9 keep but flag, below 0.5 review by hand. The keep list feeds the next workflow." style="width:100%;height:auto">
+      <style>
+        .k1{stroke:var(--ink);fill:none;stroke-width:1.5}
+        .a1{stroke:var(--accent);fill:none;stroke-width:2}
+        .ar1{stroke:var(--muted);fill:none;stroke-width:1.3}
+        .h1{fill:var(--accent);font-family:Inter,system-ui,sans-serif;font-size:12px;font-weight:800;letter-spacing:.14em}
+        .t1{fill:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:13.5px}
+        .b1{fill:var(--accent);font-family:Inter,system-ui,sans-serif;font-size:15px;font-weight:750}
+        .s1{fill:var(--muted);font-family:Inter,system-ui,sans-serif;font-size:12px}
+        .w1{fill:var(--ink);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:.06em}
+      </style>
+      <defs>
+        <marker id="m1" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="var(--muted)"/></marker>
+      </defs>
+      <text x="14" y="30" class="h1">YOUR CODE</text>
+      <rect x="14" y="52" width="160" height="38" rx="8" class="k1"/><text x="94" y="76" class="t1" text-anchor="middle">GSC export</text>
+      <rect x="14" y="104" width="160" height="38" rx="8" class="k1"/><text x="94" y="128" class="t1" text-anchor="middle">Split into batches</text>
+      <rect x="14" y="156" width="160" height="38" rx="8" class="k1"/><text x="94" y="180" class="t1" text-anchor="middle">Apply thresholds</text>
+      <path d="M176 71 C 210 71, 215 118, 246 122" class="ar1" marker-end="url(#m1)"/>
+      <path d="M176 123 C 210 123, 215 124, 246 126" class="ar1" marker-end="url(#m1)"/>
+      <text x="256" y="30" class="h1">ONE REQUEST</text>
+      <rect x="256" y="52" width="230" height="150" rx="12" class="a1"/>
+      <text x="371" y="84" class="b1" text-anchor="middle">Jev</text>
+      <text x="272" y="112" class="w1">state: 200 rows</text>
+      <text x="272" y="134" class="w1">questions: 200 nouls</text>
+      <text x="272" y="156" class="w1">~300 ms · &lt; $0.001</text>
+      <text x="371" y="186" class="s1" text-anchor="middle">one probability per row, no text</text>
+      <path d="M488 127 h56" class="ar1" marker-end="url(#m1)"/>
+      <path d="M371 204 C 371 240, 120 210, 96 196" class="ar1" marker-end="url(#m1)" style="stroke-dasharray:4 4"/>
+      <text x="558" y="30" class="h1">THRESHOLDS</text>
+      <text x="558" y="66" class="t1">≥ 0.9 → act, no review</text>
+      <text x="558" y="96" class="t1">0.5 – 0.9 → keep, flagged</text>
+      <text x="558" y="126" class="t1">&lt; 0.5 → a human reads it</text>
+      <text x="558" y="162" class="s1">50,000 rows ≈ 250 requests</text>
+      <text x="558" y="182" class="s1">≈ under two minutes, serial</text>
+      <line x1="14" y1="242" x2="746" y2="242" style="stroke:var(--line);stroke-width:1"/>
+      <text x="380" y="274" class="s1" text-anchor="middle">Code owns the loop, the batching and the thresholds. Jev owns exactly one thing: the judgment.</text>
+      <text x="380" y="298" class="s1" text-anchor="middle">Every workflow on this page is this diagram with a different question in the box.</text>
+    </svg>
+  </figure>
+
+  <p>That diagram is the whole architecture, and it's the opposite of how most people use an LLM for SEO. You don't ask Jev to "analyse my keywords". You keep the loop in a script, hand Jev one narrow question per row, and let thresholds in your own code decide what happens next. TypeSafe's phrase for it is "keep code in control and give System One narrow, structured decisions". Every SEO tool built on chat prompts got this backwards.</p>
+
+  <h3>What Jev is bad at, from TypeSafe's own list</h3>
+  <p>The docs ship a page called "jaggedness" for the current model, jev-1.13, and it changes how you write questions. The ones that bite SEO work:</p>
+  <ul>
+    <li><strong>It answers the question you wrote, not the one you meant.</strong> Negations and edge cases are read literally. "Is this query NOT relevant" will burn you. Phrase every noul so that a high value means yes to something positive.</li>
+    <li><strong>It cannot count.</strong> Word counts, occurrences, number of H2s: it recognises the shape of an answer rather than tallying. Code counts. Jev judges.</li>
+    <li><strong>It reads dates and numbers as text.</strong> "Did position improve" is a spreadsheet question. Don't ask it.</li>
+    <li><strong>Irrelevant state is a distractor.</strong> Accuracy falls as the state fills with things unrelated to the decision. This is why the batch sizes below are conservative and why each question names the exact row it's about.</li>
+    <li><strong>It is not immune to being wrong.</strong> "Cannot hallucinate" means it cannot answer outside your schema. It can still pick the wrong option inside it. The confidence field is what tells you when.</li>
+  </ul>
+
+  <p>The guide is four parts: <strong>get access</strong> (three routes, one of which works today), the <strong>four workflows</strong> from the post in the post's order, the <strong>routine</strong> that keeps them from becoming four jobs, and the <strong>mistakes</strong> I expect to make first.</p>
+
+  <hr>
+
+  <h2 id="access">Get access: three routes, and one you can use today</h2>
+  <p class="lede">The direct API is waitlisted. The wire format is already public and already cloned, which means you can build the workflows now and swap the base URL later.</p>
+
+  <div class="fn">
+    <div class="fn-head"><h3 class="fn-title">Route 1 — TypeSafe direct</h3></div>
+    <p class="fn-sub">The real thing. Waitlist at the time of writing.</p>
+    <p>Sign up at <strong>console.typesafe.ai</strong>. When you're in you get a <code>TYPESAFE_API_KEY</code>, a Python SDK (<code>pip install typesafe-sdk</code>), a JavaScript SDK, and one endpoint. Every request on this page is written against it.</p>
+    <div class="prompt"><div class="prompt-bar"><span class="prompt-label">endpoint</span><button class="copy">Copy</button></div>
+<pre>POST https://api.typesafe.ai/v1/systemone
+Authorization: Bearer $TYPESAFE_API_KEY
+Content-Type: application/json</pre></div>
+  </div>
+
+  <div class="fn">
+    <div class="fn-head"><h3 class="fn-title">Route 2 — Through Vercel's AI Gateway</h3></div>
+    <p class="fn-sub">The route the first third-party libraries call "the easiest way to get Jev right now".</p>
+    <p>Vercel's AI Gateway lists Jev as a model, billed through your Vercel account with an <code>AI_GATEWAY_API_KEY</code>. Open-source eval libraries like <strong>jevals</strong> already use it as their default backend and report the same request shape and the same sub-second latency. If you have a Vercel account, this is the first thing to try.</p>
+  </div>
+
+  <div class="fn">
+    <div class="fn-head"><h3 class="fn-title">Route 3 — An open-weight clone on your Mac, today</h3></div>
+    <p class="fn-sub">Not Jev. Not as smart. Same request and response shape, so the workflows port unchanged.</p>
+    <p>Within a week of launch the community shipped models that speak the System One format: <strong>Kev</strong> (Qwen3-based, runs on a 32GB Mac), <strong>Laya</strong> (ModernBERT, around 10ms on Apple Silicon), <strong>open-jev</strong> (Gemma 3 4B) and a server called <strong>verdict</strong> that turns any llama.cpp model into a <code>/v1/systemone</code> endpoint. None of them are TypeSafe's, and their accuracy on real SEO judgments is unmeasured. What they give you is a way to write, test and debug every workflow below against your own data now, then point it at the real model when your key arrives.</p>
+    <div class="callout"><p><span class="k">The test that matters.</span> Whatever backend you use, hand-label 50 rows first. Run the workflow. Count the disagreements. If it's under 5, trust the ≥ 0.9 band. If it's over 10, rewrite the question, not the threshold. That 50-row check is the difference between using Jev and trusting a number you never verified.</p></div>
+  </div>
+
+  <div class="fn">
+    <div class="fn-head"><h3 class="fn-title">The loop every workflow runs in</h3></div>
+    <p class="fn-sub">Thirty lines of Python. Replace the question builder per workflow; nothing else changes.</p>
+    <div class="prompt"><div class="prompt-bar"><span class="prompt-label">python · batch loop</span><button class="copy">Copy</button></div>
+<pre>import os, csv, json, time, requests
+
+URL = "https://api.typesafe.ai/v1/systemone"
+HEADERS = {"Authorization": f"Bearer {os.environ['TYPESAFE_API_KEY']}"}
+BATCH = 200          # rows per request. Start here; drop to 100 if agreement on your 50-row sample falls.
+
+def ask(state, questions):
+    for attempt in range(5):
+        r = requests.post(URL, headers=HEADERS,
+                          json={"model": "jev-latest", "state": state, "questions": questions})
+        if r.status_code in (429, 529):          # rate-limited or overloaded: back off, never hammer
+            time.sleep(2 ** attempt); continue
+        r.raise_for_status()
+        return r.json()["answers"]
+    raise RuntimeError("gave up after 5 attempts")
+
+def run(rows, build_state, build_questions, out_path):
+    with open(out_path, "w", newline="") as f:
+        w = csv.writer(f); w.writerow(["id", "answer", "probability", "confidence"])
+        for i in range(0, len(rows), BATCH):
+            chunk = rows[i:i+BATCH]
+            answers = ask(build_state(chunk), build_questions(chunk))
+            for row in chunk:
+                a = answers[row["id"]]
+                w.writerow([row["id"],
+                            a.get("choice") or a.get("score") or a.get("noul"),
+                            a.get("noul") or max(a.get("probabilities", {}).values(), default=""),
+                            a.get("confidence", "")])
+# rows = list of dicts with an "id" key. build_state / build_questions come from each workflow below.</pre></div>
+    <p style="margin-top:14px">Two things in there are not optional. The backoff on 429 and 529 is what TypeSafe asks for in their API reference. And the output goes to a CSV with the probability <em>and</em> the confidence on every row, because the thresholds get applied afterwards in a spreadsheet or a second script, where you can see them. Never hard-code "keep if above 0.7" inside the loop on day one.</p>
+  </div>
+
+  <hr>
+
+  <h2 id="workflows">The four workflows from the post</h2>
+  <p class="lede">Same four, same order. Each one is a state, a question, a threshold and one action.</p>
+
+  <div class="fn" id="w1">
+    <div class="fn-head"><span class="fn-num">1</span><h3 class="fn-title">Filter your full GSC export down to relevant queries</h3></div>
+    <p class="fn-sub">Yes/no per keyword. The one that makes the other three possible.</p>
+    <div class="meta"><span class="chip"><b>type</b> noul</span><span class="chip"><b>rows</b> every query in a 16-month export</span><span class="chip"><b>batch</b> 200</span><span class="chip"><b>output</b> keep list</span></div>
+    <p><em>Why it exists:</em> a Search Console export for a site with any age is mostly noise. Brand misspellings, queries from the one page that accidentally ranks for something irrelevant, the 2,000 long-tails with one impression. Every keyword analysis you've ever done was done on a sample because the full list was unreadable. Jev reads the full list.</p>
+    <p><strong>State:</strong> a short description of the business (two or three sentences, what it sells and to whom) plus the batch of queries, keyed by id. <strong>Question:</strong> one noul per query, referencing that query's key. The <code>criteria</code> block is where you define relevance in your own terms, and it's the part you'll rewrite after the 50-row check.</p>
+    <div class="prompt"><div class="prompt-bar"><span class="prompt-label">request · one per batch of 200</span><button class="copy">Copy</button></div>
+<pre>{
+  "model": "jev-latest",
+  "state": {
+    "site": "ChatSEO is an AI SEO assistant for small business owners and solo founders. It connects to Google Search Console and tells the user which page to fix next. It does not sell SEO services, courses or link building.",
+    "queries": {
+      "q1": "chatgpt prompts for seo",
+      "q2": "how to see which pages get clicks in search console",
+      "q3": "netflix cancel subscription",
+      "q4": "seo agency pricing london"
+    }
+  },
+  "questions": {
+    "q1": { "type": "noul",
+      "instructions": "Someone typing the query at queries.q1 into Google is a plausible customer for the business described in site.",
+      "criteria": {
+        "true":  "The query is about doing SEO, understanding Search Console data, or choosing an SEO tool, from the point of view of someone who owns or runs a website.",
+        "false": "The query is about an unrelated topic, is looking to hire an agency or freelancer, is academic or news-driven, or is a navigational search for another product." } },
+    "q2": { "type": "noul", "instructions": "Someone typing the query at queries.q2 into Google is a plausible customer for the business described in site.", "criteria": { "true": "same as above", "false": "same as above" } },
+    "q3": { "type": "noul", "instructions": "Someone typing the query at queries.q3 into Google is a plausible customer for the business described in site.", "criteria": { "true": "same as above", "false": "same as above" } },
+    "q4": { "type": "noul", "instructions": "Someone typing the query at queries.q4 into Google is a plausible customer for the business described in site.", "criteria": { "true": "same as above", "false": "same as above" } }
+  }
+}</pre></div>
+    <p style="margin-top:14px">In production your script generates the four questions, and the "same as above" is the full criteria text repeated, because Jev evaluates each question independently and doesn't read the others. It's more tokens. At $0.042 per million, you will not notice.</p>
+    <p><strong>Thresholds:</strong> <code>noul ≥ 0.8</code> keep. <code>noul ≤ 0.2</code> drop. Between the two, keep it but tag it <code>review</code>, and read the 40 highest-impression ones in that band by hand. Expect the band to hold 10 to 20 percent of rows on the first run and to shrink every time you sharpen the criteria.</p>
+    <p><strong>One action:</strong> the keep list, joined back to clicks, impressions and position, becomes your working keyword set. Everything else on this page runs on that set and nothing else. Do not run workflows 2 to 4 on the raw export.</p>
+  </div>
+
+  <div class="fn" id="w2">
+    <div class="fn-head"><span class="fn-num">2</span><h3 class="fn-title">Classify intent and funnel stage into your taxonomy</h3></div>
+    <p class="fn-sub">Wrong output is impossible by design. If your taxonomy has five intents, you get one of the five.</p>
+    <div class="meta"><span class="chip"><b>type</b> choice × 2</span><span class="chip"><b>rows</b> the keep list from workflow 1</span><span class="chip"><b>batch</b> 100</span><span class="chip"><b>output</b> intent + stage + confidence</span></div>
+    <p><em>Why it exists:</em> every intent classifier you've used either forced Google's four buckets on you or let an LLM invent a sixth category on row 300. A choice question is the opposite: the options are yours, they're closed, and each one gets a probability. Two questions per query in one request, because Jev runs them in parallel and it costs nothing extra in latency.</p>
+    <p><strong>State:</strong> the same business description, plus the batch of queries with their top-ranking page URL from the export if you have it. The URL is a strong signal for navigational intent and it's free. <strong>Questions:</strong> for each query, one choice for intent and one for funnel stage. The options below are mine. Replace them with yours, but keep the descriptions concrete: the docs are explicit that options which describe a <em>situation</em> beat options that describe a <em>degree</em>.</p>
+    <div class="prompt"><div class="prompt-bar"><span class="prompt-label">request · two questions per query</span><button class="copy">Copy</button></div>
+<pre>{
+  "model": "jev-latest",
+  "state": {
+    "site": "ChatSEO is an AI SEO assistant for small business owners and solo founders. It connects to Google Search Console and tells the user which page to fix next.",
+    "queries": {
+      "q7":  { "text": "best ai seo tools 2026", "ranking_url": "/blog/ai-seo-tools" },
+      "q8":  { "text": "chatseo pricing", "ranking_url": "/pricing" }
+    }
+  },
+  "questions": {
+    "q7_intent": { "type": "choice",
+      "instructions": "What is the searcher at queries.q7 trying to do?",
+      "criteria": {
+        "informational": "Learn how something works or how to do it. No sign of wanting to buy or pick a product.",
+        "commercial":    "Compare, shortlist or evaluate products or approaches before choosing one.",
+        "transactional": "Sign up, buy, download, get pricing or start using a specific thing now.",
+        "navigational":  "Reach a specific brand, product or page they already know.",
+        "other":         "None of the above, or the query is too ambiguous to place." } },
+    "q7_stage": { "type": "choice",
+      "instructions": "Where is the searcher at queries.q7 in the buying journey for the business described in site?",
+      "criteria": {
+        "top":    "Has the problem, does not yet know solutions like this exist.",
+        "middle": "Knows solutions exist, is working out which kind or which one.",
+        "bottom": "Has chosen or nearly chosen, wants to start, price, or confirm a detail.",
+        "none":   "Not on a journey toward this business at all." } },
+    "q8_intent": { "type": "choice", "instructions": "What is the searcher at queries.q8 trying to do?", "criteria": { "informational": "…", "commercial": "…", "transactional": "…", "navigational": "…", "other": "…" } },
+    "q8_stage":  { "type": "choice", "instructions": "Where is the searcher at queries.q8 in the buying journey for the business described in site?", "criteria": { "top": "…", "middle": "…", "bottom": "…", "none": "…" } }
+  }
+}</pre></div>
+    <p style="margin-top:14px">Always include an <code>other</code> or <code>none</code> option. The docs recommend it, and the reason is practical: without an escape hatch, an ambiguous query gets forced into your best-sounding bucket with a probability that looks more certain than it is.</p>
+    <p><strong>Thresholds:</strong> this is where <code>confidence</code> earns its keep. <code>confidence ≥ 0.9</code>: accept both labels. <code>0.5 to 0.9</code>: accept, but the row carries a flag and you don't build anything on it without a glance. <code>&lt; 0.5</code>: it goes in a review sheet. The probabilities are still there for every row, so a query that's 0.48 commercial and 0.47 transactional tells you something useful: it's a comparison page with a CTA.</p>
+    <p><strong>One action:</strong> pivot the result by stage × intent, filter to <strong>bottom + transactional or commercial</strong>, sort by impressions, and find the first query in that list whose ranking URL is a blog post or is empty. That's the page you brief this week. Not the list. That one.</p>
+  </div>
+
+  <div class="fn" id="w3">
+    <div class="fn-head"><span class="fn-num">3</span><h3 class="fn-title">Detect cannibalisation across every page pair on your site</h3></div>
+    <p class="fn-sub">Not "which queries have two URLs". Which pairs of pages are actually competing for the same intent, and which one should win.</p>
+    <div class="meta"><span class="chip"><b>type</b> noul + choice + score</span><span class="chip"><b>rows</b> candidate page pairs</span><span class="chip"><b>batch</b> 20 pairs</span><span class="chip"><b>output</b> a ranked merge list</span></div>
+    <p><em>Why it exists:</em> the usual cannibalisation check is a pivot on the query + page export: any query with two URLs is "cannibalised". Half of those are fine (a pricing page and a comparison page both ranking for a brand term). The real question, same intent or not, is a judgment. It was too expensive to make for every pair, so nobody did. At Jev's price you can, and the answer comes with a recommendation attached.</p>
+    <p><strong>Before Jev sees anything, code does the pre-filter.</strong> Do not send every page pair on your site. A 400-page site has 79,800 pairs and almost all of them are obviously unrelated. From the query + page export, build the list of page pairs that share at least one query with impressions. That's usually a few hundred pairs. Those are the candidates.</p>
+    <p><strong>State:</strong> for each pair, the two pages' URL, title, H1, meta description and their top five shared queries with impressions. Keep it to that. Full page bodies are exactly the "irrelevant state" the jaggedness page warns about. <strong>Questions:</strong> three per pair, in parallel.</p>
+    <div class="prompt"><div class="prompt-bar"><span class="prompt-label">request · three questions per pair</span><button class="copy">Copy</button></div>
+<pre>{
+  "model": "jev-latest",
+  "state": {
+    "pairs": {
+      "p1": {
+        "a": { "url": "/blog/what-is-search-console", "title": "What Is Google Search Console? A Beginner's Guide", "h1": "What is Google Search Console?", "meta": "Everything a beginner needs to know about GSC." },
+        "b": { "url": "/blog/search-console-tutorial", "title": "Google Search Console Tutorial (2026)", "h1": "How to use Google Search Console", "meta": "Step-by-step tutorial for GSC." },
+        "shared_queries": [
+          { "q": "google search console tutorial", "impressions": 4200 },
+          { "q": "what is search console", "impressions": 1900 },
+          { "q": "how to use search console", "impressions": 1400 } ] }
+    }
+  },
+  "questions": {
+    "p1_same_intent": { "type": "noul",
+      "instructions": "Pages pairs.p1.a and pairs.p1.b are written to satisfy the same searcher need, such that one page could serve every query in pairs.p1.shared_queries.",
+      "criteria": {
+        "true":  "Both pages explain or teach the same thing to the same kind of reader. A searcher would be equally served by either.",
+        "false": "The pages serve different needs: one defines, the other instructs; one compares, the other sells; or they target different audiences or stages." } },
+    "p1_winner": { "type": "choice",
+      "instructions": "If only one page in pairs.p1 should exist, which one, based on how well its title, H1 and meta match pairs.p1.shared_queries?",
+      "criteria": {
+        "a": "Page a's title, H1 and meta match the shared queries better.",
+        "b": "Page b's title, H1 and meta match the shared queries better.",
+        "neither": "Both should exist; they serve different needs." } },
+    "p1_severity": { "type": "score",
+      "instructions": "How much does the overlap between pairs.p1.a and pairs.p1.b hurt?",
+      "criteria": [
+        "Cosmetic overlap. Different needs, a shared brand or generic term.",
+        "Partial overlap. One or two shared queries could go to either page.",
+        "Direct competition. Same need, same queries, two pages splitting the signal." ] }
+  }
+}</pre></div>
+    <p style="margin-top:14px">Three questions instead of one because they fail differently. <code>same_intent</code> is the decision. <code>winner</code> is the plan. <code>severity</code> is the priority. When <code>same_intent</code> is high and <code>winner</code> is <code>neither</code> with low confidence, you've found the pair a human needs to look at, and you've found it in a list of 400 instead of by accident.</p>
+    <p><strong>Thresholds:</strong> a pair is a merge candidate when <code>same_intent ≥ 0.9</code> <em>and</em> <code>severity ≥ 1.5</code> <em>and</em> <code>winner</code> has <code>confidence ≥ 0.7</code>. Sort candidates by total shared impressions.</p>
+    <p><strong>One action:</strong> the top pair on that list gets consolidated this week: the loser 301s to the winner, the winner absorbs any section the loser had that the winner didn't. One pair. Then you measure it for 28 days before touching the next one, because "we merged 15 pages in a weekend" is how people find out their cannibalisation checker was wrong.</p>
+  </div>
+
+  <div class="fn" id="w4">
+    <div class="fn-head"><span class="fn-num">4</span><h3 class="fn-title">Score AI drafts before publishing</h3></div>
+    <p class="fn-sub">Auto-approve the sure ones. Review the rest. Never read a draft that was going to pass anyway.</p>
+    <div class="meta"><span class="chip"><b>type</b> noul + score + choice</span><span class="chip"><b>rows</b> one draft + its brief</span><span class="chip"><b>batch</b> 1 draft per request</span><span class="chip"><b>output</b> publish / revise / rewrite</span></div>
+    <p><em>Why it exists:</em> if you generate content at any volume, the bottleneck moved from writing to reviewing a long time ago. Using a frontier model as the reviewer is slow, costs more than the draft did, and gives a different verdict on Monday than on Tuesday. LangChain measured GPT and Claude judges at 92 to 913 times the score variance of Jev on identical inputs. A reviewer that changes its mind between runs is not a gate, it's a coin.</p>
+    <p><strong>State:</strong> the brief (target query, intent from workflow 2, the three things the piece must cover, the claims it's allowed to make) and the draft, split into a list of paragraphs so questions can point at them. One draft per request. This is the one workflow where the state is large, so don't batch drafts together. <strong>Questions:</strong> a mix, and note the one thing none of them ask.</p>
+    <div class="prompt"><div class="prompt-bar"><span class="prompt-label">request · one draft</span><button class="copy">Copy</button></div>
+<pre>{
+  "model": "jev-latest",
+  "state": {
+    "brief": {
+      "target_query": "how to find pages losing clicks in search console",
+      "intent": "informational",
+      "must_cover": [ "the Pages report and the date comparison", "how to spot a drop that's a query loss vs a position loss", "what to do first when a page drops" ],
+      "allowed_claims": [ "GSC data lags by roughly 2 days", "the Compare tab supports custom date ranges" ]
+    },
+    "draft": {
+      "title": "How to Find Pages Losing Clicks in Search Console",
+      "paragraphs": [ "…", "…", "…" ]
+    }
+  },
+  "questions": {
+    "matches_intent": { "type": "noul",
+      "instructions": "The draft answers brief.target_query in the way a searcher with brief.intent intent expects, rather than selling, listing tools, or drifting to a related topic." },
+    "coverage": { "type": "score",
+      "instructions": "How completely does the draft cover the items in brief.must_cover?",
+      "criteria": [ "Covers none of them.", "Covers one, or mentions the others without explaining.", "Covers most of them properly.", "Covers every item with enough detail to act on." ] },
+    "unsupported_claim": { "type": "noul",
+      "instructions": "The draft states at least one specific factual claim, number or product behaviour that is not in brief.allowed_claims and not common knowledge.",
+      "criteria": { "true": "There is a concrete, checkable statement that the brief did not license.", "false": "Every specific claim is either in brief.allowed_claims or is general enough not to need a source." } },
+    "sounds_generated": { "type": "score",
+      "instructions": "How much does the draft read like unedited AI output?",
+      "criteria": [ "Reads like a person with a point of view wrote it.", "Mostly fine, some filler or generic transitions.", "Padded, repetitive, or opens with a definition nobody asked for." ] },
+    "verdict": { "type": "choice",
+      "instructions": "What should happen to this draft?",
+      "criteria": {
+        "publish": "Ready as is, or with edits a proofreader would make.",
+        "revise":  "Right piece, specific gaps: a missing must_cover item, a claim to remove, a section to cut.",
+        "rewrite": "Wrong intent, wrong angle, or would need more than half its text changed." } }
+  }
+}</pre></div>
+    <p style="margin-top:14px">The thing none of these ask: <em>how long is it</em>, <em>does it have an H2 every 300 words</em>, <em>does the target query appear in the first 100 words</em>. Jev can't count and shouldn't be asked to. Those are five lines of code that run before the request, and a draft that fails them never reaches Jev at all.</p>
+    <p><strong>Thresholds:</strong> auto-approve when <code>verdict = publish</code> with <code>confidence ≥ 0.9</code>, <code>matches_intent ≥ 0.9</code> and <code>unsupported_claim ≤ 0.1</code>. All three. Anything else goes to the review queue with the failing question's name attached, so the reviewer opens the draft knowing what to look for instead of reading it cold.</p>
+    <p><strong>One action:</strong> publish the auto-approved drafts. Then open the review queue sorted by <code>coverage</code> ascending and fix the worst one. If the auto-approve rate is above 60 percent on the first week, your thresholds are too loose, not your drafts too good. Tighten until you catch one you'd have caught yourself.</p>
+  </div>
+
+  <hr>
+
+  <h2 id="routine">The routine, so four workflows don't become four jobs</h2>
+  <p class="lede">Each workflow runs on a different clock, and three of them run without you.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Workflow</th><th>Runs</th><th>Triggered by</th><th>You read</th></tr></thead>
+    <tbody>
+      <tr><td><b>1 · Filter</b></td><td>Monthly</td><td>A fresh 16-month export</td><td>The review band's top 40, once</td></tr>
+      <tr><td><b>2 · Classify</b></td><td>Monthly, right after 1</td><td>The new keep list</td><td>One row: the next page to brief</td></tr>
+      <tr><td><b>3 · Cannibalisation</b></td><td>Monthly, after 2</td><td>The query + page export</td><td>One pair: the merge for this month</td></tr>
+      <tr><td><b>4 · Draft scoring</b></td><td>Every draft</td><td>A draft landing in the folder</td><td>The review queue, worst first</td></tr>
+    </tbody>
+  </table></div>
+  <p>The first three are one script, one morning a month, in that order, because each one's input is the previous one's output. The fourth is a hook on your content pipeline. Total reading time per month, if the thresholds are right: under an hour. Total judgments made on your behalf in that month: somewhere in the tens of thousands.</p>
+  <p>And the reason to run it monthly rather than daily is not cost. It's that the actions at the end of each workflow (brief one page, merge one pair) take Google weeks to reflect. Re-judging the same export every day produces the same list with more noise.</p>
+
+  <div class="callout">
+    <p><span class="k">Where this playbook stops, and where I'd want the employee to start.</span> Every request above judges. None of them <em>sees</em>. Jev doesn't pull your Search Console, doesn't know which of the 4,000 queries it just kept gained or lost position since last month, doesn't open the page it just told you to merge, and doesn't check 28 days later whether the merge worked. That loop, and the part where the one action actually ships, is still you, a script and a spreadsheet.</p>
+    <p>That's the gap <a href="https://link.chatseo.app/pb-jev-for-seo" target="_blank" rel="noopener"><strong>ChatSEO</strong></a> is built to close: it's connected to your Search Console, so the judgment lands on live numbers, the action gets pushed to your CMS, and the recheck is on the calendar before you've closed the tab. The day Jev is in its toolbox, the four workflows on this page are what it runs underneath. Until then, they're what I'd run by hand.</p>
+  </div>
+
+  <hr>
+
+  <h2 id="mistakes">The five mistakes I expect to make first</h2>
+  <p class="lede">Written before I've made them, from the docs and from every classifier I've ever shipped.</p>
+  <ol>
+    <li><strong>Trusting the probability without the 50-row check.</strong> A calibrated 0.92 is only calibrated on the distribution it was trained on. Your queries aren't that. Fifty hand-labelled rows per workflow, before any threshold is chosen, is the whole quality process.</li>
+    <li><strong>Asking a negated question.</strong> "Is this query irrelevant" reads naturally and fails in a way you won't notice for a month. Every noul on this page is phrased so that yes is the positive case, and the docs warn that <code>P(x)</code> and <code>1 − P(not x)</code> are not the same number.</li>
+    <li><strong>Stuffing state.</strong> Sending the full page HTML to the cannibalisation check, or the whole business plan as the site description. Accuracy drops with unrelated context, and the docs say so. Title, H1, meta, top queries. Stop there.</li>
+    <li><strong>Asking Jev to count or compare numbers.</strong> "Did this page's clicks fall by more than 20 percent" is a spreadsheet formula. The model reads numbers as text and will give you a confident answer that's wrong. Code does arithmetic. Jev does judgment.</li>
+    <li><strong>Acting on the whole list.</strong> Merging every flagged pair, briefing every bottom-funnel query, publishing every auto-approved draft on the same day. Each workflow ends in one action for a reason: it's the only way to learn whether the judgment was right before you've made it four hundred times.</li>
+  </ol>
+
+  <h3>Where it still needs you</h3>
+  <p>Writing the criteria. Every question on this page has a <code>criteria</code> block, and that block is your SEO judgment, compressed. Jev applies it fifty thousand times; it doesn't invent it. If your definition of "relevant" is fuzzy, you get fuzzy at scale, fast and cheap. The 50-row check is really a check on your criteria, not on the model.</p>
+  <p>Deciding what to do about it. A merge list is not a merge. A bottom-funnel query with no page is not a page. The judgment got cheap. The action didn't, and the action is still the part that moves clicks.</p>
+
+  <hr>
+
+  <h2 id="proof" style="scroll-margin-top:80px">How one founder went from 250 → 750 clicks a day</h2>
+  <p>This is the Search Console graph from a ChatSEO user running a loop built on exactly these judgments: which queries matter, which page owns them, which fix to ship first, and a recheck at 28 days. No new content, no link building. The tool made the judgments; the founder shipped the one action a week.</p>
+  <figure>
+    <img src="img/proof-clicks.webp" alt="Search Console graph showing daily clicks rising from around 250 to around 750." loading="lazy">
+  </figure>
+
+  <h2>Why this works when SEO tools don't</h2>
+  <p>Everything on this page is four questions and a loop, and you can <a href="https://link.chatseo.app/pb-jev-for-seo" target="_blank" rel="noopener">try the employed version for free</a> if you'd rather not be the one running it.</p>
+
+  <div class="vs">
+    <div class="vs-col vs-old">
+      <h3>Old SEO tools</h3>
+      <ul>
+        <li>A sample of 500 keywords, and a guess about the rest</li>
+        <li>Intent buckets that belong to the tool, not to you</li>
+        <li>"Cannibalisation" means two URLs, not two pages fighting</li>
+        <li>A reviewer that gives a different verdict every run</li>
+        <li>A dashboard of findings and no one to act on them</li>
+      </ul>
+    </div>
+    <div class="vs-col vs-new">
+      <h3>What you actually want</h3>
+      <ul>
+        <li>Every keyword judged, for a dime</li>
+        <li>Your taxonomy, closed, with a probability per label</li>
+        <li>Same intent or not, per pair, with the winner named</li>
+        <li>The same answer on Monday and Tuesday</li>
+        <li>One action, shipped, rechecked at 28 days</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="final" style="margin:44px 0">
+    <h2 style="margin-top:0">That's the whole idea behind ChatSEO</h2>
+    <p>Thousands of tiny judgments, made on your live Search Console data, rolled up into the one thing to do next. Jev makes the judgments cheaper. ChatSEO is the employee that runs them for you.</p>
+    <a class="btn btn-primary" href="https://link.chatseo.app/pb-jev-for-seo" target="_blank" rel="noopener">Get your SEO employee free →</a>
+    <p class="note" style="margin-top:16px">No credit card required</p>
+  </div>
+
+  <footer>
+    <p>Built by <a href="https://link.chatseo.app/pb-jev-for-seo" target="_blank" rel="noopener">Nicholas at ChatSEO</a> · Everything on this page is free to copy and use. Jev and TypeSafe are trademarks of TypeSafe AI; this page is not affiliated with them.</p>
+  </footer>
+
+</div>
+<script>
+// Theme: remember the viewer's choice, fall back to their system setting.
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  try{ var s=localStorage.getItem('theme'); if(s) root.setAttribute('data-theme',s); }catch(e){}
+  btn.addEventListener('click',function(){
+    var cur=root.getAttribute('data-theme');
+    if(!cur) cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+    var next=cur==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{ localStorage.setItem('theme',next); }catch(e){}
+  });
+})();
+
+// Copy buttons: getting the request out cleanly is the whole point of the page.
+document.querySelectorAll('.copy').forEach(function(btn){
+  btn.addEventListener('click',function(e){
+    e.preventDefault();
+    var pre=btn.closest('.prompt').querySelector('pre');
+    var text=pre.innerText;
+    var done=function(){ btn.textContent='Copied'; btn.classList.add('done');
+      setTimeout(function(){ btn.textContent='Copy'; btn.classList.remove('done'); },1600); };
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done).catch(fallback);
+    } else { fallback(); }
+    function fallback(){
+      var ta=document.createElement('textarea'); ta.value=text;
+      ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta);
+      ta.select(); try{ document.execCommand('copy'); done(); }catch(e){ btn.textContent='Select manually'; }
+      document.body.removeChild(ta);
+    }
+  });
+});
+</script>
+</body>
+</html>

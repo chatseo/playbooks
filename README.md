@@ -2,6 +2,7 @@
 
 Free, ungated SEO playbooks from [ChatSEO](https://link.chatseo.app/pb-seo-system).
 
+- [Jev for SEO](https://chatseo.github.io/playbooks/jev-for-seo/) — Jev answers yes or no 100x faster and cheaper than an LLM: the four SEO jobs that turns into (filter a full GSC export, classify intent into your taxonomy, cannibalisation across every page pair, score AI drafts), every request written out, with the honest caveat that it's built from the docs while the API is still waitlisted.
 - [The AI Head of SEO](https://chatseo.github.io/playbooks/ai-head-of-seo/) — not every company has a Head of SEO: the 15 SEO functions, the operating brief that makes them one job, and the seven outputs it hands you every week — strategy, keyword priorities, content plan, fix queue, shipped changes, Monday's action list, performance report.
 - [The Full Claude SEO Department](https://chatseo.github.io/playbooks/full-seo-department/) — 50 agents and 50 skills across ten SEO functions: every agent has a role, a system prompt, inputs/outputs, guardrails and a first task, and runs one skill. All 100 files in full, plus a zip.
 - [The Astra/Fable SEO Folder](https://chatseo.github.io/playbooks/astra-seo-folder/) — 15 skills that take you from auditing your site to knowing exactly which pages to fix and why, plus the shared GSC data file, the scoring model and the three workflows that chain them.
