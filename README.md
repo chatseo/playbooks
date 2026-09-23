@@ -2,6 +2,8 @@
 
 Free, ungated SEO playbooks from [ChatSEO](https://link.chatseo.app/pb-seo-system).
 
+- [The Local SEO Playbook for 2026](https://chatseo.github.io/playbooks/local-seo-playbook/) — local visibility now happens on four surfaces at once (map pack, organic, AI answers, and the directories AI engines cite): nine steps in the order that makes them work, with the ChatSEO prompt for each.
+- [Le playbook SEO local 2026](https://chatseo.github.io/playbooks/local-seo-playbook-fr/) — version française.
 - [The Complete Claude SEO Playbook](https://chatseo.github.io/playbooks/complete-claude-seo-playbook/) — 200 resources in one place: 50 SEO playbooks, 50 Claude skills, 50 SEO prompts, 25 SEO workflows and 25 SEO templates across keyword research, content, on-page, technical, internal linking, link building, Search Console, SERP, local and AI search. Every file in full, plus a zip.
 - [Jev for SEO](https://chatseo.github.io/playbooks/jev-for-seo/) — Jev answers yes or no 100x faster and cheaper than an LLM: the four SEO jobs that turns into (filter a full GSC export, classify intent into your taxonomy, cannibalisation across every page pair, score AI drafts), every request written out, with the honest caveat that it's built from the docs while the API is still waitlisted.
 - [The AI Head of SEO](https://chatseo.github.io/playbooks/ai-head-of-seo/) — not every company has a Head of SEO: the 15 SEO functions, the operating brief that makes them one job, and the seven outputs it hands you every week — strategy, keyword priorities, content plan, fix queue, shipped changes, Monday's action list, performance report.

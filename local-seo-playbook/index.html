@@ -4,12 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Local SEO Playbook for 2026</title>
-<meta name="description" content="Local visibility now happens on four surfaces at once: the map pack, organic results, AI answers and the directories AI engines cite. The nine steps that cover all four, in the order that makes them work, with every prompt.">
+<meta name="description" content="Local visibility now happens on four surfaces at once: the map pack, organic results, AI answers and the directories AI engines cite. The nine steps that cover all four, in order, with every ChatSEO prompt.">
 <meta property="og:title" content="The Local SEO Playbook for 2026">
 <meta property="og:description" content="700 reviews and still on page 2 of the map. Invisible in ChatGPT. The nine steps that fix local SEO on all four surfaces, in order, with every prompt. Free.">
 <meta property="og:image" content="https://chatseo.github.io/playbooks/local-seo-playbook/img/og-card.jpg">
 <meta property="og:url" content="https://chatseo.github.io/playbooks/local-seo-playbook/">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="fr" href="https://chatseo.github.io/playbooks/local-seo-playbook-fr/">
+<link rel="alternate" hreflang="en" href="https://chatseo.github.io/playbooks/local-seo-playbook/">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📍</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,14 +35,10 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth; scroll-padding-top:72px}
-body{
-  margin:0; background:var(--bg); color:var(--ink);
+body{margin:0; background:var(--bg); color:var(--ink);
   font-family:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",sans-serif;
-  font-size:17.5px; line-height:1.66; -webkit-font-smoothing:antialiased;
-}
+  font-size:17.5px; line-height:1.66; -webkit-font-smoothing:antialiased}
 .wrap{max-width:var(--maxw); margin:0 auto; padding:0 20px}
-
-/* ---------- top bar ---------- */
 .bar{position:sticky; top:0; z-index:50; background:color-mix(in srgb, var(--bg) 90%, transparent);
   backdrop-filter:blur(10px); border-bottom:1px solid var(--line)}
 .bar-in{max-width:var(--maxw); margin:0 auto; padding:12px 20px; display:flex; align-items:center; gap:14px}
@@ -50,125 +48,61 @@ body{
 .bar nav::-webkit-scrollbar{display:none}
 .bar nav a{color:var(--muted); text-decoration:none; font-size:13.5px; font-weight:500; white-space:nowrap}
 .bar nav a:hover{color:var(--accent)}
-.theme{background:none; border:1px solid var(--line); color:var(--muted); border-radius:6px;
-  width:32px; height:32px; cursor:pointer; font-size:14px; flex:none}
+.lang{font-size:13px; font-weight:600; color:var(--accent); text-decoration:none; border:1px solid var(--line); border-radius:6px; padding:6px 10px; white-space:nowrap}
+.theme{background:none; border:1px solid var(--line); color:var(--muted); border-radius:6px; width:32px; height:32px; cursor:pointer; font-size:14px; flex:none}
 .theme:hover{color:var(--accent); border-color:var(--accent)}
-
-/* ---------- hero ---------- */
 .hero{padding:72px 0 12px}
-.eyebrow{display:inline-block; font-size:11.5px; font-weight:600; letter-spacing:.14em; text-transform:uppercase;
-  color:var(--accent); margin-bottom:18px}
+.eyebrow{display:inline-block; font-size:11.5px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); margin-bottom:18px}
 h1{font-weight:700; letter-spacing:-.03em; font-size:clamp(38px,7vw,58px); line-height:1.04; margin:0 0 20px}
 h1 em{font-style:normal; color:var(--accent)}
-.sub{font-size:19px; color:var(--ink); max-width:600px; margin:0 0 26px; line-height:1.5}
+.sub{font-size:19px; max-width:600px; margin:0 0 26px; line-height:1.5}
 .cta-row{display:flex; gap:12px; flex-wrap:wrap; margin-bottom:10px}
-.btn{display:inline-flex; align-items:center; gap:8px; padding:12px 24px; border-radius:6px;
-  font-weight:500; font-size:15px; text-decoration:none; border:1px solid transparent; transition:.15s;
-  box-shadow:0 1px 3px rgba(0,0,0,.1),0 1px 2px -1px rgba(0,0,0,.1)}
+.btn{display:inline-flex; align-items:center; gap:8px; padding:12px 24px; border-radius:6px; font-weight:500; font-size:15px;
+  text-decoration:none; border:1px solid transparent; transition:.15s; box-shadow:0 1px 3px rgba(0,0,0,.1),0 1px 2px -1px rgba(0,0,0,.1)}
 .btn-primary{background:var(--accent); color:var(--on-accent)}
 .btn-primary:hover{filter:brightness(1.08); transform:translateY(-1px)}
 .btn-ghost{border-color:var(--line); color:var(--ink); background:var(--bg); box-shadow:none}
 .btn-ghost:hover{border-color:var(--accent); color:var(--accent)}
 .note{font-size:13.5px; color:var(--muted)}
-.tease{margin:-14px 0 24px; font-size:14.5px}
-.tease a{color:var(--muted); text-decoration:none; border-bottom:1px dashed var(--line); padding-bottom:2px}
-.tease a:hover{color:var(--accent); border-bottom-color:var(--accent)}
-
-/* ---------- type ---------- */
-h2{font-weight:700; font-size:clamp(27px,4.4vw,34px); line-height:1.14; letter-spacing:-.025em; margin:64px 0 8px}
+h2{font-weight:700; font-size:clamp(27px,4.4vw,34px); line-height:1.14; letter-spacing:-.025em; margin:60px 0 8px}
 h2 .n{color:var(--accent); font-weight:600; margin-right:10px}
-h3{font-size:19px; font-weight:600; letter-spacing:-.015em; margin:30px 0 8px}
+h3{font-size:19px; font-weight:600; letter-spacing:-.015em; margin:28px 0 8px}
 p{margin:0 0 17px}
 a{color:var(--accent)}
-.lede{font-size:19px; color:var(--ink); margin-bottom:24px; line-height:1.5}
-hr{border:0; border-top:1px solid var(--line); margin:52px 0}
+.lede{font-size:19px; margin-bottom:22px; line-height:1.5}
+hr{border:0; border-top:1px solid var(--line); margin:48px 0}
 strong{font-weight:650}
 ul,ol{padding-left:22px; margin:0 0 18px}
 li{margin-bottom:8px}
 .plain{list-style:none; padding:0}
 .plain li{padding-left:24px; position:relative; margin-bottom:10px}
 .plain li::before{content:"↳"; position:absolute; left:0; color:var(--accent); font-weight:700}
-:not(pre) > code{font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.86em;
-  background:var(--accent-soft); border-radius:4px; padding:1px 6px; color:var(--ink); word-break:break-word}
-
-/* ---------- author ---------- */
-.author{display:flex; gap:22px; align-items:flex-start; border-top:1px solid var(--line); border-bottom:1px solid var(--line);
-  padding:26px 0; margin:44px 0 8px}
-.author-img{width:84px; height:84px; border-radius:50%; flex:none; object-fit:cover; background:var(--accent-soft)}
-.author p{margin:0 0 10px; font-size:16.5px; line-height:1.6}
-.author p:last-child{margin-bottom:0}
-
-/* ---------- figures ---------- */
-figure{margin:34px 0}
+figure{margin:32px 0}
 figure img{width:100%; height:auto; display:block; border-radius:8px; border:1px solid var(--line)}
 figure.plainfig img{border:0; border-radius:0}
 figcaption{font-size:13.5px; color:var(--muted); margin-top:10px}
-
-/* ---------- callout ---------- */
 .callout{border-left:2px solid var(--accent); padding:4px 0 4px 20px; margin:28px 0}
 .callout p{margin:0 0 10px; font-size:16px}
 .callout p:last-child{margin:0}
 .callout .k{font-weight:650; color:var(--accent)}
-
-/* ---------- step card ---------- */
-.step{border:1px solid var(--line); border-radius:8px; padding:20px 22px; margin:20px 0}
-.step h3{margin:0 0 8px; font-size:16.5px}
-.step p{font-size:16px; margin-bottom:10px}
-.step p:last-child, .step ul:last-child{margin-bottom:0}
-.step ul{margin:0}
-.step li{font-size:16px}
-
-/* ---------- prompt block ---------- */
 .prompt{position:relative; margin:20px 0 22px}
-.prompt-bar{display:flex; align-items:center; justify-content:space-between; gap:10px;
-  background:var(--code-bg); border-radius:8px 8px 0 0; padding:9px 13px; border-bottom:1px solid rgba(255,255,255,.1)}
+.prompt-bar{display:flex; align-items:center; justify-content:space-between; gap:10px; background:var(--code-bg);
+  border-radius:8px 8px 0 0; padding:9px 13px; border-bottom:1px solid rgba(255,255,255,.1)}
 .prompt-label{font-family:"JetBrains Mono",ui-monospace,monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#8C93A0}
-.copy{background:rgba(255,255,255,.12); color:#F5F5F5; border:0; border-radius:4px; padding:5px 11px; font-size:12px;
-  font-weight:600; cursor:pointer; font-family:inherit; transition:.15s; white-space:nowrap}
+.copy{background:rgba(255,255,255,.12); color:#F5F5F5; border:0; border-radius:4px; padding:5px 11px; font-size:12px; font-weight:600; cursor:pointer; font-family:inherit; transition:.15s; white-space:nowrap}
 .copy:hover, .copy.done{background:#0066FD; color:#FFFFFF}
-pre{margin:0; background:var(--code-bg); color:var(--code-ink); border-radius:0 0 8px 8px; padding:16px;
-  overflow-x:auto; font-family:"JetBrains Mono",ui-monospace,monospace; font-size:12.5px; line-height:1.62;
-  white-space:pre-wrap; word-wrap:break-word}
-
-/* ---------- table ---------- */
-.tw{overflow-x:auto; margin:18px 0; border:1px solid var(--line); border-radius:8px}
-table{border-collapse:collapse; width:100%; font-size:14.5px; min-width:440px}
-th,td{padding:10px 14px; text-align:left; border-bottom:1px solid var(--line); vertical-align:top}
-th{font-weight:600; font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted)}
-tr:last-child td{border-bottom:0}
-td b{color:var(--accent)}
-
-/* ---------- recap list ---------- */
+pre{margin:0; background:var(--code-bg); color:var(--code-ink); border-radius:0 0 8px 8px; padding:16px; overflow-x:auto;
+  font-family:"JetBrains Mono",ui-monospace,monospace; font-size:12.5px; line-height:1.62; white-space:pre-wrap; word-wrap:break-word}
 .recap{counter-reset:s; list-style:none; padding:0; margin:22px 0}
 .recap li{counter-increment:s; position:relative; padding-left:40px; margin-bottom:12px}
-.recap li::before{content:counter(s); position:absolute; left:0; top:2px; width:26px; height:26px; border-radius:50%;
-  background:var(--accent); color:var(--on-accent); font-size:13px; font-weight:700; display:flex; align-items:center; justify-content:center}
-
-/* ---------- old-vs-new ---------- */
-.vs{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:24px 0}
-.vs-col{border:1px solid var(--line); border-radius:8px; padding:18px 20px}
-.vs-col h3{margin:0 0 12px; font-size:12.5px; letter-spacing:.08em; text-transform:uppercase}
-.vs-col ul{margin:0; padding-left:18px}
-.vs-col li{font-size:15px; margin-bottom:8px}
-.vs-old h3{color:var(--muted)}
-.vs-old li{color:var(--muted); text-decoration:line-through; text-decoration-color:var(--line)}
-.vs-new{border-color:var(--accent)}
-.vs-new h3{color:var(--accent)}
-@media (max-width:600px){ .vs{grid-template-columns:1fr} }
-
-/* ---------- final ---------- */
+.recap li::before{content:counter(s); position:absolute; left:0; top:2px; width:26px; height:26px; border-radius:50%; background:var(--accent);
+  color:var(--on-accent); font-size:13px; font-weight:700; display:flex; align-items:center; justify-content:center}
 .final{border:1px solid var(--accent); border-radius:8px; padding:36px 26px; text-align:center; margin:52px 0 20px}
 .final h2{margin:0 0 10px; font-size:clamp(25px,4vw,31px)}
 .final p{max-width:470px; margin:0 auto 22px}
 footer{text-align:center; padding:30px 0 56px; color:var(--muted); font-size:13.5px}
 footer a{color:var(--muted)}
-
-@media (max-width:560px){
-  body{font-size:16.5px}
-  .bar nav{display:none}
-  .author{flex-direction:column; gap:14px}
-  .step{padding:16px 16px}
-}
+@media (max-width:560px){ body{font-size:16.5px} .bar nav{display:none} }
 </style>
 </head>
 <body>
@@ -182,9 +116,9 @@ footer a{color:var(--muted)}
       <a href="#step-2">Profile</a>
       <a href="#step-3">Directories</a>
       <a href="#step-6">Site</a>
-      <a href="#step-8">Content &amp; links</a>
       <a href="#order">The order</a>
     </nav>
+    <a class="lang" href="../local-seo-playbook-fr/" hreflang="fr">FR</a>
     <button class="theme" id="themeBtn" aria-label="Toggle theme">◐</button>
   </div>
 </div>
@@ -194,26 +128,16 @@ footer a{color:var(--muted)}
   <div class="hero">
     <span class="eyebrow">Free · Local SEO · 2026</span>
     <h1>The Local SEO Playbook<br><em>for 2026</em></h1>
-    <p class="sub">700 reviews and still stuck on page 2 of the map. Invisible in ChatGPT. Citations and blog posts that bring zero calls. Local visibility now happens on four surfaces at once, and most strategies only work on the first one. Here are the nine steps that cover all four, in the order that makes them work.</p>
-    <p class="tease"><a href="#proof">How one founder went from 250 to 750 clicks a day working this way →</a></p>
+    <p class="sub">700 reviews and still stuck on page 2 of the map. Invisible in ChatGPT. Local visibility now happens on four surfaces at once, and most strategies only work on the first one. Nine steps, in the order that makes them work, with the ChatSEO prompt for each.</p>
     <div class="cta-row">
-      <a class="btn btn-primary" href="https://link.chatseo.app/pb-local-seo-playbook" target="_blank" rel="noopener">Try ChatSEO free for 7 days →</a>
+      <a class="btn btn-primary" href="https://link.chatseo.app/pb-local-seo-playbook" target="_blank" rel="noopener">Start your 7-day free trial →</a>
       <a class="btn btn-ghost" href="#step-1">Read the 9 steps</a>
     </div>
-    <p class="note">The SEO agent for local SEO · 🎁 7 days free</p>
+    <p class="note">ChatSEO, the SEO agent for local SEO · 🎁 7 days free</p>
   </div>
 
-  <div class="author">
-    <img class="author-img" src="img/tw3810.webp" alt="Nicholas" loading="lazy">
-    <div>
-      <p><strong>Hey there, I'm Nicholas 👋</strong></p>
-      <p>I grew my last B2C app to 15K Google clicks/month as a solo founder, then sold it. Turns out I fell in love with SEO along the way.</p>
-      <p>So now I'm building <a href="https://link.chatseo.app/pb-local-seo-playbook" target="_blank" rel="noopener"><strong>ChatSEO.app</strong></a>, an all-in-one <strong>SEO employee</strong> whose job is to make sure you <strong>rank #1 in Google and in AI search</strong>. This page is the local version of how it works. <a href="https://link.chatseo.app/pb-local-seo-playbook" target="_blank" rel="noopener"><strong>Try it free →</strong></a></p>
-    </div>
-  </div>
 
   <h2 id="surfaces">Local SEO in 2026 is broken for most people</h2>
-  <p class="lede">Not because the tactics stopped working. Because the place where a customer finds you moved, and most strategies stayed where they were.</p>
   <ul class="plain">
     <li>700 reviews, still stuck on page 2 of the map</li>
     <li>Invisible in ChatGPT</li>
@@ -222,7 +146,7 @@ footer a{color:var(--muted)}
   <p>Local visibility now happens on <strong>four surfaces at once</strong>:</p>
 
   <figure class="plainfig">
-    <svg viewBox="0 0 720 300" role="img" aria-label="Four surfaces of local visibility: the map pack, organic results, AI answers, and the directories AI engines pull their answers from. Most local SEO strategies only work on the first one." style="width:100%;height:auto">
+    <svg viewBox="0 0 720 300" role="img" aria-label="Four surfaces of local visibility: the map pack, organic results, AI answers, and the directories AI engines pull their answers from. Most strategies only work on the first one." style="width:100%;height:auto">
       <style>
         .s-ink{stroke:var(--ink);fill:none;stroke-width:1.5}
         .s-acc{stroke:var(--accent);fill:none;stroke-width:2}
@@ -260,381 +184,176 @@ footer a{color:var(--muted)}
       <line x1="10" y1="240" x2="710" y2="240" class="s-hair"/>
       <text x="360" y="272" class="t" text-anchor="middle">Most strategies only work on the first one.</text>
     </svg>
-    <figcaption>The map pack, organic results, AI answers, and the directories AI engines pull their answers from. Steps 3 and 4 of this playbook exist for the fourth surface.</figcaption>
   </figure>
 
-  <p>The steps below run in a specific order. <strong>The order is the method.</strong> Each step feeds the next one, and two of them only exist because of what you measured in the first.</p>
-  <p>For the sake of this masterclass, let's take a dentist. Real practice, real teardown: a dental practice located in Ballwin, Missouri, with 700 Google reviews and a #20 position in its own city's map pack. Here's why, and how to fix it.</p>
+  <p>The steps below run in a specific order. <strong>The order is the method.</strong> Each step feeds the next one.</p>
+  <p>For the sake of this masterclass, let's take a dentist: a practice in Ballwin, Missouri, 700 Google reviews, #20 in its own city's map pack. Here's why, and how to fix it.</p>
 
   <hr>
 
   <h2 id="step-1"><span class="n">Step 1</span>Benchmark four search surfaces before you touch anything</h2>
   <p class="lede">The instinct when you open a new site is to start fixing. Don't. Not even the obvious mistake you just spotted.</p>
-  <p>Take a snapshot first. If you fix things before you measure, you can never prove what worked. That matters for your own learning, and it matters ten times more if this is a client paying you a retainer: the benchmark is the only thing that turns "we did some SEO" into "we moved you from #20 to #8 and here's the before".</p>
-  <p>And the snapshot can't be "where do we rank on Google". For local, you track four surfaces:</p>
-
-  <div class="step">
-    <h3>What the snapshot records</h3>
-    <ul>
-      <li><strong>Map pack:</strong> your position for the core "service + city" query, and a geo-grid (the same query checked from multiple points across the city) so you see where in town you are weak, not just an average.</li>
-      <li><strong>Organic:</strong> rankings for your service pages, and which competitors sit above you on which engines.</li>
-      <li><strong>AI answers:</strong> whether the business is named when someone asks ChatGPT, Gemini, Perplexity, Claude and Grok for the best [service] in [city]. Yes or no, per platform.</li>
-      <li><strong>AI citations:</strong> the third-party sites those AI answers cite as their sources. Write every one down. This list becomes your to-do list in step 3.</li>
-    </ul>
-  </div>
-
-  <p>Then install the three basics: <strong>Google Search Console, Google Analytics 4, and call tracking</strong>. For a local business, a call is the conversion. If you don't track calls, you're flying blind on the one metric the owner cares about, and you'll end up reporting rankings to someone who only wants to know if the phone rang.</p>
-  <p>The organic side of the snapshot is the easy part: connect Search Console and GA4 to <a href="https://link.chatseo.app/pb-local-seo-playbook" target="_blank" rel="noopener">ChatSEO</a> and your baseline (queries, pages, clicks, positions) is there before you change a single line. That's your "before" for every fix that follows.</p>
+  <p>Take a snapshot first. If you fix things before you measure, you can never prove what worked. That matters for your own learning, and ten times more if a client is paying you a retainer.</p>
+  <p>And the snapshot can't be "where do we rank on Google". For local, you track four surfaces: the map pack (with a geo-grid across the city), organic rankings, whether the business is named in AI answers, and <strong>which third-party sites those AI answers cite</strong>. That last list becomes your to-do list in step 3. Keep it.</p>
+  <p>Then install the three basics: Google Search Console, Google Analytics 4, and call tracking. For a local business, a call is the conversion. If you don't track calls, you're flying blind on the one metric the owner cares about.</p>
+  <p>Connect Search Console and GA4 to <a href="https://link.chatseo.app/pb-local-seo-playbook" target="_blank" rel="noopener">ChatSEO</a> and your baseline is there before you change a single line:</p>
 
   <div class="prompt">
-    <div class="prompt-bar"><span class="prompt-label">Prompt · Step 1 · ChatSEO with Search Console connected</span><button class="copy" type="button">Copy</button></div>
-<pre>Build the "before" snapshot for [site URL], dated today, from Search Console and GA4 (last 28 days).
-
-Give me:
-1. Total clicks, impressions and average position.
-2. The top 20 queries and top 20 pages by clicks.
-3. Every query that contains [city] or a neighbouring city name, with its clicks, impressions and position.
-4. The pages that get impressions but almost no clicks.
-
-Do not suggest any fixes yet. This is the baseline, not the audit.
-If a number cannot be read from the data, say "cannot compute from this data". Do not estimate it.</pre>
+    <div class="prompt-bar"><span class="prompt-label">Step 1 · Paste this into ChatSEO</span><button class="copy" type="button">Copy</button></div>
+<pre>Build my "before" snapshot for [site URL], dated today, from Search Console and GA4 (last 28 days): total clicks, impressions and average position, the top 20 queries and pages by clicks, and every query containing [city]. Do not suggest fixes yet. If a number cannot be read from the data, say so. Do not estimate.</pre>
   </div>
 
-  <h3>For the dentist, the benchmark showed</h3>
-  <ul class="plain">
-    <li><strong>#20 in the local pack</strong>, with a geo-grid weak across Ballwin itself, the city the practice is in</li>
-    <li>Decent organic rankings, with competitors ahead on several engines</li>
-    <li>Visible in 4 AI platforms (Gemini, Perplexity, Claude, Grok), but <strong>not in ChatGPT</strong>, the one with the most users</li>
-    <li>A clear list of third-party sites being cited in AI answers for local dentists</li>
-  </ul>
-  <p>That last line becomes your to-do list later. Keep it.</p>
+  <p>For the dentist, the benchmark showed: <strong>#20 in the local pack</strong>, weak across Ballwin itself. Decent organic rankings, competitors ahead on several engines. Visible in Gemini, Perplexity, Claude and Grok, but <strong>not in ChatGPT</strong>, the one with the most users. And a clear list of sites cited in AI answers for local dentists.</p>
 
   <hr>
 
   <h2 id="step-2"><span class="n">Step 2</span>Fix the Google Business Profile first, because it's the fastest lever you have</h2>
-  <p class="lede">Here's the mistake. The practice is located in Ballwin. It serves Ballwin. But the profile was optimized for Chesterfield, the neighboring city.</p>
-  <p>So Google had a practice in Ballwin telling it, in effect, "I'm about Chesterfield". Result: #20 at home. Seven hundred reviews, and the single most important relevance signal was pointing at the wrong town.</p>
-  <p><strong>The fix takes seconds.</strong> Point the profile at the city where you actually are.</p>
-  <p>Nobody should promise results in SEO. But this pattern shows up again and again, and fixing it alone often moves a profile <strong>5 to 10 spots</strong> in the map pack. Same for the primary category: the wrong category is the other one-second fix that moves rankings. Here the category (Dentist) was already right, so location was the whole problem.</p>
-
-  <h3>Why it's so powerful</h3>
-  <p>Google's local ranking comes down to three things: <strong>relevance, distance and prominence</strong>. This practice already had prominence (700 reviews). It couldn't do anything about distance. It was losing on relevance to its own city. You don't need more reviews when the signal pointing Google at the right city is broken. More reviews on a mis-located profile is more prominence for the wrong query.</p>
-
-  <div class="step">
-    <h3>The GBP routine after the fix</h3>
-    <ul>
-      <li>Keep driving Google reviews, <strong>consistently, not in bursts</strong>. A steady stream reads as a real business; fifty in a week then nothing reads as a campaign.</li>
-      <li>Add more visual depth: photos of the office, the team, the equipment. Real photos, not stock.</li>
-      <li><strong>Recheck location and category every time someone touches the profile.</strong> An agency, an intern, a well-meaning owner: this is how the Chesterfield mistake happened in the first place.</li>
-    </ul>
-  </div>
-
-  <p>That's it. Most people overcomplicate the GBP. Get the location and category right, then feed it reviews.</p>
+  <p class="lede">The practice is located in Ballwin. It serves Ballwin. But the profile was optimized for Chesterfield, the neighboring city.</p>
+  <p>So Google had a practice in Ballwin telling it, in effect, "I'm about Chesterfield". Result: #20 at home. <strong>The fix takes seconds.</strong> Point the profile at the city where you actually are.</p>
+  <p>Nobody should promise results in SEO. But this pattern shows up again and again, and fixing it alone often moves a profile <strong>5 to 10 spots</strong> in the map pack. Same for the primary category: the wrong category is the other one-second fix that moves rankings. Here the category was already right, so location was the whole problem.</p>
+  <p>Why it's so powerful: Google's local ranking comes down to relevance, distance and prominence. This practice already had prominence (700 reviews). It was losing on relevance to its own city. You don't need more reviews when the signal pointing Google at the right city is broken.</p>
+  <p>After the fix, the routine is simple: keep driving Google reviews consistently, not in bursts. Add photos of the office, the team, the equipment. Recheck location and category every time someone touches the profile. Most people overcomplicate the GBP. Get the location and category right, then feed it reviews.</p>
 
   <hr>
 
   <h2 id="step-3"><span class="n">Step 3</span>Find the 4 to 7 directories that AI engines actually cite</h2>
   <p class="lede">This is where the playbook breaks from how local SEO worked for a decade.</p>
-  <p>The old way: build citations in bulk. Submit to 100+ directories, tick the box, move on. Honestly, it barely mattered. Most of those directories had no readers, no authority and no effect beyond making an invoice look busy.</p>
-  <p><strong>Citations matter again. But not as a volume game.</strong></p>
-  <p>AI engines answer "best dentist in Ballwin" by retrieving pages and citing them. So the question is no longer "how many directories list us" but "which pages does the AI read before it answers". Go back to the AI citations data from Step 1 and look at which third-party sites appear. For this dentist, four came up:</p>
-  <ul class="plain">
-    <li>HealthGrades</li>
-    <li>Delta Dental (the insurer's dentist directory)</li>
-    <li>Yelp</li>
-    <li>ADA.org</li>
-  </ul>
-  <p>That's the list. Not 150 directories. <strong>Four.</strong></p>
-  <p>Across most local industries, 4 to 7 citation sources actually show up. The rest are probably not worth your time at all.</p>
-  <p>This also means <strong>your citation list is different for every niche</strong>. A plumber's list won't include HealthGrades. A lawyer's will include sites a dentist never needs. A restaurant's will be dominated by review platforms. You don't guess it. You read it off the AI citations, and you re-read it every few months because the sources AI engines lean on move.</p>
+  <p>The old way: build citations in bulk. Submit to 100+ directories, tick the box, move on. Honestly, it barely mattered. <strong>Citations matter again. But not as a volume game.</strong></p>
+  <p>AI engines answer "best dentist in Ballwin" by retrieving pages and citing them. Go back to the AI citations from step 1 and look at which third-party sites appear. For this dentist, four came up: HealthGrades, Delta Dental (the insurer's dentist directory), Yelp, and ADA.org. That's the list. Not 150 directories. <strong>Four.</strong></p>
+  <p>Across most local industries, 4 to 7 citation sources actually show up. The rest are probably not worth your time. And the list is different for every niche: a plumber's won't include HealthGrades, a lawyer's will include sites a dentist never needs. You don't guess it. You read it off the AI citations.</p>
+
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Step 3 · Paste this into ChatSEO</span><button class="copy" type="button">Copy</button></div>
+<pre>Analyze the AI search results for "best [business type] in [city, state]" and the 5 closest variations. List every third-party site cited in the answers, how many times each one appears, and whether [business name] is listed on it today. Rank them by citation count. Give me only the top 4 to 7 as my citation list. Do not add directories that were not cited.</pre>
+  </div>
 
   <hr>
 
   <h2 id="step-4"><span class="n">Step 4</span>Do SEO on those directories, not just on your website</h2>
   <p class="lede">Being listed on HealthGrades isn't enough. You need to rank inside HealthGrades.</p>
-  <p>Search the directory for dentists in the area and the practice is buried far down the list. So when an AI engine retrieves that page, it sees other brands first. Being present on the right source and being invisible on it are the same thing from the AI's point of view.</p>
-  <p>Three moves to fix it.</p>
-
-  <div class="step">
-    <h3>1. Consider the sponsored slots</h3>
-    <p>The HealthGrades results page had 3 sponsored listings at the top. AI engines don't care whether a listing is paid. They see the brands at the top of the page and weigh them because they're the most retrievable. If the directory is a top citation in your niche, a sponsored slot might be one of the cheapest AI visibility plays available. (Caveat in the honest section below: plausible, not yet proven. Test one directory before you buy all of them.)</p>
-  </div>
-
-  <div class="step">
-    <h3>2. Split your review effort 90/10</h3>
-    <p>90% of your review requests go to Google. The other 10% go to these secondary review surfaces. That's how you climb inside the directory and give AI engines fresh signals from a source they already trust. You are not trying to match your Google review count on Yelp. You are trying to stop being the profile with two reviews from 2021.</p>
-  </div>
-
-  <div class="step">
-    <h3>3. Rewrite the profile like a web page</h3>
-    <p>The practice's HealthGrades profile was thin. Strip out the directory boilerplate and you were left with roughly one sentence about what the practice does. Treat it exactly like a page on your site:</p>
-    <ul>
-      <li>Get the topics and entities that should be covered for your target (e.g. "cosmetic dentist Ballwin") from the pages already ranking for it</li>
-      <li>Generate a full draft, around 500 words as a starting point</li>
-      <li>If the platform has a character limit, compress it to 150 or 300 words while keeping the key topics</li>
-      <li>Make sure each service you offer (veneers, implants, Invisalign) is covered naturally</li>
-    </ul>
-  </div>
-
-  <p>In <a href="https://link.chatseo.app/pb-local-seo-playbook" target="_blank" rel="noopener">ChatSEO</a>, that's one message: ask it to analyze the top results for your keyword and write the profile around what they cover, then ask for the 300-word version. You paste it into the directory yourself.</p>
+  <p>Search the directory for dentists in the area and the practice is buried far down the list. So when an AI engine retrieves that page, it sees other brands first. Three moves to fix it.</p>
+  <p><strong>1. Consider the sponsored slots.</strong> The HealthGrades results page had 3 sponsored listings at the top. AI engines don't care whether a listing is paid. They see the brands at the top of the page. If the directory is a top citation in your niche, a sponsored slot might be one of the cheapest AI visibility plays available.</p>
+  <p><strong>2. Split your review effort 90/10.</strong> 90% of your review requests go to Google. The other 10% go to these secondary review surfaces. That's how you climb inside the directory and give AI engines fresh signals from a source they already trust.</p>
+  <p><strong>3. Rewrite the profile like a web page.</strong> The practice's HealthGrades profile was thin: strip the boilerplate and one sentence was left. Treat it exactly like a page on your site. Get the topics and entities from the pages already ranking for "cosmetic dentist Ballwin", draft around 500 words, compress to 300 or 150 if the platform has a limit, and make sure each service (veneers, implants, Invisalign) is covered naturally.</p>
+  <p>In <a href="https://link.chatseo.app/pb-local-seo-playbook" target="_blank" rel="noopener">ChatSEO</a>, that's one message. You paste the result into the directory yourself:</p>
 
   <div class="prompt">
-    <div class="prompt-bar"><span class="prompt-label">Prompt · Step 4 · ChatSEO</span><button class="copy" type="button">Copy</button></div>
-<pre>Analyze the top 10 results for "[cosmetic dentist Ballwin]".
-List the topics, entities and services those pages cover, and their word-count range.
-
-Then write a directory profile for [practice name] of about 500 words that covers those topics naturally and mentions each service we offer: [veneers, implants, Invisalign, ...].
-Written for a reader choosing a dentist, not for a search engine. No keyword stuffing, no city name in every sentence.
-
-Then give me a 300-word version and a 150-word version that keep every key topic.
-
-Do not invent credentials, awards, years in business or patient numbers I did not give you. If you need a fact, ask.</pre>
+    <div class="prompt-bar"><span class="prompt-label">Step 4 · Paste this into ChatSEO</span><button class="copy" type="button">Copy</button></div>
+<pre>Analyze the top 10 results for "[cosmetic dentist Ballwin]" and list the topics, entities and services they cover. Then write a directory profile for [business name] of about 500 words that covers those topics naturally and mentions each service we offer: [veneers, implants, Invisalign]. Then give me a 300-word and a 150-word version that keep every key topic. Do not invent credentials, awards or numbers I did not give you.</pre>
   </div>
 
-  <p><strong>Bonus:</strong> a well-optimized directory profile can rank in Google's organic results on its own. That's one more slot on page 1 that belongs to you, even though you don't own the domain.</p>
-  <p>Then repeat for every directory on your list. Optimize your website, then optimize your profiles.</p>
+  <p><strong>Bonus:</strong> a well-optimized directory profile can rank in Google's organic results on its own. One more slot on page 1 that belongs to you, even though you don't own the domain. Repeat for every directory on your list.</p>
 
   <hr>
 
   <h2 id="step-5"><span class="n">Step 5</span>Audit your brand's footprint for inconsistencies</h2>
   <p class="lede">AI engines build their picture of your business from everything written about it online. If that picture is contradictory, you lose trust and visibility.</p>
-  <p>One prompt in ChatGPT, using a reasoning model with web search, can scan the internet for inconsistencies about a business: two phone numbers, three spellings of the name, an address that moved in 2019 and is still on half the web.</p>
-  <p>For this practice, it found something no rank tracker would: <strong>the practice had changed hands</strong>. The current dentist took it over, and the web was still full of the previous dentist's info. Old names, old details, scattered across directories and profiles. To an AI engine, that reads as two businesses with the same address and conflicting facts, which is exactly the kind of entity it hesitates to recommend.</p>
-  <p>That's a massive to-do list from one prompt. Clean it up source by source, starting with the sites that appear in AI answers or on page 1. Those are the ones the AI reads; the rest can wait.</p>
-  <p>You can use Deep Research too, but a reasoning model with web search gets you a comparable report in a fraction of the time.</p>
+  <p>For this practice, the audit found something no rank tracker would: <strong>the practice had changed hands</strong>. The current dentist took it over, and the web was still full of the previous dentist's info. Old names, old details, scattered across directories and profiles.</p>
+  <p>That's a massive to-do list from one prompt. Clean it up source by source, starting with the sites that appear in AI answers or on page 1.</p>
 
   <div class="prompt">
-    <div class="prompt-bar"><span class="prompt-label">Prompt · Step 5 · ChatGPT, reasoning model with web search</span><button class="copy" type="button">Copy</button></div>
-<pre>Search the web for every mention of [Business Name], [address] and [phone number]. List every inconsistency you find in business name, address, phone, hours, practitioner or owner name, services and website URL, across directories, review sites, social profiles, maps and news. For each one, give the source URL, what it says, the correct value, and a priority (high if the source appears in AI answers or on Google page 1). Flag anything linked to a previous owner, old address or old phone number.</pre>
+    <div class="prompt-bar"><span class="prompt-label">Step 5 · Paste this into ChatSEO</span><button class="copy" type="button">Copy</button></div>
+<pre>Search for every mention of [business name], [address] and [phone number]. List every inconsistency you find in business name, address, phone, hours, practitioner or owner name, services and website URL, across directories, review sites, social profiles, maps and news. For each one: the source URL, what it says, the correct value, and a priority (high if the source appears in AI answers or on Google page 1). Flag anything linked to a previous owner, old address or old phone number.</pre>
   </div>
 
   <hr>
 
   <h2 id="step-6"><span class="n">Step 6</span>Clean up the technical and on-page basics</h2>
-  <p class="lede">Run a crawl and plug in GSC and GA4 if you have access. This site wasn't in bad shape. Two issues stood out, and they're the same two you'll find on most local sites.</p>
-
-  <h3>Over-optimized title tags</h3>
-  <p>The site had titles like "Dental Bonding in Ballwin, Missouri", which is fine. Then it had variations stacking the city, the state abbreviation and the ZIP code into the same title.</p>
-  <p><strong>The rule: one clean version.</strong> "Dental Bonding in Ballwin, MO | Practice Name", or the dentist's name instead of the practice name. That's it.</p>
-  <p>The reasoning: LLMs and Google both understand that "Ballwin, Missouri", "Ballwin MO" and the ZIP code refer to the same place. Stuffing all three adds nothing, and it probably hurts you more than it helps, because it makes the page look like it was written for a machine.</p>
-
-  <h3>Boilerplate meta descriptions</h3>
-  <p>Many pages shared the same generic meta description. In 2026 there's no excuse for that: every page can have a unique description in minutes.</p>
+  <p class="lede">This site wasn't in bad shape. Two issues stood out, and they're the same two you'll find on most local sites.</p>
+  <p><strong>Over-optimized title tags.</strong> "Dental Bonding in Ballwin, Missouri" is fine. Then came variations stacking the city, the state abbreviation and the ZIP code. The rule: one clean version. "Dental Bonding in Ballwin, MO | Practice Name". LLMs and Google both understand that "Ballwin, Missouri", "Ballwin MO" and the ZIP refer to the same place. Stuffing all three adds nothing, and it probably hurts.</p>
+  <p><strong>Boilerplate meta descriptions.</strong> Many pages shared the same generic one. In 2026 there's no excuse: every page can have a unique description in minutes.</p>
 
   <div class="callout">
-    <p><span class="k">One rule most people miss.</span> Don't put your phone number in the title or meta description. If the searcher can grab your number from the snippet, they don't click. Organic CTR feeds rankings, so a snippet that kills clicks costs you positions too.</p>
-    <p>Important: this only applies to traditional organic results. On your Google Business Profile, the phone number obviously stays. The profile's job is the call; the snippet's job is the click.</p>
+    <p><span class="k">One rule most people miss.</span> Don't put your phone number in the title or meta description. If the searcher can grab your number from the snippet, they don't click, and organic CTR feeds rankings. This only applies to organic results: on your Google Business Profile, the phone number obviously stays.</p>
   </div>
 
-  <p>This is the step nobody should do by hand anymore. With <a href="https://link.chatseo.app/pb-local-seo-playbook" target="_blank" rel="noopener">ChatSEO</a> connected to Search Console and your WordPress or Shopify site, you ask it to find the stuffed titles and duplicate metas, review the rewrites, approve, and they're live. For a 40-page local site, that's minutes instead of an afternoon.</p>
+  <p>This is the step nobody should do by hand anymore. With <a href="https://link.chatseo.app/pb-local-seo-playbook" target="_blank" rel="noopener">ChatSEO</a> connected to Search Console and your WordPress or Shopify site, you review the rewrites, approve, and they're live. For a 40-page local site, minutes instead of an afternoon.</p>
 
   <div class="prompt">
-    <div class="prompt-bar"><span class="prompt-label">Prompt · Step 6 · ChatSEO with Search Console + CMS connected</span><button class="copy" type="button">Copy</button></div>
-<pre>Crawl [site URL] and cross it with Search Console.
-
-Find:
-1. Every title tag that stacks more than one location signal (city + state + ZIP, or the same city twice).
-2. Every meta description shared by more than one page.
-3. Any title or meta description that contains a phone number.
-
-For each page, propose one clean title in the form "Service in City, ST | Practice Name" and a unique meta description under 155 characters with no phone number in it.
-
-Show me a before/after table with the page's current clicks and impressions next to each row so I can prioritise.
-Do not publish anything until I approve the table.</pre>
+    <div class="prompt-bar"><span class="prompt-label">Step 6 · Paste this into ChatSEO</span><button class="copy" type="button">Copy</button></div>
+<pre>Crawl [site URL] and find every title tag that stacks more than one location signal (city + state + ZIP), every meta description shared by more than one page, and any title or meta that contains a phone number. For each page, propose one clean title in the form "Service in City, ST | Business Name" and a unique meta description under 155 characters with no phone number. Show me a before/after table with each page's clicks from Search Console. Do not publish until I approve.</pre>
   </div>
 
   <hr>
 
   <h2 id="step-7"><span class="n">Step 7</span>Build one page per service + city, and optimize it properly</h2>
-  <p class="lede">The practice already had the right structure: dedicated pages like "Invisalign in Ballwin, Missouri". Service plus core location. Keep that structure.</p>
-  <p>The problem was the optimization of those pages. The homepage, for example, had too many words and was aggressive without being well optimized: long, repetitive, and not actually covering what the ranking pages cover.</p>
-
-  <div class="step">
-    <h3>What a good local page looks like</h3>
-    <ul>
-      <li>A word count <strong>within the median range of the competitors ranking</strong> for that keyword. Not double. Not half.</li>
-      <li>All the critical topics and entities covered for that service in that location</li>
-      <li>Optimized for <strong>one primary topic and one location</strong>. One page, one job.</li>
-    </ul>
-  </div>
-
-  <p>The workflow: look at what ranks for "cosmetic dentist Ballwin Missouri", list what those pages cover and how long they are, then write a page that matches the range and fills the gaps. <a href="https://link.chatseo.app/pb-local-seo-playbook" target="_blank" rel="noopener">ChatSEO</a> runs that SERP analysis for you, drafts the page, and publishes it to your CMS once you've checked it. Design still needs a human pass.</p>
+  <p class="lede">The practice already had the right structure: "Invisalign in Ballwin, Missouri". Service plus core location. Keep that structure.</p>
+  <p>The problem was the optimization. The homepage had too many words and was aggressive without being well optimized. A good local page has a word count <strong>within the median range of the competitors ranking</strong> for that keyword (not double, not half), covers all the critical topics and entities for that service in that location, and is optimized for <strong>one primary topic and one location</strong>.</p>
+  <p>The workflow: look at what ranks for "cosmetic dentist Ballwin Missouri", list what those pages cover and how long they are, then write a page that matches the range and fills the gaps. <a href="https://link.chatseo.app/pb-local-seo-playbook" target="_blank" rel="noopener">ChatSEO</a> runs that SERP analysis, drafts the page, and publishes it to your CMS once you've checked it. Design still needs a human pass.</p>
 
   <div class="prompt">
-    <div class="prompt-bar"><span class="prompt-label">Prompt · Step 7 · ChatSEO</span><button class="copy" type="button">Copy</button></div>
-<pre>Analyze the top results for "[Invisalign Ballwin Missouri]".
-
-Give me:
-1. The median word count of the ranking pages, and the range.
-2. The topics and entities every ranking page covers.
-3. The topics only the top 3 cover.
-4. The page type Google is rewarding (service page, location page, blog post, directory).
-
-Then draft a page for [practice name] targeting that one service in that one city:
-- inside the median word range, not above it
-- covering every topic from points 2 and 3
-- optimized for one primary topic and one location, no second city on this page
-- with a short FAQ only if the ranking pages have one
-
-Flag any claim about the practice you could not verify from my site. Do not invent prices, before/after results or patient numbers.</pre>
+    <div class="prompt-bar"><span class="prompt-label">Step 7 · Paste this into ChatSEO</span><button class="copy" type="button">Copy</button></div>
+<pre>Analyze the top results for "[Invisalign Ballwin Missouri]": median word count, the topics and entities every ranking page covers, and the page type Google rewards. Then draft a page for [business name] targeting that one service in that one city, inside the median word range, covering every topic listed, optimized for one primary topic and one location. Flag any claim about the business you could not verify from my site. Do not invent prices or results.</pre>
   </div>
 
-  <p><strong>Priority order:</strong> your main service pages first, then every secondary service. Only after that do you move to content. A blog post about implants doesn't help if the implants page itself is half the length of the ones ranking.</p>
+  <p><strong>Priority order:</strong> main service pages first, then every secondary service. Only after that do you move to content.</p>
 
   <div class="callout">
-    <p><span class="k">Where the prompts on this page stop.</span> Steps 5, 8 and 9 run anywhere: paste the prompt, get the list. Steps 1, 6 and 7 don't. They need your live Search Console rows, a crawl of the actual site and a way to push the approved title back into the CMS. Paste-in prompts can't see the rows you didn't paste, can't refresh them next month, and can't check whether last week's fix moved the number. That gap is the whole reason <a href="https://link.chatseo.app/pb-local-seo-playbook" target="_blank" rel="noopener">ChatSEO</a> connects to Search Console, GA4 and your CMS instead of asking you to copy things into a chat.</p>
+    <p><span class="k">Why these prompts need ChatSEO and not a chat window.</span> Steps 1, 6 and 7 read your live Search Console rows, crawl the actual site and push the approved change back into your CMS. A prompt pasted into a plain chatbot can't see the rows you didn't paste, can't refresh them next month, and can't check whether last week's fix moved the number. That's the whole reason ChatSEO connects to Search Console, GA4 and your CMS. <a href="https://link.chatseo.app/pb-local-seo-playbook" target="_blank" rel="noopener">The first 7 days are free.</a></p>
   </div>
 
   <hr>
 
   <h2 id="step-8"><span class="n">Step 8</span>Write local content, not national content</h2>
   <p class="lede">This is the mistake almost every local blog makes.</p>
-  <p>The practice's blog had articles like "How long do dental implants last?". That's a national question. Thousands of sites answer it, AI answers it directly, and it does nothing for a practice that only serves Ballwin. Even if it ranked, the reader is in Oregon.</p>
-  <p><strong>The rule: every piece of content should build relevance for your location and your expertise.</strong> Not general topics.</p>
-  <p>What that looks like in practice: <strong>statistics-driven, local linkbait</strong>. Content built on Ballwin-specific data that local news, bloggers and organizations would want to cite. A survey of local families, a price comparison across the area, a seasonal trend from your own appointment book. Some ideas will be good, some won't. But ideas are no longer the bottleneck. Execution is.</p>
-  <p>The prompt, which works in ChatGPT or directly in ChatSEO (where it also sees the queries your site already gets impressions for):</p>
+  <p>The practice's blog had articles like "How long do dental implants last?". That's a national question. Thousands of sites answer it, AI answers it directly, and it does nothing for a practice that only serves Ballwin.</p>
+  <p>The rule: every piece of content should build relevance for your location and your expertise. What that looks like in practice: <strong>statistics-driven, local linkbait</strong>. Content built on Ballwin-specific data that local news, bloggers and organizations would want to cite. Some ideas will be good, some won't. But ideas are no longer the bottleneck. Execution is.</p>
 
   <div class="prompt">
-    <div class="prompt-bar"><span class="prompt-label">Prompt · Step 8 · ChatGPT or ChatSEO</span><button class="copy" type="button">Copy</button></div>
-<pre>I run [business type] in [city, state]. Give me 15 content ideas built on local data I can collect or compile myself (a local survey, public records, price comparisons across the area, local rankings, seasonal trends). Each idea must be specific to [city], something local media, bloggers and organizations would want to reference. For each: the headline, the data source, and 3 local sites likely to link to it.</pre>
+    <div class="prompt-bar"><span class="prompt-label">Step 8 · Paste this into ChatSEO</span><button class="copy" type="button">Copy</button></div>
+<pre>I run [business type] in [city, state]. Using the queries my site already gets impressions for, give me 15 content ideas built on local data I can collect or compile myself (a local survey, public records, price comparisons across the area, local rankings, seasonal trends). Each idea must be specific to [city], something local media, bloggers and organizations would want to reference. For each: the headline, the data source, and 3 local sites likely to link to it.</pre>
   </div>
 
   <hr>
 
   <h2 id="step-9"><span class="n">Step 9</span>Prospect local links in one prompt</h2>
-  <p class="lede">The last piece is off-site. Local links build local topical authority, the signal that says "this business belongs to Ballwin".</p>
-  <p>The point here is speed: one well-written prompt produces a full list of city-specific link prospects in about 4 minutes. Work that used to take a full day of manual prospecting, and that most local businesses therefore never did.</p>
+  <p class="lede">Local links build local topical authority, the signal that says "this business belongs to Ballwin".</p>
+  <p>One well-written prompt produces a full list of city-specific link prospects in about 4 minutes. Work that used to take a full day of manual prospecting.</p>
 
   <div class="prompt">
-    <div class="prompt-bar"><span class="prompt-label">Prompt · Step 9 · ChatGPT with web search, or ChatSEO</span><button class="copy" type="button">Copy</button></div>
+    <div class="prompt-bar"><span class="prompt-label">Step 9 · Paste this into ChatSEO</span><button class="copy" type="button">Copy</button></div>
 <pre>Find link opportunities for a [business type] in [city, state]. Include local news sites, chambers of commerce and business associations, local events open to sponsors, schools and sports clubs, local bloggers and podcasts, "best of [city]" lists, nonprofits, and complementary businesses. For each: name, URL, why they would link, and the exact angle to pitch.</pre>
   </div>
 
-  <p>Then you do the part AI can't: <strong>reach out, sponsor, show up.</strong> A link from the local youth soccer club is worth more to a Ballwin dentist than a guest post on a national dental blog, and it costs a sponsorship, not a content budget.</p>
+  <p>Then you do the part AI can't: <strong>reach out, sponsor, show up.</strong></p>
 
   <hr>
 
   <h2 id="order">Why the order matters</h2>
-  <p class="lede">Recap the sequence. It runs from cheapest and fastest to slowest and most compounding.</p>
   <ol class="recap">
     <li><strong>Benchmark four surfaces</strong> (so you can prove every gain)</li>
     <li><strong>Fix GBP location and category</strong> (fastest lever, biggest jump)</li>
-    <li><strong>Find the 4 to 7 directories AI cites</strong> (your citation list comes from data, not a template)</li>
+    <li><strong>Find the 4 to 7 directories AI cites</strong> (from data, not a template)</li>
     <li><strong>Rank inside those directories</strong> (sponsored slots, 90/10 reviews, rewritten profiles)</li>
-    <li><strong>Clean up brand inconsistencies</strong> (so AI engines get one coherent story)</li>
+    <li><strong>Clean up brand inconsistencies</strong> (one coherent story for AI engines)</li>
     <li><strong>Fix titles and metas</strong> (no ZIP stuffing, no phone numbers)</li>
-    <li><strong>Build and optimize service + city pages</strong> (service pages before any blog post)</li>
-    <li><strong>Write local, data-driven content</strong> (never generic national topics)</li>
+    <li><strong>Build and optimize service + city pages</strong> (before any blog post)</li>
+    <li><strong>Write local, data-driven content</strong> (never national topics)</li>
     <li><strong>Build local links</strong> (topical authority tied to your city)</li>
   </ol>
+  <p>It runs from cheapest and fastest to slowest and most compounding. Steps 1 to 4 can move rankings within weeks. Steps 7 to 9 are what keep you there when competitors wake up. And steps 3 and 4 only exist because you tracked AI citations in step 1.</p>
 
-  <figure class="plainfig">
-    <svg viewBox="0 0 720 210" role="img" aria-label="Timeline of the nine steps. Steps 1 to 4 are cheap and fast and can move rankings within weeks. Steps 5 and 6 are cleanup. Steps 7 to 9 are slow and compounding and keep you there." style="width:100%;height:auto">
-      <style>
-        .l-hair{stroke:var(--line);stroke-width:1}
-        .l-acc{stroke:var(--accent);stroke-width:3;fill:none}
-        .l-ink{stroke:var(--ink);stroke-width:1.5;fill:none}
-        .d-acc{fill:var(--accent)}
-        .d-bg{fill:var(--bg);stroke:var(--ink);stroke-width:1.5}
-        .lt{fill:var(--ink);font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:13px;font-weight:600}
-        .ls{fill:var(--muted);font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:12px}
-        .ln{fill:var(--on-accent);font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:11px;font-weight:700}
-        .lnk{fill:var(--ink);font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:11px;font-weight:700}
-      </style>
-      <line x1="30" y1="100" x2="690" y2="100" class="l-hair"/>
-      <path d="M30 100 H 300" class="l-acc"/>
-      <g>
-        <circle cx="60" cy="100" r="12" class="d-acc"/><text x="60" y="104" class="ln" text-anchor="middle">1</text>
-        <circle cx="140" cy="100" r="12" class="d-acc"/><text x="140" y="104" class="ln" text-anchor="middle">2</text>
-        <circle cx="220" cy="100" r="12" class="d-acc"/><text x="220" y="104" class="ln" text-anchor="middle">3</text>
-        <circle cx="300" cy="100" r="12" class="d-acc"/><text x="300" y="104" class="ln" text-anchor="middle">4</text>
-        <circle cx="380" cy="100" r="12" class="d-bg"/><text x="380" y="104" class="lnk" text-anchor="middle">5</text>
-        <circle cx="460" cy="100" r="12" class="d-bg"/><text x="460" y="104" class="lnk" text-anchor="middle">6</text>
-        <circle cx="540" cy="100" r="12" class="d-bg"/><text x="540" y="104" class="lnk" text-anchor="middle">7</text>
-        <circle cx="610" cy="100" r="12" class="d-bg"/><text x="610" y="104" class="lnk" text-anchor="middle">8</text>
-        <circle cx="680" cy="100" r="12" class="d-bg"/><text x="680" y="104" class="lnk" text-anchor="middle">9</text>
-      </g>
-      <text x="180" y="48" class="lt" text-anchor="middle">Steps 1 to 4</text>
-      <text x="180" y="66" class="ls" text-anchor="middle">cheap, fast, can move rankings within weeks</text>
-      <text x="420" y="150" class="lt" text-anchor="middle">Steps 5 and 6</text>
-      <text x="420" y="168" class="ls" text-anchor="middle">cleanup: one story, one title</text>
-      <text x="610" y="48" class="lt" text-anchor="middle">Steps 7 to 9</text>
-      <text x="610" y="66" class="ls" text-anchor="middle">slow, compounding, keeps you there</text>
-      <line x1="30" y1="190" x2="690" y2="190" class="l-hair"/>
-      <text x="360" y="208" class="ls" text-anchor="middle">cheapest and fastest on the left, slowest and most compounding on the right</text>
-    </svg>
-    <figcaption>Steps 1 to 4 can move rankings within weeks. Steps 7 to 9 are what keep you there when competitors wake up.</figcaption>
-  </figure>
+  <h3>The honest caveats</h3>
+  <ul>
+    <li><strong>This is one site.</strong> A live teardown, not a case study with results. The 5 to 10 spot lift is a pattern seen across many campaigns, not a measured outcome on this practice.</li>
+    <li><strong>CTR as a ranking factor.</strong> Google denied it for years; its 2023 antitrust testimony described NavBoost, which uses click data. Directionally it holds, but don't treat it as settled.</li>
+    <li><strong>"AI engines don't care if a listing is sponsored."</strong> Plausible, no hard data yet. Test one directory before you spend on all of them.</li>
+    <li><strong>The directory list is niche-specific.</strong> HealthGrades and Delta Dental are dentist answers. Pull your own list.</li>
+  </ul>
 
-  <p>And steps 3 and 4 only exist because you tracked AI citations in step 1. Skip the benchmark and you'd be back to submitting to 150 directories, because you'd have no way of knowing which four mattered.</p>
-
-  <hr>
-
-  <h2 id="caveats">The honest caveats</h2>
-  <p class="lede">A few things worth saying before the replies do.</p>
-  <div class="tw">
-    <table>
-      <thead><tr><th>Claim</th><th>How solid it is</th></tr></thead>
-      <tbody>
-        <tr><td><b>This is one site.</b></td><td>It's a live teardown, not a case study with results. The 5 to 10 spot lift from the location fix is a pattern seen across many campaigns, not a measured outcome on this practice.</td></tr>
-        <tr><td><b>CTR as a ranking factor.</b></td><td>Google denied using clicks for years. Its own testimony in the 2023 US antitrust trial described a system called NavBoost that uses click data. Directionally it holds, but don't treat it as settled science.</td></tr>
-        <tr><td><b>"AI engines don't care if a listing is sponsored."</b></td><td>Plausible, since they retrieve the page as it's rendered. There's no hard data proving it yet. Test it on one directory before you spend money on all of them.</td></tr>
-        <tr><td><b>The directory list is niche-specific.</b></td><td>HealthGrades and Delta Dental are dentist answers. Pull your own list from AI citations in your niche, and re-pull it: the sources move.</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <h2 id="time">Where the time actually goes</h2>
-  <p>Run this on one local business and you'll see the split. The GBP fix takes seconds. The directories and links take judgment and outreach: reading a HealthGrades page, deciding whether a sponsored slot is worth it, emailing a chamber of commerce. That part is yours.</p>
-  <p>The on-site work (baseline, titles, metas, service pages, content ideas) takes the most hours, and it's the most repetitive. It's the same SERP analysis, the same before/after table, the same "match the median, cover the topics" page, run once per service. Which is exactly the kind of work that should not be done by hand in 2026.</p>
-
-  <hr>
-
-  <h2 id="proof" style="scroll-margin-top:80px">How one founder went from 250 to 750 clicks a day</h2>
-  <p>This is the Search Console graph from a ChatSEO user running the same loop this playbook describes: measure first, fix the highest-leverage thing, ship one page at a time, recheck. No link buying, no content farm. The tool found the fixes; the founder approved them one by one.</p>
-  <figure>
-    <img src="img/proof-clicks.webp" alt="Search Console graph showing daily clicks rising from around 250 to around 750." loading="lazy">
-  </figure>
-
-  <h2>Why this works when local SEO tools don't</h2>
-  <p>Everything on this page is nine steps and a list of prompts, and you can <a href="https://link.chatseo.app/pb-local-seo-playbook" target="_blank" rel="noopener">try the version that runs on your real data for free</a> if you'd rather not be the one pasting.</p>
-
-  <div class="vs">
-    <div class="vs-col vs-old">
-      <h3>Old local SEO tools</h3>
-      <ul>
-        <li>A rank tracker for the map pack, and nothing for AI answers</li>
-        <li>150 directory submissions, none of them the four that matter</li>
-        <li>An audit with 47 findings and no order to do them in</li>
-        <li>Title rewrites you copy into WordPress by hand</li>
-        <li>A blog calendar of national questions</li>
-      </ul>
-    </div>
-    <div class="vs-col vs-new">
-      <h3>What you actually want</h3>
-      <ul>
-        <li>A baseline on all four surfaces before anything changes</li>
-        <li>The directories AI actually cites, read off the data</li>
-        <li>The one fix that moves the most, then the next</li>
-        <li>Titles and metas fixed on the live site once you approve</li>
-        <li>Service + city pages that match what already ranks</li>
-      </ul>
-    </div>
-  </div>
 
   <div class="final" style="margin:44px 0">
-    <h2 style="margin-top:0">That's the whole idea behind ChatSEO</h2>
-    <p>Connect Search Console, GA4 and your CMS once. Then ask it to run the benchmark, find the stuffed titles, draft the service page, and ship the fix. The SEO agent for local SEO, 7 days free.</p>
-    <a class="btn btn-primary" href="https://link.chatseo.app/pb-local-seo-playbook" target="_blank" rel="noopener">Try ChatSEO free for 7 days →</a>
+    <h2 style="margin-top:0">Run the nine steps on your own data</h2>
+    <p>Connect Search Console, GA4 and your CMS once. Then paste the prompts above, one by one, and approve what ChatSEO proposes. <strong>7 days free</strong>, cancel anytime.</p>
+    <a class="btn btn-primary" href="https://link.chatseo.app/pb-local-seo-playbook" target="_blank" rel="noopener">Start your 7-day free trial →</a>
   </div>
 
   <footer>
-    <p>Built by <a href="https://link.chatseo.app/pb-local-seo-playbook" target="_blank" rel="noopener">Nicholas at ChatSEO</a> · Everything on this page is free to copy and use.</p>
+    <p>Built by <a href="https://link.chatseo.app/pb-local-seo-playbook" target="_blank" rel="noopener">Nicholas at ChatSEO</a> · Everything on this page is free to copy and use · <a href="../local-seo-playbook-fr/">Version française</a></p>
   </footer>
 
 </div>
 <script>
-// Theme: remember the viewer's choice, fall back to their system setting.
 (function(){
   var root=document.documentElement, btn=document.getElementById('themeBtn');
   try{ var s=localStorage.getItem('theme'); if(s) root.setAttribute('data-theme',s); }catch(e){}
@@ -646,8 +365,6 @@ Flag any claim about the practice you could not verify from my site. Do not inve
     try{ localStorage.setItem('theme',next); }catch(e){}
   });
 })();
-
-// Copy buttons: getting the prompt out cleanly is the whole point of the page.
 document.querySelectorAll('.copy').forEach(function(btn){
   btn.addEventListener('click',function(e){
     e.preventDefault();
