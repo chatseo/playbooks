@@ -108,6 +108,10 @@ pre{margin:0; background:var(--code-bg); color:var(--code-ink); border-radius:0 
 footer{text-align:center; padding:30px 0 56px; color:var(--muted); font-size:13.5px}
 footer a{color:var(--muted)}
 @media (max-width:560px){ body{font-size:16.5px} .bar nav{display:none} .step-num{width:44px;height:44px;font-size:20px;border-radius:10px} }
+.run-row{display:flex;justify-content:flex-end;margin-top:8px}
+.run{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:6px;background:var(--accent);color:var(--on-accent);
+  font-size:13.5px;font-weight:600;text-decoration:none;box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.run:hover{filter:brightness(1.08)}
 </style>
 </head>
 <body>
@@ -136,10 +140,9 @@ footer a{color:var(--muted)}
     <h1>Le site SEO<br><em>à deux moteurs</em></h1>
     <p class="sub">Des articles de blog à l'échelle et des pages de services, construits dans Claude Code sans écrire une ligne de code. Écrire n'est plus le goulot d'étranglement. Voici tout ce qu'il y a autour de l'écriture, étape par étape, avec chaque prompt en modèle.</p>
     <div class="cta-row">
-      <a class="btn btn-primary" href="https://link.chatseo.app/pb-two-engine-seo-site-fr" target="_blank" rel="noopener">Commencer mon essai gratuit 7 jours →</a>
-      <a class="btn btn-ghost" href="#step-0">Commencer à l'étape 0</a>
+      <a class="btn btn-primary" href="#step-0">Commencer à l'étape 0 →</a>
     </div>
-    <p class="note">ChatSEO donne à Claude les données de mots-clés qu'il ne peut pas deviner · 🎁 7 jours gratuits</p>
+    <p class="note">12 prompts à copier, 6 schémas, zéro ligne de code. ChatSEO n'intervient qu'aux étapes où il faut des données.</p>
   </div>
 
   <h2>Ceux qui font du SEO avec l'IA ont presque tous les mêmes problèmes</h2>
@@ -397,6 +400,22 @@ footer a{color:var(--muted)}
 
 </div>
 <script>
+// "Run in ChatSEO": every prompt written for ChatSEO gets a button that opens the chat pre-filled.
+// The app reads ?message= and pre-fills (it does not auto-send); source=playbook fires the PROMPT_PREFILLED event.
+(function(){
+  var fr=document.documentElement.lang==='fr';
+  var base=fr?'https://chatseo.app/fr/dashboard':'https://chatseo.app/dashboard';
+  var name=location.pathname.split('/').filter(Boolean).pop()||'playbook';
+  document.querySelectorAll('.prompt').forEach(function(p){
+    var lab=p.querySelector('.prompt-label'); var label=lab?lab.textContent:'';
+    if(!/into ChatSEO|dans ChatSEO/.test(label)) return;
+    var text=p.querySelector('pre').innerText.trim();
+    var a=document.createElement('a'); a.className='run'; a.target='_blank'; a.rel='noopener';
+    a.href=base+'?message='+encodeURIComponent(text)+'&source=playbook&name='+encodeURIComponent(name);
+    a.textContent=fr?'Lancer dans ChatSEO \u2192':'Run in ChatSEO \u2192';
+    var row=document.createElement('div'); row.className='run-row'; row.appendChild(a); p.appendChild(row);
+  });
+})();
 (function(){
   var root=document.documentElement, btn=document.getElementById('themeBtn');
   try{ var s=localStorage.getItem('theme'); if(s) root.setAttribute('data-theme',s); }catch(e){}
