@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le site SEO à deux moteurs</title>
+<meta name="description" content="Des articles de blog à l'échelle et des pages de services, construits dans Claude Code sans écrire une ligne de code. Dix étapes, chaque prompt en modèle, et l'ordre qui fait ranker.">
+<meta property="og:title" content="Le site SEO à deux moteurs">
+<meta property="og:description" content="Écrire n'est plus le goulot d'étranglement. Les dix étapes autour de l'écriture : de vraies données de mots-clés, une vraie voix, la structure qui gagne déjà, et un deuxième moteur pour les clients. Gratuit.">
+<meta property="og:image" content="https://chatseo.github.io/playbooks/two-engine-seo-site-fr/img/og-card.jpg">
+<meta property="og:url" content="https://chatseo.github.io/playbooks/two-engine-seo-site-fr/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="fr" href="https://chatseo.github.io/playbooks/two-engine-seo-site-fr/">
+<link rel="alternate" hreflang="en" href="https://chatseo.github.io/playbooks/two-engine-seo-site/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFFFFF; --ink:#030712; --muted:#4B5563; --faint:#9AA1AE;
+  --accent:#0066FD; --on-accent:#FFFFFF; --accent-soft:#EEF4FF;
+  --line:#E8EEF9; --code-bg:#030712; --code-ink:#F4F6FA;
+  --maxw:720px;
+}
+:root:not([data-theme="light"]){ @media (prefers-color-scheme: dark){
+  --bg:#030712; --ink:#FFFFFF; --muted:#A3AAB8; --faint:#6B7280;
+  --accent:#4D8DFF; --on-accent:#030712; --accent-soft:#0E1A33;
+  --line:#1F2937; --code-bg:#0B1220; --code-ink:#F4F6FA;
+}}
+:root[data-theme="dark"]{
+  --bg:#030712; --ink:#FFFFFF; --muted:#A3AAB8; --faint:#6B7280;
+  --accent:#4D8DFF; --on-accent:#030712; --accent-soft:#0E1A33;
+  --line:#1F2937; --code-bg:#0B1220; --code-ink:#F4F6FA;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:72px}
+body{margin:0; background:var(--bg); color:var(--ink);
+  font-family:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:17.5px; line-height:1.66; -webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 20px}
+.bar{position:sticky; top:0; z-index:50; background:color-mix(in srgb, var(--bg) 90%, transparent);
+  backdrop-filter:blur(10px); border-bottom:1px solid var(--line)}
+.bar-in{max-width:var(--maxw); margin:0 auto; padding:12px 20px; display:flex; align-items:center; gap:14px}
+.brand{font-weight:700; letter-spacing:-.02em; font-size:15px; text-decoration:none; color:var(--ink); white-space:nowrap}
+.brand span{color:var(--accent)}
+.bar nav{margin-left:auto; display:flex; gap:16px; overflow-x:auto; scrollbar-width:none}
+.bar nav::-webkit-scrollbar{display:none}
+.bar nav a{color:var(--muted); text-decoration:none; font-size:13.5px; font-weight:500; white-space:nowrap}
+.bar nav a:hover{color:var(--accent)}
+.lang{font-size:13px; font-weight:600; color:var(--accent); text-decoration:none; border:1px solid var(--line); border-radius:6px; padding:6px 10px; white-space:nowrap}
+.theme{background:none; border:1px solid var(--line); color:var(--muted); border-radius:6px; width:32px; height:32px; cursor:pointer; font-size:14px; flex:none}
+.theme:hover{color:var(--accent); border-color:var(--accent)}
+.hero{padding:72px 0 12px}
+.eyebrow{display:inline-block; font-size:11.5px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); margin-bottom:18px}
+h1{font-weight:700; letter-spacing:-.03em; font-size:clamp(38px,7vw,58px); line-height:1.04; margin:0 0 20px}
+h1 em{font-style:normal; color:var(--accent)}
+.sub{font-size:19px; max-width:600px; margin:0 0 26px; line-height:1.5}
+.cta-row{display:flex; gap:12px; flex-wrap:wrap; margin-bottom:10px}
+.btn{display:inline-flex; align-items:center; gap:8px; padding:12px 24px; border-radius:6px; font-weight:500; font-size:15px;
+  text-decoration:none; border:1px solid transparent; transition:.15s; box-shadow:0 1px 3px rgba(0,0,0,.1),0 1px 2px -1px rgba(0,0,0,.1)}
+.btn-primary{background:var(--accent); color:var(--on-accent)}
+.btn-primary:hover{filter:brightness(1.08); transform:translateY(-1px)}
+.btn-ghost{border-color:var(--line); color:var(--ink); background:var(--bg); box-shadow:none}
+.btn-ghost:hover{border-color:var(--accent); color:var(--accent)}
+.note{font-size:13.5px; color:var(--muted)}
+h2{font-weight:700; font-size:clamp(27px,4.4vw,34px); line-height:1.14; letter-spacing:-.025em; margin:60px 0 8px}
+h3{font-size:19px; font-weight:600; letter-spacing:-.015em; margin:28px 0 8px}
+p{margin:0 0 17px}
+a{color:var(--accent)}
+.lede{font-size:19px; margin-bottom:22px; line-height:1.5}
+hr{border:0; border-top:1px solid var(--line); margin:48px 0}
+strong{font-weight:650}
+ul,ol{padding-left:22px; margin:0 0 18px}
+li{margin-bottom:8px}
+.plain{list-style:none; padding:0}
+.plain li{padding-left:24px; position:relative; margin-bottom:10px}
+.plain li::before{content:"↳"; position:absolute; left:0; color:var(--accent); font-weight:700}
+.step-head{display:flex; align-items:flex-start; gap:18px; margin:64px 0 6px}
+.step-num{flex:none; width:56px; height:56px; border-radius:12px; background:var(--accent); color:var(--on-accent);
+  font-weight:700; font-size:26px; display:flex; align-items:center; justify-content:center; letter-spacing:-.02em}
+.step-head h2{margin:0}
+.chips{display:flex; gap:8px; flex-wrap:wrap; margin:10px 0 18px}
+.chip{font-size:12.5px; font-weight:600; padding:5px 11px; border-radius:100px; border:1px solid var(--line); color:var(--muted)}
+.chip.tool{border-color:var(--accent); color:var(--accent); background:var(--accent-soft)}
+figure{margin:28px 0}
+figure img{width:100%; height:auto; display:block; border-radius:8px; border:1px solid var(--line)}
+figcaption{font-size:13.5px; color:var(--muted); margin-top:10px}
+.callout{border-left:2px solid var(--accent); padding:4px 0 4px 20px; margin:28px 0}
+.callout p{margin:0 0 10px; font-size:16px}
+.callout p:last-child{margin:0}
+.callout .k{font-weight:650; color:var(--accent)}
+.prompt{position:relative; margin:20px 0 22px}
+.prompt-bar{display:flex; align-items:center; justify-content:space-between; gap:10px; background:var(--code-bg);
+  border-radius:8px 8px 0 0; padding:9px 13px; border-bottom:1px solid rgba(255,255,255,.1)}
+.prompt-label{font-family:"JetBrains Mono",ui-monospace,monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#8C93A0}
+.copy{background:rgba(255,255,255,.12); color:#F5F5F5; border:0; border-radius:4px; padding:5px 11px; font-size:12px; font-weight:600; cursor:pointer; font-family:inherit; transition:.15s; white-space:nowrap}
+.copy:hover, .copy.done{background:#0066FD; color:#FFFFFF}
+pre{margin:0; background:var(--code-bg); color:var(--code-ink); border-radius:0 0 8px 8px; padding:16px; overflow-x:auto;
+  font-family:"JetBrains Mono",ui-monospace,monospace; font-size:12.5px; line-height:1.62; white-space:pre-wrap; word-wrap:break-word}
+.recap{counter-reset:s; list-style:none; padding:0; margin:22px 0}
+.recap li{counter-increment:s; position:relative; padding-left:40px; margin-bottom:12px}
+.recap li::before{content:counter(s); position:absolute; left:0; top:2px; width:26px; height:26px; border-radius:50%; background:var(--accent);
+  color:var(--on-accent); font-size:13px; font-weight:700; display:flex; align-items:center; justify-content:center}
+.final{border:1px solid var(--accent); border-radius:8px; padding:36px 26px; text-align:center; margin:52px 0 20px}
+.final h2{margin:0 0 10px; font-size:clamp(25px,4vw,31px)}
+.final p{max-width:470px; margin:0 auto 22px}
+footer{text-align:center; padding:30px 0 56px; color:var(--muted); font-size:13.5px}
+footer a{color:var(--muted)}
+@media (max-width:560px){ body{font-size:16.5px} .bar nav{display:none} .step-num{width:44px;height:44px;font-size:20px;border-radius:10px} }
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="bar-in">
+    <a class="brand" href="#top">Chat<span>SEO</span></a>
+    <nav>
+      <a href="#position">Position</a>
+      <a href="#step-0">Construire</a>
+      <a href="#step-1">Mots-clés</a>
+      <a href="#step-3">Voix</a>
+      <a href="#step-7">Pages services</a>
+      <a href="#step-8">/blog</a>
+      <a href="#offpage">Off-page</a>
+    </nav>
+    <a class="lang" href="../two-engine-seo-site/" hreflang="en">EN</a>
+    <button class="theme" id="themeBtn" aria-label="Changer de thème">◐</button>
+  </div>
+</div>
+
+<div class="wrap" id="top">
+
+  <div class="hero">
+    <span class="eyebrow">Gratuit · Claude Code · 10 étapes</span>
+    <h1>Le site SEO<br><em>à deux moteurs</em></h1>
+    <p class="sub">Des articles de blog à l'échelle et des pages de services, construits dans Claude Code sans écrire une ligne de code. Écrire n'est plus le goulot d'étranglement. Voici tout ce qu'il y a autour de l'écriture, étape par étape, avec chaque prompt en modèle.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://link.chatseo.app/pb-two-engine-seo-site-fr" target="_blank" rel="noopener">Commencer mon essai gratuit 7 jours →</a>
+      <a class="btn btn-ghost" href="#step-0">Commencer à l'étape 0</a>
+    </div>
+    <p class="note">ChatSEO donne à Claude les données de mots-clés qu'il ne peut pas deviner · 🎁 7 jours gratuits</p>
+  </div>
+
+  <h2>Ceux qui font du SEO avec l'IA ont presque tous les mêmes problèmes</h2>
+  <ul class="plain">
+    <li>Ils demandent « 20 mots-clés » à Claude et reçoivent 20 suppositions</li>
+    <li>Leurs articles commencent par « Dans un monde en constante évolution »</li>
+    <li>Leurs pages chargent lentement et ils ne savent pas pourquoi</li>
+    <li>Ils publient 300 pages en une semaine et se demandent pourquoi rien ne ranke</li>
+  </ul>
+  <p>Claude écrit plus vite que n'importe quelle équipe. Le goulot d'étranglement, c'est tout ce qu'il y a autour de l'écriture : choisir le bon mot-clé, rendre la page digne d'être lue, et rendre le site facile à crawler pour Google.</p>
+  <p>Voici le système complet. Deux moteurs, un site. Chaque prompt ci-dessous est un modèle : remplace ce qui est entre <code>[CROCHETS]</code> par ton activité et colle.</p>
+
+  <hr>
+
+  <h2 id="position">Pourquoi la position compte plus que tu ne le penses</h2>
+  <p class="lede">Le taux de clic s'effondre à mesure qu'on descend dans la page.</p>
+  <p>La position 1 prend entre 20 % et 40 % des clics selon les études. Le tableau 2026 de First Page Sage la place à 39,8 %, la position 2 à 18,7 %, la position 10 à 1,6 %.</p>
+  <figure>
+    <img src="img/01-ctr-by-position.webp" alt="Graphique : part des clics par position organique. Position 1 : 39,8 %, position 2 : 18,7 %, position 10 : 1,6 %." loading="lazy">
+  </figure>
+  <p>Le jeu, ce n'est donc pas « être en première page ». C'est <strong>« être dans le top 3 sur des mots-clés que tu peux vraiment gagner »</strong>. C'est pour ça que ce système commence par le choix des mots-clés, pas par l'écriture.</p>
+
+  <hr>
+
+  <div class="step-head" id="step-0"><div class="step-num">0</div><h2>Construire le site dans Claude Code</h2></div>
+  <div class="chips"><span class="chip tool">Claude Code</span><span class="chip">~15 min</span><span class="chip">un fichier, un prompt</span></div>
+  <p>Crée un dossier vide. Ajoute un fichier : <code>CLAUDE.md</code>. C'est le manuel de ton employé. Il dit à Claude comment construire, comment écrire, et ce qu'il ne doit jamais faire.</p>
+  <p>Une règle dans ce fichier compte plus que toutes les autres : <strong>la génération de site statique</strong>. Une page peut être servie de trois façons :</p>
+  <figure>
+    <img src="img/02-three-ways-to-serve.webp" alt="Trois cartes : statique (déjà construite, celle à utiliser), côté serveur (construite à la demande, acceptable), côté client (construite dans le navigateur, jamais)." loading="lazy">
+  </figure>
+  <p>L'option 3, c'est comme ça qu'on passe un an à faire du SEO sans jamais être indexé. Impose l'option 1 dans <code>CLAUDE.md</code>. Puis un prompt :</p>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Étape 0 · Colle dans Claude Code</span><button class="copy" type="button">Copier</button></div>
+<pre>Construis un site web pour [NOM DE TON ENTREPRISE], qui propose [TA SOLUTION] à [TON CLIENT CIBLE]. Pages : une page d'accueil, un index de blog et un index de services. Copie exactement le design de la capture d'écran jointe. Utilise la génération de site statique.</pre>
+  </div>
+  <p>Joins une capture d'écran d'un design que tu aimes. Sans référence, tu obtiens du design IA générique. Avec une, tu obtiens quelque chose de proche du premier coup.</p>
+  <!-- SCREENSHOT SLOT 1: the homepage Claude Code built next to the reference screenshot -->
+
+  <hr>
+
+  <div class="step-head" id="step-1"><div class="step-num">1</div><h2>Trouver les mots-clés que Claude ne peut pas deviner</h2></div>
+  <div class="chips"><span class="chip tool">ChatSEO</span><span class="chip">l'étape qui a besoin de données</span></div>
+  <p class="lede">Claude ne connaît pas les volumes de recherche. Il ne connaît pas la difficulté. Demande-lui des mots-clés et il en invente de plausibles.</p>
+  <p>C'est l'étape où il te faut un outil avec des données. <a href="https://link.chatseo.app/pb-two-engine-seo-site-fr" target="_blank" rel="noopener">ChatSEO</a> a les données de mots-clés, et un MCP pour que Claude Code les lise directement :</p>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Étape 1 · Colle dans ChatSEO</span><button class="copy" type="button">Copier</button></div>
+<pre>Je vends [TA SOLUTION] à [TON CLIENT CIBLE] en [TON PAYS / LANGUE]. Trouve 50 mots-clés informationnels que mes futurs clients cherchent avant d'acheter. Difficulté 30 max, 100+ recherches mensuelles. Retire les noms de marque, les noms de concurrents, et les requêtes de gens qui seraient mes concurrents plutôt que mes clients. Ajoute des mots-clés sous forme de question et des sujets amont que mes acheteurs cherchent des mois avant d'avoir besoin de moi. Regroupe-les en clusters, un mot-clé principal par cluster, et donne-moi un tableau.</pre>
+  </div>
+  <!-- SCREENSHOT SLOT 2: the ChatSEO keyword table (volume, difficulty, cluster) -->
+  <p>Ou saute le copier-coller : branche le MCP ChatSEO dans Claude Code (plan Pro) et laisse-le écrire le fichier pour toi. Les données et le constructeur vivent dans la même session.</p>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Étape 1 · Colle dans Claude Code, MCP ChatSEO connecté</span><button class="copy" type="button">Copier</button></div>
+<pre>Utilise le MCP ChatSEO pour trouver 50 mots-clés informationnels pour [TA SOLUTION] en [TON PAYS / LANGUE] : difficulté 30 max, 100+ recherches mensuelles, pas de noms de marque ni de concurrents. Enregistre-les dans keywords.csv avec les colonnes keyword, volume, difficulty, cluster.</pre>
+  </div>
+
+  <hr>
+
+  <div class="step-head" id="step-2"><div class="step-num">2</div><h2>Écrire le premier article, avec un cluster</h2></div>
+  <div class="chips"><span class="chip tool">Claude Code</span><span class="chip">un article, des dizaines de mots-clés</span></div>
+  <p class="lede">Un article ne ranke jamais sur un seul mot-clé. Il ranke sur des dizaines.</p>
+  <figure>
+    <img src="img/03-keyword-cluster.webp" alt="Mot-clé principal « déboucher une canalisation » au centre, quatre mots-clés du cluster autour." loading="lazy">
+  </figure>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Étape 2 · Colle dans Claude Code</span><button class="copy" type="button">Copier</button></div>
+<pre>Prends le prochain mot-clé principal de keywords.csv qui n'a pas encore d'article de blog. Écris un article de blog pour ce mot-clé en utilisant les mots-clés de son cluster dans le même fichier. Ajoute des images libres de droits en utilisant la clé API du fichier .env.</pre>
+  </div>
+  <p>Mets chaque clé secrète dans le fichier <code>.env</code>. Jamais dans le code.</p>
+  <p>Le résultat sera techniquement correct et totalement illisible. <strong>C'est normal.</strong> L'étape suivante corrige ça.</p>
+
+  <hr>
+
+  <div class="step-head" id="step-3"><div class="step-num">3</div><h2>Tuer le contenu générique</h2></div>
+  <div class="chips"><span class="chip tool">Claude Code</span><span class="chip">5 fichiers de référence</span></div>
+  <p class="lede">Un premier jet, quel que soit le modèle, se lit comme une brochure. Personne ne va au bout. Et des gens qui quittent ta page en 8 secondes, c'est un signal que Google voit.</p>
+  <p>Crée cinq fichiers de référence dans ton projet :</p>
+  <ul class="plain">
+    <li><code>voice.md</code> : comment tu parles</li>
+    <li><code>humor.md</code> : ce qui te fait rire</li>
+    <li><code>opinions.md</code> : ce sur quoi tu te disputerais</li>
+    <li><code>stats.md</code> : tes vrais chiffres (clients servis, années d'activité)</li>
+    <li><code>stories.md</code> : les anecdotes que tu racontes à chaque client</li>
+  </ul>
+  <p>Nourris-les avec tes posts LinkedIn, tes emails, tes transcripts d'appels. Si tu n'as rien, colle un auteur dont tu aimes le style et dis à Claude que c'est la référence humour.</p>
+  <figure>
+    <img src="img/04-before-after-slop.webp" alt="Avant : une phrase de brochure générique. Après : une phrase avec de la voix et de l'humour." loading="lazy">
+  </figure>
+  <p>La plomberie, c'est ennuyeux. Ton article n'est pas obligé de l'être.</p>
+
+  <hr>
+
+  <div class="step-head" id="step-4"><div class="step-num">4</div><h2>Copier la structure qui ranke déjà</h2></div>
+  <div class="chips"><span class="chip tool">ChatSEO</span><span class="chip tool">Claude Code</span><span class="chip">le corrigé est public</span></div>
+  <p class="lede">Personne ne connaît l'algorithme exact. Mais les 3 premiers résultats sur ton mot-clé sont un corrigé public.</p>
+  <p>Regarde les 3 premiers résultats organiques (saute les forums et les annuaires). Fais la moyenne de leur nombre de mots, de leurs titres, de leurs images, des sous-sujets que les trois couvrent. C'est ton modèle.</p>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Étape 4 · Colle dans ChatSEO</span><button class="copy" type="button">Copier</button></div>
+<pre>Analyse les 3 premiers résultats organiques pour [TON MOT-CLÉ PRINCIPAL], hors forums et annuaires. Donne-moi leur nombre de mots moyen, leurs H2, les sous-sujets que les trois couvrent, et un angle qu'aucun ne couvre.</pre>
+  </div>
+  <!-- SCREENSHOT SLOT 3: ChatSEO's SERP analysis output for one keyword -->
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Étape 4 · Puis colle dans Claude Code</span><button class="copy" type="button">Copier</button></div>
+<pre>Réécris l'article avec cette structure et ce nombre de mots. Garde ma voix, mon humour, mes chiffres et mes anecdotes des fichiers de référence.</pre>
+  </div>
+  <p>Reprends la structure. <strong>Bats-les sur l'angle que personne ne couvre.</strong></p>
+
+  <hr>
+
+  <div class="step-head" id="step-5"><div class="step-num">5</div><h2>Le SEO on-page sans perdre la voix</h2></div>
+  <div class="chips"><span class="chip tool">Claude Code</span><span class="chip tool">ChatSEO</span><span class="chip">la checklist</span></div>
+  <p>La checklist est longue. L'essentiel :</p>
+  <ul class="plain">
+    <li>Exactement un H1</li>
+    <li>Le mot-clé principal dans les 100 premiers mots</li>
+    <li>3 à 5 liens internes, 2 à 3 liens externes</li>
+    <li>4 à 8 questions en FAQ</li>
+    <li>Un meta title et une meta description rédigés (le texte bleu et gris dans Google)</li>
+  </ul>
+  <p>Colle ta checklist dans Claude Code avec une seule consigne : <strong>applique chaque point, ne touche pas au ton</strong>. Cette consigne, c'est tout l'intérêt. Une passe SEO qui retransforme ton article en brochure vient d'annuler l'étape 3.</p>
+  <p>Si ton site tourne sur WordPress ou Shopify, ChatSEO peut auditer et appliquer ça pour toi :</p>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Étape 5 · Colle dans ChatSEO</span><button class="copy" type="button">Copier</button></div>
+<pre>Audite [URL DE TA PAGE] en SEO on-page sur le mot-clé [TON MOT-CLÉ PRINCIPAL] : H1, placement du mot-clé, liens internes et externes, FAQ, longueur du title et de la meta description. Liste les corrections et applique-les sans changer le ton.</pre>
+  </div>
+
+  <hr>
+
+  <div class="step-head" id="step-6"><div class="step-num">6</div><h2>Le SEO technique en trois prompts</h2></div>
+  <div class="chips"><span class="chip tool">Claude Code</span><span class="chip">2 ou 3 boucles</span></div>
+  <p>Trois choses dont Google a besoin :</p>
+  <ul class="plain">
+    <li><code>sitemap.xml</code> : la liste de chaque page que tu veux indexer</li>
+    <li><code>robots.txt</code> : ce que Google peut crawler (tout sauf ta zone d'admin)</li>
+    <li>Un audit de performance propre : vitesse, SEO, accessibilité, bonnes pratiques</li>
+  </ul>
+  <p>Sur une première construction, la performance est en général moyenne. Tu n'as pas besoin d'apprendre ce que veut dire « requêtes bloquant le rendu ». Lance un audit de performance, colle le rapport complet dans Claude Code :</p>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Étape 6 · Colle dans Claude Code</span><button class="copy" type="button">Copier</button></div>
+<pre>Voici mon audit de performance : [COLLE LE RAPPORT COMPLET]. Corrige tout jusqu'à ce que les quatre catégories atteignent 100. Génère aussi robots.txt et sitemap.xml.</pre>
+  </div>
+  <p>Pas à 100 après une passe ? Colle le nouveau rapport. Recommence. Deux ou trois boucles suffisent en général.</p>
+  <!-- SCREENSHOT SLOT 4: the performance audit at 100/100/100/100 (before/after pair if available) -->
+
+  <hr>
+
+  <div class="step-head" id="step-7"><div class="step-num">7</div><h2>Le deuxième moteur : les pages de services</h2></div>
+  <div class="chips"><span class="chip tool">ChatSEO</span><span class="chip">les pages qui amènent des clients</span></div>
+  <p class="lede">Les articles de blog amènent des lecteurs. Les pages de services amènent des clients.</p>
+  <p>« Comment déboucher une canalisation », c'est quelqu'un qui apprend. « Débouchage canalisation Lyon », c'est quelqu'un qui a sa carte bancaire à la main. Vois ça comme une fermeture éclair : les services d'un côté, les villes de l'autre. Chaque case est une page.</p>
+  <figure>
+    <img src="img/05-service-zipper.webp" alt="Une grille 3 par 3 : trois services croisés avec trois villes. Chaque case est une page. Neuf pages, un modèle." loading="lazy">
+  </figure>
+  <p>Pas d'angle local ? Remplace les villes par des secteurs ou des cas d'usage (« logiciel de facturation pour architectes »).</p>
+  <p>Pour savoir quelles cases méritent d'être construites, trie par coût par clic. Un CPC élevé veut dire que des concurrents paient ce clic en publicité. C'est un mot-clé qui rapporte.</p>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Étape 7 · Colle dans ChatSEO</span><button class="copy" type="button">Copier</button></div>
+<pre>Je vends [TES SERVICES, séparés par des virgules] à [TES VILLES / SECTEURS, séparés par des virgules]. Liste les mots-clés commerciaux au CPC le plus élevé qui combinent un de mes services avec un de ces lieux ou secteurs. Montre le volume et le CPC de chacun, et signale les combinaisons qui méritent leur propre page.</pre>
+  </div>
+  <p>Deux règles :</p>
+  <ul class="plain">
+    <li><strong>Un seul modèle pour toutes.</strong> Teste ta landing page d'abord, trouve la version qui convertit le mieux, réutilise-la partout.</li>
+    <li><strong>N'en construis pas des milliers.</strong> Les pages de services sont des quasi-doublons par nature. Quelques dizaines de bonnes pages battent 900 pages creuses.</li>
+  </ul>
+
+  <h3>Pourquoi l'ordre compte</h3>
+  <p>Les deux moteurs ne sont pas indépendants. Les articles de blog construisent l'autorité thématique : ils disent à Google que tu connais ton domaine, et ils passent des liens internes à tes pages de services. Les pages de services sont dures à ranker sur un domaine neuf. C'est l'autorité du blog qui les fait monter.</p>
+  <figure>
+    <img src="img/06-two-engines.webp" alt="Moteur 1, les articles de blog, alimente l'autorité thématique et les liens internes du moteur 2, les pages de services. Lecteurs à gauche, clients à droite." loading="lazy">
+  </figure>
+  <p><strong>Le blog d'abord, les pages de services ensuite.</strong> La marée soulève les bateaux.</p>
+
+  <hr>
+
+  <div class="step-head" id="step-8"><div class="step-num">8</div><h2>Tout emballer dans une seule commande</h2></div>
+  <div class="chips"><span class="chip tool">Claude Code</span><span class="chip">30 min → un mot</span></div>
+  <p class="lede">Tout ce qui précède, c'est 30 minutes de prompts par article. Fais-le une fois, puis mets-le en bouteille.</p>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Étape 8 · Colle dans Claude Code</span><button class="copy" type="button">Copier</button></div>
+<pre>Crée un skill appelé /blog. Il prend un mot-clé non utilisé dans keywords.csv, construit le cluster, analyse les 3 premiers résultats, écrit avec ma voix en utilisant les fichiers de référence, ajoute des images, applique la checklist on-page, et réutilise le même modèle de page optimisé.</pre>
+  </div>
+  <p>Maintenant tu tapes <code>/blog</code>. Un article, entièrement optimisé. Fais pareil pour <code>/service</code>.</p>
+  <!-- SCREENSHOT SLOT 5: the terminal running /blog with the finished post listed -->
+  <div class="callout">
+    <p><span class="k">Le piège.</span> En publier 500 le premier jour. Les règles anti-spam de Google visent explicitement le contenu produit à l'échelle pour manipuler les classements. Monte en puissance comme le ferait une vraie entreprise. Un par jour, puis deux, puis trois. Jamais mille.</p>
+  </div>
+
+  <hr>
+
+  <div class="step-head" id="step-9"><div class="step-num">9</div><h2>Mettre en ligne, puis le dire à Google</h2></div>
+  <div class="chips"><span class="chip tool">Claude Code</span><span class="chip tool">ChatSEO</span><span class="chip">la boucle de retour</span></div>
+  <p>Demande à Claude Code de déployer le site sur un hébergeur statique et de te guider pour le nom de domaine. Ensuite :</p>
+  <ul class="plain">
+    <li>Vérifie ton site auprès de Google et soumets <code>sitemap.xml</code></li>
+    <li>Crée ta fiche Google gratuite si tu sers une zone locale. Pour les recherches locales, c'est le fruit le plus facile à cueillir</li>
+    <li>Connecte tes données Google à <a href="https://link.chatseo.app/pb-two-engine-seo-site-fr" target="_blank" rel="noopener">ChatSEO</a> pour voir ce qui marche vraiment</li>
+  </ul>
+  <p>Une fois que les pages commencent à avoir des impressions :</p>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Étape 9 · Colle dans ChatSEO, Search Console connectée</span><button class="copy" type="button">Copier</button></div>
+<pre>Quelles pages de [TON DOMAINE] publiées ces 30 derniers jours ont des impressions mais presque aucun clic ? Propose un nouveau title et une nouvelle meta description pour chacune.</pre>
+  </div>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Étape 9 · Colle dans ChatSEO</span><button class="copy" type="button">Copier</button></div>
+<pre>Passe en revue la fiche Google de [NOM DE TON ENTREPRISE] et dis-moi les 3 corrections qui comptent le plus pour apparaître sur « [TON SERVICE] [TA VILLE] ».</pre>
+  </div>
+
+  <hr>
+
+  <h2 id="offpage">Off-page : là où les gens se font avoir</h2>
+  <p>« 100 backlinks pour 5 € », ça veut dire un réseau de blogs privés. Un seul propriétaire, des milliers de domaines poubelles qui pointent vers toi. Ça peut avoir l'air génial pendant quelques mois. Puis une mise à jour tombe et le site disparaît.</p>
+  <p>Quatre méthodes qui ne portent pas ce risque :</p>
+  <ul class="plain">
+    <li><strong>Remplacement de liens cassés :</strong> trouve les liens morts sur les sites de ta niche, propose ta page en remplacement</li>
+    <li><strong>Articles invités :</strong> cherche <code>"[TA NICHE]" "écrire pour nous"</code></li>
+    <li><strong>Demandes de journalistes :</strong> réponds aux questions des journalistes, fais-toi citer</li>
+    <li><strong>Placements payants</strong> sur de vrais sites réputés</li>
+  </ul>
+  <p>On a fait de l'off-page chez ChatSEO, méthodes propres uniquement. <strong>DR 51 en cinq mois.</strong></p>
+  <!-- SCREENSHOT SLOT 6: the Ahrefs DR graph for chatseo.app -->
+
+  <h2>Là où je ne suis pas d'accord : « le SEO IA, c'est juste du SEO »</h2>
+  <p>À moitié vrai. Bien ranker te fait toujours citer par les moteurs IA, parce qu'ils cherchent avant de répondre.</p>
+  <p>Mais le clic rétrécit. Ahrefs a analysé 300 000 mots-clés en février 2026 : quand un AI Overview apparaît, le CTR du premier résultat chute de 58 %.</p>
+  <p>On a donc ajouté un filtre à l'étape des mots-clés : <strong>des requêtes de bas et de milieu de funnel avec une vraie intention business, et pas d'AI Overview sur la page de résultats</strong>. Si Google répond lui-même à la question, la première place vaut beaucoup moins.</p>
+
+  <hr>
+
+  <h2>Ce qu'il faut retenir</h2>
+  <p>Le système fait 10 étapes. La plupart des gens font l'étape 2 et s'arrêtent.</p>
+  <ol class="recap">
+    <li><strong>Construire le site</strong> dans Claude Code, statique, à partir d'une capture de référence</li>
+    <li><strong>De vraies données de mots-clés</strong>, difficulté 30 max, en clusters</li>
+    <li><strong>Le premier article</strong> sur un mot-clé principal et son cluster</li>
+    <li><strong>Tuer le générique</strong> avec cinq fichiers de référence</li>
+    <li><strong>Copier la structure</strong> du top 3, les battre sur un angle</li>
+    <li><strong>La passe on-page</strong> qui ne touche pas au ton</li>
+    <li><strong>La boucle technique</strong> jusqu'à quatre scores à 100</li>
+    <li><strong>Les pages de services</strong>, un modèle, triées par CPC</li>
+    <li><strong>Une commande</strong> : /blog et /service, en montant en puissance comme une vraie entreprise</li>
+    <li><strong>Mise en ligne</strong>, sitemap soumis, suivi de ce qui marche</li>
+  </ol>
+  <p>La différence entre du contenu IA générique et un site qui ranke, ce sont les étapes 1, 3 et 4 : de vraies données de mots-clés, une vraie voix, et la structure qui gagne déjà.</p>
+  <p>C'est comme ça que Paul publie 2 pages SEO par semaine sur chatseo.app. L'organique est aujourd'hui proche de notre première source de clients.</p>
+
+  <div class="final" style="margin:44px 0">
+    <h2 style="margin-top:0">La moitié « données » de ce système, c'est ChatSEO</h2>
+    <p>Les données de mots-clés, l'analyse de SERP, les audits et le suivi ci-dessus, c'est ce que fait ChatSEO. Utilise-le dans l'app, ou branche le MCP dans Claude Code et fais tourner toute la boucle depuis un seul terminal. <strong>7 jours gratuits</strong>.</p>
+    <a class="btn btn-primary" href="https://link.chatseo.app/pb-two-engine-seo-site-fr" target="_blank" rel="noopener">Commencer mon essai gratuit 7 jours →</a>
+  </div>
+
+  <footer>
+    <p>Écrit par <a href="https://link.chatseo.app/pb-two-engine-seo-site-fr" target="_blank" rel="noopener">Nicholas de ChatSEO</a> · Tout ce qui est sur cette page est libre de copie et d'usage · <a href="../two-engine-seo-site/">English version</a></p>
+  </footer>
+
+</div>
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  try{ var s=localStorage.getItem('theme'); if(s) root.setAttribute('data-theme',s); }catch(e){}
+  btn.addEventListener('click',function(){
+    var cur=root.getAttribute('data-theme');
+    if(!cur) cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+    var next=cur==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{ localStorage.setItem('theme',next); }catch(e){}
+  });
+})();
+document.querySelectorAll('.copy').forEach(function(btn){
+  btn.addEventListener('click',function(e){
+    e.preventDefault();
+    var pre=btn.closest('.prompt').querySelector('pre');
+    var text=pre.innerText;
+    var done=function(){ btn.textContent='Copié'; btn.classList.add('done');
+      setTimeout(function(){ btn.textContent='Copier'; btn.classList.remove('done'); },1600); };
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done).catch(fallback);
+    } else { fallback(); }
+    function fallback(){
+      var ta=document.createElement('textarea'); ta.value=text;
+      ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta);
+      ta.select(); try{ document.execCommand('copy'); done(); }catch(e){ btn.textContent='Sélectionne à la main'; }
+      document.body.removeChild(ta);
+    }
+  });
+});
+</script>
+</body>
+</html>

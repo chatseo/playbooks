@@ -2,6 +2,8 @@
 
 Free, ungated SEO playbooks from [ChatSEO](https://link.chatseo.app/pb-seo-system).
 
+- [The 2-Engine SEO Site](https://chatseo.github.io/playbooks/two-engine-seo-site/) — blog posts at scale plus service pages, built in Claude Code without writing a line of code: ten steps, every prompt as a template, six diagrams, and the order that makes it rank.
+- [Le site SEO à deux moteurs](https://chatseo.github.io/playbooks/two-engine-seo-site-fr/) — version française.
 - [The Local SEO Playbook for 2026](https://chatseo.github.io/playbooks/local-seo-playbook/) — local visibility now happens on four surfaces at once (map pack, organic, AI answers, and the directories AI engines cite): nine steps in the order that makes them work, with the ChatSEO prompt for each.
 - [Le playbook SEO local 2026](https://chatseo.github.io/playbooks/local-seo-playbook-fr/) — version française.
 - [The Complete Claude SEO Playbook](https://chatseo.github.io/playbooks/complete-claude-seo-playbook/) — 200 resources in one place: 50 SEO playbooks, 50 Claude skills, 50 SEO prompts, 25 SEO workflows and 25 SEO templates across keyword research, content, on-page, technical, internal linking, link building, Search Console, SERP, local and AI search. Every file in full, plus a zip.
