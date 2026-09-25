@@ -2,6 +2,8 @@
 
 Free, ungated SEO playbooks from [ChatSEO](https://link.chatseo.app/pb-seo-system).
 
+- [The Complete SEO & GEO Guide for 2026](https://chatseo.github.io/playbooks/seo-geo-guide-2026/) — search now happens on Google, ChatGPT, Perplexity and AI Overviews: twelve chapters from strategy to automation, each with a checklist and the ChatSEO prompt that does the work.
+- [Le guide complet SEO et GEO 2026](https://chatseo.github.io/playbooks/seo-geo-guide-2026-fr/) — version française.
 - [The 2-Engine SEO Site](https://chatseo.github.io/playbooks/two-engine-seo-site/) — blog posts at scale plus service pages, built in Claude Code without writing a line of code: ten steps, every prompt as a template, six diagrams, and the order that makes it rank.
 - [Le site SEO à deux moteurs](https://chatseo.github.io/playbooks/two-engine-seo-site-fr/) — version française.
 - [The Local SEO Playbook for 2026](https://chatseo.github.io/playbooks/local-seo-playbook/) — local visibility now happens on four surfaces at once (map pack, organic, AI answers, and the directories AI engines cite): nine steps in the order that makes them work, with the ChatSEO prompt for each.

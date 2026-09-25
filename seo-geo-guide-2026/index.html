@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Complete SEO & GEO Guide for 2026</title>
+<meta name="description" content="Search now happens on Google, ChatGPT, Perplexity and AI Overviews. Twelve chapters from strategy to automation, each with a checklist and the ChatSEO prompt that does the work. Free.">
+<meta property="og:title" content="The Complete SEO & GEO Guide for 2026">
+<meta property="og:description" content="Search now happens on Google, ChatGPT, Perplexity and AI Overviews. Twelve chapters from strategy to automation, each with a checklist and the ChatSEO prompt that does the work. Free.">
+<meta property="og:image" content="https://chatseo.github.io/playbooks/seo-geo-guide-2026/img/og-card.jpg">
+<meta property="og:url" content="https://chatseo.github.io/playbooks/seo-geo-guide-2026/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="fr" href="https://chatseo.github.io/playbooks/seo-geo-guide-2026-fr/">
+<link rel="alternate" hreflang="en" href="https://chatseo.github.io/playbooks/seo-geo-guide-2026/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧭</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFFFFF; --ink:#030712; --muted:#4B5563; --faint:#9AA1AE;
+  --accent:#0066FD; --on-accent:#FFFFFF; --accent-soft:#EEF4FF;
+  --line:#E8EEF9; --code-bg:#030712; --code-ink:#F4F6FA;
+  --maxw:720px;
+}
+:root:not([data-theme="light"]){ @media (prefers-color-scheme: dark){
+  --bg:#030712; --ink:#FFFFFF; --muted:#A3AAB8; --faint:#6B7280;
+  --accent:#4D8DFF; --on-accent:#030712; --accent-soft:#0E1A33;
+  --line:#1F2937; --code-bg:#0B1220; --code-ink:#F4F6FA;
+}}
+:root[data-theme="dark"]{
+  --bg:#030712; --ink:#FFFFFF; --muted:#A3AAB8; --faint:#6B7280;
+  --accent:#4D8DFF; --on-accent:#030712; --accent-soft:#0E1A33;
+  --line:#1F2937; --code-bg:#0B1220; --code-ink:#F4F6FA;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:72px}
+body{margin:0; background:var(--bg); color:var(--ink);
+  font-family:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:17.5px; line-height:1.66; -webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 20px}
+.bar{position:sticky; top:0; z-index:50; background:color-mix(in srgb, var(--bg) 90%, transparent);
+  backdrop-filter:blur(10px); border-bottom:1px solid var(--line)}
+.bar-in{max-width:var(--maxw); margin:0 auto; padding:12px 20px; display:flex; align-items:center; gap:14px}
+.brand{font-weight:700; letter-spacing:-.02em; font-size:15px; text-decoration:none; color:var(--ink); white-space:nowrap}
+.brand span{color:var(--accent)}
+.bar nav{margin-left:auto; display:flex; gap:16px; overflow-x:auto; scrollbar-width:none}
+.bar nav::-webkit-scrollbar{display:none}
+.bar nav a{color:var(--muted); text-decoration:none; font-size:13.5px; font-weight:500; white-space:nowrap}
+.bar nav a:hover{color:var(--accent)}
+.lang{font-size:13px; font-weight:600; color:var(--accent); text-decoration:none; border:1px solid var(--line); border-radius:6px; padding:6px 10px; white-space:nowrap}
+.theme{background:none; border:1px solid var(--line); color:var(--muted); border-radius:6px; width:32px; height:32px; cursor:pointer; font-size:14px; flex:none}
+.theme:hover{color:var(--accent); border-color:var(--accent)}
+.hero{padding:72px 0 12px}
+.eyebrow{display:inline-block; font-size:11.5px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); margin-bottom:18px}
+h1{font-weight:700; letter-spacing:-.03em; font-size:clamp(38px,7vw,58px); line-height:1.04; margin:0 0 20px}
+h1 em{font-style:normal; color:var(--accent)}
+.sub{font-size:19px; max-width:600px; margin:0 0 26px; line-height:1.5}
+.cta-row{display:flex; gap:12px; flex-wrap:wrap; margin-bottom:10px}
+.btn{display:inline-flex; align-items:center; gap:8px; padding:12px 24px; border-radius:6px; font-weight:500; font-size:15px;
+  text-decoration:none; border:1px solid transparent; transition:.15s; box-shadow:0 1px 3px rgba(0,0,0,.1),0 1px 2px -1px rgba(0,0,0,.1)}
+.btn-primary{background:var(--accent); color:var(--on-accent)}
+.btn-primary:hover{filter:brightness(1.08); transform:translateY(-1px)}
+.btn-ghost{border-color:var(--line); color:var(--ink); background:var(--bg); box-shadow:none}
+.btn-ghost:hover{border-color:var(--accent); color:var(--accent)}
+.note{font-size:13.5px; color:var(--muted)}
+h2{font-weight:700; font-size:clamp(27px,4.4vw,34px); line-height:1.14; letter-spacing:-.025em; margin:60px 0 8px}
+h2 .n{color:var(--accent); font-weight:600; margin-right:10px}
+h3{font-size:19px; font-weight:600; letter-spacing:-.015em; margin:28px 0 8px}
+p{margin:0 0 17px}
+a{color:var(--accent)}
+.lede{font-size:19px; margin-bottom:22px; line-height:1.5}
+hr{border:0; border-top:1px solid var(--line); margin:48px 0}
+strong{font-weight:650}
+ul,ol{padding-left:22px; margin:0 0 18px}
+li{margin-bottom:8px}
+.plain{list-style:none; padding:0}
+.plain li{padding-left:24px; position:relative; margin-bottom:10px}
+.plain li::before{content:"↳"; position:absolute; left:0; color:var(--accent); font-weight:700}
+figure{margin:32px 0}
+figure img{width:100%; height:auto; display:block; border-radius:8px; border:1px solid var(--line)}
+figure.plainfig img{border:0; border-radius:0}
+figcaption{font-size:13.5px; color:var(--muted); margin-top:10px}
+.callout{border-left:2px solid var(--accent); padding:4px 0 4px 20px; margin:28px 0}
+.callout p{margin:0 0 10px; font-size:16px}
+.callout p:last-child{margin:0}
+.callout .k{font-weight:650; color:var(--accent)}
+.prompt{position:relative; margin:20px 0 22px}
+.prompt-bar{display:flex; align-items:center; justify-content:space-between; gap:10px; background:var(--code-bg);
+  border-radius:8px 8px 0 0; padding:9px 13px; border-bottom:1px solid rgba(255,255,255,.1)}
+.prompt-label{font-family:"JetBrains Mono",ui-monospace,monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#8C93A0}
+.copy{background:rgba(255,255,255,.12); color:#F5F5F5; border:0; border-radius:4px; padding:5px 11px; font-size:12px; font-weight:600; cursor:pointer; font-family:inherit; transition:.15s; white-space:nowrap}
+.copy:hover, .copy.done{background:#0066FD; color:#FFFFFF}
+pre{margin:0; background:var(--code-bg); color:var(--code-ink); border-radius:0 0 8px 8px; padding:16px; overflow-x:auto;
+  font-family:"JetBrains Mono",ui-monospace,monospace; font-size:12.5px; line-height:1.62; white-space:pre-wrap; word-wrap:break-word}
+.recap{counter-reset:s; list-style:none; padding:0; margin:22px 0}
+.recap li{counter-increment:s; position:relative; padding-left:40px; margin-bottom:12px}
+.recap li::before{content:counter(s); position:absolute; left:0; top:2px; width:26px; height:26px; border-radius:50%; background:var(--accent);
+  color:var(--on-accent); font-size:13px; font-weight:700; display:flex; align-items:center; justify-content:center}
+.final{border:1px solid var(--accent); border-radius:8px; padding:36px 26px; text-align:center; margin:52px 0 20px}
+.final h2{margin:0 0 10px; font-size:clamp(25px,4vw,31px)}
+.final p{max-width:470px; margin:0 auto 22px}
+footer{text-align:center; padding:30px 0 56px; color:var(--muted); font-size:13.5px}
+footer a{color:var(--muted)}
+@media (max-width:560px){ body{font-size:16.5px} .bar nav{display:none} }
+.run-row{display:flex;justify-content:flex-end;margin-top:8px}
+.run{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:6px;background:var(--accent);color:var(--on-accent);
+  font-size:13.5px;font-weight:600;text-decoration:none;box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.run:hover{filter:brightness(1.08)}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="bar-in">
+    <a class="brand" href="#top">Chat<span>SEO</span></a>
+    <nav>
+      <a href="#surfaces">SEO + GEO</a>
+      <a href="#chapters">12 chapters</a>
+      <a href="#ch-5">On-page</a>
+      <a href="#ch-6">GEO</a>
+      <a href="#ch-11">Reporting</a>
+    </nav>
+    <a class="lang" href="../seo-geo-guide-2026-fr/" hreflang="fr">FR</a>
+    <button class="theme" id="themeBtn" aria-label="Toggle theme">◐</button>
+  </div>
+</div>
+
+<div class="wrap" id="top">
+
+  <div class="hero">
+    <span class="eyebrow">Free · SEO + GEO · 2026</span>
+    <h1>The Complete SEO &amp; GEO Guide<br><em>for 2026</em></h1>
+    <p class="sub">Search now happens on Google, ChatGPT, Perplexity and AI Overviews. Twelve chapters, from strategy to automation. Each one gives you what matters in 2026, a short checklist and the ChatSEO prompt that does the work on your own data.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://link.chatseo.app/pb-seo-geo-guide-2026" target="_blank" rel="noopener">Start your 7-day free trial →</a>
+      <a class="btn btn-ghost" href="#chapters">Read the 12 chapters</a>
+    </div>
+    <p class="note">ChatSEO, the AI SEO agent connected to your Search Console · 🎁 7 days free</p>
+  </div>
+
+  <h2 id="surfaces">SEO is no longer just keywords and backlinks</h2>
+  <p class="lede">People still search on Google. They also ask ChatGPT, Perplexity and the AI Overview at the top of the results. Each one picks a few sources and ignores the rest.</p>
+  <figure><img src="img/01-four-surfaces.webp" alt="Four search surfaces in 2026: Google, AI Overviews, ChatGPT and Perplexity, built on the same foundations" width="1400" height="788" loading="lazy"></figure>
+  <p>The good news: the foundations are the same everywhere. A site Google can crawl, pages that answer the question in the first lines, a brand named the same way everywhere, and mentions on the sites these engines already trust. SEO gets you ranked. GEO (generative engine optimisation) gets you quoted. You need both.</p>
+  <figure><img src="img/02-seo-vs-geo.webp" alt="What Google rewards compared to what AI engines reward" width="1400" height="788" loading="lazy"></figure>
+
+  <h2 id="chapters">The 12 chapters, in order</h2>
+  <figure><img src="img/03-order.webp" alt="The 12 chapters grouped in four phases: plan, fix, get visible, measure" width="1400" height="788" loading="lazy"></figure>
+  <ol class="recap">
+    <li><a href="#ch-1">SEO strategy and goal setting</a></li>
+    <li><a href="#ch-2">Keyword and search intent research</a></li>
+    <li><a href="#ch-3">Topical authority and content clusters</a></li>
+    <li><a href="#ch-4">Technical SEO and site health</a></li>
+    <li><a href="#ch-5">On-page optimisation and internal linking</a></li>
+    <li><a href="#ch-6">GEO, AEO and AI search visibility</a></li>
+    <li><a href="#ch-7">Getting cited by ChatGPT, Perplexity and AI Overviews</a></li>
+    <li><a href="#ch-8">Schema markup and structured data</a></li>
+    <li><a href="#ch-9">Link building and digital PR</a></li>
+    <li><a href="#ch-10">Local SEO and Google Business Profile</a></li>
+    <li><a href="#ch-11">Google Search Console, tracking and reporting</a></li>
+    <li><a href="#ch-12">AI workflows and SEO automation</a></li>
+  </ol>
+  <p><strong>Only have an hour?</strong> Do chapters 1, 5 and 11. They use the traffic you already have.</p>
+
+  <hr>
+
+  <h2 id="ch-1"><span class="n">1</span>SEO strategy and goal setting</h2>
+  <p>Most SEO fails before the first keyword: no goal, no baseline, so no way to know if anything worked. Start from a business goal, then pick the pages that serve it.</p>
+  <ul class="plain">
+    <li>One business goal per quarter (leads, sales, sign-ups), not "more traffic".</li>
+    <li>Three KPIs: non-brand clicks, conversions from organic, mentions in AI answers.</li>
+    <li>A dated baseline before you change anything.</li>
+  </ul>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Chapter 1 · Paste this into ChatSEO</span><button class="copy" type="button">Copy</button></div>
+<pre>Build my SEO baseline for [site URL], dated today, from Search Console (last 28 days, compared with the 28 days before): total clicks, impressions and average position, split brand and non-brand queries, and the 10 pages that bring the most non-brand clicks. Then propose one quarterly SEO goal tied to [business goal: leads / sales / sign-ups]. Only use numbers from the data. If one is missing, say so.</pre>
+  </div>
+
+  <h2 id="ch-2"><span class="n">2</span>Keyword and search intent research</h2>
+  <p>A keyword is only worth targeting if the page type matches what Google already shows. A "best X" query wants a comparison, a "X near me" query wants a local page, a "how to" query wants a guide.</p>
+  <ul class="plain">
+    <li>Start from queries you already appear for in Search Console, not from a blank tool.</li>
+    <li>Tag every keyword with its intent: learn, compare, buy, local.</li>
+    <li>Check the top 5 results before you decide the page type.</li>
+  </ul>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Chapter 2 · Paste this into ChatSEO</span><button class="copy" type="button">Copy</button></div>
+<pre>From my Search Console queries (last 3 months) and keyword data for [topic], list the 20 keywords with the best mix of volume and fit for [site URL]. For each: monthly volume, my current position if any, search intent (learn, compare, buy, local), and the page type the top 5 results use. Give me one table, sorted by opportunity. Do not invent volumes.</pre>
+  </div>
+
+  <h2 id="ch-3"><span class="n">3</span>Topical authority and content clusters</h2>
+  <p>Google and AI engines trust sites that cover a topic completely, not sites with one great article. A cluster is one pillar page and the supporting pages that link to it.</p>
+  <ul class="plain">
+    <li>One pillar per core service or product category.</li>
+    <li>5 to 15 supporting pages, each answering one precise question.</li>
+    <li>Every supporting page links to the pillar, and the pillar links back.</li>
+  </ul>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Chapter 3 · Paste this into ChatSEO</span><button class="copy" type="button">Copy</button></div>
+<pre>Map a content cluster for [topic] on [site URL]: one pillar page and up to 12 supporting pages. For each page: the target keyword, its search intent, whether a page already exists on my site (give the URL) or needs to be created. Order the missing pages by the traffic they could bring, using real keyword data only.</pre>
+  </div>
+
+  <h2 id="ch-4"><span class="n">4</span>Technical SEO and site health</h2>
+  <p>You don't need a 200-line audit. You need the handful of issues that stop your important pages from being crawled, indexed or loaded fast.</p>
+  <ul class="plain">
+    <li>Important pages indexed, no accidental noindex, clean sitemap.</li>
+    <li>No redirect chains or broken internal links on key pages.</li>
+    <li>Mobile speed acceptable on the templates that carry traffic.</li>
+    <li>AI crawlers (GPTBot, PerplexityBot) not blocked by accident in robots.txt.</li>
+  </ul>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Chapter 4 · Paste this into ChatSEO</span><button class="copy" type="button">Copy</button></div>
+<pre>Run a technical SEO check on [site URL]: indexing, sitemap, robots.txt (including AI crawlers), redirects, broken internal links and page speed on my top 10 pages by clicks. Return only the issues that affect pages bringing traffic, ranked by impact, with the fix for each. Do not list issues you cannot confirm from the crawl or Search Console.</pre>
+  </div>
+
+  <h2 id="ch-5"><span class="n">5</span>On-page optimisation and internal linking</h2>
+  <p>The fastest wins sit on pages that already rank in positions 4 to 20. A better title, a clearer first paragraph and two internal links can move them without writing a new page.</p>
+  <ul class="plain">
+    <li>Titles that match the query and give a reason to click.</li>
+    <li>The answer in the first two sentences, then the detail.</li>
+    <li>Internal links from your strongest pages to the ones you want to push.</li>
+  </ul>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Chapter 5 · Paste this into ChatSEO</span><button class="copy" type="button">Copy</button></div>
+<pre>Find the pages on [site URL] ranking in positions 4 to 20 with a click-through rate below what their position should get (Search Console, last 3 months). For the top 10: rewrite the title and meta description, and suggest 2 internal links from my strongest pages. Show current vs proposed side by side. Wait for my approval before changing anything on the site.</pre>
+  </div>
+
+  <h2 id="ch-6"><span class="n">6</span>GEO, AEO and AI search visibility</h2>
+  <p>Before optimising for AI engines, find out where you stand. Ask the questions your customers ask, and see who gets named.</p>
+  <ul class="plain">
+    <li>List 10 to 20 questions a buyer would ask an AI assistant about your category.</li>
+    <li>Check which brands and pages ChatGPT, Perplexity and AI Overviews cite for each.</li>
+    <li>Note the sites cited again and again: that's where you need to appear.</li>
+  </ul>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Chapter 6 · Paste this into ChatSEO</span><button class="copy" type="button">Copy</button></div>
+<pre>Check my AI search visibility for [brand] in [category / city]. Write the 10 questions a buyer would ask an AI assistant, then report for each: whether my brand is mentioned, which competitors are, and which pages or sites are cited as sources. End with the 5 sources cited most often. Only report what the results show.</pre>
+  </div>
+
+  <div class="callout">
+    <p><span class="k">Why a checklist isn't enough.</span> This page gives you the method and the prompts. It can't read your Search Console, crawl your site or check this week whether ChatGPT names you. ChatSEO does, on your real data, and pushes the approved fixes to WordPress or Shopify. <a href="https://link.chatseo.app/pb-seo-geo-guide-2026" target="_blank" rel="noopener">The first 7 days are free.</a></p>
+  </div>
+
+  <h2 id="ch-7"><span class="n">7</span>Getting cited by ChatGPT, Perplexity and AI Overviews</h2>
+  <p>AI engines quote passages, not pages. The passage that gets quoted is short, answers the question directly and states facts they can trust.</p>
+  <ul class="plain">
+    <li>Answer first: the direct answer in one or two sentences under each heading.</li>
+    <li>Question-shaped headings, the way people ask.</li>
+    <li>Numbers with their source, dates, named authors.</li>
+    <li>Your brand, services and locations named the same way on every site.</li>
+    <li>Presence on the sources from chapter 6: directories, comparison sites, forums.</li>
+  </ul>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Chapter 7 · Paste this into ChatSEO</span><button class="copy" type="button">Copy</button></div>
+<pre>Rewrite [page URL] so AI engines can quote it: turn the main headings into the questions people ask, put a direct 1 to 2 sentence answer under each, and flag every claim that needs a source. Keep my facts and my tone. Do not add numbers that are not on the page. Show me the new version before publishing.</pre>
+  </div>
+
+  <h2 id="ch-8"><span class="n">8</span>Schema markup and structured data</h2>
+  <p>Schema tells search engines what a page is: a product, a local business, an article, an FAQ. It won't rank a bad page, but it makes a good one easier to understand and to show richly.</p>
+  <ul class="plain">
+    <li>Organization or LocalBusiness on the home page.</li>
+    <li>Product with price and availability on product pages.</li>
+    <li>Article with author and date on blog posts, FAQPage where there's a real FAQ.</li>
+    <li>Validate with Google's Rich Results Test.</li>
+  </ul>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Chapter 8 · Paste this into ChatSEO</span><button class="copy" type="button">Copy</button></div>
+<pre>Check the structured data on [page URL]. Tell me which schema types it has, which it should have for its page type, and write the missing JSON-LD using only information visible on the page. Leave a placeholder where a value is missing instead of guessing it.</pre>
+  </div>
+
+  <h2 id="ch-9"><span class="n">9</span>Link building and digital PR</h2>
+  <p>Links still matter for Google, and mentions matter for AI engines. The best prospects already link to or mention your competitors.</p>
+  <ul class="plain">
+    <li>Sites linking to two or more competitors but not to you.</li>
+    <li>Unlinked mentions of your brand: ask for the link.</li>
+    <li>One piece of original data per quarter that journalists and bloggers can cite.</li>
+  </ul>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Chapter 9 · Paste this into ChatSEO</span><button class="copy" type="button">Copy</button></div>
+<pre>Find link prospects for [site URL] against [competitor 1] and [competitor 2]: the sites that link to at least one of them and not to me, from real backlink data. Keep the 20 most relevant to [topic], drop spam and link sellers, and give me the linking page and a one-line outreach angle for each.</pre>
+  </div>
+
+  <h2 id="ch-10"><span class="n">10</span>Local SEO and Google Business Profile</h2>
+  <p>If you serve a city, the map pack and your Google Business Profile often matter more than your website. The full method is in <a href="../local-seo-playbook/">the Local SEO Playbook</a>; here are the essentials.</p>
+  <ul class="plain">
+    <li>Primary category and address set for the city you want to win.</li>
+    <li>Name, address and phone identical on every directory.</li>
+    <li>A steady flow of reviews that mention the service and the city.</li>
+    <li>One page per service and city on your site.</li>
+  </ul>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Chapter 10 · Paste this into ChatSEO</span><button class="copy" type="button">Copy</button></div>
+<pre>Audit my local SEO for [business name] in [city]: my Google Business Profile category, my position in the local pack for [main service] + [city], the consistency of my name, address and phone across directories, and whether I have a page per service and city. Rank the fixes by expected impact. Say "not found" where you cannot check something.</pre>
+  </div>
+
+  <h2 id="ch-11"><span class="n">11</span>Google Search Console, tracking and reporting</h2>
+  <p>A report is useful when it ends with a decision. Four numbers, what changed, and what you'll do next month.</p>
+  <ul class="plain">
+    <li>Non-brand clicks and impressions, compared with the previous period.</li>
+    <li>Pages that went up or down the most, and why.</li>
+    <li>Conversions from organic (GA4), and mentions in AI answers.</li>
+    <li>Next month's three actions.</li>
+  </ul>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Chapter 11 · Paste this into ChatSEO</span><button class="copy" type="button">Copy</button></div>
+<pre>Write my monthly SEO report for [site URL] from Search Console and GA4: non-brand clicks and impressions vs last month, the 5 pages that gained and the 5 that lost the most (with the queries behind the change), organic conversions, and 3 actions for next month in order. Keep it to one page. Use only numbers from the data.</pre>
+  </div>
+
+  <h2 id="ch-12"><span class="n">12</span>AI workflows and SEO automation</h2>
+  <p>Automate the reading and the drafting. Keep the decisions and the final check. A weekly routine beats a yearly audit.</p>
+  <ul class="plain">
+    <li><strong>Monday:</strong> what moved last week and the three actions for this week.</li>
+    <li><strong>During the week:</strong> ship the fixes, one page at a time, after review.</li>
+    <li><strong>Monthly:</strong> the report from chapter 11, AI visibility from chapter 6.</li>
+    <li>If you work in Claude or another AI tool, ChatSEO also connects through MCP (Pro plan).</li>
+  </ul>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Chapter 12 · Paste this into ChatSEO</span><button class="copy" type="button">Copy</button></div>
+<pre>Give me this week's SEO action list for [site URL]: compare last week with the week before in Search Console, spot the pages and queries that moved, and list the 3 actions most likely to bring clicks this week, each with the page, the change and why. Do not include anything the data does not support.</pre>
+  </div>
+
+  <div class="final" style="margin:44px 0">
+    <h2 style="margin-top:0">Run the 12 chapters on your own site</h2>
+    <p>Connect Search Console once. Then paste the prompts above, one chapter at a time, and approve what ChatSEO proposes. <strong>7 days free</strong>, cancel anytime.</p>
+    <a class="btn btn-primary" href="https://link.chatseo.app/pb-seo-geo-guide-2026" target="_blank" rel="noopener">Start your 7-day free trial →</a>
+  </div>
+
+  <footer>
+    <p>Built by <a href="https://link.chatseo.app/pb-seo-geo-guide-2026" target="_blank" rel="noopener">Nicholas at ChatSEO</a> · Everything on this page is free to copy and use · <a href="../seo-geo-guide-2026-fr/">Version française</a></p>
+  </footer>
+
+</div>
+<script>
+// "Run in ChatSEO": every prompt written for ChatSEO gets a button that opens the chat pre-filled.
+// The app reads ?message= and pre-fills (it does not auto-send); source=playbook fires the PROMPT_PREFILLED event.
+(function(){
+  var fr=document.documentElement.lang==='fr';
+  var base=fr?'https://chatseo.app/fr/dashboard':'https://chatseo.app/dashboard';
+  var name=location.pathname.split('/').filter(Boolean).pop()||'playbook';
+  document.querySelectorAll('.prompt').forEach(function(p){
+    var lab=p.querySelector('.prompt-label'); var label=lab?lab.textContent:'';
+    if(!/into ChatSEO|dans ChatSEO/.test(label)) return;
+    var text=p.querySelector('pre').innerText.trim();
+    var a=document.createElement('a'); a.className='run'; a.target='_blank'; a.rel='noopener';
+    a.href=base+'?message='+encodeURIComponent(text)+'&source=playbook&name='+encodeURIComponent(name);
+    a.textContent=fr?'Lancer dans ChatSEO \u2192':'Run in ChatSEO \u2192';
+    var row=document.createElement('div'); row.className='run-row'; row.appendChild(a); p.appendChild(row);
+  });
+})();
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  try{ var s=localStorage.getItem('theme'); if(s) root.setAttribute('data-theme',s); }catch(e){}
+  btn.addEventListener('click',function(){
+    var cur=root.getAttribute('data-theme');
+    if(!cur) cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+    var next=cur==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{ localStorage.setItem('theme',next); }catch(e){}
+  });
+})();
+document.querySelectorAll('.copy').forEach(function(btn){
+  btn.addEventListener('click',function(e){
+    e.preventDefault();
+    var pre=btn.closest('.prompt').querySelector('pre');
+    var text=pre.innerText;
+    var done=function(){ btn.textContent='Copied'; btn.classList.add('done');
+      setTimeout(function(){ btn.textContent='Copy'; btn.classList.remove('done'); },1600); };
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done).catch(fallback);
+    } else { fallback(); }
+    function fallback(){
+      var ta=document.createElement('textarea'); ta.value=text;
+      ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta);
+      ta.select(); try{ document.execCommand('copy'); done(); }catch(e){ btn.textContent='Select manually'; }
+      document.body.removeChild(ta);
+    }
+  });
+});
+</script>
+</body>
+</html>
