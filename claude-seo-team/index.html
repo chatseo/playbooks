@@ -272,6 +272,23 @@ h3.dept{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:3
 figure.proof img{border-radius:12px}
 figure.proof figcaption{font-size:14.5px;color:var(--ink)}
 .audit h3{margin-top:26px}
+.doc-head{padding:56px 0 8px}
+.crumb{font-size:13.5px;color:var(--muted);margin:0 0 14px}
+.crumb a{color:var(--muted);text-decoration:none}
+.crumb a:hover{color:var(--accent)}
+.doc-head h1{font-size:clamp(38px,6.5vw,54px);margin:0 0 10px}
+.doc-meta{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:13px;color:var(--muted);margin:0}
+.tldr{border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin:30px 0 18px;background:var(--surface)}
+.tldr-k,.toc-k{font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);margin:0 0 8px}
+.tldr ul{margin:0;padding-left:20px}
+.tldr li{font-size:16px;margin-bottom:6px}
+.toc{margin:0 0 10px;padding:4px 0 0}
+.toc ol{margin:0;padding-left:22px}
+.toc > ol > li{margin-bottom:6px;font-size:15.5px}
+.toc ol ol{margin:6px 0 4px;padding-left:18px;list-style:none}
+.toc ol ol li{font-size:14.5px;margin-bottom:3px;break-inside:avoid}
+.toc a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
+.toc a:hover{color:var(--accent);border-bottom-color:var(--accent)}
 
 </style>
 </head>
@@ -294,28 +311,39 @@ figure.proof figcaption{font-size:14.5px;color:var(--ink)}
 
 <div class="wrap" id="top">
 
-  <div class="hero">
-    <span class="eyebrow">Free · Nothing gated</span>
-    <h1>The Claude<br><em>SEO Team</em></h1>
-    <p class="sub">10 roles in 3 departments, all working your Search Console data into fixes that actually ship. Each role passes its findings to the next.</p>
-    <div class="cta-row">
-      <a class="btn btn-primary" href="https://link.chatseo.app/pb-claude-seo-team" target="_blank" rel="noopener">Start your 7-day free trial →</a>
-      <a class="btn btn-ghost" href="#find">See the 10 roles</a>
-    </div>
+  <header class="doc-head">
+    <p class="crumb"><a href="https://chatseo.github.io/playbooks/">ChatSEO Playbooks</a> / Free, nothing gated</p>
+    <h1>The Claude SEO Team</h1>
+    <p class="doc-meta">10 roles · 20 prompts · 6 templates · 3 departments</p>
+  </header>
+
+  <div class="tldr">
+    <p class="tldr-k">TL;DR</p>
+    <ul>
+      <li>Most sites have pages stuck at positions 8 to 20. They are the cheapest clicks you will ever get.</li>
+      <li>This playbook splits the work into 10 roles in 3 departments: <a href="#find">find</a> those pages, <a href="#fix">fix</a> them, <a href="#measure">measure</a> and repeat.</li>
+      <li>Every role has an instruction and two prompts. Each ends with a handoff note the next role reads.</li>
+      <li>It only works on your real Search Console data. <a href="#setup">Setup</a> takes two minutes.</li>
+    </ul>
   </div>
+
+  <nav class="toc" aria-label="Contents">
+    <p class="toc-k">Contents</p>
+    <ol><li><a href="#how">How the team works</a></li>
+<li><a href="#setup">Setup: two minutes</a></li>
+<li><a href="#find">Department 1 · Find what&#x27;s worth fixing</a><ol><li><a href="#role-1">01 · Search Console Analyst</a></li><li><a href="#role-2">02 · CTR Watcher</a></li><li><a href="#role-3">03 · Prioritizer</a></li></ol></li>
+<li><a href="#fix">Department 2 · Fix the pages</a><ol><li><a href="#role-4">04 · Intent Matcher</a></li><li><a href="#role-5">05 · Title &amp; Meta Writer</a></li><li><a href="#role-6">06 · Content Gap Editor</a></li><li><a href="#role-7">07 · Internal Linker</a></li></ol></li>
+<li><a href="#measure">Department 3 · Measure and repeat</a><ol><li><a href="#role-8">08 · Performance Tracker</a></li><li><a href="#role-9">09 · Cannibalization Checker</a></li><li><a href="#role-10">10 · Head of the Loop</a></li></ol></li>
+<li><a href="#templates">The 6 templates</a></li></ol>
+  </nav>
 
   <figure class="proof">
     <img src="img/proof-103k.webp" alt="Search Console, one ChatSEO customer: daily clicks flat until they started using ChatSEO.app in July 2025, then climbing to 600+ a day. 103k clicks, 12.9M impressions in total." loading="lazy">
     <figcaption>To get similar results for your business, <a href="https://link.chatseo.app/pb-claude-seo-team" target="_blank" rel="noopener">try ChatSEO.app free for 7 days</a>.</figcaption>
   </figure>
 
-  <h2>What's inside</h2>
-  <ul class="plain">
-    <li>10 role instructions, one per job on the team</li>
-    <li>20 reusable prompts, two per role</li>
-    <li>6 working templates the roles fill and pass along</li>
-    
-  </ul>
+  <h2 id="how">How the team works</h2>
+  <p>Three departments, run in order, every 28 days. Each role reads the handoff note of the one before it, does one job, and writes its own.</p>
 
   <figure class="plainfig">
     <svg viewBox="0 0 760 250" role="img" aria-label="Three departments in a loop. Find what's worth fixing: Search Console Analyst, CTR Watcher, Prioritizer. Fix the pages: Intent Matcher, Title and Meta Writer, Content Gap Editor, Internal Linker. Measure and repeat: Performance Tracker, Cannibalization Checker, Head of the Loop. Each role passes a handoff note to the next, and the last one hands the cycle back to the first.">
@@ -700,12 +728,6 @@ Open question: [anything the next role must check]</pre></div>
     <img src="img/proof-9k.webp" alt="Search Console, another ChatSEO customer: flat for a year, then clicks rise sharply from January 2026 after they started using ChatSEO.app. 9.13k clicks, 286k impressions." loading="lazy">
     <figcaption>To get similar results for your business, <a href="https://link.chatseo.app/pb-claude-seo-team" target="_blank" rel="noopener">try ChatSEO.app free for 7 days</a>.</figcaption>
   </figure>
-
-  <div class="final">
-    <h2 style="margin-top:0">Or let ChatSEO run the team</h2>
-    <p>ChatSEO reads your Search Console, finds the pages closest to page 1, writes the fixes and tracks them. Try it free for 7 days.</p>
-    <a class="btn btn-primary" href="https://link.chatseo.app/pb-claude-seo-team" target="_blank" rel="noopener">Start your 7-day free trial →</a>
-  </div>
 
   <footer>
     <p>Built by <a href="https://link.chatseo.app/pb-claude-seo-team" target="_blank" rel="noopener">Nicholas at ChatSEO</a> · Everything on this page is free to copy and use.</p>
