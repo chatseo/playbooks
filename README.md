@@ -2,6 +2,7 @@
 
 Free, ungated SEO playbooks from [ChatSEO](https://link.chatseo.app/pb-seo-system).
 
+- [The Claude SEO Team](https://chatseo.github.io/playbooks/claude-seo-team/) — 10 roles in 3 departments that turn your Search Console data into fixes that ship: find the pages stuck at positions 8 to 20, fix titles, content and internal links, then measure and repeat. Every role instruction, 20 prompts and 6 templates.
 - [The Complete SEO & GEO Guide for 2026](https://chatseo.github.io/playbooks/seo-geo-guide-2026/) — search now happens on Google, ChatGPT, Perplexity and AI Overviews: twelve chapters from strategy to automation, each with a checklist and the ChatSEO prompt that does the work.
 - [Le guide complet SEO et GEO 2026](https://chatseo.github.io/playbooks/seo-geo-guide-2026-fr/) — version française.
 - [The 2-Engine SEO Site](https://chatseo.github.io/playbooks/two-engine-seo-site/) — blog posts at scale plus service pages, built in Claude Code without writing a line of code: ten steps, every prompt as a template, six diagrams, and the order that makes it rank.

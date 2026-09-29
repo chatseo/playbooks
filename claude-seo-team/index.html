@@ -1,0 +1,760 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Claude SEO Team</title>
+<meta name="description" content="10 roles across 3 departments that turn your Search Console data into fixes that ship: find the pages stuck at positions 8 to 20, fix them, measure, repeat. Every instruction, prompt and template, free.">
+<meta property="og:title" content="The Claude SEO Team">
+<meta property="og:description" content="10 roles across 3 departments that turn your Search Console data into fixes that ship: find the pages stuck at positions 8 to 20, fix them, measure, repeat. Every instruction, prompt and template, free.">
+<meta property="og:image" content="https://chatseo.github.io/playbooks/claude-seo-team/img/og-card.jpg">
+<meta property="og:url" content="https://chatseo.github.io/playbooks/claude-seo-team/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧑‍💼</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFFFFF; --surface:#FFFFFF; --ink:#000000; --muted:#5A6069;
+  --accent:#1D4ED8; --on-accent:#FFFFFF; --accent-soft:#EEF3FF; --sage:#1D4ED8;
+  --line:#E3E6EB; --code-bg:#0B0F19; --code-ink:#F4F6FA;
+  --shadow:0 1px 2px rgba(0,0,0,.04), 0 8px 24px rgba(0,0,0,.05);
+  --maxw:780px;
+}
+:root:not([data-theme="light"]){ @media (prefers-color-scheme: dark){
+  --bg:#000000; --surface:#0C0E12; --ink:#FFFFFF; --muted:#9AA1AB;
+  --accent:#6EA1FF; --on-accent:#000000; --accent-soft:#111826; --sage:#6EA1FF;
+  --line:#23272E; --code-bg:#0E1117; --code-ink:#F4F6FA;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.5);
+}}
+:root[data-theme="dark"]{
+  --bg:#000000; --surface:#0C0E12; --ink:#FFFFFF; --muted:#9AA1AB;
+  --accent:#6EA1FF; --on-accent:#000000; --accent-soft:#111826; --sage:#6EA1FF;
+  --line:#23272E; --code-bg:#0E1117; --code-ink:#F4F6FA;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.5);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:72px}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:17px; line-height:1.68; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 22px}
+
+/* ---------- top bar ---------- */
+.bar{
+  position:sticky; top:0; z-index:50; background:color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter:blur(10px); border-bottom:1px solid var(--line);
+}
+.bar-in{max-width:var(--maxw); margin:0 auto; padding:11px 22px; display:flex; align-items:center; gap:14px}
+.brand{font-weight:800; letter-spacing:-.02em; font-size:15px; text-decoration:none; color:var(--ink); white-space:nowrap}
+.brand span{color:var(--accent)}
+.bar nav{margin-left:auto; display:flex; gap:16px; overflow-x:auto; scrollbar-width:none}
+.bar nav::-webkit-scrollbar{display:none}
+.bar nav a{color:var(--muted); text-decoration:none; font-size:13.5px; font-weight:500; white-space:nowrap}
+.bar nav a:hover{color:var(--accent)}
+.theme{background:none; border:1px solid var(--line); color:var(--muted); border-radius:8px;
+  width:32px; height:32px; cursor:pointer; font-size:14px; flex:none}
+.theme:hover{color:var(--accent); border-color:var(--accent)}
+
+/* ---------- hero ---------- */
+.hero{padding:64px 0 8px; text-align:center}
+.eyebrow{
+  display:inline-block; font-size:12px; font-weight:700; letter-spacing:.13em; text-transform:uppercase;
+  color:var(--accent); background:var(--accent-soft); padding:6px 13px; border-radius:100px; margin-bottom:20px;
+}
+h1{
+  font-family:"Instrument Serif",Georgia,serif; font-weight:400; letter-spacing:-.015em;
+  font-size:clamp(40px,7.5vw,62px); line-height:1.06; margin:0 0 18px;
+}
+h1 em{font-style:italic; color:var(--accent)}
+.sub{font-size:19px; color:var(--muted); max-width:580px; margin:0 auto 30px}
+.cta-row{display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-bottom:10px}
+.btn{
+  display:inline-flex; align-items:center; gap:8px; padding:13px 24px; border-radius:10px;
+  font-weight:600; font-size:15px; text-decoration:none; border:1px solid transparent; transition:.15s;
+}
+.btn-primary{background:var(--accent); color:var(--on-accent)}
+.btn-primary:hover{filter:brightness(1.08); transform:translateY(-1px)}
+.btn-ghost{border-color:var(--line); color:var(--ink); background:var(--surface)}
+.btn-ghost:hover{border-color:var(--accent); color:var(--accent)}
+.note{font-size:13.5px; color:var(--muted)}
+.tease{margin:-16px 0 26px; font-size:14.5px}
+.tease a{color:var(--muted); text-decoration:none; border-bottom:1px dashed var(--line); padding-bottom:2px}
+.tease a:hover{color:var(--accent); border-bottom-color:var(--accent)}
+
+/* ---------- figures ---------- */
+figure{margin:38px 0}
+figure img{width:100%; height:auto; display:block; border-radius:14px; border:1px solid var(--line)}
+figure.plainfig img{border:0; border-radius:0}
+figcaption{font-size:13.5px; color:var(--muted); text-align:center; margin-top:11px}
+
+/* ---------- type ---------- */
+h2{
+  font-family:"Instrument Serif",Georgia,serif; font-weight:400; font-size:clamp(29px,4.6vw,38px);
+  line-height:1.16; letter-spacing:-.01em; margin:60px 0 6px;
+}
+h3{font-size:19px; font-weight:700; letter-spacing:-.01em; margin:32px 0 8px}
+p{margin:0 0 17px}
+a{color:var(--accent)}
+.lede{font-size:19px; color:var(--muted); margin-bottom:26px}
+hr{border:0; border-top:1px solid var(--line); margin:56px 0}
+strong{font-weight:650}
+
+/* ---------- author ---------- */
+.author{
+  display:flex; gap:24px; align-items:flex-start; background:var(--surface);
+  border:1px solid var(--line); border-radius:16px; padding:28px; margin:40px 0;
+}
+.author-img{
+  width:96px; height:96px; border-radius:50%; flex:none; object-fit:cover;
+  background:var(--accent-soft); border:1px solid var(--line);
+}
+.author p{margin:0 0 11px; font-size:17px; line-height:1.62}
+.author p:last-child{margin-bottom:0}
+
+/* ---------- skill cards ---------- */
+.group-head{
+  display:flex; align-items:center; gap:12px; margin:46px 0 6px;
+}
+.group-head span{
+  font-size:12px; font-weight:800; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--accent); background:var(--accent-soft); padding:5px 12px; border-radius:100px; flex:none;
+}
+.group-head hr{flex:1; margin:0; border-top:1px solid var(--line)}
+.group-sub{color:var(--muted); font-size:15.5px; margin:0 0 18px}
+.fn{
+  background:var(--surface); border:1px solid var(--line); border-radius:16px;
+  padding:24px 26px; margin:14px 0; box-shadow:var(--shadow); scroll-margin-top:80px;
+}
+.fn-head{display:flex; align-items:baseline; gap:12px; margin-bottom:4px; flex-wrap:wrap}
+.fn-num{
+  font-family:"Instrument Serif",Georgia,serif; font-size:30px; line-height:1;
+  color:var(--accent); flex:none;
+}
+.fn-title{font-size:20px; font-weight:750; letter-spacing:-.015em; margin:0}
+.fn-sub{color:var(--muted); font-size:15px; margin:0 0 14px}
+.meta{display:flex; flex-wrap:wrap; gap:8px; margin:14px 0}
+.chip{
+  font-size:12.5px; font-weight:600; padding:5px 11px; border-radius:100px;
+  background:var(--bg); border:1px solid var(--line); color:var(--muted);
+}
+.chip b{color:var(--ink); font-weight:650}
+
+/* ---------- dropdown ---------- */
+details.drop{
+  border:1px solid var(--line); border-radius:12px; background:var(--bg);
+  margin:14px 0 0; overflow:hidden;
+}
+details.drop + details.drop{margin-top:8px}
+details.drop > summary{
+  cursor:pointer; list-style:none; padding:12px 16px; display:flex; align-items:center; gap:10px;
+  font-size:14.5px; font-weight:600; color:var(--accent); user-select:none;
+}
+details.drop > summary::-webkit-details-marker{display:none}
+details.drop > summary::before{
+  content:"›"; font-size:19px; line-height:1; color:var(--accent);
+  transition:transform .18s ease; display:inline-block; flex:none;
+}
+details.drop[open] > summary::before{transform:rotate(90deg)}
+details.drop > summary:hover{background:var(--accent-soft)}
+details.drop[open] > summary{border-bottom:1px solid var(--line)}
+.drop-body{padding:14px 16px 16px}
+.drop-body > *:last-child{margin-bottom:0}
+.drop-body .prompt{margin:0}
+.drop-note{font-size:13.5px; color:var(--muted); margin:0 0 12px}
+
+/* ---------- prompt block ---------- */
+.prompt{position:relative; margin:16px 0 4px}
+.prompt-bar{
+  display:flex; align-items:center; justify-content:space-between; gap:10px;
+  background:var(--code-bg); border-radius:10px 10px 0 0; padding:9px 13px;
+  border-bottom:1px solid rgba(255,255,255,.09);
+}
+.prompt-label{
+  font-family:"JetBrains Mono",ui-monospace,monospace; font-size:11.5px;
+  letter-spacing:.06em; text-transform:uppercase; color:#8C93A0;
+}
+.copy{
+  background:rgba(255,255,255,.12); color:#F5F5F5; border:0; border-radius:6px;
+  padding:5px 11px; font-size:12px; font-weight:600; cursor:pointer;
+  font-family:Inter,sans-serif; transition:.15s; white-space:nowrap;
+}
+.copy:hover{background:#1D4ED8; color:#FFFFFF}
+.copy.done{background:#1D4ED8; color:#FFFFFF}
+pre{
+  margin:0; background:var(--code-bg); color:var(--code-ink); border-radius:0 0 10px 10px;
+  padding:17px; overflow-x:auto; font-family:"JetBrains Mono",ui-monospace,monospace;
+  font-size:12.5px; line-height:1.62; white-space:pre-wrap; word-wrap:break-word;
+}
+
+/* ---------- callout ---------- */
+.callout{
+  border-left:3px solid var(--accent); background:var(--accent-soft);
+  padding:16px 20px; border-radius:0 12px 12px 0; margin:26px 0;
+}
+.callout p{margin:0; font-size:15.5px}
+.callout .k{font-weight:700; color:var(--accent)}
+
+/* ---------- lists ---------- */
+ul,ol{padding-left:22px; margin:0 0 18px}
+li{margin-bottom:9px}
+.plain{list-style:none; padding:0}
+.plain li{padding-left:28px; position:relative; margin-bottom:13px}
+.plain li::before{content:"→"; position:absolute; left:0; color:var(--accent); font-weight:700}
+
+/* ---------- setup steps ---------- */
+.setup{counter-reset:s; list-style:none; padding:0; margin:22px 0}
+.setup li{counter-increment:s; position:relative; padding-left:40px; margin-bottom:14px}
+.setup li::before{
+  content:counter(s); position:absolute; left:0; top:1px;
+  width:26px; height:26px; border-radius:50%; background:var(--accent); color:var(--on-accent);
+  font-size:13px; font-weight:700; display:flex; align-items:center; justify-content:center;
+}
+kbd{
+  font-family:"JetBrains Mono",ui-monospace,monospace; font-size:12.5px;
+  background:var(--bg); border:1px solid var(--line); border-radius:5px; padding:2px 6px;
+}
+
+/* ---------- table ---------- */
+.tw{overflow-x:auto; margin:18px 0; border:1px solid var(--line); border-radius:12px}
+table{border-collapse:collapse; width:100%; font-size:14.5px; min-width:420px}
+th,td{padding:10px 15px; text-align:left; border-bottom:1px solid var(--line)}
+th{background:var(--surface); font-weight:650; font-size:12.5px; letter-spacing:.05em; text-transform:uppercase; color:var(--muted)}
+tr:last-child td{border-bottom:0}
+td b{color:var(--accent)}
+
+/* ---------- old-vs-new comparison ---------- */
+.vs{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:26px 0}
+.vs-col{border:1px solid var(--line); border-radius:14px; padding:20px; background:var(--surface)}
+.vs-col h3{margin:0 0 12px; font-size:15px; letter-spacing:.04em; text-transform:uppercase}
+.vs-col ul{margin:0; padding-left:20px}
+.vs-col li{font-size:15px; margin-bottom:9px; color:var(--muted)}
+.vs-old h3{color:var(--muted)}
+.vs-old li{text-decoration:line-through; text-decoration-color:var(--line)}
+.vs-new{border-color:var(--accent)}
+.vs-new h3{color:var(--accent)}
+.vs-new li{color:var(--ink)}
+:not(pre) > code{
+  font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:.88em; background:var(--surface); border:1px solid var(--line);
+  border-radius:6px; padding:1px 6px; color:var(--ink); word-break:break-word;
+}
+@media (max-width:600px){ .vs{grid-template-columns:1fr} }
+
+/* ---------- final cta ---------- */
+.final{
+  background:var(--surface); border:1px solid var(--accent); border-radius:18px;
+  padding:38px 28px; text-align:center; margin:52px 0 24px;
+}
+.final h2{margin:0 0 10px}
+.final p{color:var(--muted); max-width:470px; margin:0 auto 22px}
+footer{text-align:center; padding:34px 0 56px; color:var(--muted); font-size:13.5px}
+footer a{color:var(--muted)}
+
+@media (max-width:560px){
+  body{font-size:16px}
+  .fn{padding:20px}
+  .bar nav{display:none}
+  .author{flex-direction:column; gap:12px}
+}
+
+
+.run-row{display:flex;justify-content:flex-end;margin-top:8px}
+.run{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:6px;background:var(--accent);color:var(--on-accent);
+  font-size:13.5px;font-weight:600;text-decoration:none;box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.run:hover{filter:brightness(1.08)}
+.hands{font-size:15px;margin:0 0 4px}
+.hands b{color:var(--accent);font-weight:650}
+h3.dept{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:30px;margin:6px 0 4px;letter-spacing:-.01em}
+figure.proof img{border-radius:12px}
+figure.proof figcaption{font-size:14.5px;color:var(--ink)}
+.audit h3{margin-top:26px}
+
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="bar-in">
+    <a class="brand" href="#top">Chat<span>SEO</span></a>
+    <nav>
+      <a href="#setup">Setup</a>
+      <a href="#find">Find</a>
+      <a href="#fix">Fix</a>
+      <a href="#measure">Measure</a>
+      <a href="#templates">Templates</a>
+      
+    </nav>
+    <button class="theme" id="themeBtn" aria-label="Toggle theme">◐</button>
+  </div>
+</div>
+
+<div class="wrap" id="top">
+
+  <div class="hero">
+    <span class="eyebrow">Free · Nothing gated</span>
+    <h1>The Claude<br><em>SEO Team</em></h1>
+    <p class="sub">10 roles in 3 departments, all working your Search Console data into fixes that actually ship. Each role passes its findings to the next.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://link.chatseo.app/pb-claude-seo-team" target="_blank" rel="noopener">Start your 7-day free trial →</a>
+      <a class="btn btn-ghost" href="#find">See the 10 roles</a>
+    </div>
+  </div>
+
+  <figure class="proof">
+    <img src="img/proof-103k.webp" alt="Search Console, one ChatSEO customer: daily clicks flat until they started using ChatSEO.app in July 2025, then climbing to 600+ a day. 103k clicks, 12.9M impressions in total." loading="lazy">
+    <figcaption>To get similar results for your business, <a href="https://link.chatseo.app/pb-claude-seo-team" target="_blank" rel="noopener">try ChatSEO.app free for 7 days</a>.</figcaption>
+  </figure>
+
+  <h2>What's inside</h2>
+  <ul class="plain">
+    <li>10 role instructions, one per job on the team</li>
+    <li>20 reusable prompts, two per role</li>
+    <li>6 working templates the roles fill and pass along</li>
+    
+  </ul>
+
+  <figure class="plainfig">
+    <svg viewBox="0 0 760 250" role="img" aria-label="Three departments in a loop. Find what's worth fixing: Search Console Analyst, CTR Watcher, Prioritizer. Fix the pages: Intent Matcher, Title and Meta Writer, Content Gap Editor, Internal Linker. Measure and repeat: Performance Tracker, Cannibalization Checker, Head of the Loop. Each role passes a handoff note to the next, and the last one hands the cycle back to the first.">
+      <style>
+        .bx{stroke:var(--line);fill:var(--surface);stroke-width:1.2}
+        .bxa{stroke:var(--accent);fill:none;stroke-width:1.8}
+        .hd{fill:var(--accent);font-family:Inter,system-ui,sans-serif;font-size:11.5px;font-weight:800;letter-spacing:.13em}
+        .tx{fill:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:13px}
+        .sm{fill:var(--muted);font-family:Inter,system-ui,sans-serif;font-size:12px}
+        .ln{stroke:var(--muted);fill:none;stroke-width:1.3}
+      </style>
+      <defs><marker id="ar" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="var(--muted)"/></marker></defs>
+      <rect x="10" y="14" width="220" height="176" rx="12" class="bxa"/>
+      <text x="26" y="40" class="hd">1 · FIND</text>
+      <text x="26" y="70" class="tx">01 Search Console Analyst</text>
+      <text x="26" y="96" class="tx">02 CTR Watcher</text>
+      <text x="26" y="122" class="tx">03 Prioritizer</text>
+      <text x="26" y="176" class="sm">→ the fix list</text>
+      <path d="M232 102 h34" class="ln" marker-end="url(#ar)"/>
+      <rect x="270" y="14" width="220" height="176" rx="12" class="bxa"/>
+      <text x="286" y="40" class="hd">2 · FIX</text>
+      <text x="286" y="70" class="tx">04 Intent Matcher</text>
+      <text x="286" y="96" class="tx">05 Title &amp; Meta Writer</text>
+      <text x="286" y="122" class="tx">06 Content Gap Editor</text>
+      <text x="286" y="148" class="tx">07 Internal Linker</text>
+      <text x="286" y="176" class="sm">→ the changes, shipped</text>
+      <path d="M492 102 h34" class="ln" marker-end="url(#ar)"/>
+      <rect x="530" y="14" width="220" height="176" rx="12" class="bxa"/>
+      <text x="546" y="40" class="hd">3 · MEASURE</text>
+      <text x="546" y="70" class="tx">08 Performance Tracker</text>
+      <text x="546" y="96" class="tx">09 Cannibalization Checker</text>
+      <text x="546" y="122" class="tx">10 Head of the Loop</text>
+      <text x="546" y="176" class="sm">→ next cycle's pages</text>
+      <path d="M640 192 v26 H120 v-24" class="ln" marker-end="url(#ar)"/>
+      <text x="380" y="238" class="sm" text-anchor="middle">every role ends with a handoff note · the loop restarts every 28 days</text>
+    </svg>
+  </figure>
+
+  <h2 id="setup">Setup: two minutes</h2>
+  <ol class="setup">
+    <li>Connect your Google Search Console to <a href="https://link.chatseo.app/pb-claude-seo-team" target="_blank" rel="noopener">ChatSEO</a> (read-only, one click). Every role reads from it.</li>
+    <li>Fill the <a href="#templates">Team brief</a> once. Every role reads it first.</li>
+    <li>Run the roles in order. Each one ends with a <strong>handoff note</strong>; paste it into the next role's conversation.</li>
+  </ol>
+  <div class="callout"><p><span class="k">The honest gap.</span> Paste these prompts into a plain AI chat and every one of them hits the same wall: it can't see your Search Console, so it says "not in the data" or guesses. ChatSEO is connected to it, so every number is yours. That's what the <a href="https://link.chatseo.app/pb-claude-seo-team" target="_blank" rel="noopener">7-day free trial</a> is for. Prefer Claude? The ChatSEO MCP plugs the same data into Claude (Pro plan).</p></div>
+
+  <div class="group-head" id="find"><span>Department 1</span><hr></div>
+  <h3 class="dept">Find what&#x27;s worth fixing</h3>
+  <p class="group-sub">Pull the data, find the pages stuck just off page 1, pick the ones worth the work.</p>
+  
+  <div class="fn" id="role-1">
+    <div class="fn-head"><span class="fn-num">01</span><h3 class="fn-title">Search Console Analyst</h3></div>
+    <p class="fn-sub">Pulls your Search Console and finds the pages stuck at positions 8 to 20.</p>
+    <p class="hands"><b>Hands the next role:</b> A clean baseline table and the striking-distance list, ranked by impressions.</p>
+    <details class="drop"><summary>Role instruction</summary><div class="drop-body">
+      <p class="drop-note">Paste it at the top of the conversation, or save it as a Claude project instruction.</p>
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">Role 1 · Search Console Analyst</span><button class="copy" type="button">Copy</button></div>
+<pre>You are the Search Console Analyst of an SEO team. You work only from my Google Search Console data.
+Your job: pull the numbers the rest of the team needs, then find the pages with an average position between 8 and 20 and real demand behind them.
+Rules:
+- Never estimate a number. If it is not in the data, write &quot;not in the data&quot;.
+- Always give clicks, impressions, CTR and average position, last 28 days vs the 28 before.
+- A page qualifies as striking distance only with 100+ impressions in 28 days and a position between 8.0 and 20.0.
+- Rank by impressions, not by position. Demand first. Name the query that brings most of each page&#x27;s impressions.
+- End with a HANDOFF note for the CTR Watcher (template 6).</pre></div>
+    </div></details>
+    <details class="drop"><summary>The 2 prompts</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">Prompt 1.1 · Pull the baseline · paste into ChatSEO</span><button class="copy" type="button">Copy</button></div>
+<pre>Pull my Search Console data for the last 28 days and the 28 days before. Give me one table per page: URL, clicks, impressions, CTR, average position, and the change vs the previous period. Drop pages under 50 impressions. Only use numbers from my Search Console. If a number is not in the data, write &quot;not in the data&quot; instead of estimating. End with the 3 numbers that changed the most.</pre></div>
+<div class="prompt"><div class="prompt-bar"><span class="prompt-label">Prompt 1.2 · Striking distance list · paste into ChatSEO</span><button class="copy" type="button">Copy</button></div>
+<pre>From my Search Console, last 28 days: list every page with an average position between 8 and 20 and at least 100 impressions. Columns: URL, top query, impressions, clicks, CTR, position. Sort by impressions. Only use numbers from my Search Console. If a number is not in the data, write &quot;not in the data&quot; instead of estimating. End with a HANDOFF note for the CTR Watcher.</pre></div>
+    </div></details>
+  </div>
+  <div class="fn" id="role-2">
+    <div class="fn-head"><span class="fn-num">02</span><h3 class="fn-title">CTR Watcher</h3></div>
+    <p class="fn-sub">Catches pages that kept their position but lost the click.</p>
+    <p class="hands"><b>Hands the next role:</b> The snippet problems: same rank, fewer clicks.</p>
+    <details class="drop"><summary>Role instruction</summary><div class="drop-body">
+      <p class="drop-note">Paste it at the top of the conversation, or save it as a Claude project instruction.</p>
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">Role 2 · CTR Watcher</span><button class="copy" type="button">Copy</button></div>
+<pre>You are the CTR Watcher of an SEO team. You compare the last 28 days to the 28 before in my Search Console.
+Your job: find pages whose CTR dropped while their average position moved less than 1.5 places. That is a snippet problem, not a ranking problem.
+Rules:
+- Only count pages with 200+ impressions in both periods.
+- Show CTR before, CTR after, position before, position after.
+- Say what changed in the results page only if the data shows it. Otherwise say &quot;check the SERP by hand&quot;.
+- End with a HANDOFF note for the Prioritizer (template 6).</pre></div>
+    </div></details>
+    <details class="drop"><summary>The 2 prompts</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">Prompt 2.1 · CTR drops at a stable rank · paste into ChatSEO</span><button class="copy" type="button">Copy</button></div>
+<pre>Compare my last 28 days to the 28 days before in Search Console. List the pages whose CTR fell while average position moved less than 1.5 places, with 200+ impressions in both periods. Columns: URL, CTR before, CTR after, position before, position after, clicks lost. Only use numbers from my Search Console. If a number is not in the data, write &quot;not in the data&quot; instead of estimating. End with the worst one.</pre></div>
+<div class="prompt"><div class="prompt-bar"><span class="prompt-label">Prompt 2.2 · Low CTR for the rank · paste into ChatSEO</span><button class="copy" type="button">Copy</button></div>
+<pre>List my pages in positions 1 to 10 over the last 28 days whose CTR is below the median CTR of my other pages at the same rounded position. Columns: URL, position, CTR, median CTR at that position, impressions. Only use numbers from my Search Console. If a number is not in the data, write &quot;not in the data&quot; instead of estimating. End with a HANDOFF note for the Prioritizer.</pre></div>
+    </div></details>
+  </div>
+  <div class="fn" id="role-3">
+    <div class="fn-head"><span class="fn-num">03</span><h3 class="fn-title">Prioritizer</h3></div>
+    <p class="fn-sub">Picks the few pages closest to page 1. Says no to everything else.</p>
+    <p class="hands"><b>Hands the next role:</b> The fix list: 3 to 5 pages, in order, with the reason.</p>
+    <details class="drop"><summary>Role instruction</summary><div class="drop-body">
+      <p class="drop-note">Paste it at the top of the conversation, or save it as a Claude project instruction.</p>
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">Role 3 · Prioritizer</span><button class="copy" type="button">Copy</button></div>
+<pre>You are the Prioritizer of an SEO team. You read the HANDOFF notes from the Search Console Analyst and the CTR Watcher.
+Your job: choose the 3 to 5 pages the team fixes this cycle, nothing more.
+Rules:
+- Score each candidate: closer to position 10 is better, more impressions is better, a CTR drop at a stable rank is a bonus.
+- Show the score and the numbers behind it. Never invent a gain.
+- Every page you do not pick gets one line saying why not.
+- Fill the Opportunity sheet (template 2) and end with a HANDOFF note for the Intent Matcher.</pre></div>
+    </div></details>
+    <details class="drop"><summary>The 2 prompts</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">Prompt 3.1 · Pick this cycle&#x27;s pages · paste into ChatSEO</span><button class="copy" type="button">Copy</button></div>
+<pre>From my Search Console, last 28 days: take every page between position 8 and 20 with 100+ impressions, plus any page whose CTR dropped at a stable rank. Pick the 3 to 5 closest to page 1 with the most impressions. For each: URL, position, impressions, CTR, one-line reason. Only use numbers from my Search Console. If a number is not in the data, write &quot;not in the data&quot; instead of estimating. End with the order to fix them in.</pre></div>
+<div class="prompt"><div class="prompt-bar"><span class="prompt-label">Prompt 3.2 · Say no to the rest · paste into ChatSEO</span><button class="copy" type="button">Copy</button></div>
+<pre>List the pages that almost made this cycle&#x27;s fix list and say in one line each why they wait. Use my Search Console numbers for the last 28 days. Only use numbers from my Search Console. If a number is not in the data, write &quot;not in the data&quot; instead of estimating. End with a HANDOFF note for the Intent Matcher.</pre></div>
+    </div></details>
+  </div>
+
+  <div class="group-head" id="fix"><span>Department 2</span><hr></div>
+  <h3 class="dept">Fix the pages</h3>
+  <p class="group-sub">Match each page to what it actually ranks for, then fix the title, the content and the links.</p>
+  
+  <div class="fn" id="role-4">
+    <div class="fn-head"><span class="fn-num">04</span><h3 class="fn-title">Intent Matcher</h3></div>
+    <p class="fn-sub">Checks each page answers the query it actually ranks for, not the one you wrote it for.</p>
+    <p class="hands"><b>Hands the next role:</b> One target query per page, and the gap between page and intent.</p>
+    <details class="drop"><summary>Role instruction</summary><div class="drop-body">
+      <p class="drop-note">Paste it at the top of the conversation, or save it as a Claude project instruction.</p>
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">Role 4 · Intent Matcher</span><button class="copy" type="button">Copy</button></div>
+<pre>You are the Intent Matcher of an SEO team. You read the Prioritizer&#x27;s fix list.
+Your job: for each page, find the query it really ranks for in Search Console and check the page answers it.
+Rules:
+- The target query is the one with the most impressions, not the one in the title.
+- Say what the searcher wants in one line: learn, compare, buy, or find a place.
+- Say what the page gives them in one line. Name the mismatch plainly.
+- Fill the Page fix card (template 3), then HANDOFF to the Title and Meta Writer.</pre></div>
+    </div></details>
+    <details class="drop"><summary>The 2 prompts</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">Prompt 4.1 · Find the real target query · paste into ChatSEO</span><button class="copy" type="button">Copy</button></div>
+<pre>For this page: [URL]. From my Search Console, last 28 days, list the top 5 queries by impressions with clicks, CTR and position. Tell me which one the page should target and whether the page&#x27;s current title and H1 match it. Only use numbers from my Search Console. If a number is not in the data, write &quot;not in the data&quot; instead of estimating. End with the target query.</pre></div>
+<div class="prompt"><div class="prompt-bar"><span class="prompt-label">Prompt 4.2 · Name the intent gap · paste into ChatSEO</span><button class="copy" type="button">Copy</button></div>
+<pre>Read this page: [URL]. Its target query is [QUERY]. In three lines: what the searcher wants, what the page gives them, and the gap between the two. Then list the top 3 results on Google for [QUERY] and what each covers that my page does not. End with a HANDOFF note for the Title and Meta Writer.</pre></div>
+    </div></details>
+  </div>
+  <div class="fn" id="role-5">
+    <div class="fn-head"><span class="fn-num">05</span><h3 class="fn-title">Title &amp; Meta Writer</h3></div>
+    <p class="fn-sub">Rewrites the snippet so the page wins the click at the rank it already has.</p>
+    <p class="hands"><b>Hands the next role:</b> A new title and meta per page, with the old ones kept for the log.</p>
+    <details class="drop"><summary>Role instruction</summary><div class="drop-body">
+      <p class="drop-note">Paste it at the top of the conversation, or save it as a Claude project instruction.</p>
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">Role 5 · Title &amp; Meta Writer</span><button class="copy" type="button">Copy</button></div>
+<pre>You are the Title and Meta Writer of an SEO team. You read the Intent Matcher&#x27;s page fix card.
+Your job: rewrite the title tag and meta description so the page wins more clicks at its current position.
+Rules:
+- Title under 60 characters, target query near the start, one concrete reason to click.
+- Meta under 155 characters, says what the reader gets, no fluff.
+- Never promise something the page does not deliver.
+- Keep the old title and meta in the Fix log (template 5). HANDOFF to the Content Gap Editor.</pre></div>
+    </div></details>
+    <details class="drop"><summary>The 2 prompts</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">Prompt 5.1 · Rewrite the snippet · paste into ChatSEO</span><button class="copy" type="button">Copy</button></div>
+<pre>Page: [URL]. Target query: [QUERY]. Read the page and its current title and meta description. Write 3 new titles under 60 characters and 2 meta descriptions under 155 characters, each matching the target query and what the page actually delivers. Show the current ones first. End with the one pair you would ship.</pre></div>
+<div class="prompt"><div class="prompt-bar"><span class="prompt-label">Prompt 5.2 · Beat the page 1 snippets · paste into ChatSEO</span><button class="copy" type="button">Copy</button></div>
+<pre>Look at the titles and descriptions ranking on page 1 for [QUERY]. List what they all say, and one angle none of them use that my page [URL] can honestly claim. Write my title and meta around that angle. End with a HANDOFF note for the Content Gap Editor.</pre></div>
+    </div></details>
+  </div>
+  <div class="fn" id="role-6">
+    <div class="fn-head"><span class="fn-num">06</span><h3 class="fn-title">Content Gap Editor</h3></div>
+    <p class="fn-sub">Adds what the page is missing compared to page 1. Only that.</p>
+    <p class="hands"><b>Hands the next role:</b> The sections to add, written, with where they go.</p>
+    <details class="drop"><summary>Role instruction</summary><div class="drop-body">
+      <p class="drop-note">Paste it at the top of the conversation, or save it as a Claude project instruction.</p>
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">Role 6 · Content Gap Editor</span><button class="copy" type="button">Copy</button></div>
+<pre>You are the Content Gap Editor of an SEO team. You read the Intent Matcher&#x27;s gap and the page 1 results.
+Your job: add only what the page is missing to answer its target query, nothing decorative.
+Rules:
+- List the gaps first, each with the page 1 result that covers it.
+- Write each missing section in the site&#x27;s own tone, ready to paste.
+- Say where each section goes on the page.
+- Do not rewrite what already works. HANDOFF to the Internal Linker.</pre></div>
+    </div></details>
+    <details class="drop"><summary>The 2 prompts</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">Prompt 6.1 · List the content gaps · paste into ChatSEO</span><button class="copy" type="button">Copy</button></div>
+<pre>Compare my page [URL] with the top 5 Google results for [QUERY]. List the subtopics, questions and facts they cover that my page does not, with which result covers each. Skip anything my page already covers. End with the 3 gaps that matter most for the query.</pre></div>
+<div class="prompt"><div class="prompt-bar"><span class="prompt-label">Prompt 6.2 · Write the missing sections · paste into ChatSEO</span><button class="copy" type="button">Copy</button></div>
+<pre>Write the 3 missing sections for my page [URL] on [QUERY], in the tone of the rest of my site, ready to paste. For each: a heading, the section, and where it goes on the page. Do not rewrite existing sections. End with a HANDOFF note for the Internal Linker.</pre></div>
+    </div></details>
+  </div>
+  <div class="fn" id="role-7">
+    <div class="fn-head"><span class="fn-num">07</span><h3 class="fn-title">Internal Linker</h3></div>
+    <p class="fn-sub">Sends links to the page from your pages that already rank.</p>
+    <p class="hands"><b>Hands the next role:</b> The link plan: which page, which sentence, which anchor.</p>
+    <details class="drop"><summary>Role instruction</summary><div class="drop-body">
+      <p class="drop-note">Paste it at the top of the conversation, or save it as a Claude project instruction.</p>
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">Role 7 · Internal Linker</span><button class="copy" type="button">Copy</button></div>
+<pre>You are the Internal Linker of an SEO team. You read the fix list and my Search Console.
+Your job: find pages on my site that already get clicks and are topically close, and add a link from each to the page being fixed.
+Rules:
+- Source pages must have clicks in the last 28 days in Search Console.
+- Give the exact sentence to add the link to, and the anchor text (varied, natural, close to the target query).
+- Three to five links per page, no more.
+- Fill the Internal link plan (template 4). HANDOFF to the Performance Tracker.</pre></div>
+    </div></details>
+    <details class="drop"><summary>The 2 prompts</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">Prompt 7.1 · Find the source pages · paste into ChatSEO</span><button class="copy" type="button">Copy</button></div>
+<pre>My page [URL] targets [QUERY]. From my Search Console, last 28 days, list my pages that get clicks and cover a related topic, sorted by clicks. Mark the ones that already link to [URL]. Only use numbers from my Search Console. If a number is not in the data, write &quot;not in the data&quot; instead of estimating. End with the 5 best pages to link from.</pre></div>
+<div class="prompt"><div class="prompt-bar"><span class="prompt-label">Prompt 7.2 · Write the link plan · paste into ChatSEO</span><button class="copy" type="button">Copy</button></div>
+<pre>For each source page you picked, give me the exact sentence where a link to [URL] fits, the anchor text, and the rewritten sentence if one is needed. Vary the anchors. End with a HANDOFF note for the Performance Tracker.</pre></div>
+    </div></details>
+  </div>
+
+  <div class="group-head" id="measure"><span>Department 3</span><hr></div>
+  <h3 class="dept">Measure and repeat</h3>
+  <p class="group-sub">Track every fix against its own baseline, catch pages fighting each other, choose what&#x27;s next.</p>
+  
+  <div class="fn" id="role-8">
+    <div class="fn-head"><span class="fn-num">08</span><h3 class="fn-title">Performance Tracker</h3></div>
+    <p class="fn-sub">Grades every fix against the numbers it started from.</p>
+    <p class="hands"><b>Hands the next role:</b> A verdict per fix: worked, no change, or worse.</p>
+    <details class="drop"><summary>Role instruction</summary><div class="drop-body">
+      <p class="drop-note">Paste it at the top of the conversation, or save it as a Claude project instruction.</p>
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">Role 8 · Performance Tracker</span><button class="copy" type="button">Copy</button></div>
+<pre>You are the Performance Tracker of an SEO team. You read the Fix log (template 5).
+Your job: compare each fixed page&#x27;s clicks, CTR and position 28 days after the change to its baseline in the log.
+Rules:
+- Only grade a fix after 28 days. Before that, write &quot;too early&quot;.
+- Verdict per fix: worked, no change, or worse, with the numbers.
+- Never credit a fix for a change that also happened to the whole site. Compare to the site&#x27;s overall trend.
+- HANDOFF to the Cannibalization Checker.</pre></div>
+    </div></details>
+    <details class="drop"><summary>The 2 prompts</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">Prompt 8.1 · Grade the fixes · paste into ChatSEO</span><button class="copy" type="button">Copy</button></div>
+<pre>Here is my fix log: [PASTE LOG]. For each page, pull its clicks, CTR and position from Search Console for the 28 days after the change date and compare with the baseline in the log. Also give my whole site&#x27;s change over the same dates. Only use numbers from my Search Console. If a number is not in the data, write &quot;not in the data&quot; instead of estimating. End with a verdict per fix: worked, no change, or worse.</pre></div>
+<div class="prompt"><div class="prompt-bar"><span class="prompt-label">Prompt 8.2 · Weekly movement · paste into ChatSEO</span><button class="copy" type="button">Copy</button></div>
+<pre>From my Search Console, last 7 days vs the 7 days before: for these pages [URLs], give clicks, impressions, CTR and position with the change. Only use numbers from my Search Console. If a number is not in the data, write &quot;not in the data&quot; instead of estimating. End with a HANDOFF note for the Cannibalization Checker.</pre></div>
+    </div></details>
+  </div>
+  <div class="fn" id="role-9">
+    <div class="fn-head"><span class="fn-num">09</span><h3 class="fn-title">Cannibalization Checker</h3></div>
+    <p class="fn-sub">Catches two of your pages competing for the same query.</p>
+    <p class="hands"><b>Hands the next role:</b> Each conflict, and which page should own the query.</p>
+    <details class="drop"><summary>Role instruction</summary><div class="drop-body">
+      <p class="drop-note">Paste it at the top of the conversation, or save it as a Claude project instruction.</p>
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">Role 9 · Cannibalization Checker</span><button class="copy" type="button">Copy</button></div>
+<pre>You are the Cannibalization Checker of an SEO team. You work from my Search Console, query by page.
+Your job: find queries where 2 or more of my pages get impressions and swap positions, and decide which page should own each.
+Rules:
+- A conflict needs 2+ pages with 20+ impressions each on the same query in 28 days.
+- The owner is the page with the better intent match, then the better position. Say why.
+- The fix is one of: merge, redirect, re-target the weaker page, or de-link. Pick one.
+- HANDOFF to the Head of the Loop.</pre></div>
+    </div></details>
+    <details class="drop"><summary>The 2 prompts</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">Prompt 9.1 · Find the conflicts · paste into ChatSEO</span><button class="copy" type="button">Copy</button></div>
+<pre>From my Search Console, last 28 days: list every query where 2 or more of my pages each have 20+ impressions. For each: the query, each page with impressions, clicks and position. Only use numbers from my Search Console. If a number is not in the data, write &quot;not in the data&quot; instead of estimating. End with the conflict that costs the most clicks.</pre></div>
+<div class="prompt"><div class="prompt-bar"><span class="prompt-label">Prompt 9.2 · Settle each conflict · paste into ChatSEO</span><button class="copy" type="button">Copy</button></div>
+<pre>For each conflict you found, say which page should own the query and why in one line, and pick one fix: merge, redirect, re-target the weaker page, or remove the internal links that confuse Google. End with a HANDOFF note for the Head of the Loop.</pre></div>
+    </div></details>
+  </div>
+  <div class="fn" id="role-10">
+    <div class="fn-head"><span class="fn-num">10</span><h3 class="fn-title">Head of the Loop</h3></div>
+    <p class="fn-sub">Reads every handoff and decides what the team fixes next.</p>
+    <p class="hands"><b>Hands the next role:</b> Next cycle&#x27;s plan, and one line on what this cycle taught.</p>
+    <details class="drop"><summary>Role instruction</summary><div class="drop-body">
+      <p class="drop-note">Paste it at the top of the conversation, or save it as a Claude project instruction.</p>
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">Role 10 · Head of the Loop</span><button class="copy" type="button">Copy</button></div>
+<pre>You are the Head of the Loop of an SEO team. You read every HANDOFF note from this cycle and the Performance Tracker&#x27;s verdicts.
+Your job: decide what the team does next cycle, and write down what this cycle proved.
+Rules:
+- Repeat what worked on the next pages in line. Stop what did not.
+- Next cycle has 3 to 5 pages, never more.
+- One line on what this cycle taught, backed by a number from the data.
+- Update the Team brief (template 1) if a threshold should change. Then hand the cycle back to the Search Console Analyst.</pre></div>
+    </div></details>
+    <details class="drop"><summary>The 2 prompts</summary><div class="drop-body">
+      <div class="prompt"><div class="prompt-bar"><span class="prompt-label">Prompt 10.1 · Decide the next cycle · paste into ChatSEO</span><button class="copy" type="button">Copy</button></div>
+<pre>Here are this cycle&#x27;s handoff notes and fix verdicts: [PASTE]. From my Search Console, last 28 days, find the next 3 to 5 pages between position 8 and 20 that did not get fixed yet. Tell me which type of fix worked best this cycle and apply it to them. Only use numbers from my Search Console. If a number is not in the data, write &quot;not in the data&quot; instead of estimating. End with next cycle&#x27;s list, in order.</pre></div>
+<div class="prompt"><div class="prompt-bar"><span class="prompt-label">Prompt 10.2 · What this cycle taught · paste into ChatSEO</span><button class="copy" type="button">Copy</button></div>
+<pre>In 5 lines: what we changed this cycle, what it did to clicks and position (numbers from my Search Console only), what we stop doing, what we repeat, and which threshold in the Team brief should change. End with the date the next cycle starts.</pre></div>
+    </div></details>
+  </div>
+
+  <hr>
+  <h2 id="templates">The 6 templates</h2>
+  <p class="lede">What the roles fill and hand to each other. Copy them into a doc, a sheet or the conversation.</p>
+
+  <details class="drop"><summary>Template 1 · Team brief</summary><div class="drop-body">
+    <p class="drop-note">Read by every role. Fill once, update when the Head of the Loop says so.</p>
+    <div class="prompt"><div class="prompt-bar"><span class="prompt-label">Template 1 · Team brief</span><button class="copy" type="button">Copy</button></div>
+<pre># TEAM BRIEF
+
+Site: [domain]
+What we sell: [one line]
+Who buys it: [one line]
+Money pages: [3 to 5 URLs that make revenue]
+
+Thresholds
+- Striking distance: position 8 to 20, 100+ impressions / 28 days
+- CTR drop: position moved &lt; 1.5 places, 200+ impressions both periods
+- Cannibalization: 2+ pages with 20+ impressions on one query
+- Fixes per cycle: 3 to 5 pages
+- Grade a fix after: 28 days
+
+Tone: [how the site writes]
+Never: [claims we can&#x27;t make, pages not to touch]</pre></div>
+  </div></details>
+
+  <details class="drop"><summary>Template 2 · Opportunity sheet</summary><div class="drop-body">
+    <p class="drop-note">Filled by the Prioritizer. One row per candidate page.</p>
+    <div class="prompt"><div class="prompt-bar"><span class="prompt-label">Template 2 · Opportunity sheet</span><button class="copy" type="button">Copy</button></div>
+<pre># OPPORTUNITY SHEET · cycle [n] · [date]
+
+| # | URL | Top query | Impr. 28d | Clicks | CTR | Pos. | CTR drop? | Picked? | Why |
+|---|-----|-----------|-----------|--------|-----|------|-----------|---------|-----|
+| 1 |     |           |           |        |     |      |           |         |     |
+| 2 |     |           |           |        |     |      |           |         |     |
+| 3 |     |           |           |        |     |      |           |         |     |
+
+Picked this cycle: [URLs, in order]</pre></div>
+  </div></details>
+
+  <details class="drop"><summary>Template 3 · Page fix card</summary><div class="drop-body">
+    <p class="drop-note">One per page being fixed. The Fix department fills it top to bottom.</p>
+    <div class="prompt"><div class="prompt-bar"><span class="prompt-label">Template 3 · Page fix card</span><button class="copy" type="button">Copy</button></div>
+<pre># PAGE FIX CARD · [URL]
+
+Target query: [query with most impressions]
+Baseline (28d): clicks [ ] · impressions [ ] · CTR [ ] · position [ ]
+
+Intent: the searcher wants to [learn / compare / buy / find a place]
+Page gives them: [one line]
+Gap: [one line]
+
+Title  old: [ ]   new: [ ]
+Meta   old: [ ]   new: [ ]
+
+Sections added:
+1. [heading] · goes after [section]
+2. [heading] · goes after [section]
+
+Internal links added: see link plan</pre></div>
+  </div></details>
+
+  <details class="drop"><summary>Template 4 · Internal link plan</summary><div class="drop-body">
+    <p class="drop-note">Filled by the Internal Linker. Three to five rows per page.</p>
+    <div class="prompt"><div class="prompt-bar"><span class="prompt-label">Template 4 · Internal link plan</span><button class="copy" type="button">Copy</button></div>
+<pre># INTERNAL LINK PLAN · to [target URL]
+
+| Source page | Clicks 28d | Sentence (as it will read) | Anchor | Done |
+|-------------|-----------|-----------------------------|--------|------|
+|             |           |                             |        |      |
+|             |           |                             |        |      |
+|             |           |                             |        |      |</pre></div>
+  </div></details>
+
+  <details class="drop"><summary>Template 5 · Fix log</summary><div class="drop-body">
+    <p class="drop-note">The team&#x27;s memory. One row per shipped change, graded 28 days later.</p>
+    <div class="prompt"><div class="prompt-bar"><span class="prompt-label">Template 5 · Fix log</span><button class="copy" type="button">Copy</button></div>
+<pre># FIX LOG
+
+| Date shipped | URL | What changed | Baseline clicks / pos. | +28d clicks / pos. | Site trend same dates | Verdict |
+|--------------|-----|--------------|------------------------|--------------------|-----------------------|---------|
+|              |     |              |                        |                    |                       |         |</pre></div>
+  </div></details>
+
+  <details class="drop"><summary>Template 6 · Handoff note</summary><div class="drop-body">
+    <p class="drop-note">What every role writes at the end, and what the next role reads first.</p>
+    <div class="prompt"><div class="prompt-bar"><span class="prompt-label">Template 6 · Handoff note</span><button class="copy" type="button">Copy</button></div>
+<pre># HANDOFF · from [role] to [next role] · [date]
+
+Found: [the 1 to 3 things that matter, with numbers]
+Decided: [what I chose and why, one line each]
+Did not do: [what I skipped and why]
+Your input: [the list / table / URLs you work from]
+Open question: [anything the next role must check]</pre></div>
+  </div></details>
+
+
+  <hr>
+
+  <figure class="proof">
+    <img src="img/proof-9k.webp" alt="Search Console, another ChatSEO customer: flat for a year, then clicks rise sharply from January 2026 after they started using ChatSEO.app. 9.13k clicks, 286k impressions." loading="lazy">
+    <figcaption>To get similar results for your business, <a href="https://link.chatseo.app/pb-claude-seo-team" target="_blank" rel="noopener">try ChatSEO.app free for 7 days</a>.</figcaption>
+  </figure>
+
+  <div class="final">
+    <h2 style="margin-top:0">Or let ChatSEO run the team</h2>
+    <p>ChatSEO reads your Search Console, finds the pages closest to page 1, writes the fixes and tracks them. Try it free for 7 days.</p>
+    <a class="btn btn-primary" href="https://link.chatseo.app/pb-claude-seo-team" target="_blank" rel="noopener">Start your 7-day free trial →</a>
+  </div>
+
+  <footer>
+    <p>Built by <a href="https://link.chatseo.app/pb-claude-seo-team" target="_blank" rel="noopener">Nicholas at ChatSEO</a> · Everything on this page is free to copy and use.</p>
+  </footer>
+
+</div>
+<script>
+// "Run in ChatSEO": every prompt written for ChatSEO gets a button that opens the chat pre-filled.
+// The app reads ?message= and pre-fills (it does not auto-send); source=playbook fires the PROMPT_PREFILLED event.
+(function(){
+  var base='https://chatseo.app/dashboard';
+  var name=location.pathname.split('/').filter(Boolean).pop()||'playbook';
+  document.querySelectorAll('.prompt').forEach(function(p){
+    var lab=p.querySelector('.prompt-label'); var label=lab?lab.textContent:'';
+    if(!/into ChatSEO/.test(label)) return;
+    var text=p.querySelector('pre').innerText.trim();
+    var a=document.createElement('a'); a.className='run'; a.target='_blank'; a.rel='noopener';
+    a.href=base+'?message='+encodeURIComponent(text)+'&source=playbook&name='+encodeURIComponent(name);
+    a.textContent='Run in ChatSEO \u2192';
+    var row=document.createElement('div'); row.className='run-row'; row.appendChild(a); p.appendChild(row);
+  });
+})();
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  try{ var s=localStorage.getItem('theme'); if(s) root.setAttribute('data-theme',s); }catch(e){}
+  btn.addEventListener('click',function(){
+    var cur=root.getAttribute('data-theme');
+    if(!cur) cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+    var next=cur==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{ localStorage.setItem('theme',next); }catch(e){}
+  });
+})();
+document.querySelectorAll('.copy').forEach(function(btn){
+  btn.addEventListener('click',function(e){
+    e.preventDefault();
+    var text=btn.closest('.prompt').querySelector('pre').innerText;
+    var done=function(){ btn.textContent='Copied'; btn.classList.add('done');
+      setTimeout(function(){ btn.textContent='Copy'; btn.classList.remove('done'); },1600); };
+    function fallback(){
+      var ta=document.createElement('textarea'); ta.value=text;
+      ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta);
+      ta.select(); try{ document.execCommand('copy'); done(); }catch(e){ btn.textContent='Select manually'; }
+      document.body.removeChild(ta);
+    }
+    if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(done).catch(fallback); }
+    else { fallback(); }
+  });
+});
+</script>
+</body>
+</html>
