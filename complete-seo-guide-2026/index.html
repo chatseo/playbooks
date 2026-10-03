@@ -106,6 +106,27 @@ footer a{color:var(--muted)}
   font-size:13.5px;font-weight:600;text-decoration:none;box-shadow:0 1px 2px rgba(0,0,0,.08)}
 .run:hover{filter:brightness(1.08)}
 </style>
+<style>
+.crumb{font-size:13.5px;color:var(--muted);margin:0 0 14px}
+.crumb a{color:var(--muted);text-decoration:none}
+.crumb a:hover{color:var(--accent)}
+.doc-head{padding:56px 0 8px}
+.doc-head h1{font-size:clamp(38px,6.5vw,54px);margin:0 0 10px}
+.doc-meta{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:13px;color:var(--muted);margin:0}
+.tldr{border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin:30px 0 18px;background:var(--surface)}
+.tldr-k,.toc-k{font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);margin:0 0 8px}
+.tldr ul{margin:0;padding-left:20px}
+.tldr li{font-size:16px;margin-bottom:6px}
+.toc{margin:0 0 10px;padding:4px 0 0}
+.toc ol{margin:0;padding-left:22px}
+.toc > ol > li{margin-bottom:6px;font-size:15.5px}
+.toc ol ol{margin:6px 0 4px;padding-left:18px;list-style:none}
+.toc ol ol li{font-size:14.5px;margin-bottom:3px}
+.toc a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
+.toc a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+figure.proof img{border-radius:12px}
+figure.proof figcaption{font-size:14.5px;color:var(--ink)}
+</style>
 </head>
 <body>
 
@@ -125,38 +146,56 @@ footer a{color:var(--muted)}
 
 <div class="wrap" id="top">
 
-  <div class="hero">
-    <span class="eyebrow">Free guide · 2026</span>
-    <h1>The Complete SEO Guide<br><em>for 2026</em></h1>
-    <p class="sub">Stop treating SEO as "publish blog posts and wait". Ranking on Google is half the job now. The other half is getting cited by ChatGPT, Perplexity and AI Overviews. Twelve chapters, each with an audit checklist and the ChatSEO prompt that does the work, plus the Search Console filters, editable templates and weekly workflows.</p>
-    <div class="cta-row">
-      <a class="btn btn-primary" href="https://link.chatseo.app/pb-complete-seo-guide-2026" target="_blank" rel="noopener">Start your 7-day free trial →</a>
-      <a class="btn btn-ghost" href="#chapters">Read the 12 chapters</a>
-    </div>
-    <p class="note">ChatSEO, the AI SEO agent connected to your Search Console · 🎁 7 days free</p>
+  <header class="doc-head">
+    <p class="crumb"><a href="https://chatseo.github.io/playbooks/">ChatSEO Playbooks</a> / Free, nothing gated</p>
+    <h1>The Complete SEO Guide for 2026</h1>
+    <p class="doc-meta">12 chapters · 13 prompts · 6 Search Console filters · 4 templates · 3 workflows</p>
+  </header>
+
+  <div class="tldr">
+    <p class="tldr-k">TL;DR</p>
+    <ul>
+      <li>Ranking on Google is half the job now. The other half is getting cited by ChatGPT, Perplexity and AI Overviews.</li>
+      <li>Twelve chapters, from keyword prioritisation to Shopify, WordPress and reporting. Each has an audit checklist and the prompt that does the work.</li>
+      <li>The fastest wins are in <a href="#ch-7">chapter 7</a> (Search Console quick wins) and <a href="#ch-8">chapter 8</a> (pages stuck on page 2).</li>
+      <li>Then run it every week with the <a href="#workflows">three workflows</a>.</li>
+    </ul>
   </div>
+
+  <figure class="proof">
+    <img src="img/proof-103k.webp" alt="Search Console, one ChatSEO customer: daily clicks flat until they started using ChatSEO.app in July 2025, then climbing to 600+ a day. 103k clicks, 12.9M impressions in total." loading="lazy">
+    <figcaption>To get similar results for your business, <a href="https://link.chatseo.app/pb-complete-seo-guide-2026" target="_blank" rel="noopener">try ChatSEO.app free for 7 days</a>.</figcaption>
+  </figure>
+
+  <nav class="toc" aria-label="Contents">
+    <p class="toc-k">Contents</p>
+    <ol>
+      <li><a href="#half">Ranking is half the job</a></li>
+      <li><a href="#chapters">The 12 chapters, in order</a><ol>
+        <li><a href="#ch-1">01 · SEO strategy and keyword prioritisation</a></li>
+        <li><a href="#ch-2">02 · Search intent and topic clusters</a></li>
+        <li><a href="#ch-3">03 · Technical SEO: crawling, indexing, Core Web Vitals</a></li>
+        <li><a href="#ch-4">04 · On-page: titles, meta descriptions, internal linking</a></li>
+        <li><a href="#ch-5">05 · Content that ranks and gets cited by AI</a></li>
+        <li><a href="#ch-6">06 · AEO, GEO and AI search visibility</a></li>
+        <li><a href="#ch-7">07 · Google Search Console: finding quick wins</a></li>
+        <li><a href="#ch-8">08 · Pages stuck on page 2 and how to push them</a></li>
+        <li><a href="#ch-9">09 · Link building and digital PR</a></li>
+        <li><a href="#ch-10">10 · Local SEO and Google Business Profile</a></li>
+        <li><a href="#ch-11">11 · Shopify and WordPress SEO</a></li>
+        <li><a href="#ch-12">12 · Reporting, tracking and SEO automation with AI</a></li>
+      </ol></li>
+      <li><a href="#workflows">Three workflows to run it</a></li>
+    </ol>
+  </nav>
 
   <h2 id="half">Ranking is half the job</h2>
   <p class="lede">Your buyers still search on Google. They also ask ChatGPT, Perplexity and the AI Overview at the top of the results, and those answers name a handful of sources. If you're not one of them, you don't exist in that answer.</p>
   <figure><img src="img/01-two-halves.webp" alt="Half one: rank on Google. Half two: get cited by ChatGPT, Perplexity and AI Overviews. Both sit on the same foundations." width="1400" height="788" loading="lazy"></figure>
   <p>The good news: both halves sit on the same foundations. A site Google can crawl, pages that match the intent and answer in the first lines, a brand named the same way everywhere, and mentions on the sites these engines already trust. This guide works through them in the order that pays back fastest.</p>
 
-  <h2 id="chapters">The 12 chapters</h2>
+  <h2 id="chapters">The 12 chapters, in order</h2>
   <figure><img src="img/02-order.webp" alt="The 12 chapters grouped in four phases: plan, fix, grow, measure" width="1400" height="788" loading="lazy"></figure>
-  <ol class="recap">
-    <li><a href="#ch-1">SEO strategy and keyword prioritisation</a></li>
-    <li><a href="#ch-2">Search intent and topic clusters</a></li>
-    <li><a href="#ch-3">Technical SEO: crawling, indexing, Core Web Vitals</a></li>
-    <li><a href="#ch-4">On-page: titles, meta descriptions, internal linking</a></li>
-    <li><a href="#ch-5">Content that ranks and gets cited by AI</a></li>
-    <li><a href="#ch-6">AEO, GEO and AI search visibility</a></li>
-    <li><a href="#ch-7">Google Search Console: finding quick wins</a></li>
-    <li><a href="#ch-8">Pages stuck on page 2 and how to push them</a></li>
-    <li><a href="#ch-9">Link building and digital PR</a></li>
-    <li><a href="#ch-10">Local SEO and Google Business Profile</a></li>
-    <li><a href="#ch-11">Shopify and WordPress SEO</a></li>
-    <li><a href="#ch-12">Reporting, tracking and SEO automation with AI</a></li>
-  </ol>
   <p><strong>Only have an hour?</strong> Do chapters 7 and 8. They work on traffic Google already gives you, so they move fastest.</p>
 
   <hr>
@@ -188,6 +227,11 @@ footer a{color:var(--muted)}
     <div class="prompt-bar"><span class="prompt-label">Chapter 2 · Paste this into ChatSEO</span><button class="copy" type="button">Copy</button></div>
 <pre>Map a topic cluster for [topic] on [site URL]: one pillar page and up to 12 supporting pages. For each: target keyword, search intent, the page type the top 5 results use, and whether a page already exists on my site (give the URL) or needs creating. Flag any two of my pages competing for the same keyword. Use real keyword and Search Console data only.</pre>
   </div>
+
+  <figure class="proof">
+    <img src="img/proof-9k.webp" alt="Search Console, another ChatSEO customer: flat for a year, then clicks rise sharply from January 2026 after they started using ChatSEO.app. 9.13k clicks, 286k impressions." loading="lazy">
+    <figcaption>Another ChatSEO customer: flat for a year, then up from the week they started.</figcaption>
+  </figure>
 
   <h2 id="ch-3"><span class="n">3</span>Technical SEO: crawling, indexing, Core Web Vitals</h2>
   <p>You don't need a 200-line audit. You need the few issues that stop your important pages from being crawled, indexed or loaded fast. Search Console's Pages report and Core Web Vitals report tell you most of it for free.</p>
@@ -279,6 +323,11 @@ Call to action:</pre>
   <div class="callout">
     <p><span class="k">Why a guide isn't enough.</span> This page gives you the method, the filters and the prompts. It can't read your Search Console, crawl your site or check this week whether ChatGPT names you. ChatSEO does, on your real data, and pushes the fixes you approve to WordPress or Shopify. <a href="https://link.chatseo.app/pb-complete-seo-guide-2026" target="_blank" rel="noopener">The first 7 days are free.</a></p>
   </div>
+
+  <figure class="proof">
+    <img src="img/proof-11k.webp" alt="Search Console, a third ChatSEO customer: clicks flat from spring to October 2025, then climbing steadily after they started using ChatSEO.app. 11.7k clicks, 238k impressions." loading="lazy">
+    <figcaption>A third one: started using ChatSEO.app in October 2025, clicks have climbed every month since. To get similar results, <a href="https://link.chatseo.app/pb-complete-seo-guide-2026" target="_blank" rel="noopener">try ChatSEO.app free for 7 days</a>.</figcaption>
+  </figure>
 
   <h2 id="ch-7"><span class="n">7</span>Google Search Console: finding quick wins</h2>
   <p>A quick win is a page Google already shows but people don't click, or a query you rank for without a page built for it. Search Console has all of it, under Performance → Search results. Set the date to the last 3 months, tick all four metrics, then apply one filter at a time.</p>
@@ -435,12 +484,6 @@ Either way, thanks for the article.
   <div class="prompt">
     <div class="prompt-bar"><span class="prompt-label">Weekly · Paste this into ChatSEO</span><button class="copy" type="button">Copy</button></div>
 <pre>Give me this week's SEO action list for [site URL]: compare last week with the week before in Search Console, spot the pages and queries that moved, and list the 3 actions most likely to bring clicks this week, each with the page, the change and why. Do not include anything the data does not support.</pre>
-  </div>
-
-  <div class="final" style="margin:44px 0">
-    <h2 style="margin-top:0">Run the guide on your own site</h2>
-    <p>Connect Search Console once. Then paste the prompts above, one chapter at a time, and approve what ChatSEO proposes. <strong>7 days free</strong>, cancel anytime.</p>
-    <a class="btn btn-primary" href="https://link.chatseo.app/pb-complete-seo-guide-2026" target="_blank" rel="noopener">Start your 7-day free trial →</a>
   </div>
 
   <footer>
