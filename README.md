@@ -2,6 +2,7 @@
 
 Free, ungated SEO playbooks from [ChatSEO](https://link.chatseo.app/pb-seo-system).
 
+- [The Backlinks Playbook for 2026](https://chatseo.github.io/playbooks/backlinks-playbook/) — every way a founder can get backlinks, 13 methods in five tiers from free to paid (claim, ask, trade, earn, buy): every ChatSEO prompt, every outreach email and follow-up, the five checks before you pay for a link, the profile anomalies to avoid and a fresh-domain plan.
 - [The Claude Chief of GEO](https://chatseo.github.io/playbooks/claude-chief-of-geo/) — get your brand named by ChatGPT, Gemini and Claude: 6 Claude Code skills (plus the 3 they depend on, as a zip) built on 5 million ChatGPT answers. Fan-out queries, self-ranking, ranking swaps, the citation ladder, footprint and a monthly routine.
 - [11.5M Organic Views: The 4 Growth Playbooks](https://chatseo.github.io/playbooks/11m-organic-views/) — how one founder got 11.5M organic views on TikTok, LinkedIn, Reddit and X without ads: TikTok SEO from Creator Search Insights, the LinkedIn playbook post and its CTA flywheel, the Reddit warm-up and title formula, the daily X article, with every hook, template and prompt.
 - [The Complete SEO Guide for 2026](https://chatseo.github.io/playbooks/complete-seo-guide-2026/) — rank on Google and get cited by ChatGPT, Perplexity and AI Overviews: twelve chapters from keyword prioritisation to Shopify/WordPress and reporting, each with an audit checklist and a ChatSEO prompt, plus six Search Console filters, four editable templates and three workflows.
