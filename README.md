@@ -2,6 +2,7 @@
 
 Free, ungated SEO playbooks from [ChatSEO](https://link.chatseo.app/pb-seo-system).
 
+- [The Claude Code SEO Team](https://chatseo.github.io/playbooks/claude-code-seo-team/) — 50 Claude Code agents across 10 SEO departments, plus 20 skills, 15 workflows (slash commands), 15 templates, 10 task recipes and 10 audits: 120 resources, every one to copy or download as one zip in the right folders.
 - [The Complete Claude SEO Team](https://chatseo.github.io/playbooks/claude-seo-team-20-agents/) — 20 Claude Code agents, one SEO job each, across 8 departments (keyword research, competitors, technical audits, content, internal linking, backlinks, GEO, reporting): every agent file to copy or download as a zip, the shared seo/ folder handoff, the run order and the prompt that runs the whole team.
 - [The Backlinks Playbook for 2026](https://chatseo.github.io/playbooks/backlinks-playbook/) — every way a founder can get backlinks, 13 methods in five tiers from free to paid (claim, ask, trade, earn, buy): every ChatSEO prompt, every outreach email and follow-up, the five checks before you pay for a link, the profile anomalies to avoid and a fresh-domain plan.
 - [The Claude Chief of GEO](https://chatseo.github.io/playbooks/claude-chief-of-geo/) — get your brand named by ChatGPT, Gemini and Claude: 6 Claude Code skills (plus the 3 they depend on, as a zip) built on 5 million ChatGPT answers. Fan-out queries, self-ranking, ranking swaps, the citation ladder, footprint and a monthly routine.
