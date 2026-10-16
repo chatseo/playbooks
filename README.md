@@ -2,6 +2,7 @@
 
 Free, ungated SEO playbooks from [ChatSEO](https://link.chatseo.app/pb-seo-system).
 
+- [The Fastest Way to Master SEO in 2026](https://chatseo.github.io/playbooks/master-seo-2026/) — a step-by-step learning path from beginner to advanced: 10 modules in 3 levels (fundamentals, keyword research, on-page, content, technical, internal linking, backlinks, local, AI search and GEO, real SEO systems), each with what to learn, an exercise on your own site, a skill check and the ChatSEO prompt, plus an 8-week plan and a glossary.
 - [The Complete Claude SEO Department](https://chatseo.github.io/playbooks/complete-claude-seo-department/) — 48 Claude agents across 6 SEO departments, plus 35 skills, 32 prompts, 15 workflows (slash commands) and 10 playbooks: 140 resources, every one to copy or download as one zip in the right folders.
 - [The Claude Code SEO Team](https://chatseo.github.io/playbooks/claude-code-seo-team/) — 50 Claude Code agents across 10 SEO departments, plus 20 skills, 15 workflows (slash commands), 15 templates, 10 task recipes and 10 audits: 120 resources, every one to copy or download as one zip in the right folders.
 - [The Complete Claude SEO Team](https://chatseo.github.io/playbooks/claude-seo-team-20-agents/) — 20 Claude Code agents, one SEO job each, across 8 departments (keyword research, competitors, technical audits, content, internal linking, backlinks, GEO, reporting): every agent file to copy or download as a zip, the shared seo/ folder handoff, the run order and the prompt that runs the whole team.
