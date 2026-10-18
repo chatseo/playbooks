@@ -1,0 +1,1038 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>50 Claude Skills for SEO: The Free Library for Your Entire SEO Cycle</title>
+<meta name="description" content="50 copyable Claude Skills across 8 SEO categories: keyword research, technical SEO, content, rankings and CTR, internal linking, backlinks, AI search (GEO) and local SEO. Free, one zip.">
+<meta property="og:title" content="50 Claude Skills for SEO: The Free Library for Your Entire SEO Cycle">
+<meta property="og:description" content="50 copyable Claude Skills across 8 SEO categories: keyword research, technical SEO, content, rankings and CTR, internal linking, backlinks, AI search (GEO) and local SEO. Free, one zip.">
+<meta property="og:image" content="https://chatseo.github.io/playbooks/claude-skills-seo-50/img/og-card.jpg">
+<meta property="og:url" content="https://chatseo.github.io/playbooks/claude-skills-seo-50/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFFFFF; --ink:#030712; --muted:#4B5563; --faint:#9AA1AE;
+  --accent:#0066FD; --on-accent:#FFFFFF; --accent-soft:#EEF4FF;
+  --line:#E8EEF9; --code-bg:#030712; --code-ink:#F4F6FA;
+  --maxw:720px;
+}
+:root:not([data-theme="light"]){ @media (prefers-color-scheme: dark){
+  --bg:#030712; --ink:#FFFFFF; --muted:#A3AAB8; --faint:#6B7280;
+  --accent:#4D8DFF; --on-accent:#030712; --accent-soft:#0E1A33;
+  --line:#1F2937; --code-bg:#0B1220; --code-ink:#F4F6FA;
+}}
+:root[data-theme="dark"]{
+  --bg:#030712; --ink:#FFFFFF; --muted:#A3AAB8; --faint:#6B7280;
+  --accent:#4D8DFF; --on-accent:#030712; --accent-soft:#0E1A33;
+  --line:#1F2937; --code-bg:#0B1220; --code-ink:#F4F6FA;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:72px}
+body{margin:0; background:var(--bg); color:var(--ink);
+  font-family:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:17.5px; line-height:1.66; -webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 20px}
+.bar{position:sticky; top:0; z-index:50; background:color-mix(in srgb, var(--bg) 90%, transparent);
+  backdrop-filter:blur(10px); border-bottom:1px solid var(--line)}
+.bar-in{max-width:var(--maxw); margin:0 auto; padding:12px 20px; display:flex; align-items:center; gap:14px}
+.brand{font-weight:700; letter-spacing:-.02em; font-size:15px; text-decoration:none; color:var(--ink); white-space:nowrap}
+.brand span{color:var(--accent)}
+.bar nav{margin-left:auto; display:flex; gap:16px; overflow-x:auto; scrollbar-width:none}
+.bar nav::-webkit-scrollbar{display:none}
+.bar nav a{color:var(--muted); text-decoration:none; font-size:13.5px; font-weight:500; white-space:nowrap}
+.bar nav a:hover{color:var(--accent)}
+.lang{font-size:13px; font-weight:600; color:var(--accent); text-decoration:none; border:1px solid var(--line); border-radius:6px; padding:6px 10px; white-space:nowrap}
+.theme{background:none; border:1px solid var(--line); color:var(--muted); border-radius:6px; width:32px; height:32px; cursor:pointer; font-size:14px; flex:none}
+.theme:hover{color:var(--accent); border-color:var(--accent)}
+.hero{padding:72px 0 12px}
+.eyebrow{display:inline-block; font-size:11.5px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); margin-bottom:18px}
+h1{font-weight:700; letter-spacing:-.03em; font-size:clamp(38px,7vw,58px); line-height:1.04; margin:0 0 20px}
+h1 em{font-style:normal; color:var(--accent)}
+.sub{font-size:19px; max-width:600px; margin:0 0 26px; line-height:1.5}
+.cta-row{display:flex; gap:12px; flex-wrap:wrap; margin-bottom:10px}
+.btn{display:inline-flex; align-items:center; gap:8px; padding:12px 24px; border-radius:6px; font-weight:500; font-size:15px;
+  text-decoration:none; border:1px solid transparent; transition:.15s; box-shadow:0 1px 3px rgba(0,0,0,.1),0 1px 2px -1px rgba(0,0,0,.1)}
+.btn-primary{background:var(--accent); color:var(--on-accent)}
+.btn-primary:hover{filter:brightness(1.08); transform:translateY(-1px)}
+.btn-ghost{border-color:var(--line); color:var(--ink); background:var(--bg); box-shadow:none}
+.btn-ghost:hover{border-color:var(--accent); color:var(--accent)}
+.note{font-size:13.5px; color:var(--muted)}
+h2{font-weight:700; font-size:clamp(27px,4.4vw,34px); line-height:1.14; letter-spacing:-.025em; margin:60px 0 8px}
+h2 .n{color:var(--accent); font-weight:600; margin-right:10px}
+h3{font-size:19px; font-weight:600; letter-spacing:-.015em; margin:28px 0 8px}
+p{margin:0 0 17px}
+a{color:var(--accent)}
+.lede{font-size:19px; margin-bottom:22px; line-height:1.5}
+hr{border:0; border-top:1px solid var(--line); margin:48px 0}
+strong{font-weight:650}
+ul,ol{padding-left:22px; margin:0 0 18px}
+li{margin-bottom:8px}
+.plain{list-style:none; padding:0}
+.plain li{padding-left:24px; position:relative; margin-bottom:10px}
+.plain li::before{content:"↳"; position:absolute; left:0; color:var(--accent); font-weight:700}
+figure{margin:32px 0}
+figure img{width:100%; height:auto; display:block; border-radius:8px; border:1px solid var(--line)}
+figure.plainfig img{border:0; border-radius:0}
+figcaption{font-size:13.5px; color:var(--muted); margin-top:10px}
+.callout{border-left:2px solid var(--accent); padding:4px 0 4px 20px; margin:28px 0}
+.callout p{margin:0 0 10px; font-size:16px}
+.callout p:last-child{margin:0}
+.callout .k{font-weight:650; color:var(--accent)}
+.prompt{position:relative; margin:20px 0 22px}
+.prompt-bar{display:flex; align-items:center; justify-content:space-between; gap:10px; background:var(--code-bg);
+  border-radius:8px 8px 0 0; padding:9px 13px; border-bottom:1px solid rgba(255,255,255,.1)}
+.prompt-label{font-family:"JetBrains Mono",ui-monospace,monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#8C93A0}
+.copy{background:rgba(255,255,255,.12); color:#F5F5F5; border:0; border-radius:4px; padding:5px 11px; font-size:12px; font-weight:600; cursor:pointer; font-family:inherit; transition:.15s; white-space:nowrap}
+.copy:hover, .copy.done{background:#0066FD; color:#FFFFFF}
+pre{margin:0; background:var(--code-bg); color:var(--code-ink); border-radius:0 0 8px 8px; padding:16px; overflow-x:auto;
+  font-family:"JetBrains Mono",ui-monospace,monospace; font-size:12.5px; line-height:1.62; white-space:pre-wrap; word-wrap:break-word}
+.recap{counter-reset:s; list-style:none; padding:0; margin:22px 0}
+.recap li{counter-increment:s; position:relative; padding-left:40px; margin-bottom:12px}
+.recap li::before{content:counter(s); position:absolute; left:0; top:2px; width:26px; height:26px; border-radius:50%; background:var(--accent);
+  color:var(--on-accent); font-size:13px; font-weight:700; display:flex; align-items:center; justify-content:center}
+.final{border:1px solid var(--accent); border-radius:8px; padding:36px 26px; text-align:center; margin:52px 0 20px}
+.final h2{margin:0 0 10px; font-size:clamp(25px,4vw,31px)}
+.final p{max-width:470px; margin:0 auto 22px}
+footer{text-align:center; padding:30px 0 56px; color:var(--muted); font-size:13.5px}
+footer a{color:var(--muted)}
+@media (max-width:560px){ body{font-size:16.5px} .bar nav{display:none} }
+.run-row{display:flex;justify-content:flex-end;margin-top:8px}
+.run{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:6px;background:var(--accent);color:var(--on-accent);
+  font-size:13.5px;font-weight:600;text-decoration:none;box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.run:hover{filter:brightness(1.08)}
+</style>
+<style>
+.crumb{font-size:13.5px;color:var(--muted);margin:0 0 14px}
+.crumb a{color:var(--muted);text-decoration:none}
+.crumb a:hover{color:var(--accent)}
+.doc-head{padding:56px 0 8px}
+.doc-head h1{font-size:clamp(38px,6.5vw,54px);margin:0 0 10px}
+.doc-meta{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:13px;color:var(--muted);margin:0}
+.tldr{border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin:30px 0 18px;background:var(--surface)}
+.tldr-k,.toc-k{font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);margin:0 0 8px}
+.tldr ul{margin:0;padding-left:20px}
+.tldr li{font-size:16px;margin-bottom:6px}
+.toc{margin:0 0 10px;padding:4px 0 0}
+.toc ol{margin:0;padding-left:22px}
+.toc > ol > li{margin-bottom:6px;font-size:15.5px}
+.toc ol ol{margin:6px 0 4px;padding-left:18px;list-style:none}
+.toc ol ol li{font-size:14.5px;margin-bottom:3px}
+.toc a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
+.toc a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+figure.proof img{border-radius:12px}
+figure.proof figcaption{font-size:14.5px;color:var(--ink)}
+figure.narrow img{max-width:360px;margin:0 auto;display:block}
+figure.mid img{max-width:620px;margin:0 auto;display:block}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start;margin:22px 0}
+.pair figure{margin:0}
+.pair.three{grid-template-columns:1fr 1fr 1fr}
+.pair.phone{max-width:520px;margin-left:auto;margin-right:auto}
+.pair figcaption{text-align:center}
+h2 + .lede{margin-top:6px}
+@media (max-width:640px){.pair,.pair.three{grid-template-columns:1fr}}
+.dl-row{display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px;margin:18px 0 8px}
+.dl{display:inline-block;background:var(--accent);color:#fff!important;text-decoration:none;font-weight:700;padding:12px 20px;border-radius:10px}
+.dl:hover{opacity:.9}
+.dl-note{font-size:14.5px;color:var(--muted)}
+details.res{border:1px solid var(--line);border-radius:10px;margin:10px 0;background:var(--surface)}
+details.res > summary{cursor:pointer;padding:12px 16px;list-style:none;font-size:15.5px}
+details.res > summary::-webkit-details-marker{display:none}
+details.res > summary::before{content:"+";display:inline-block;width:18px;color:var(--accent);font-weight:800}
+details.res[open] > summary::before{content:"\2212"}
+details.res > summary code{font-weight:700}
+details.res .sum-d{color:var(--muted)}
+details.res .prompt{margin:0 14px 14px}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="bar-in">
+    <a class="brand" href="#top">Chat<span>SEO</span></a>
+    <nav>
+      <a href="#map">Map</a>
+      <a href="#setup">Setup</a>
+      <a href="#c-keyword">Skills</a>
+      <a href="#gap">Data</a>
+      <a href="download/claude-skills-seo-50.zip">Zip</a>
+    </nav>
+    <button class="theme" id="themeBtn" aria-label="Toggle theme">◐</button>
+  </div>
+</div>
+
+<div class="wrap" id="top">
+
+  <header class="doc-head">
+    <p class="crumb"><a href="https://chatseo.github.io/playbooks/">ChatSEO Playbooks</a> / Free, nothing gated</p>
+    <h1>50 Claude Skills for SEO</h1>
+    <p class="doc-meta">50 skills · 8 categories · one SKILL.md each · free zip</p>
+  </header>
+
+  <div class="tldr">
+    <p class="tldr-k">TL;DR</p>
+    <ul>
+      <li>50 reusable Claude Skills covering the entire SEO cycle, from the first keyword to the monthly report. <a href="#map">See the map.</a></li>
+      <li>Each skill tells Claude which data to use, the steps to follow, the exact output table, and the one action to take next.</li>
+      <li>Drop the folder in, restart Claude Code, and ask normally. Claude picks the right skill on its own. <a href="#setup">2-minute setup.</a></li>
+      <li>Most skills read Search Console, volumes or backlinks. Without that data Claude guesses. <a href="#gap">Here's how to plug it in.</a></li>
+      <li>All 50 are below, ready to copy. Or <a href="download/claude-skills-seo-50.zip">download them as one zip</a>.</li>
+    </ul>
+  </div>
+
+  <figure class="proof">
+    <img src="img/proof-103k.webp" alt="Search Console, one ChatSEO customer: daily clicks flat until they started using ChatSEO.app in July 2025, then climbing to 600+ a day. 103k clicks, 12.9M impressions in total." loading="lazy">
+    <figcaption>To get similar results for your business, <a href="https://link.chatseo.app/pb-claude-skills-seo-50" target="_blank" rel="noopener">try ChatSEO.app free for 7 days</a>.</figcaption>
+  </figure>
+
+  <nav class="toc" aria-label="Contents">
+    <p class="toc-k">Contents</p>
+    <ol>
+      <li><a href="#map">The map: 50 skills, 8 categories</a></li>
+      <li><a href="#setup">The 2-minute setup</a></li>
+      <li>The 50 skills
+        <ol>
+          <li><a href="#c-keyword">Keyword Research</a> · 8 skills</li>
+          <li><a href="#c-technical">Technical SEO</a> · 8 skills</li>
+          <li><a href="#c-content">Content Creation</a> · 6 skills</li>
+          <li><a href="#c-ctr">Rankings &amp; CTR</a> · 7 skills</li>
+          <li><a href="#c-linking">Internal Linking</a> · 6 skills</li>
+          <li><a href="#c-backlinks">Backlinks</a> · 5 skills</li>
+          <li><a href="#c-geo">AI Search (GEO)</a> · 5 skills</li>
+          <li><a href="#c-local">Local SEO</a> · 5 skills</li>
+        </ol>
+      </li>
+      <li><a href="#gap">The part the skills can't do alone</a></li>
+      <li><a href="#limits">Where this breaks</a></li>
+      <li><a href="#tomorrow">What I'd do tomorrow</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="map">The map: 50 skills, 8 categories</h2>
+  <p class="lede">SEO teams spend hours on the same jobs every week. Each of those jobs is a skill here.</p>
+  <p>A Claude Skill is one file, <code>SKILL.md</code>: a name, one line saying when to use it, and the instructions. Claude reads only the one-line descriptions until your request matches one, then loads that skill. So 50 skills cost you nothing until you need one.</p>
+  <figure class="mid"><img src="img/01-map.webp" alt="The 50 skills in 8 categories: keyword research, technical SEO, content creation, rankings and CTR, internal linking, backlinks, AI search (GEO) and local SEO" loading="lazy"></figure>
+  <p>Every skill follows the same shape:</p>
+  <ul class="plain">
+    <li><strong>The data Claude needs.</strong> Which export, which date range, which filter.</li>
+    <li><strong>A repeatable workflow.</strong> The steps, in order, with the thresholds that separate signal from noise.</li>
+    <li><strong>An output template.</strong> The exact columns of the table, capped, so you can act on it.</li>
+    <li><strong>The one action to take next.</strong> Not a list of ten. One.</li>
+  </ul>
+
+  <h2 id="setup">The 2-minute setup</h2>
+  <ol>
+    <li><a href="download/claude-skills-seo-50.zip">Download the zip</a> and unzip it at the root of your site's folder. The skills land in <code>.claude/skills/</code>. To use them in every project, unzip in <code>~/.claude/</code> instead.</li>
+    <li>Restart Claude Code.</li>
+    <li>Ask normally: <em>"which of my pages should I push first?"</em> loads <code>position-8-15-finder</code>. You can also name a skill: <em>"use title-rewriter on my top 20 pages"</em>.</li>
+  </ol>
+  <p class="dl-row"><a class="dl" href="download/claude-skills-seo-50.zip" download>Download all 50 skills (.zip)</a> <span class="dl-note">50 SKILL.md files, already in the right folders</span></p>
+
+  <hr>
+
+  <h2 id="c-keyword"><span class="n">1</span>Keyword Research</h2>
+  <p class="lede">Expand seed terms, classify search intent and map every query to the right page. 8 skills.</p>
+<details class="res"><summary><code>seed-expander</code> <span class="sum-d">· Turn one seed keyword into a full keyword universe with volume and difficulty.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/seed-expander/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: seed-expander
+description: Turn one seed keyword into a full keyword universe with volume and difficulty. Use at the start of any new topic.
+---
+
+Take the seed. Expand via modifiers, questions, comparisons, alternatives, and long-tail variants.
+For each keyword: volume | difficulty | intent | whether the site already ranks for it.
+Drop anything with zero volume or an intent the site cannot serve.
+Cap the output at 50 keywords.
+End with the single keyword to build the pillar page around.</pre>
+  </div></details>
+<details class="res"><summary><code>intent-classifier</code> <span class="sum-d">· Classify keywords by search intent so you build the right page type.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/intent-classifier/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: intent-classifier
+description: Classify keywords by search intent so you build the right page type. Use before any content decision.
+---
+
+For each keyword, classify as informational, commercial investigation, transactional, or navigational.
+Base the call on what actually ranks in the SERP, not on the wording of the keyword.
+Columns: keyword | intent | evidence from the SERP | correct page type.
+Flag any keyword where the SERP shows mixed intent: those need a hybrid page or should be skipped.
+End with the one keyword whose intent the site is currently getting wrong.</pre>
+  </div></details>
+<details class="res"><summary><code>keyword-gap</code> <span class="sum-d">· Find keywords a competitor ranks for that you do not.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/keyword-gap/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: keyword-gap
+description: Find keywords a competitor ranks for that you do not. Use for competitive research.
+---
+
+Pull the competitor&#x27;s ranking keywords. Remove anything the site already ranks top 20 for, and anything branded to them.
+Keep only keywords the site could credibly rank for given its existing topical authority: say so if a keyword is out of reach.
+Columns: keyword | their position | volume | intent | the page you would need to build.
+Cap at 25.
+End with the one keyword to target this month.</pre>
+  </div></details>
+<details class="res"><summary><code>question-harvester</code> <span class="sum-d">· Collect the real questions people ask about a topic.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/question-harvester/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: question-harvester
+description: Collect the real questions people ask about a topic. Use before writing an FAQ or GEO content.
+---
+
+Gather questions from People Also Ask, GSC queries containing question words, and forum and Reddit threads on the topic.
+Deduplicate by meaning, not by wording.
+For each: question | volume or frequency signal | whether the site already answers it | best format for the answer.
+Cap at 20 questions.
+End with the one unanswered question worth a dedicated page.</pre>
+  </div></details>
+<details class="res"><summary><code>cluster-builder</code> <span class="sum-d">· Turn a messy keyword export into clean topic clusters.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/cluster-builder/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: cluster-builder
+description: Turn a messy keyword export into clean topic clusters. Use when handed a CSV of hundreds of keywords.
+---
+
+Read the export. Cluster by SERP overlap where available, otherwise by shared intent and entity: never by string similarity alone.
+One cluster = one page. If two clusters would produce near-identical pages, merge them.
+For each cluster: cluster name | primary keyword | supporting keywords | total volume | page type to build.
+Cap at 15 clusters. Say how many keywords you dropped and why.
+End with the one cluster with the best volume-to-difficulty ratio.</pre>
+  </div></details>
+<details class="res"><summary><code>serp-shape-reader</code> <span class="sum-d">· Read what content format actually ranks for a keyword.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/serp-shape-reader/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: serp-shape-reader
+description: Read what content format actually ranks for a keyword. Use before writing anything.
+---
+
+Analyse the top 10 for the keyword. Record: dominant format (listicle, guide, tool, product, video, forum), median word count, and how many results are from the same site type.
+If 6+ results share one format, that format is mandatory: say so.
+Note which SERP features occupy space above the fold.
+Do not summarise the content of each result; report the pattern.
+End with the one format decision for this page.</pre>
+  </div></details>
+<details class="res"><summary><code>buying-stage-mapper</code> <span class="sum-d">· Map keywords to funnel stage so content matches where the buyer is.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/buying-stage-mapper/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: buying-stage-mapper
+description: Map keywords to funnel stage so content matches where the buyer is. Use when planning a content calendar.
+---
+
+For each keyword, assign a stage: unaware, problem-aware, solution-aware, product-aware, or ready to buy.
+For each: keyword | stage | what the reader needs at that moment | the CTA that fits.
+Flag any stage with no coverage on the site: that gap is the finding.
+Do not assign a hard-sell CTA to a problem-aware keyword.
+End with the one funnel stage to fill first.</pre>
+  </div></details>
+<details class="res"><summary><code>query-to-page-map</code> <span class="sum-d">· Map which page Google actually serves for each of your target queries.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/query-to-page-map/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: query-to-page-map
+description: Map which page Google actually serves for each of your target queries. Use to catch mismatches.
+---
+
+For each target query, pull the URL GSC reports as ranking.
+Compare it to the URL you intended to rank. Flag every mismatch.
+Columns: query | intended URL | actual URL | position | why Google chose differently.
+A mismatch usually means intent or internal linking, not keyword density.
+End with the one query where the wrong page is ranking and it matters most.</pre>
+  </div></details>
+  <figure class="proof">
+    <img src="img/proof-david-19k.webp" alt="Search Console, David&#x27;s e-commerce store over 12 months: flat at 30 to 40 clicks a day until he started using ChatSEO in April 2026, then a climb past 200 a day by September. 19.3k clicks, 276k impressions." loading="lazy">
+    <figcaption>David's e-commerce store: 30 clicks a day in April 2026, 200+ a day by September. To get similar results, <a href="https://link.chatseo.app/pb-claude-skills-seo-50" target="_blank" rel="noopener">try ChatSEO.app free for 7 days</a>.</figcaption>
+  </figure>
+  <h2 id="c-technical"><span class="n">2</span>Technical SEO</h2>
+  <p class="lede">Find crawl blockers, diff index coverage and fix redirects, schema and Core Web Vitals. 8 skills.</p>
+<details class="res"><summary><code>crawl-blockers</code> <span class="sum-d">· Find pages blocked from indexing by robots.txt, noindex, or canonical conflicts.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/crawl-blockers/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: crawl-blockers
+description: Find pages blocked from indexing by robots.txt, noindex, or canonical conflicts. Use for a technical audit or when pages are missing from Google.
+---
+
+Pull every indexable URL from the sitemap. For each, check: robots.txt disallow, meta robots noindex, canonical pointing elsewhere, and GSC coverage state.
+Report ONLY conflicts: a URL that is submitted but blocked, or canonicalised to a page that is itself noindexed.
+Columns: URL | blocker | where it is set | traffic at stake (GSC clicks, last 28d).
+Cap at 20 rows, sorted by clicks lost.
+End with the single blocker fix that unlocks the most traffic.</pre>
+  </div></details>
+<details class="res"><summary><code>index-coverage-diff</code> <span class="sum-d">· Compare GSC index coverage week over week and explain what changed.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/index-coverage-diff/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: index-coverage-diff
+description: Compare GSC index coverage week over week and explain what changed. Use for weekly technical monitoring.
+---
+
+Pull GSC index coverage counts by state for this week and the previous week.
+Report only states that moved more than 5% or 50 URLs, whichever is larger.
+For each: state | last week | this week | delta | most likely cause given what else changed.
+Flag any move into &#x27;Crawled - currently not indexed&#x27; as a quality signal, not a technical one.
+End with the one state to investigate.</pre>
+  </div></details>
+<details class="res"><summary><code>sitemap-vs-index</code> <span class="sum-d">· Find sitemap URLs Google has not indexed, and say why.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/sitemap-vs-index/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: sitemap-vs-index
+description: Find sitemap URLs Google has not indexed, and say why. Use when new pages are not appearing in search.
+---
+
+Diff the sitemap URL set against GSC indexed URLs.
+For each missing URL, classify the reason: discovered-not-crawled, crawled-not-indexed, duplicate, soft 404, or blocked.
+Group by reason and count. Show 3 example URLs per reason, not all of them.
+Crawled-not-indexed means thin or duplicate content: say so plainly rather than suggesting a resubmit.
+End with the one reason group to fix.</pre>
+  </div></details>
+<details class="res"><summary><code>redirect-chain-map</code> <span class="sum-d">· Find redirect chains and loops wasting crawl budget and link equity.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/redirect-chain-map/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: redirect-chain-map
+description: Find redirect chains and loops wasting crawl budget and link equity. Use during a migration or technical audit.
+---
+
+Crawl the URL list and follow every 3xx to its final destination.
+Report only chains of 2+ hops, and any loop.
+Columns: start URL | hops | final status | inbound internal links | inbound external links.
+Sort by external links, because that is where equity is leaking.
+End with the one chain to flatten first.</pre>
+  </div></details>
+<details class="res"><summary><code>core-web-vitals-triage</code> <span class="sum-d">· Rank Core Web Vitals failures by the traffic they actually cost.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/core-web-vitals-triage/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: core-web-vitals-triage
+description: Rank Core Web Vitals failures by the traffic they actually cost. Use when CWV is failing or a speed audit is requested.
+---
+
+Pull CWV field data by URL group. Join each group to its GSC clicks over the last 28 days.
+Ignore any failing group under 1% of total clicks: it is noise.
+For each remaining group: metric failing | current value | threshold | clicks affected | the one technical cause.
+Do not list generic advice like &quot;optimise images&quot; without naming the specific asset or script.
+End with the single template to fix first.</pre>
+  </div></details>
+<details class="res"><summary><code>schema-picker</code> <span class="sum-d">· Choose the right schema type and generate valid JSON-LD.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/schema-picker/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: schema-picker
+description: Choose the right schema type and generate valid JSON-LD. Use when adding structured data.
+---
+
+Identify the page type, then select the schema type that actually earns a rich result for it: not every type does.
+Generate valid JSON-LD using only fields the page genuinely contains. Never fabricate ratings, prices, or dates.
+State which rich result this makes the page eligible for, and that eligibility is not a guarantee.
+Validate required vs recommended properties and flag anything missing.
+End with the one page to add schema to first.</pre>
+  </div></details>
+<details class="res"><summary><code>image-alt-batch</code> <span class="sum-d">· Write alt text for images missing it, for accessibility and image search.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/image-alt-batch/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: image-alt-batch
+description: Write alt text for images missing it, for accessibility and image search. Use in batches.
+---
+
+For each image, write alt text under 125 characters describing what the image shows in context.
+Decorative images get empty alt, not a description: identify those.
+Include the target keyword only where the image genuinely depicts it.
+Columns: image | page | current alt | new alt.
+End with the one page whose images could realistically earn image-search traffic.</pre>
+  </div></details>
+<details class="res"><summary><code>heading-structure-fix</code> <span class="sum-d">· Fix broken heading hierarchy that confuses crawlers and readers.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/heading-structure-fix/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: heading-structure-fix
+description: Fix broken heading hierarchy that confuses crawlers and readers. Use during on-page audits.
+---
+
+For each page, extract the heading tree. Flag: multiple H1s, skipped levels, headings used for styling, and H2s that do not describe their section.
+Columns: URL | issue | current heading | corrected heading.
+Rewrite headings to carry the query variant they should target, without keyword stuffing.
+Cap at 15 pages.
+End with the one page whose structure is costing it the most.</pre>
+  </div></details>
+  <figure class="proof">
+    <img src="img/proof-9k.webp" alt="Search Console, a second ChatSEO customer: 9.13k clicks and 286k impressions" loading="lazy">
+    <figcaption>Another customer, same curve. To get similar results, <a href="https://link.chatseo.app/pb-claude-skills-seo-50" target="_blank" rel="noopener">try ChatSEO.app free for 7 days</a>.</figcaption>
+  </figure>
+  <h2 id="c-content"><span class="n">3</span>Content Creation</h2>
+  <p class="lede">Build briefs from the SERP, write first drafts and refresh pages before they decay. 6 skills.</p>
+<details class="res"><summary><code>brief-builder</code> <span class="sum-d">· Write a content brief specific enough that the draft is not generic AI mush.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/brief-builder/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: brief-builder
+description: Write a content brief specific enough that the draft is not generic AI mush. Use before writing any page.
+---
+
+Analyse the top 10 for the primary keyword. Build a brief containing: target keyword and cluster, search intent, mandatory format, required H2s with the gap each fills, entities and facts that must appear, the angle no competitor has taken, internal links to include, and the CTA.
+Every required section must state WHY it is required, citing what ranks.
+Ban generic sections: no &quot;Introduction&quot;, no &quot;Conclusion&quot;, no &quot;What is X&quot; unless the SERP demands it.
+End with the one angle that differentiates this page.</pre>
+  </div></details>
+<details class="res"><summary><code>outline-from-serp</code> <span class="sum-d">· Build an H2 outline from what ranks plus what nobody covers.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/outline-from-serp/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: outline-from-serp
+description: Build an H2 outline from what ranks plus what nobody covers. Use after the brief.
+---
+
+Extract every H2 and H3 from the top 10 results. Cluster them by topic and count frequency.
+Sections appearing in 5+ results are table stakes: include them. Sections in 1-2 results are optional.
+Then name what NO result covers but the searcher needs. That is the differentiator.
+Output the outline with a one-line note per section on what it must contain.
+End with the one section that will make this page better than the current number one.</pre>
+  </div></details>
+<details class="res"><summary><code>first-draft</code> <span class="sum-d">· Write the first draft from an approved brief, in the site&#x27;s voice.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/first-draft/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: first-draft
+description: Write the first draft from an approved brief, in the site&#x27;s voice. Use only after brief-builder.
+---
+
+Read the brief and follow it exactly: do not add sections it did not ask for.
+Open with the answer, not with context-setting. No &quot;In today&#x27;s digital landscape&quot;.
+Every claim gets a specific number, example, or source. If you cannot source it, cut it.
+Match sentence length to the site&#x27;s existing content. Short sentences. Plain words.
+End the draft with the CTA from the brief and nothing after it.</pre>
+  </div></details>
+<details class="res"><summary><code>eeat-injector</code> <span class="sum-d">· Add real experience and expertise signals to a draft.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/eeat-injector/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: eeat-injector
+description: Add real experience and expertise signals to a draft. Use before publishing anything YMYL or competitive.
+---
+
+Read the draft. Find every claim stated without evidence.
+For each, specify what would make it credible: a named source, a first-hand result, a screenshot, a date, a methodology note, or an author credential.
+Columns: claim | current evidence | what to add | where to get it.
+Do not invent experience the author does not have: mark those claims for cutting instead.
+End with the one addition that most raises the page&#x27;s credibility.</pre>
+  </div></details>
+<details class="res"><summary><code>content-refresh</code> <span class="sum-d">· Build a rewrite plan for a page that is losing traffic.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/content-refresh/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: content-refresh
+description: Build a rewrite plan for a page that is losing traffic. Use when a page decays.
+---
+
+Pull the page&#x27;s GSC data for the last 90 days vs the prior 90. Identify which queries lost position and which are new.
+Compare the page to what currently ranks top 3: what do they cover that it does not, and what has changed since publication.
+Output: sections to add, sections to cut, facts to update, title and meta to rewrite.
+If the page lost to a different content format entirely, say so: a refresh will not save it.
+End with the one change to make first.</pre>
+  </div></details>
+<details class="res"><summary><code>decay-detector</code> <span class="sum-d">· Find pages losing traffic before the decline becomes serious.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/decay-detector/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: decay-detector
+description: Find pages losing traffic before the decline becomes serious. Use weekly.
+---
+
+Compare the last 28 days to the prior 28, and to the same period last year to control for seasonality.
+Flag pages down more than 20% that are not explained by seasonality.
+For each: URL | clicks then | clicks now | position change | whether it lost position or lost impressions.
+Losing impressions at a stable position means the SERP changed, not your page: distinguish the two.
+End with the one page to refresh.</pre>
+  </div></details>
+  <figure class="proof">
+    <img src="img/proof-11k.webp" alt="Search Console, a third ChatSEO customer: clicks flat from spring to October 2025, then climbing steadily after they started using ChatSEO.app. 11.7k clicks, 238k impressions." loading="lazy">
+    <figcaption>Started using ChatSEO.app in October 2025, clicks have climbed every month since. To get similar results, <a href="https://link.chatseo.app/pb-claude-skills-seo-50" target="_blank" rel="noopener">try ChatSEO.app free for 7 days</a>.</figcaption>
+  </figure>
+  <h2 id="c-ctr"><span class="n">4</span>Rankings &amp; CTR</h2>
+  <p class="lede">Find pages stuck at position 8-15, rewrite titles that don&#x27;t get clicks and report it monthly. 7 skills.</p>
+<details class="res"><summary><code>position-8-15-finder</code> <span class="sum-d">· Find pages sitting at position 8-15 that deserve a push.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/position-8-15-finder/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: position-8-15-finder
+description: Find pages sitting at position 8-15 that deserve a push. Use first: this is the fastest win on the list.
+---
+
+Pull GSC queries from the last 28 days with average position between 8 and 15 and impressions above 100.
+Rank by impressions multiplied by the CTR you would gain moving to position 3.
+Columns: URL | query | position | impressions | estimated clicks gained | the one change to make.
+The change must be specific: a section to add, a link to build, a title to rewrite. Not &quot;improve the content&quot;.
+Cap at 10 rows. End with the single page to push first.</pre>
+  </div></details>
+<details class="res"><summary><code>low-ctr-finder</code> <span class="sum-d">· Find pages ranking in the top 10 with a CTR far below expectation.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/low-ctr-finder/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: low-ctr-finder
+description: Find pages ranking in the top 10 with a CTR far below expectation. Use monthly.
+---
+
+Pull GSC pages in positions 1-10. Compare each page&#x27;s CTR to the benchmark for its position.
+Flag only pages more than 40% below benchmark with over 200 impressions.
+Columns: URL | position | actual CTR | expected CTR | clicks left on the table | likely cause.
+A position-4 page with 1.2% CTR is a packaging problem, not a ranking problem: say which it is.
+End with the one page to rewrite.</pre>
+  </div></details>
+<details class="res"><summary><code>title-rewriter</code> <span class="sum-d">· Rewrite titles for pages ranking well with poor CTR.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/title-rewriter/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: title-rewriter
+description: Rewrite titles for pages ranking well with poor CTR. Use monthly.
+---
+
+Pull GSC pages in positions 1-10 with CTR below the expected rate for their position.
+For each, write 3 title options under 60 characters that carry the primary query, a reason to click, and no clickbait.
+Columns: URL | position | current CTR | expected CTR | current title | 3 options.
+Cap at 10 pages, sorted by impressions.
+End with the one title to ship today.</pre>
+  </div></details>
+<details class="res"><summary><code>meta-description-batch</code> <span class="sum-d">· Write meta descriptions for pages that lack one or have a weak one.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/meta-description-batch/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: meta-description-batch
+description: Write meta descriptions for pages that lack one or have a weak one. Use in batches.
+---
+
+For each URL, write a meta description of 140-160 characters containing the primary query, the specific benefit, and a verb.
+Do not restate the title. Do not use &quot;Learn more about&quot;.
+Skip any page where Google is already rewriting the description to something better: say which those are.
+Cap at 20 URLs.
+End with the one page where a better description would earn the most clicks.</pre>
+  </div></details>
+<details class="res"><summary><code>intent-mismatch</code> <span class="sum-d">· Find pages ranking for queries they were not built to serve.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/intent-mismatch/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: intent-mismatch
+description: Find pages ranking for queries they were not built to serve. Use when a page has impressions but no clicks.
+---
+
+Pull GSC queries per page. For each page, compare the intent of its top queries to the page&#x27;s actual type.
+Flag pages where the dominant query intent does not match the page type: a product page pulling informational queries, or a blog post pulling transactional ones.
+Columns: URL | page type | dominant query intent | impressions | clicks | CTR.
+Cap at 10 pages.
+End with the one page to repurpose.</pre>
+  </div></details>
+<details class="res"><summary><code>serp-feature-audit</code> <span class="sum-d">· Find SERP features you could realistically win.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/serp-feature-audit/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: serp-feature-audit
+description: Find SERP features you could realistically win. Use to capture clicks without moving position.
+---
+
+For each target keyword, list which SERP features appear: featured snippet, PAA, image pack, video, local pack, AI Overview.
+For each feature the site does not hold, judge whether it is winnable given current position: anything outside the top 10 is not.
+Columns: keyword | feature | current holder | your position | the specific change needed to win it.
+Cap at 15.
+End with the one feature to go after.</pre>
+  </div></details>
+<details class="res"><summary><code>monthly-report</code> <span class="sum-d">· Produce a monthly SEO report a client will actually read.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/monthly-report/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: monthly-report
+description: Produce a monthly SEO report a client will actually read. Use at month end.
+---
+
+Pull clicks, impressions, average position and indexed pages for the month and the prior month.
+Structure: what moved and by how much, what we shipped, what it produced, what is next.
+Every number carries its absolute value alongside the percentage. Every win names the action that caused it.
+No screenshots of dashboards. No metric without a decision attached to it.
+Cap at one page. End with the one priority for next month.</pre>
+  </div></details>
+  <h2 id="c-linking"><span class="n">5</span>Internal Linking</h2>
+  <p class="lede">Build hubs, rescue orphan pages and point the right links at your money pages. 6 skills.</p>
+<details class="res"><summary><code>hub-spoke-builder</code> <span class="sum-d">· Turn a topic cluster into a linked hub-and-spoke structure.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/hub-spoke-builder/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: hub-spoke-builder
+description: Turn a topic cluster into a linked hub-and-spoke structure. Use after cluster-builder.
+---
+
+Take the cluster. Designate one pillar page and assign every other page as a spoke.
+Specify: pillar links down to every spoke, every spoke links up to the pillar, and spokes link sideways only where topically adjacent.
+Output the full link map with the anchor text for each link.
+Flag any spoke that duplicates the pillar&#x27;s intent: that one should be merged, not linked.
+End with the one link that completes the structure.</pre>
+  </div></details>
+<details class="res"><summary><code>orphan-finder</code> <span class="sum-d">· Find pages with no internal links pointing to them.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/orphan-finder/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: orphan-finder
+description: Find pages with no internal links pointing to them. Use during a site audit.
+---
+
+Build the internal link graph from a crawl. Flag every indexable URL with zero inbound internal links.
+Join each orphan to its GSC impressions: an orphan with impressions is a real loss, one with none may deserve to be cut.
+Columns: orphan URL | impressions | topic | 3 existing pages that should link to it.
+Cap at 20.
+End with the one orphan to link first.</pre>
+  </div></details>
+<details class="res"><summary><code>link-depth-fix</code> <span class="sum-d">· Find pages buried more than 3 clicks from the homepage.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/link-depth-fix/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: link-depth-fix
+description: Find pages buried more than 3 clicks from the homepage. Use when deep pages underperform.
+---
+
+Crawl from the homepage and record click depth for every indexable URL.
+Flag pages at depth 4+ that have GSC impressions: those are earning attention despite being buried.
+Columns: URL | depth | impressions | the shallow page that should link to it.
+Do not recommend adding links to the main navigation for every page: name the one or two that deserve it.
+End with the one page to surface.</pre>
+  </div></details>
+<details class="res"><summary><code>anchor-text-audit</code> <span class="sum-d">· Audit internal anchor text for over-optimisation and vagueness.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/anchor-text-audit/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: anchor-text-audit
+description: Audit internal anchor text for over-optimisation and vagueness. Use during a link audit.
+---
+
+Pull every internal anchor pointing to each target URL. Group by anchor text.
+Flag two problems: generic anchors (&quot;click here&quot;, &quot;read more&quot;) and exact-match repetition above 40% of a page&#x27;s inbound anchors.
+Columns: target URL | anchor | count | share | replacement anchor.
+End with the one target URL whose anchor profile needs fixing most.</pre>
+  </div></details>
+<details class="res"><summary><code>cannibalisation-finder</code> <span class="sum-d">· Find pages competing against each other for the same query.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/cannibalisation-finder/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: cannibalisation-finder
+description: Find pages competing against each other for the same query. Use when rankings fluctuate or traffic is flat.
+---
+
+Pull GSC query-page pairs for the last 90 days. Flag any query where 2+ URLs each took impressions.
+Only report cases where the alternate URL took over 10% of impressions: below that it is noise.
+Columns: query | URLs | impressions split | clicks | which URL should win and why.
+Recommend one of: merge, differentiate intent, or canonicalise. Never all three.
+End with the one query costing the most clicks.</pre>
+  </div></details>
+<details class="res"><summary><code>link-opportunity-finder</code> <span class="sum-d">· Find existing pages that should link to your money page.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/link-opportunity-finder/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: link-opportunity-finder
+description: Find existing pages that should link to your money page. Use to push a specific URL.
+---
+
+Take the target URL. Find every page on the site that mentions its topic or ranks for a related query but does not link to it.
+For each, quote the exact sentence where the link belongs and propose the anchor text.
+Columns: source page | its authority signal | sentence to link from | proposed anchor.
+Cap at 15 opportunities, sorted by the source page&#x27;s own traffic.
+End with the single highest-value link to add.</pre>
+  </div></details>
+  <h2 id="c-backlinks"><span class="n">6</span>Backlinks</h2>
+  <p class="lede">Find link gaps, prospect broken links and write outreach people actually answer. 5 skills.</p>
+<details class="res"><summary><code>link-gap</code> <span class="sum-d">· Find sites linking to competitors but not to you.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/link-gap/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: link-gap
+description: Find sites linking to competitors but not to you. Use for link prospecting.
+---
+
+Pull backlink profiles for 3 competitors. Keep only referring domains linking to 2+ of them but not to you.
+Remove directories, scrapers, and anything with no real traffic.
+Columns: domain | authority | which competitors it links to | the page it linked to | why it would link to you.
+Cap at 25 prospects.
+End with the one prospect most likely to say yes.</pre>
+  </div></details>
+<details class="res"><summary><code>broken-link-prospector</code> <span class="sum-d">· Find broken pages on relevant sites you could replace with your content.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/broken-link-prospector/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: broken-link-prospector
+description: Find broken pages on relevant sites you could replace with your content. Use for outreach.
+---
+
+Find pages on target sites that link out to URLs returning 404.
+Keep only broken targets whose topic matches content you already have or could write in a day.
+Columns: host page | broken URL | its former topic | your replacement URL | inbound links the broken URL still has.
+End with the one replacement worth pitching first.</pre>
+  </div></details>
+<details class="res"><summary><code>outreach-writer</code> <span class="sum-d">· Write outreach emails that get replies.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/outreach-writer/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: outreach-writer
+description: Write outreach emails that get replies. Use after any prospecting skill.
+---
+
+For each prospect, write an email under 120 words. Reference the specific page and what is actually on it, state the value in one sentence, make one ask.
+No compliments about their &quot;amazing blog&quot;. No &quot;I hope this email finds you well&quot;. No follow-up threat.
+Subject line under 45 characters, lowercase, specific.
+End with the one prospect to send to first.</pre>
+  </div></details>
+<details class="res"><summary><code>digital-pr-angle</code> <span class="sum-d">· Turn your own data into a story a journalist would actually cover.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/digital-pr-angle/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: digital-pr-angle
+description: Turn your own data into a story a journalist would actually cover. Use for link earning.
+---
+
+Take the available proprietary data. Find the angle that is genuinely newsworthy: a counterintuitive finding, a ranking or league table, a trend with a number attached, or a seasonal hook.
+State the headline a journalist would write, the single statistic that carries it, and the 3 publications that cover this beat.
+If the data does not support a real story, say so: do not manufacture one.
+End with the one angle to pitch.</pre>
+  </div></details>
+<details class="res"><summary><code>toxic-link-triage</code> <span class="sum-d">· Decide whether a suspicious backlink profile needs action.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/toxic-link-triage/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: toxic-link-triage
+description: Decide whether a suspicious backlink profile needs action. Use when links look spammy.
+---
+
+Classify referring domains as: natural, low quality but harmless, or genuinely manipulative.
+Google ignores most spam automatically: recommend disavow only for links that are paid, part of a scheme, or arrived alongside a manual action.
+Columns: domain | classification | evidence | action.
+If there is no manual action and no pattern of paid links, recommend doing nothing and say why.
+End with the one decision: disavow or leave it.</pre>
+  </div></details>
+  <h2 id="c-geo"><span class="n">7</span>AI Search (GEO)</h2>
+  <p class="lede">Check who ChatGPT cites, work out why it&#x27;s not you and write answer blocks it can quote. 5 skills.</p>
+<details class="res"><summary><code>answer-block-writer</code> <span class="sum-d">· Write passages an AI engine can lift and cite.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/answer-block-writer/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: answer-block-writer
+description: Write passages an AI engine can lift and cite. Use on every page you want cited.
+---
+
+For each target question, write a 40-60 word answer block that stands alone with no surrounding context, states the answer in the first sentence, includes one specific number or named entity, and reads as a complete quote.
+Place it directly under a heading phrased as the question.
+No hedging, no &quot;it depends&quot; openers, no marketing language.
+End with the one page to add an answer block to first.</pre>
+  </div></details>
+<details class="res"><summary><code>citation-checker</code> <span class="sum-d">· Check whether AI engines cite your brand for your key questions.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/citation-checker/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: citation-checker
+description: Check whether AI engines cite your brand for your key questions. Use monthly.
+---
+
+Take the 10 questions your buyers actually ask. Query each against ChatGPT, Claude and Perplexity.
+Record: are you cited, which competitors are, which source URL the engine used, and how your brand is described.
+Columns: question | cited yes/no | competitors cited | source used.
+Do not treat one absent citation as a trend: note the sample size.
+End with the one question where a citation is most winnable.</pre>
+  </div></details>
+<details class="res"><summary><code>competitor-citation-teardown</code> <span class="sum-d">· Work out why an AI engine cites a competitor instead of you.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/competitor-citation-teardown/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: competitor-citation-teardown
+description: Work out why an AI engine cites a competitor instead of you. Use after citation-checker.
+---
+
+Take a question where a competitor is cited. Fetch the exact page the engine used.
+Compare it to your equivalent page on: directness of the answer in the first 100 words, presence of a quotable standalone passage, structured data, freshness date, named author, and third-party corroboration elsewhere on the web.
+Columns: signal | their page | your page | gap.
+End with the one change that would make your page the better citation.</pre>
+  </div></details>
+<details class="res"><summary><code>entity-consistency</code> <span class="sum-d">· Check that AI engines describe your brand accurately and consistently.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/entity-consistency/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: entity-consistency
+description: Check that AI engines describe your brand accurately and consistently. Use quarterly.
+---
+
+Ask each engine to describe the brand, its category, its pricing, and its main alternatives.
+Compare answers against the truth. Flag every inaccuracy and where the engine likely picked it up.
+Columns: claim made | accurate? | likely source | correction route.
+Corrections come from fixing the source, not from prompting the engine: say which source to fix.
+End with the one inaccuracy to correct first.</pre>
+  </div></details>
+<details class="res"><summary><code>llms-txt-builder</code> <span class="sum-d">· Generate an llms.txt that tells AI crawlers what matters on your site.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/llms-txt-builder/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: llms-txt-builder
+description: Generate an llms.txt that tells AI crawlers what matters on your site. Use once, then maintain.
+---
+
+Build llms.txt listing the site&#x27;s purpose in one line, then the pages that genuinely represent it: docs, pricing, key guides, and about.
+One line per URL with a short description of what it answers. Exclude blog archives, tags, and thin pages.
+Keep it under 50 URLs: this is a curation, not a sitemap.
+Note that adoption is not universal and this is a low-cost bet, not a ranking factor.
+End with the one page that most deserves to be in it.</pre>
+  </div></details>
+  <h2 id="c-local"><span class="n">8</span>Local SEO</h2>
+  <p class="lede">Audit your Google Business Profile, fix NAP consistency and close the local pack gap. 5 skills.</p>
+<details class="res"><summary><code>gbp-audit</code> <span class="sum-d">· Audit a Google Business Profile for completeness and ranking signals.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/gbp-audit/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: gbp-audit
+description: Audit a Google Business Profile for completeness and ranking signals. Use for any local business.
+---
+
+Check the profile for: primary and secondary categories, full description, hours including holiday hours, service area, attributes, products or services listed, photo count and recency, Q&amp;A, and post frequency.
+Columns: element | current state | impact on local ranking | fix.
+Category choice outranks almost everything else: check it first and say if it is wrong.
+End with the one element to fix today.</pre>
+  </div></details>
+<details class="res"><summary><code>nap-consistency</code> <span class="sum-d">· Find name, address and phone inconsistencies across the web.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/nap-consistency/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: nap-consistency
+description: Find name, address and phone inconsistencies across the web. Use before any local campaign.
+---
+
+Collect the business NAP as listed on the site, GBP, and the major directories and aggregators.
+Compare against the canonical version character by character: abbreviations, suite numbers, and phone formats all count.
+Columns: source | name | address | phone | mismatch | how to correct it.
+End with the one citation to correct first, weighted by the directory&#x27;s authority.</pre>
+  </div></details>
+<details class="res"><summary><code>local-pack-gap</code> <span class="sum-d">· Work out why a competitor outranks you in the map pack.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/local-pack-gap/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: local-pack-gap
+description: Work out why a competitor outranks you in the map pack. Use when local rankings stall.
+---
+
+Compare your GBP to the top 3 map pack competitors on: primary category, review count, average rating, review recency, photo count, post frequency, proximity to the searcher, and website relevance for the query.
+Columns: signal | you | competitor 1 | competitor 2 | competitor 3 | gap.
+Proximity cannot be changed: if that is the whole gap, say so honestly.
+End with the one closable gap.</pre>
+  </div></details>
+<details class="res"><summary><code>local-landing-page-builder</code> <span class="sum-d">· Build a location page that is not thin duplicate content.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/local-landing-page-builder/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: local-landing-page-builder
+description: Build a location page that is not thin duplicate content. Use when targeting multiple cities.
+---
+
+For the target location, produce a page outline containing: locally specific service detail, named neighbourhoods or districts served, a local case study or customer, location-specific FAQs, embedded map, and NAP.
+At least 40% of the body must be content that could not appear on any other location page. Name exactly which sections carry that.
+If you cannot find enough local specifics, say the page should not be built.
+End with the one local detail that makes this page unique.</pre>
+  </div></details>
+<details class="res"><summary><code>review-response-writer</code> <span class="sum-d">· Write responses to customer reviews that help local ranking.</span></summary>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Skill · .claude/skills/review-response-writer/SKILL.md</span><button class="copy" type="button">Copy</button></div>
+<pre>---
+name: review-response-writer
+description: Write responses to customer reviews that help local ranking. Use weekly.
+---
+
+For each review, write a response under 60 words. Thank by name, address the specific point raised, and where natural include the service and city once.
+Negative reviews: acknowledge, take it offline with a contact route, never argue, never blame the customer.
+Do not use the same opening line twice across responses.
+End with the one review that needs a reply today.</pre>
+  </div></details>
+
+  <hr>
+
+  <h2 id="gap">The part the skills can't do alone</h2>
+  <div class="callout">
+    <p><span class="k">The honest gap.</span> A skill tells Claude what to do with your Search Console, your volumes and your backlinks. It can't fetch them. Ask Claude which page to push without that data and it guesses from its training, confidently. Connect the ChatSEO MCP (Pro plan) and every skill reads the real numbers: Search Console, keyword volumes, backlinks, the live Google results and competitor pages. <a href="https://link.chatseo.app/pb-claude-skills-seo-50" target="_blank" rel="noopener">Try ChatSEO.app free for 7 days</a>.</p>
+  </div>
+  <div class="prompt">
+    <div class="prompt-bar"><span class="prompt-label">Connect ChatSEO · Terminal</span><button class="copy" type="button">Copy</button></div>
+<pre>claude mcp add --transport http chatseo https://api.chatseo.app/mcp</pre>
+  </div>
+  <p>Then type <code>/mcp</code> in Claude Code to log in once.</p>
+
+  <h2 id="limits">Where this breaks</h2>
+  <ul class="plain">
+    <li><strong>Skills are process, not judgement.</strong> They find the pages and write the first pass. You still decide what ships.</li>
+    <li><strong>Small sites get small tables.</strong> Under a few hundred impressions a month, most thresholds return nothing. Start with content and technical skills.</li>
+    <li><strong>A skill only fires when its description matches.</strong> If Claude doesn't pick the right one, name it.</li>
+    <li><strong>AI search skills sample, they don't measure.</strong> One missing citation is not a trend. The skills say so; believe them.</li>
+  </ul>
+
+  <h2 id="tomorrow">What I'd do tomorrow</h2>
+  <ol>
+    <li>Connect Search Console and the ChatSEO MCP before running a single skill.</li>
+    <li>Run <code>position-8-15-finder</code>. Push the one page it names.</li>
+    <li>Run <code>low-ctr-finder</code>, then <code>title-rewriter</code> on what it finds.</li>
+    <li>Run <code>crawl-blockers</code> and <code>sitemap-vs-index</code> once, fix only what blocks pages that matter.</li>
+    <li>Run <code>decay-detector</code> every Monday and <code>monthly-report</code> at month end.</li>
+    <li>Add <code>citation-checker</code> monthly once your money pages rank.</li>
+  </ol>
+  <p>Research. Fix. Write. Push. Link. Get cited. In that order, because each step works on what the previous one left behind.</p>
+
+  <footer>
+    <p>Built by <a href="https://link.chatseo.app/pb-claude-skills-seo-50" target="_blank" rel="noopener">Nicholas at ChatSEO</a> · Everything on this page is free to copy and use</p>
+  </footer>
+
+</div>
+<script>
+// "Run in ChatSEO": every prompt written for ChatSEO gets a button that opens the chat pre-filled.
+// The app reads ?message= and pre-fills (it does not auto-send); source=playbook fires the PROMPT_PREFILLED event.
+(function(){
+  var fr=document.documentElement.lang==='fr';
+  var base=fr?'https://chatseo.app/fr/dashboard':'https://chatseo.app/dashboard';
+  var name=location.pathname.split('/').filter(Boolean).pop()||'playbook';
+  document.querySelectorAll('.prompt').forEach(function(p){
+    var lab=p.querySelector('.prompt-label'); var label=lab?lab.textContent:'';
+    if(!/into ChatSEO|dans ChatSEO/.test(label)) return;
+    var text=p.querySelector('pre').innerText.trim();
+    var a=document.createElement('a'); a.className='run'; a.target='_blank'; a.rel='noopener';
+    a.href=base+'?message='+encodeURIComponent(text)+'&source=playbook&name='+encodeURIComponent(name);
+    a.textContent=fr?'Lancer dans ChatSEO \u2192':'Run in ChatSEO \u2192';
+    var row=document.createElement('div'); row.className='run-row'; row.appendChild(a); p.appendChild(row);
+  });
+})();
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  try{ var s=localStorage.getItem('theme'); if(s) root.setAttribute('data-theme',s); }catch(e){}
+  btn.addEventListener('click',function(){
+    var cur=root.getAttribute('data-theme');
+    if(!cur) cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+    var next=cur==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{ localStorage.setItem('theme',next); }catch(e){}
+  });
+})();
+document.querySelectorAll('.copy').forEach(function(btn){
+  btn.addEventListener('click',function(e){
+    e.preventDefault();
+    var pre=btn.closest('.prompt').querySelector('pre');
+    var text=pre.innerText;
+    var done=function(){ btn.textContent='Copied'; btn.classList.add('done');
+      setTimeout(function(){ btn.textContent='Copy'; btn.classList.remove('done'); },1600); };
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done).catch(fallback);
+    } else { fallback(); }
+    function fallback(){
+      var ta=document.createElement('textarea'); ta.value=text;
+      ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta);
+      ta.select(); try{ document.execCommand('copy'); done(); }catch(e){ btn.textContent='Select manually'; }
+      document.body.removeChild(ta);
+    }
+  });
+});
+</script>
+</body>
+</html>
