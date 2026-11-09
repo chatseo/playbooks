@@ -2,6 +2,7 @@
 
 Free, ungated SEO playbooks from [ChatSEO](https://link.chatseo.app/pb-seo-system).
 
+- [The Parasite SEO Playbook](https://chatseo.github.io/playbooks/parasite-seo/) — publish where Google and ChatGPT already trust: five methods (next-year pages, Zenodo research papers, answer-first LinkedIn articles, twenty Gamma decks, the Reddit threads Google already ranks), with 7 prompts, 3 templates, a tracking sheet and a 14-day plan.
 - [The Ultimate SEO Operations Engine](https://chatseo.github.io/playbooks/seo-operations-engine/) — a connected n8n blueprint in 7 modules (intake, opportunity scoring, planning, production, approval and publishing, tracking, reporting): 9 importable workflows, node map, synthetic demo data and a testing checklist, plus a zip.
 - [50 Claude Skills for SEO](https://chatseo.github.io/playbooks/claude-skills-seo-50/) — 50 copyable Claude Skills in 8 categories (keyword research, technical SEO, content creation, rankings & CTR, internal linking, backlinks, AI search / GEO, local SEO), each with the data it needs, the workflow, the output table and the one next action, plus a zip.
 - [The Fastest Way to Master SEO in 2026](https://chatseo.github.io/playbooks/master-seo-2026/) — a step-by-step learning path from beginner to advanced: 10 modules in 3 levels (fundamentals, keyword research, on-page, content, technical, internal linking, backlinks, local, AI search and GEO, real SEO systems), each with what to learn, an exercise on your own site, a skill check and the ChatSEO prompt, plus an 8-week plan and a glossary.
